@@ -2,7 +2,7 @@
 dconf , gnome , wayland , X11 , PipeWire and Pulse Audio fix , setting global , qt-dbus , linux , tweak , tweaks , dconf , perfomance
 
 
-Ubuntu 16.04....21.04 all support ubuntu stable-> gnome-shell-3.36-3.38 | support gnome-shell-42 nemo support proview https://youtu.be/fqCYEX4uOhg
+Ubuntu 16.04....22.04 all support ubuntu stable-> gnome-shell-3.36-3.38 | support gnome-shell-42 nemo support proview https://youtu.be/fqCYEX4uOhg
 
 dconf 09.04.2022 new resetting tweak audio power_save_controller on perfomance | 07.05.2021 + EPB cpu all perfomance -> saved energy replace parametr "0" to "15" example sudo sh -c "/usr/bin/echo 15 /sys/devices/system/cpu/cpu*/power/energy_perf_bias" <- 15 -> device smartphone , tablet-planshet , notebook battery power save
 
