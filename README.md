@@ -12,6 +12,8 @@ Download new thems + icons https://github.com/Griggorii/Setting_dconf_linux_OS20
 
 $ sudo dpkg -i *.deb
 
+Press Super + Scroll mouse
+
 Idea fast gui off animations autorun flag wine playonlinux , steam and all run applications emulators program send
 
 $ gsettings set org.gnome.desktop.interface enable-animations false
