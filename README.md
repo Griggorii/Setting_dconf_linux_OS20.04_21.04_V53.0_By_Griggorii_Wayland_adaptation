@@ -21,7 +21,7 @@ $ gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 
 $ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
-Analog prefer-light default reset bacground image desktop | Most likely the setting is designed to automatically switch the theme from day to night
+Analog prefer-light default reset bacground image desktop | Most likely, the setting is intended to automatically switch the theme from day to night, it also makes it possible to apply, as in the case of prefer-light, the old theme from gtk2 / 3 for some tools, for example: gnome-system-monitor at the same time, the theme of gtk4 itself remains white
 
 $ gsettings set org.gnome.desktop.interface color-scheme 'default'
 __________________________________________________
