@@ -13,6 +13,18 @@ Download new thems + icons https://github.com/Griggorii/Setting_dconf_linux_OS20
 $ sudo dpkg -i *.deb
 
 Press Super + Scroll mouse
+___________________________________________________
+
+Manipulate theme dark/light command
+
+$ gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+
+$ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+Analog prefer-light default reset bacground image desktop | Most likely the setting is designed to automatically switch the theme from day to night
+
+$ gsettings set org.gnome.desktop.interface color-scheme 'default'
+__________________________________________________
 
 Idea fast gui off animations autorun flag wine playonlinux , steam and all run applications emulators program send
 
