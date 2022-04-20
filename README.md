@@ -15,7 +15,7 @@ $ sudo dpkg -i *.deb
 Press Super + Scroll mouse
 ___________________________________________________
 
-Manipulate theme dark/light command
+Manipulate theme new scheme ubuntu 22.04 dark/light command
 
 $ gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 
