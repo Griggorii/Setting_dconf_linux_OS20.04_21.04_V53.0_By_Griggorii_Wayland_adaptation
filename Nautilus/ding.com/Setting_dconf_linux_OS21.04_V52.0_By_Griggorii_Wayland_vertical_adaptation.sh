@@ -845,7 +845,7 @@ server-publish-to=''
 
 [apps/seahorse/listing]
 item-filter='personal'
-keyrings-selected=['pkcs11:model=p11-kit-trust;manufacturer=PKCS%2311%20Kit;serial=1;token=System%20Trust']
+keyrings-selected=['secret-service:///org/freedesktop/secrets/collection/login']
 show-expiry=false
 show-trust=false
 show-type=false
@@ -884,7 +884,7 @@ show-warning=false
 small-keys-list-rows=false
 sort-case-sensitive=false
 use-shortpaths=false
-window-height=471
+window-height=490
 window-is-fullscreen=false
 window-is-maximized=false
 window-width=851
@@ -1780,6 +1780,17 @@ preview-size=250
 replace-alpha='white'
 show-labels=false
 
+[com/github/maoschanz/drawing/tools-options]
+last-active-shape='polygon'
+last-delete-replace='alpha'
+last-font-name='Sans'
+last-left-rgba=['0.8', '0.0', '0.0', '1.0']
+last-right-rgba=['1.0', '1.0', '0.0', '0.5']
+last-shape-filling='empty'
+last-size=5
+last-text-background='outline'
+use-antialiasing=true
+
 [com/github/wwmm/pulseeffects]
 blocksize-in='512'
 blocksize-out='512'
@@ -1788,6 +1799,8 @@ custom-sink=''
 custom-source='alsa_input.pci-0000_00_1b.0.analog-stereo'
 enable-all-sinkinputs=true
 enable-all-sourceoutputs=false
+last-used-input-preset='Presets'
+last-used-output-preset='My7'
 last-used-preset='Akai HD-230_V5'
 niceness=-10
 priority-type='None'
@@ -2601,6 +2614,12 @@ room-size='Small'
 state=true
 treble-cut=4918.0
 
+[com/github/wwmm/pulseeffects/sinkinputs/rnnoise]
+installed=false
+model-path=''
+post-messages=false
+state=false
+
 [com/github/wwmm/pulseeffects/sinkinputs/stereotools]
 balance-in=7.5286998857393428e-16
 balance-out=0.0
@@ -3305,6 +3324,11 @@ predelay=0.0
 room-size='Large'
 state=false
 treble-cut=5000.0
+
+[com/github/wwmm/pulseeffects/sourceoutputs/rnnoise]
+installed=false
+model-path='Standard RNNoise Model'
+post-messages=false
 
 [com/github/wwmm/pulseeffects/sourceoutputs/stereotools]
 installed=true
@@ -4087,10 +4111,100 @@ position=13
 [com/solus-project/budgie-panel/applets/{a59f49ed-4393-11e8-a325-934928330824}]
 position=0
 
+[com/solus-project/budgie-panel/applets/{a5e846db-4770-11ec-b442-00163e000000}]
+alignment='start'
+name='Budgie Menu'
+position=0
+
+[com/solus-project/budgie-panel/applets/{a5e846dc-4770-11ec-b442-00163e000000}]
+alignment='start'
+name='Spacer'
+position=1
+
+[com/solus-project/budgie-panel/applets/{a5e846dd-4770-11ec-b442-00163e000000}]
+alignment='start'
+name='ShowTime'
+position=2
+
+[com/solus-project/budgie-panel/applets/{a5e846de-4770-11ec-b442-00163e000000}]
+alignment='center'
+name='Clock'
+position=0
+
+[com/solus-project/budgie-panel/applets/{a5e846df-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='AppIndicator Applet'
+position=0
+
+[com/solus-project/budgie-panel/applets/{a5e846e0-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='System Tray'
+position=1
+
+[com/solus-project/budgie-panel/applets/{a5e846e1-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='DropBy'
+position=2
+
+[com/solus-project/budgie-panel/applets/{a5e846e2-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='QuickNote'
+position=3
+
+[com/solus-project/budgie-panel/applets/{a5e846e3-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='Spacer'
+position=4
+
+[com/solus-project/budgie-panel/applets/{a5e846e4-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='Night Light'
+position=5
+
+[com/solus-project/budgie-panel/applets/{a5e846e5-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='Places'
+position=6
+
+[com/solus-project/budgie-panel/applets/{a5e846e6-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='Notifications'
+position=7
+
+[com/solus-project/budgie-panel/applets/{a5e846e7-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='Status Indicator'
+position=8
+
+[com/solus-project/budgie-panel/applets/{a5e846e8-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='Separator'
+position=9
+
+[com/solus-project/budgie-panel/applets/{a5e846e9-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='Spacer'
+position=10
+
+[com/solus-project/budgie-panel/applets/{a5e846ea-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='User Indicator'
+position=11
+
+[com/solus-project/budgie-panel/applets/{a5e846eb-4770-11ec-b442-00163e000000}]
+alignment='end'
+name='Raven Trigger'
+position=12
+
 [com/solus-project/budgie-panel/applets/{a62353d6-b044-11e8-8456-bf8a87eecc81}]
 alignment='end'
 name='Budgie Brightness Control'
 position=1
+
+[com/solus-project/budgie-panel/applets/{a6d0d202-b6bd-11e8-bc1e-d744980f9328}]
+alignment='start'
+name='ShowTime'
+position=2
 
 [com/solus-project/budgie-panel/applets/{a87d0e22-b5a5-11e8-a0ad-9dd098ee626e}]
 alignment='start'
@@ -4126,6 +4240,91 @@ position=3
 alignment='start'
 name='WeatherShow'
 position=4
+
+[com/solus-project/budgie-panel/applets/{b02318c7-4772-11ec-b442-00163e000000}]
+alignment='start'
+name='Budgie Menu'
+position=0
+
+[com/solus-project/budgie-panel/applets/{b02318c8-4772-11ec-b442-00163e000000}]
+alignment='start'
+name='Spacer'
+position=1
+
+[com/solus-project/budgie-panel/applets/{b02318c9-4772-11ec-b442-00163e000000}]
+alignment='start'
+name='ShowTime'
+position=2
+
+[com/solus-project/budgie-panel/applets/{b02318ca-4772-11ec-b442-00163e000000}]
+alignment='center'
+name='Clock'
+position=0
+
+[com/solus-project/budgie-panel/applets/{b02318cb-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='AppIndicator Applet'
+position=0
+
+[com/solus-project/budgie-panel/applets/{b02318cc-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='System Tray'
+position=1
+
+[com/solus-project/budgie-panel/applets/{b02318cd-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='DropBy'
+position=2
+
+[com/solus-project/budgie-panel/applets/{b02318ce-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='QuickNote'
+position=3
+
+[com/solus-project/budgie-panel/applets/{b02318cf-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='Spacer'
+position=4
+
+[com/solus-project/budgie-panel/applets/{b02318d0-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='Night Light'
+position=5
+
+[com/solus-project/budgie-panel/applets/{b02318d1-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='Places'
+position=6
+
+[com/solus-project/budgie-panel/applets/{b14cc2b0-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='Notifications'
+position=7
+
+[com/solus-project/budgie-panel/applets/{b14cc2b1-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='Status Indicator'
+position=8
+
+[com/solus-project/budgie-panel/applets/{b14cc2b2-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='Separator'
+position=9
+
+[com/solus-project/budgie-panel/applets/{b14cc2b3-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='Spacer'
+position=10
+
+[com/solus-project/budgie-panel/applets/{b14cc2b4-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='User Indicator'
+position=11
+
+[com/solus-project/budgie-panel/applets/{b14cc2b5-4772-11ec-b442-00163e000000}]
+alignment='end'
+name='Raven Trigger'
+position=12
 
 [com/solus-project/budgie-panel/applets/{b194ed7a-dabd-11e9-b23b-0b98712e6d7b}]
 alignment='end'
@@ -4500,6 +4699,7 @@ menu-headers=true
 menu-categories-hover=true
 
 [com/solus-project/budgie-panel/instance/budgie-menu/{a35a8565-dabb-11e9-b23b-0b98712e6d7b}]
+enable-menu-label=false
 menu-categories-hover=true
 menu-headers=true
 
@@ -4694,6 +4894,23 @@ dock-mode=false
 location='bottom'
 size=39
 theme-regions=true
+transparency='dynamic'
+
+[com/solus-project/budgie-panel/panels/{a5e846da-4770-11ec-b442-00163e000000}]
+applets=['a5e846e6-4770-11ec-b442-00163e000000', 'a5e846e5-4770-11ec-b442-00163e000000', 'a5e846eb-4770-11ec-b442-00163e000000', 'a5e846e4-4770-11ec-b442-00163e000000', 'a5e846ea-4770-11ec-b442-00163e000000', 'a5e846e3-4770-11ec-b442-00163e000000', 'a5e846de-4770-11ec-b442-00163e000000', 'a5e846df-4770-11ec-b442-00163e000000', 'a5e846e1-4770-11ec-b442-00163e000000', 'a5e846e2-4770-11ec-b442-00163e000000', 'a5e846dd-4770-11ec-b442-00163e000000', 'a5e846e0-4770-11ec-b442-00163e000000', 'a5e846dc-4770-11ec-b442-00163e000000', 'a5e846e8-4770-11ec-b442-00163e000000', 'a5e846e9-4770-11ec-b442-00163e000000', 'a5e846db-4770-11ec-b442-00163e000000', 'a5e846e7-4770-11ec-b442-00163e000000']
+location='top'
+size=39
+transparency='dynamic'
+
+[com/solus-project/budgie-panel/panels/{aa97f90e-b6ce-11e8-b171-87e802b57ed0}]
+location='bottom'
+size=39
+transparency='dynamic'
+
+[com/solus-project/budgie-panel/panels/{b02318c6-4772-11ec-b442-00163e000000}]
+applets=['b14cc2b4-4772-11ec-b442-00163e000000', 'b14cc2b5-4772-11ec-b442-00163e000000', 'b14cc2b3-4772-11ec-b442-00163e000000', 'b02318c8-4772-11ec-b442-00163e000000', 'b02318c9-4772-11ec-b442-00163e000000', 'b02318cf-4772-11ec-b442-00163e000000', 'b02318c7-4772-11ec-b442-00163e000000', 'b14cc2b2-4772-11ec-b442-00163e000000', 'b02318ce-4772-11ec-b442-00163e000000', 'b14cc2b1-4772-11ec-b442-00163e000000', 'b02318d0-4772-11ec-b442-00163e000000', 'b02318d1-4772-11ec-b442-00163e000000', 'b02318cc-4772-11ec-b442-00163e000000', 'b02318cd-4772-11ec-b442-00163e000000', 'b14cc2b0-4772-11ec-b442-00163e000000', 'b02318cb-4772-11ec-b442-00163e000000', 'b02318ca-4772-11ec-b442-00163e000000']
+location='top'
+size=39
 transparency='dynamic'
 
 [com/solus-project/budgie-panel/panels/{b24ee342-09de-11ea-af56-cdd5f8c5d00f}]
@@ -4931,17 +5148,23 @@ command='/usr/lib/budgie-desktop/plugins/budgie-wprviews/wprv current'
 name='prv_single'
 
 [org/blueman/general]
+latest-last=true
+notification-daemon=true
 plugin-list=['!TransferService']
 services-last-item=1
+show-statusbar=true
 window-properties=[618, 373, 640, 232]
 
 [org/blueman/network]
+gn-enable=false
 nap-enable=false
+nat=false
 
 [org/blueman/plugins/powermanager]
 auto-power-on=@mb false
 
 [org/blueman/transfer]
+opp-accept=false
 shared-path=''
 
 [org/cinnamon]
@@ -5073,21 +5296,6 @@ needs-term=false
 [org/cinnamon/desktop/applications/terminal]
 exec='gnome-terminal'
 exec-arg='-x'
-
-[org/cinnamon/desktop/background]
-color-shading-type='solid'
-picture-opacity=100
-picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/Sunset_of_Peloponnesus_by_Simos_Xenitellis.jpg'
-primary-color='#000000'
-secondary-color='#000000'
-
-[org/cinnamon/desktop/background/slideshow]
-delay=15
-image-source='xml:///usr/share/gnome-background-properties/disco-wallpapers.xml'
-random-order=false
-slideshow-enabled=false
-slideshow-paused=false
 
 [org/cinnamon/desktop/input-sources]
 show-all-sources=false
@@ -5446,9 +5654,6 @@ fglrx-xgl-fix=true
 force-swap-buffers=true
 qt-fix=true
 
-[org/compiz/profiles/unity-lowgfx]
-plugins-with-set-keys=['addhelper', 'unityshell', 'place', 'resize', 'water', 'animation', 'opengl', 'blur', 'session', 'unitymtgrabhandles', 'scaleaddon', 'commands', 'colorfilter', 'mousepoll', 'opacify', 'showrepaint', 'wall', 'fade', 'titleinfo', 'thumbnail', 'staticswitcher', 'shift', 'extrawm', 'wallpaper', 'freewins', 'wizard', 'maximumize', 'kdecompat', 'grid', 'mag', 'wobbly', 'resizeinfo', 'td', 'workspacenames', 'animationsim', 'decor', 'neg', 'crashhandler', 'snap', 'clone', 'ezoom', 'trailfocus', 'animationjc', 'winrules', 'annotate', 'ring', 'switcher', 'fadedesktop', 'firepaint', 'animationplus', 'shelf', 'splash', 'workarounds', 'matecompat', 'obs', 'imgjpeg', 'mblur', 'showmouse', 'scale', 'notification', 'bench', 'composite', 'animationaddon', 'cube', 'put', 'vpswitch', 'screenshot', 'move', 'cubeaddon', 'showdesktop', 'rotate', 'expo', 'scalefilter', 'widget', 'core', 'imgsvg']
-
 [org/compiz/profiles/unity-lowgfx/plugins/animation]
 close-matches=['((type=Normal | Unknown) | name=sun-awt-X11-XFramePeer | name=sun-awt-X11-XDialogPeer) & !(role=toolTipTip | role=qtooltip_label) & !(type=Normal & override_redirect=1) & !(name=gnome-screensaver) & !(name=gnome-screenshot)', '((type=Menu | PopupMenu | DropdownMenu | Combo | Dialog | ModalDialog | Normal) & !(class=.exe$))', '(type=Tooltip | Notification | Utility) & !(name=compiz) & !(title=notify-osd)']
 open-matches=['((type=Normal | Unknown) | name=sun-awt-X11-XFramePeer | name=sun-awt-X11-XDialogPeer) & !(role=toolTipTip | role=qtooltip_label) & !(type=Normal & override_redirect=1) & !(name=gnome-screensaver)', '((type=Menu | PopupMenu | DropdownMenu | Combo | Dialog | ModalDialog | Normal) & !(class=.exe$))', '(type=Tooltip | Notification | Utility) & !(name=compiz) & !(title=notify-osd)']
@@ -5798,6 +6003,12 @@ recent-characters=['↓']
 [org/gnome/Disks]
 image-dir-uri=''
 
+[org/gnome/Disks/benchmark]
+do-write=false
+num-access-samples=10000
+num-samples=1000
+sample-size-mib=1
+
 [org/gnome/GPaste]
 close-on-select=true
 empty-history-confirmation=true
@@ -6016,6 +6227,7 @@ parallel=-1
 
 [org/gnome/builder/editor]
 auto-save-timeout=60
+draw-spaces=['space', 'tab', 'newline', 'nbsp', 'leading', 'trailing']
 keybindings='default'
 minimum-word-size=2
 overscroll=10
@@ -6129,6 +6341,7 @@ tab-width=2
 
 [org/gnome/builder/project-tree]
 show-icons=true
+show-ignored-files=false
 
 [org/gnome/builder/projects/GNOME-Boxes]
 config-id='org.gnome.Boxes.json'
@@ -6344,13 +6557,6 @@ exec='tilix'
 exec-arg='-e'
 
 [org/gnome/desktop/background]
-color-shading-type='solid'
-draw-background=true
-picture-opacity=100
-picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/jj_dark_by_Hiking93.jpg'
-primary-color='#000000'
-secondary-color='#000000'
 show-desktop-icons=false
 
 [org/gnome/desktop/calendar]
@@ -6373,11 +6579,12 @@ xkb-options=['terminate:ctrl_alt_bksp', 'grp:alt_shift_toggle', 'lv3:ralt_switch
 [org/gnome/desktop/interface]
 automatic-mnemonics=true
 buttons-have-icons=true
-can-change-accels=false
+can-change-accels=true
 clock-format='24h'
 clock-show-date=true
 clock-show-seconds=true
 clock-show-weekday=true
+color-scheme='default'
 cursor-blink=true
 cursor-blink-time=1200
 cursor-blink-timeout=10
@@ -6393,6 +6600,7 @@ font-rgba-order='rgb'
 gtk-color-palette='black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90'
 gtk-color-scheme=''
 gtk-enable-primary-paste=true
+gtk-im-module='gtk-im-context-simple'
 gtk-im-preedit-style='callback'
 gtk-im-status-style='callback'
 gtk-key-theme='Default'
@@ -6402,9 +6610,9 @@ gtk-timeout-repeat=20
 icon-theme='oomox-griggorii'
 locate-pointer=true
 menubar-accel='F10'
-menubar-detachable=false
+menubar-detachable=true
 menus-have-icons=true
-menus-have-tearoff=false
+menus-have-tearoff=true
 monospace-font-name='Ubuntu Mono 11'
 overlay-scrolling=true
 scaling-factor=uint32 1
@@ -6412,7 +6620,7 @@ show-battery-percentage=true
 show-input-method-menu=true
 show-unicode-menu=true
 text-scaling-factor=1.0
-toolbar-detachable=false
+toolbar-detachable=true
 toolbar-icons-size='large'
 toolbar-style='both-horiz'
 toolkit-acc=false
@@ -6439,7 +6647,7 @@ autorun-x-content-open-folder=['x-content/bootable-media']
 autorun-x-content-start-app=['x-content/unix-software', 'x-content/bootable-media']
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor']
+application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-gnome-fileroller']
 show-banners=true
 show-in-lock-screen=true
 
@@ -6460,6 +6668,9 @@ application-id='brave-browser.desktop'
 
 [org/gnome/desktop/notifications/application/budgie-desktop-settings]
 application-id='budgie-desktop-settings.desktop'
+
+[org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
+application-id='ca.desrt.dconf-editor.desktop'
 
 [org/gnome/desktop/notifications/application/cairo-dock]
 application-id='cairo-dock.desktop'
@@ -6491,6 +6702,9 @@ application-id='displaycal-vrml-to-x3d-converter.desktop'
 [org/gnome/desktop/notifications/application/displaycal]
 application-id='displaycal.desktop'
 
+[org/gnome/desktop/notifications/application/evince]
+application-id='evince.desktop'
+
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
 
@@ -6499,6 +6713,9 @@ application-id='gdebi.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-alsamixer]
 application-id='gnome-alsamixer.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-bluetooth-panel]
+application-id='gnome-bluetooth-panel.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
@@ -6533,8 +6750,13 @@ application-id='JB-mission-control-jdk8.desktop'
 [org/gnome/desktop/notifications/application/libreoffice-startcenter]
 application-id='libreoffice-startcenter.desktop'
 
+[org/gnome/desktop/notifications/application/libreoffice-writer]
+application-id='libreoffice-writer.desktop'
+
 [org/gnome/desktop/notifications/application/mousepad]
 application-id='mousepad.desktop'
+details-in-lock-screen=false
+force-expanded=false
 
 [org/gnome/desktop/notifications/application/nemo]
 application-id='nemo.desktop'
@@ -6579,6 +6801,9 @@ application-id='org.gnome.gedit.desktop'
 application-id='org.gnome.Nautilus.desktop'
 details-in-lock-screen=true
 
+[org/gnome/desktop/notifications/application/org-gnome-shell-extensions-gsconnect]
+application-id='org.gnome.Shell.Extensions.GSConnect.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-software]
 application-id='org.gnome.Software.desktop'
 
@@ -6620,6 +6845,9 @@ application-id='Thunar.desktop'
 
 [org/gnome/desktop/notifications/application/thunderbird]
 application-id='thunderbird.desktop'
+
+[org/gnome/desktop/notifications/application/transmission-gtk]
+application-id='transmission-gtk.desktop'
 
 [org/gnome/desktop/notifications/application/update-manager]
 application-id='update-manager.desktop'
@@ -6674,12 +6902,13 @@ disable-camera=true
 disable-microphone=true
 disable-sound-output=false
 hide-identity=false
+old-files-age=uint32 0
 recent-files-max-age=0
 remember-app-usage=true
 remember-recent-files=false
 remove-old-temp-files=false
 remove-old-trash-files=false
-report-technical-problems=true
+report-technical-problems=false
 send-software-usage-stats=false
 show-full-name-in-top-bar=true
 usb-protection=false
@@ -6700,6 +6929,13 @@ use-upnp=false
 view-only=false
 vnc-password='keyring'
 
+[org/gnome/desktop/remote-desktop/rdp]
+enable=true
+
+[org/gnome/desktop/remote-desktop/vnc]
+auth-method='prompt'
+view-only=true
+
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
 embedded-keyboard-command='onboard --xid'
@@ -6711,9 +6947,9 @@ logout-command=''
 logout-enabled=false
 picture-opacity=100
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/jj_dark_by_Hiking93.jpg'
-primary-color='#000000'
-secondary-color='#000000'
+picture-uri='file:///home/griggorii/.local/share/backgrounds/2022-04-09-16-45-50-hardy_wallpaper_uhd.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 show-full-name-in-top-bar=true
 show-notifications=false
 status-message-enabled=true
@@ -6747,6 +6983,7 @@ activate-window-menu=['<Alt>space']
 begin-move=['<Alt>F7']
 begin-resize=['<Alt>F8']
 close=['<Alt>F4']
+cycle-windows=@as []
 lower=['disabled']
 maximize=['<Super>Up']
 maximize-horizontally=['<Shift>KP_Multiply']
@@ -7046,6 +7283,7 @@ width=558
 [org/gnome/file-roller/dialogs/new]
 default-extension='.tar.zst'
 encrypt-header=false
+expand-options=false
 other-options=false
 volume-size=0
 
@@ -7146,7 +7384,7 @@ highlight-current-line=false
 insert-spaces=false
 max-undo-actions=2000
 restore-cursor-position=true
-scheme='tango'
+scheme='Yaru-dark'
 search-highlighting=true
 smart-home-end='after'
 syntax-highlighting=true
@@ -7190,7 +7428,7 @@ bottom-panel-active-page='GeditExternalToolsShellOutput'
 bottom-panel-size=50
 side-panel-active-page='GeditFileBrowserPanel'
 side-panel-size=289
-size=(964, 546)
+size=(976, 589)
 state=87168
 
 [org/gnome/gitg/preferences/commit/message]
@@ -7312,6 +7550,7 @@ logfiles=['/var/log/Xorg.0.log']
 width=668
 
 [org/gnome/gnome-system-monitor]
+cpu-colors=[(uint32 0, 'rgb(16,74,21)'), (1, 'rgb(54,192,56)'), (2, 'rgb(89,209,50)'), (3, 'rgb(5,255,14)'), (4, '#3cb44b'), (5, '#42d4f4'), (6, '#4363d8'), (7, '#911eb4'), (8, '#f032e6'), (9, '#fabebe'), (10, '#ffd8b1'), (11, '#fffac8'), (12, '#aaffc3'), (13, '#469990'), (14, '#000075'), (15, '#e6beff')]
 cpu-smooth-graph=true
 cpu-stacked-area-chart=true
 current-tab='resources'
@@ -7893,7 +8132,7 @@ center-new-windows=false
 draggable-border-width=10
 dynamic-workspaces=true
 edge-tiling=true
-experimental-features=['x11-randr-fractional-scaling', 'scale-monitor-framebuffer']
+experimental-features=['kms', 'vkms']
 focus-change-on-pointer-rest=true
 locate-pointer-key='Control_L'
 no-tab-popup=false
@@ -7969,166 +8208,6 @@ disable-wifi-create=false
 show-applet=true
 stamp=0
 suppress-wireless-networks-available=false
-
-[org/gnome/nm-applet/eap/0e02a213-b572-40cf-8003-2c0993c37bea]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/1da47646-0b53-483f-b862-ba10579b1c3a]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/1f0500e6-e525-46fc-95bb-91fad57f2dea]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/1f089332-e477-4927-8e57-691ab5c276d2]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/2035d840-35af-4a77-9d79-9f885a3acf9b]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/32b6e38f-4d41-4867-a66d-6b0e960f8305]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/36532871-892a-4d96-8ecb-47b7e16cf9b7]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/3b960ccd-be18-4388-9679-0df866343d0f]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/3cf999a7-d6c7-4602-a77f-077ea9c4449b]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/4445bafd-9ee3-40bf-a3ac-29c43c9bdbc1]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/472c6097-445c-403f-ad90-03966d0a2c32]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/4f97a537-0b44-4df1-9242-d366cda8bb55]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/522f6abe-793d-4e05-b93c-493668dbf761]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/536a401b-57dd-496c-a032-1ae68496caa4]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/61b6b148-7da3-42c3-bb10-34f8f82b172c]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/657557ef-7682-41be-aa9c-d3e6f4d308a3]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/6f001dae-5954-4ca2-b8c2-69bf98b28340]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/7c640920-9ba2-40a6-800b-b4bd91530563]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/810ba9bc-59f6-4375-8f88-486e2fecfe70]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/83c97f74-85cb-4a4d-9044-467822205c5f]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/86d14b40-30ae-4677-a446-861c148f5291]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/8cd23166-f187-459a-ad70-7a710bc3883a]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/9451436f-9113-463b-ac2d-24dbd898983a]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/9b5b98c3-945d-49db-9661-93c40d49f18d]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/a6b3521b-f539-47b8-ac79-aa1d3bcad2c3]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/afb5d269-6b3e-480e-ac23-69ddc1d53f76]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/b03ad369-aae8-4992-b593-9f5b8eb89c04]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/b08bbd69-f0e2-49e8-a037-ee3531ff6174]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/b9b6f132-4f30-43e3-aebb-883e7f654f29]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/bc09a999-9605-4e96-8d98-67afaa5276b0]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/c4155da4-c925-473d-977e-a57004851cda]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/ca510625-ff9c-4e3e-a438-3194fea07027]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/d335b48d-dac1-4509-ba5c-c3173176ae40]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/d40ba035-873f-453d-8f3f-d2988d187ebf]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/d82d6d46-67b3-49f1-bf79-282e962fa3a1]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/d9232ae7-1430-49e3-a6bb-246fa5d6f81c]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/dc8fec1b-b47e-4a27-9ce8-2ce2651c8513]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/e93f05ff-d246-42fa-b61f-fc080372dbb3]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/eb8a9116-59e1-411b-9fce-858bfc53b7ab]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/f693b660-6fe9-488c-84ff-dc768092b803]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
 
 [org/gnome/orca]
 active-profile=['Default', 'default']
@@ -8342,7 +8421,7 @@ area-screenshot-clip=['<Shift>F8']
 battery-status=@as []
 calculator=['<Shift>F3']
 control-center=['<Shift>F6']
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-desktop/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-desktop/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 decrease-text-size=['<Shift>KP_Subtract']
 eject=@as []
 email=['<Shift>F4']
@@ -8379,7 +8458,7 @@ screenshot-clip=['<Shift>F10']
 search=['<Shift>F5']
 stop=['<Shift>KP_2']
 suspend=@as []
-terminal=['<Control><Alt>t']
+terminal=@as []
 toggle-contrast=@as []
 touchpad-off=@as []
 touchpad-on=@as []
@@ -8454,8 +8533,8 @@ name='Move to Workspace right'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Primary><Alt>t'
-command='tilix'
-name='Терминал tilix'
+command='gnome-terminal'
+name='gnome-terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>t'
@@ -8549,7 +8628,7 @@ button-sleep='suspend'
 button-suspend='suspend'
 critical-battery-action='suspend'
 idle-brightness=30
-idle-dim=true
+idle-dim=false
 lid-close-ac-action='suspend'
 lid-close-battery-action='suspend'
 lid-close-suspend-with-external-monitor=false
@@ -8588,6 +8667,9 @@ priority=0
 active=true
 priority=0
 
+[org/gnome/settings-daemon/plugins/sharing/gnome-remote-desktop]
+enabled-connections=@as []
+
 [org/gnome/settings-daemon/plugins/smartcard]
 active=true
 priority=0
@@ -8607,21 +8689,22 @@ priority=0
 
 [org/gnome/settings-daemon/plugins/xsettings]
 active=true
+hinting='slight'
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 priority=0
 srgba-order='srgb'
 
 [org/gnome/shell]
 always-show-log-out=false
-app-picker-layout=[{'org.gnome.TwentyFortyEight.desktop': <{'position': <0>}>, 'gnome-session-properties.desktop': <{'position': <1>}>, 'chromium-browser.desktop': <{'position': <2>}>, 'software-properties-drivers.desktop': <{'position': <3>}>, 'org.gnome.Calculator.desktop': <{'position': <4>}>, 'org.gnome.Maps.desktop': <{'position': <5>}>, 'org.gnome.Mahjongg.desktop': <{'position': <6>}>, 'vlc.desktop': <{'position': <7>}>, 'synaptic.desktop': <{'position': <8>}>, 'org.gnome.Mines.desktop': <{'position': <9>}>, 'gufw.desktop': <{'position': <10>}>, 'gnome-control-center.desktop': <{'position': <11>}>, 'onboard-settings.desktop': <{'position': <12>}>, 'qt5ct.desktop': <{'position': <13>}>, 'update-manager.desktop': <{'position': <14>}>, 'lightdm-settings.desktop': <{'position': <15>}>, 'sol.desktop': <{'position': <16>}>, 'org.xfce.Catfish.desktop': <{'position': <17>}>, 'gdebi.desktop': <{'position': <18>}>, 'software-properties-gtk.desktop': <{'position': <19>}>, 'mpv.desktop': <{'position': <20>}>, 'org.gnome.Evince.desktop': <{'position': <21>}>, 'menulibre.desktop': <{'position': <22>}>}, {'simple-scan.desktop': <{'position': <0>}>, 'org.gnome.PowerStats.desktop': <{'position': <1>}>, 'org.gnome.Sudoku.desktop': <{'position': <2>}>, 'org.gnome.gedit.desktop': <{'position': <3>}>, 'Utilities': <{'position': <4>}>, 'nemo.desktop': <{'position': <5>}>, 'org.gnome.Software.desktop': <{'position': <6>}>, 'gnome-language-selector.desktop': <{'position': <7>}>, 'io.github.celluloid_player.Celluloid.desktop': <{'position': <8>}>, 'org.gnome.Cheese.desktop': <{'position': <9>}>, 'com.github.maoschanz.drawing.desktop': <{'position': <10>}>, 'gparted.desktop': <{'position': <11>}>, 'org.gnome.gThumb.desktop': <{'position': <12>}>, 'libreoffice-calc.desktop': <{'position': <13>}>, 'libreoffice-draw.desktop': <{'position': <14>}>, 'libreoffice-impress.desktop': <{'position': <15>}>, 'libreoffice-writer.desktop': <{'position': <16>}>, 'software-properties-livepatch.desktop': <{'position': <17>}>, 'com.obsproject.Studio.desktop': <{'position': <18>}>, 'onboard.desktop': <{'position': <19>}>, 'plank.desktop': <{'position': <20>}>, 'previewscontrols.desktop': <{'position': <21>}>, 'in.lsp_plug.lsp_plugins_spectrum_analyzer_x12.desktop': <{'position': <22>}>, 'in.lsp_plug.lsp_plugins_spectrum_analyzer_x16.desktop': <{'position': <23>}>}, {'rhythmbox.desktop': <{'position': <0>}>, 'stacer.desktop': <{'position': <1>}>, 'info.desktop': <{'position': <2>}>, 'transmission-gtk.desktop': <{'position': <3>}>, 'shuffler-control.desktop': <{'position': <4>}>, 'com.hughski.ColorHug.DisplayAnalysis.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.gnome.tweaks.desktop': <{'position': <7>}>, 'com.hughski.ColorHug.CcmxLoader.desktop': <{'position': <8>}>, 'hardinfo.desktop': <{'position': <9>}>, 'calf.desktop': <{'position': <10>}>, 'lightdm-gtk-greeter-settings.desktop': <{'position': <11>}>, 'mugshot.desktop': <{'position': <12>}>, 'org.gnome.Weather.desktop': <{'position': <13>}>, 'thunderbird.desktop': <{'position': <14>}>, 'org.gnome.eog.desktop': <{'position': <15>}>, 'Sundry': <{'position': <16>}>, 'org.gnome.Extensions.desktop': <{'position': <17>}>, 'usb-creator-gtk.desktop': <{'position': <18>}>, 'com.hughski.ColorHug.FlashLoader.desktop': <{'position': <19>}>, 'ubiquity.desktop': <{'position': <20>}>, 'com.hughski.ColorHug.Backlight.desktop': <{'position': <21>}>, 'org.bleachbit.BleachBit.desktop': <{'position': <22>}>, 'bleachbit-root.desktop': <{'position': <23>}>}, {'cpu-x.desktop': <{'position': <0>}>, 'in.lsp_plug.lsp_plugins_multisampler_x12_do.desktop': <{'position': <1>}>, 'in.lsp_plug.lsp_plugins_multisampler_x24_do.desktop': <{'position': <2>}>, 'in.lsp_plug.lsp_plugins_multisampler_x48_do.desktop': <{'position': <3>}>, 'in.lsp_plug.lsp_plugins_spectrum_analyzer_x8.desktop': <{'position': <4>}>, 'in.lsp_plug.lsp_plugins_spectrum_analyzer_x4.desktop': <{'position': <5>}>, 'gimp.desktop': <{'position': <6>}>, 'org.gnome.GPaste.Ui.desktop': <{'position': <7>}>, 'hannah-foo2zjs.desktop': <{'position': <8>}>, 'in.lsp_plug.lsp_plugins_latency_meter.desktop': <{'position': <9>}>, 'in.lsp_plug.lsp_plugins_crossover_ms.desktop': <{'position': <10>}>, 'in.lsp_plug.lsp_plugins_mb_compressor_ms.desktop': <{'position': <11>}>, 'in.lsp_plug.lsp_plugins_mb_expander_ms.desktop': <{'position': <12>}>, 'in.lsp_plug.lsp_plugins_mb_gate_ms.desktop': <{'position': <13>}>, 'in.lsp_plug.lsp_plugins_sc_mb_expander_ms.desktop': <{'position': <14>}>, 'in.lsp_plug.lsp_plugins_sc_mb_gate_ms.desktop': <{'position': <15>}>, 'in.lsp_plug.lsp_plugins_compressor_ms.desktop': <{'position': <16>}>, 'in.lsp_plug.lsp_plugins_graph_equalizer_x16_ms.desktop': <{'position': <17>}>, 'in.lsp_plug.lsp_plugins_para_equalizer_x16_ms.desktop': <{'position': <18>}>, 'in.lsp_plug.lsp_plugins_graph_equalizer_x32_ms.desktop': <{'position': <19>}>, 'in.lsp_plug.lsp_plugins_para_equalizer_x32_ms.desktop': <{'position': <20>}>, 'in.lsp_plug.lsp_plugins_dyna_processor_ms.desktop': <{'position': <21>}>, 'in.lsp_plug.lsp_plugins_sc_dyna_processor_ms.desktop': <{'position': <22>}>, 'in.lsp_plug.lsp_plugins_expander_ms.desktop': <{'position': <23>}>}, {'in.lsp_plug.lsp_plugins_gate_ms.desktop': <{'position': <0>}>, 'in.lsp_plug.lsp_plugins_sc_expander_ms.desktop': <{'position': <1>}>, 'in.lsp_plug.lsp_plugins_sc_gate_ms.desktop': <{'position': <2>}>, 'in.lsp_plug.lsp_plugins_sc_mb_compressor_ms.desktop': <{'position': <3>}>, 'in.lsp_plug.lsp_plugins_sc_compressor_ms.desktop': <{'position': <4>}>, 'in.lsp_plug.lsp_plugins_graph_equalizer_x16_mono.desktop': <{'position': <5>}>, 'in.lsp_plug.lsp_plugins_graph_equalizer_x32_mono.desktop': <{'position': <6>}>, 'in.lsp_plug.lsp_plugins_para_equalizer_x16_mono.desktop': <{'position': <7>}>, 'in.lsp_plug.lsp_plugins_para_equalizer_x32_mono.desktop': <{'position': <8>}>, 'in.lsp_plug.lsp_plugins_profiler_mono.desktop': <{'position': <9>}>, 'in.lsp_plug.lsp_plugins_trigger_mono.desktop': <{'position': <10>}>, 'in.lsp_plug.lsp_plugins_compressor_mono.desktop': <{'position': <11>}>, 'in.lsp_plug.lsp_plugins_impulse_reverb_mono.desktop': <{'position': <12>}>, 'in.lsp_plug.lsp_plugins_crossover_mono.desktop': <{'position': <13>}>, 'in.lsp_plug.lsp_plugins_comp_delay_mono.desktop': <{'position': <14>}>, 'in.lsp_plug.lsp_plugins_dyna_processor_mono.desktop': <{'position': <15>}>, 'in.lsp_plug.lsp_plugins_sc_dyna_processor_mono.desktop': <{'position': <16>}>, 'in.lsp_plug.lsp_plugins_expander_mono.desktop': <{'position': <17>}>, 'in.lsp_plug.lsp_plugins_gate_mono.desktop': <{'position': <18>}>, 'in.lsp_plug.lsp_plugins_impulse_responses_mono.desktop': <{'position': <19>}>, 'in.lsp_plug.lsp_plugins_limiter_mono.desktop': <{'position': <20>}>, 'in.lsp_plug.lsp_plugins_loud_comp_mono.desktop': <{'position': <21>}>, 'in.lsp_plug.lsp_plugins_sampler_mono.desktop': <{'position': <22>}>, 'in.lsp_plug.lsp_plugins_trigger_midi_mono.desktop': <{'position': <23>}>}, {'in.lsp_plug.lsp_plugins_mb_compressor_mono.desktop': <{'position': <0>}>, 'in.lsp_plug.lsp_plugins_mb_expander_mono.desktop': <{'position': <1>}>, 'in.lsp_plug.lsp_plugins_mb_gate_mono.desktop': <{'position': <2>}>, 'in.lsp_plug.lsp_plugins_sc_mb_expander_mono.desktop': <{'position': <3>}>, 'in.lsp_plug.lsp_plugins_sc_mb_gate_mono.desktop': <{'position': <4>}>, 'in.lsp_plug.lsp_plugins_room_builder_mono.desktop': <{'position': <5>}>, 'in.lsp_plug.lsp_plugins_sc_compressor_mono.desktop': <{'position': <6>}>, 'in.lsp_plug.lsp_plugins_sc_expander_mono.desktop': <{'position': <7>}>, 'in.lsp_plug.lsp_plugins_sc_gate_mono.desktop': <{'position': <8>}>, 'in.lsp_plug.lsp_plugins_sc_limiter_mono.desktop': <{'position': <9>}>, 'in.lsp_plug.lsp_plugins_sc_mb_compressor_mono.desktop': <{'position': <10>}>, 'in.lsp_plug.lsp_plugins_oscillator_mono.desktop': <{'position': <11>}>, 'in.lsp_plug.lsp_plugins_slap_delay_mono.desktop': <{'position': <12>}>, 'in.lsp_plug.lsp_plugins_surge_filter_mono.desktop': <{'position': <13>}>, 'mousepad.desktop': <{'position': <14>}>, 'in.lsp_plug.lsp_plugins_spectrum_analyzer_x1.desktop': <{'position': <15>}>, 'in.lsp_plug.lsp_plugins_phase_detector.desktop': <{'position': <16>}>, 'com.github.wwmm.pulseeffects.desktop': <{'position': <17>}>, 'shotwell.desktop': <{'position': <18>}>, 'in.lsp_plug.lsp_plugins_crossover_lr.desktop': <{'position': <19>}>, 'in.lsp_plug.lsp_plugins_mb_compressor_lr.desktop': <{'position': <20>}>, 'in.lsp_plug.lsp_plugins_mb_expander_lr.desktop': <{'position': <21>}>, 'in.lsp_plug.lsp_plugins_mb_gate_lr.desktop': <{'position': <22>}>, 'in.lsp_plug.lsp_plugins_sc_mb_expander_lr.desktop': <{'position': <23>}>}, {'in.lsp_plug.lsp_plugins_sc_mb_gate_lr.desktop': <{'position': <0>}>, 'in.lsp_plug.lsp_plugins_graph_equalizer_x16_lr.desktop': <{'position': <1>}>, 'in.lsp_plug.lsp_plugins_para_equalizer_x16_lr.desktop': <{'position': <2>}>, 'in.lsp_plug.lsp_plugins_graph_equalizer_x32_lr.desktop': <{'position': <3>}>, 'in.lsp_plug.lsp_plugins_para_equalizer_x32_lr.desktop': <{'position': <4>}>, 'in.lsp_plug.lsp_plugins_compressor_lr.desktop': <{'position': <5>}>, 'in.lsp_plug.lsp_plugins_comp_delay_x2_stereo.desktop': <{'position': <6>}>, 'in.lsp_plug.lsp_plugins_dyna_processor_lr.desktop': <{'position': <7>}>, 'in.lsp_plug.lsp_plugins_sc_dyna_processor_lr.desktop': <{'position': <8>}>, 'in.lsp_plug.lsp_plugins_expander_lr.desktop': <{'position': <9>}>, 'in.lsp_plug.lsp_plugins_gate_lr.desktop': <{'position': <10>}>, 'in.lsp_plug.lsp_plugins_sc_compressor_lr.desktop': <{'position': <11>}>, 'in.lsp_plug.lsp_plugins_sc_expander_lr.desktop': <{'position': <12>}>, 'in.lsp_plug.lsp_plugins_sc_gate_lr.desktop': <{'position': <13>}>, 'in.lsp_plug.lsp_plugins_sc_mb_compressor_lr.desktop': <{'position': <14>}>, 'in.lsp_plug.lsp_plugins_multisampler_x12.desktop': <{'position': <15>}>, 'in.lsp_plug.lsp_plugins_graph_equalizer_x16_stereo.desktop': <{'position': <16>}>, 'in.lsp_plug.lsp_plugins_para_equalizer_x16_stereo.desktop': <{'position': <17>}>, 'in.lsp_plug.lsp_plugins_multisampler_x24.desktop': <{'position': <18>}>, 'in.lsp_plug.lsp_plugins_graph_equalizer_x32_stereo.desktop': <{'position': <19>}>, 'in.lsp_plug.lsp_plugins_para_equalizer_x32_stereo.desktop': <{'position': <20>}>, 'in.lsp_plug.lsp_plugins_multisampler_x48.desktop': <{'position': <21>}>, 'in.lsp_plug.lsp_plugins_profiler_stereo.desktop': <{'position': <22>}>, 'in.lsp_plug.lsp_plugins_trigger_stereo.desktop': <{'position': <23>}>}, {'in.lsp_plug.lsp_plugins_compressor_stereo.desktop': <{'position': <0>}>, 'in.lsp_plug.lsp_plugins_impulse_reverb_stereo.desktop': <{'position': <1>}>, 'in.lsp_plug.lsp_plugins_crossover_stereo.desktop': <{'position': <2>}>, 'in.lsp_plug.lsp_plugins_comp_delay_stereo.desktop': <{'position': <3>}>, 'in.lsp_plug.lsp_plugins_dyna_processor_stereo.desktop': <{'position': <4>}>, 'in.lsp_plug.lsp_plugins_sc_dyna_processor_stereo.desktop': <{'position': <5>}>, 'in.lsp_plug.lsp_plugins_expander_stereo.desktop': <{'position': <6>}>, 'in.lsp_plug.lsp_plugins_gate_stereo.desktop': <{'position': <7>}>, 'in.lsp_plug.lsp_plugins_impulse_responses_stereo.desktop': <{'position': <8>}>, 'in.lsp_plug.lsp_plugins_limiter_stereo.desktop': <{'position': <9>}>, 'in.lsp_plug.lsp_plugins_loud_comp_stereo.desktop': <{'position': <10>}>, 'in.lsp_plug.lsp_plugins_sampler_stereo.desktop': <{'position': <11>}>, 'in.lsp_plug.lsp_plugins_trigger_midi_stereo.desktop': <{'position': <12>}>, 'in.lsp_plug.lsp_plugins_mb_compressor_stereo.desktop': <{'position': <13>}>, 'in.lsp_plug.lsp_plugins_mb_expander_stereo.desktop': <{'position': <14>}>, 'in.lsp_plug.lsp_plugins_mb_gate_stereo.desktop': <{'position': <15>}>, 'in.lsp_plug.lsp_plugins_sc_mb_expander_stereo.desktop': <{'position': <16>}>, 'in.lsp_plug.lsp_plugins_sc_mb_gate_stereo.desktop': <{'position': <17>}>, 'in.lsp_plug.lsp_plugins_room_builder_stereo.desktop': <{'position': <18>}>, 'in.lsp_plug.lsp_plugins_sc_expander_stereo.desktop': <{'position': <19>}>, 'in.lsp_plug.lsp_plugins_sc_gate_stereo.desktop': <{'position': <20>}>, 'in.lsp_plug.lsp_plugins_sc_limiter_stereo.desktop': <{'position': <21>}>, 'in.lsp_plug.lsp_plugins_sc_mb_compressor_stereo.desktop': <{'position': <22>}>, 'in.lsp_plug.lsp_plugins_slap_delay_stereo.desktop': <{'position': <23>}>}, {'in.lsp_plug.lsp_plugins_surge_filter_stereo.desktop': <{'position': <0>}>, 'in.lsp_plug.lsp_plugins_sc_compressor_stereo.desktop': <{'position': <1>}>, 'systemback.desktop': <{'position': <2>}>, 'in.lsp_plug.lsp_plugins_spectrum_analyzer_x2.desktop': <{'position': <3>}>, 'debian-uxterm.desktop': <{'position': <4>}>, 'debian-xterm.desktop': <{'position': <5>}>}]
+app-picker-layout=[{'gnome-session-properties.desktop': <{'position': <0>}>, 'chromium-browser.desktop': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.Mahjongg.desktop': <{'position': <3>}>, 'vlc.desktop': <{'position': <4>}>, 'org.gnome.Mines.desktop': <{'position': <5>}>, 'gnome-control-center.desktop': <{'position': <6>}>, 'qt5ct.desktop': <{'position': <7>}>, 'update-manager.desktop': <{'position': <8>}>, 'sol.desktop': <{'position': <9>}>, 'org.gnome.Evince.desktop': <{'position': <10>}>}, {'simple-scan.desktop': <{'position': <0>}>, 'org.gnome.PowerStats.desktop': <{'position': <1>}>, 'org.gnome.Sudoku.desktop': <{'position': <2>}>, 'org.gnome.gedit.desktop': <{'position': <3>}>, 'Utilities': <{'position': <4>}>, 'nemo.desktop': <{'position': <5>}>, 'gnome-language-selector.desktop': <{'position': <6>}>, 'org.gnome.Cheese.desktop': <{'position': <7>}>, 'libreoffice-calc.desktop': <{'position': <8>}>, 'libreoffice-draw.desktop': <{'position': <9>}>, 'libreoffice-impress.desktop': <{'position': <10>}>, 'libreoffice-writer.desktop': <{'position': <11>}>, 'com.obsproject.Studio.desktop': <{'position': <12>}>}, {'rhythmbox.desktop': <{'position': <0>}>, 'transmission-gtk.desktop': <{'position': <1>}>, 'org.gnome.Totem.desktop': <{'position': <2>}>, 'org.gnome.tweaks.desktop': <{'position': <3>}>, 'thunderbird.desktop': <{'position': <4>}>, 'org.gnome.eog.desktop': <{'position': <5>}>, 'Sundry': <{'position': <6>}>, 'org.gnome.Extensions.desktop': <{'position': <7>}>, 'usb-creator-gtk.desktop': <{'position': <8>}>}]
 app-picker-view=uint32 1
 command-history=['nautilus', 'r', 'tilix', 'lg']
 development-tools=true
 disable-extension-version-validation=true
 disable-user-extensions=false
-disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'dash-to-panel@jderose9.github.com', 'desktop-icons@csoriano', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'ding@rastersoft.com', 'unite@hardpixel.eu']
+disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'gsconnect@andyholmes.github.io', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de']
 enable-hot-corners=true
-enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'popthemetoggle@kylecorry31.github.io', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'openweather-extension@jenslody.de', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'gsconnect@andyholmes.github.io', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'desktop-icons@csoriano', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'dash-to-panel@jderose9.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com', 'unite@hardpixel.eu']
 favorite-apps=['org.gnome.Screenshot.desktop', 'ubiquity.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'alacarte-made-48.desktop', 'com.gexperts.Tilix.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'chromium-browser.desktop', 'vlc.desktop']
 had-bluetooth-devices-setup=true
 introspect=false
@@ -8639,8 +8722,25 @@ file-resolution-width=640
 pipeline='vp9enc min_quantizer=0 max_quantizer=5 cpu-used=3 deadline=1000000 threads=%T ! queue max-size-buffers=0 max-size-time=0 max-size-bytes=0 ! webmmux'
 quality-webcam=''
 
+[org/gnome/shell/extensions/Home-Server]
+serverdebug=false
+serverip='192.168.178.3'
+serverpoll=15
+
 [org/gnome/shell/extensions/PulseAudioShortcuts]
 label-menu='PulseAudio Shortcuts'
+
+[org/gnome/shell/extensions/appindicator]
+custom-icons=@a(sss) []
+icon-brightness=2.7755575615628914e-17
+icon-contrast=2.7755575615628914e-17
+icon-opacity=240
+icon-saturation=2.7755575615628914e-17
+icon-size=0
+tray-pos='right'
+
+[org/gnome/shell/extensions/auto-move-windows]
+application-list=@as []
 
 [org/gnome/shell/extensions/auto-ovpn]
 compact-mode=false
@@ -8783,6 +8883,11 @@ show-home=true
 show-network-volumes=false
 show-trash=true
 show-volumes=true
+start-corner='top-left'
+
+[org/gnome/shell/extensions/extension-list]
+hide-disabled=false
+unpin-button=false
 
 [org/gnome/shell/extensions/gnomenu]
 apps-grid-icon-size=48
@@ -8808,11 +8913,14 @@ use-panel-menu-icon=true
 use-panel-view-icon=false
 
 [org/gnome/shell/extensions/gsconnect]
+debug=false
 id='084a42d1-bb01-4aae-8b27-37803ab09506'
 name='griggorii-x64'
+show-indicators=false
 
 [org/gnome/shell/extensions/gsconnect/preferences]
 window-maximized=false
+window-position=(412, 50)
 window-size=(640, 440)
 
 [org/gnome/shell/extensions/hidetopbar]
@@ -8853,6 +8961,7 @@ y-tiles=50.0
 schema-version='1.0'
 
 [org/gnome/shell/extensions/openweather]
+actual-city=0
 center-forecast=true
 city='55.7504461,37.6174943>Москва, Центральный федеральный округ, Россия >0'
 days-forecast=2
@@ -8875,6 +8984,7 @@ wind-speed-unit='m/s'
 [org/gnome/shell/extensions/printers]
 connect-to='system-config-printer'
 job-number=true
+send-to-front=true
 show-error=true
 show-icon='When printers exist'
 show-jobs=true
@@ -8957,6 +9067,10 @@ display-all-workspaces=false
 grouping-mode='never'
 show-on-all-monitors=false
 
+[org/gnome/shell/keybindings]
+focus-active-notification=['']
+toggle-message-tray=['']
+
 [org/gnome/shell/overrides]
 attach-modal-dialogs=true
 dynamic-workspaces=true
@@ -8980,6 +9094,7 @@ document-type='photo'
 
 [org/gnome/software]
 check-timestamp=int64 1632839026
+download-updates=false
 first-run=false
 install-timestamp=int64 1617723968
 update-notification-timestamp=int64 1617857757
@@ -8989,6 +9104,11 @@ fullscreen=false
 height=600
 maximized=false
 width=800
+
+[org/gnome/sudoku]
+window-height=630
+window-is-maximized=false
+window-width=730
 
 [org/gnome/sysprof]
 last-spawn-argv=''
@@ -9174,6 +9294,10 @@ color='green'
 fullscreen=false
 maximized=false
 window-size=(712, 437)
+
+[org/gtk/gtk4/settings/color-chooser]
+custom-colors=[(0.0, 0.57254904508590698, 0.90196079015731812, 1.0)]
+selected-color=(true, 0.0, 0.57254904508590698, 0.90196079015731812, 1.0)
 
 [org/gtk/settings/color-chooser]
 custom-colors=[(0.070588235294117646, 0.37647058823529411, 0.47058823529411764, 1.0), (0.0078431372549019607, 0.21176470588235294, 0.23921568627450981, 1.0), (0.011764705882352929, 0.21176470588235297, 0.23921568627450981, 1.0), (0.87450980392156863, 0.85882352941176465, 0.76470588235294112, 1.0), (0.20000000000000001, 0.18823529411764706, 0.18431372549019609, 1.0), (0.27058823529411763, 0.25882352941176473, 0.25098039215686274, 1.0), (1.0, 1.0, 0.0, 0.5), (0.10196078431372549, 0.10196078431372549, 0.10196078431372549, 1.0)]
@@ -9575,7 +9699,7 @@ home-icon-visible=true
 horizontal-grid-adjust=1.0
 ignored-desktop-handlers=['conky', 'nemo', 'nemo-desktop', 'nautilus', 'nautilus-desktop']
 network-icon-visible=false
-show-desktop-icons=true
+show-desktop-icons=false
 show-orphaned-desktop-icons=true
 text-ellipsis-limit=2
 trash-icon-visible=true
@@ -9584,6 +9708,7 @@ vertical-grid-adjust=1.0
 volumes-visible=true
 
 [org/nemo/icon-view]
+captions=['none', 'size', 'date_modified']
 default-use-tighter-layout=true
 default-zoom-level='standard'
 labels-beside-icons=false
@@ -9593,10 +9718,12 @@ thumbnail-size=64
 default-column-order=['name', 'date_created', 'date_modified', 'type', 'size', 'where', 'owner', 'date_modified_with_time', 'group', 'date_accessed', 'selinux_context', 'detailed_type', 'permissions', 'octal_permissions', 'mime_type', 'date_created_with_time']
 default-visible-columns=['name', 'date_created', 'date_modified', 'type', 'size', 'where', 'owner', 'date_modified_with_time', 'group', 'date_accessed', 'selinux_context', 'detailed_type', 'permissions', 'octal_permissions', 'mime_type', 'date_created_with_time']
 default-zoom-level='smaller'
+search-visible-columns=['name', 'date_created', 'size', 'type', 'where']
 
 [org/nemo/plugins]
 disabled-actions=@as []
 disabled-extensions=@as []
+disabled-scripts=@as []
 enabled-extensions=@as []
 
 [org/nemo/preferences]
@@ -9692,13 +9819,17 @@ selection-menu-properties=true
 selection-menu-rename=true
 selection-menu-scripts=true
 
+[org/nemo/search]
+search-content-case-sensitive=false
+search-content-use-regex=false
+
 [org/nemo/sidebar-panels/tree]
 show-only-directories=false
 
 [org/nemo/window-state]
 bookmarks-expanded=true
 devices-expanded=true
-geometry='888x493+34+28'
+geometry='895x487+34+28'
 maximized=false
 my-computer-expanded=true
 network-expanded=true
@@ -9992,11 +10123,11 @@ replace-all-location=1
 
 [org/xfce/mousepad/state/window]
 fullscreen=false
-height=uint32 491
+height=uint32 476
 left=-1
 maximized=false
 top=-1
-width=uint32 828
+width=uint32 837
 
 [org/yorba/shotwell/crop-settings]
 last-crop-height=1
@@ -10186,8 +10317,11 @@ mode='none'
 use-same-proxy=false
 
 [system/proxy/ftp]
+authentication-password=''
+authentication-user=''
 host=''
 port=0
+use-authentication=false
 
 [system/proxy/http]
 authentication-password=''
@@ -10586,11 +10720,27 @@ grep -H -r -n  "20.04" /etc/lsb-release && gsettings set org.gnome.gedit.prefere
 
 grep -H -r -n  "20.04" /etc/lsb-release && gsettings set org.gnome.gedit.preferences.editor scheme 'tango'
 
+gsettings set org.gnome.desktop.interface color-scheme 'default'
+
+gsettings set org.gnome.desktop.interface menubar-detachable 'true'
+
+gsettings set org.gnome.desktop.interface menus-have-tearoff 'true'
+
+gsettings set org.gnome.desktop.interface toolbar-detachable 'true'
+
+gsettings set org.gnome.desktop.background picture-uri 'default'
+
 dconf reset -f /org/compiz/profiles/unity-lowgfx/plugins-with-set-keys
 
 dconf reset -f /org/gnome/nm-applet/eap/
 
 dconf reset -f /org/blueman/plugins/recentconns
+
+dconf reset -f /org/gnome/desktop/background/
+
+dconf reset -f /org/gnome/desktop/background/
+
+dconf reset -f /org/cinnamon/desktop/background/
 
 gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 
@@ -10639,6 +10789,12 @@ alias goboost='(set -x; powerprofilesctl set interactive; sudo cpupower frequenc
 alias goboost='(set -x; powerprofilesctl set interactive; sudo cpupower frequency-set -g)'
 
 alias boostrun='powerprofilesctl launch -p interactive'
+
+sudo service apport-autoreport.service stop
+
+sudo service disable apport-autoreport.service
+
+sudo service mask apport-autoreport.service
 
 EOF
 cat > '/tmp/.drirc' <<EOL
@@ -14906,3 +15062,4 @@ EOF
 EOF
 clear
 clear
+
