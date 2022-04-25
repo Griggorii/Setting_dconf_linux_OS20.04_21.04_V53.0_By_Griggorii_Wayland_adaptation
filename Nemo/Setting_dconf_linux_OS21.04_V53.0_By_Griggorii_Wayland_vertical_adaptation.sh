@@ -11016,6 +11016,8 @@ sudo mv nemo-desktop.desktop /etc/xdg/autostart/
 EOF
 rm nemo-desktop.desktop
 EOF
+sudo sed -i 's/system-file-manager/folder/g' '/usr/share/applications/nemo.desktop'
+EOF
 sudo rm /usr/share/onboard/themes/Droid.theme
 EOF
 cat << EOF > Droid.theme
@@ -12705,8 +12707,6 @@ vm.vfs_cache_pressure=1000
 vm.dirty_background_ratio=50
 vm.dirty_ratio=80
 EOF
-sudo sed -i 's/true/false/g' '/etc/whoopsie'
-EOF
 sudo cp ./sysctl.conf /etc/
 EOF
 cp ./sysctl.conf /etc/
@@ -13694,7 +13694,7 @@ sudo service disable apport-autoreport.service
 
 sudo service mask apport-autoreport.service
 
-lsof /home/griggorii & graphviz libgvc6 -y
+sudo sed -i 's/true/false/g' '/etc/whoopsie'
 
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 443 -j ACCEPT
 # iptables -A OUTPUT -o eth0 -p tcp --dport 443 -j ACCEPT
