@@ -10796,6 +10796,20 @@ alias goboost='(set -x; powerprofilesctl set interactive; sudo cpupower frequenc
 
 alias boostrun='powerprofilesctl launch -p interactive'
 
+sudo service apport stop
+
+sudo systemctl disable apport
+
+sudo systemctl mask apport
+
+sudo rm -rf /var/crash/*
+
+sudo sed -i 's/enabled=1/enabled=0/g' '/etc/default/apport'
+
+sudo service disable apport
+
+sudo service mask apport
+
 sudo service apport-autoreport.service stop
 
 sudo service disable apport-autoreport.service
@@ -13687,12 +13701,6 @@ sudo chmod -x '/usr/lib/X11/xedit/lisp/indent.lsp' '/usr/lib/X11/xedit/lisp/lisp
 sudo apt purge libgitlab-api-v4-perl -y
 
 sudo apt purge xul-ext-ubufox -y
-
-sudo service apport-autoreport.service stop
-
-sudo service disable apport-autoreport.service
-
-sudo service mask apport-autoreport.service
 
 sudo sed -i 's/true/false/g' '/etc/whoopsie'
 
