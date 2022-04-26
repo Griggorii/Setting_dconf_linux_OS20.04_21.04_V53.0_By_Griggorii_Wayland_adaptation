@@ -7573,7 +7573,7 @@ smooth-refresh=true
 solaris-mode=true
 swap-color='#49A835'
 update-interval=5000
-window-state=(848, 498, 231, 78)
+window-state=(862, 587, 34, 28)
 
 [org/gnome/gnome-system-monitor/disktreenew]
 col-0-visible=true
