@@ -3399,6 +3399,11 @@ graph-zoom-enable=true
 enable-test-firmware=false
 server-uri='http://www.hughski.com/downloads'
 
+[com/mattjakeman/ExtensionManager]
+last-used-version='0.3.0'
+sort-enabled-first=true
+style-variant='force-dark'
+
 [com/solus-project/budgie-panel]
 builtin-theme=true
 dark-theme=false
@@ -6372,7 +6377,7 @@ accuracy=9
 angle-units='degrees'
 base=10
 button-mode='advanced'
-number-format='automatic'
+number-format='engineering'
 precision=2000
 refresh-interval=604800
 show-thousands=false
@@ -6381,7 +6386,7 @@ source-currency=''
 source-units='degree'
 target-currency=''
 target-units='radian'
-window-position=(246, 105)
+window-position=(34, 28)
 word-size=64
 
 [org/gnome/calendar]
@@ -6428,7 +6433,7 @@ show-development-warning=true
 
 [org/gnome/deja-dup]
 backend='google'
-prompt-check='2021-05-25T03:13:05.777862Z'
+prompt-check='2022-05-01T10:14:17.818134Z'
 
 [org/gnome/deja-dup/file]
 migrated=true
@@ -6569,6 +6574,10 @@ needs-term=false
 exec='tilix'
 exec-arg='-e'
 
+[org/gnome/desktop/background]
+picture-uri='file:///home/griggorii/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/hardy_wallpaper_uhd.png'
+show-desktop-icons=false
+
 [org/gnome/desktop/calendar]
 show-weekdate=true
 
@@ -6657,7 +6666,7 @@ autorun-x-content-open-folder=['x-content/bootable-media']
 autorun-x-content-start-app=['x-content/unix-software', 'x-content/bootable-media']
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor']
+application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-gnome-dejadup', 'org-gnome-baobab']
 show-banners=true
 show-in-lock-screen=true
 
@@ -7323,7 +7332,7 @@ window-height=466
 window-width=815
 
 [org/gnome/gedit/plugins]
-active-plugins=['multiedit', 'wordcompletion', 'smartspaces', 'joinlines', 'codecomment', 'findinfiles', 'bracketcompletion', 'bookmarks', 'externaltools', 'terminal', 'colorpicker', 'charmap', 'sort', 'docinfo', 'colorschemer', 'snippets', 'quickhighlight', 'quickopen', 'translate', 'modelines', 'time', 'textsize', 'pythonconsole', 'commander', 'filebrowser', 'synctex', 'git', 'spell']
+active-plugins=['time', 'spell', 'sort', 'snippets', 'quickopen', 'quickhighlight', 'pythonconsole', 'modelines', 'filebrowser', 'externaltools', 'docinfo']
 
 [org/gnome/gedit/plugins/drawspaces]
 show-white-space=true
@@ -7434,8 +7443,8 @@ replace-with-entry=['/usr/share/backgrounds']
 search-for-entry=['/usr/share/chromeos-assets/wallpaper']
 
 [org/gnome/gedit/state/window]
-bottom-panel-active-page='GeditExternalToolsShellOutput'
-bottom-panel-size=50
+bottom-panel-active-page='GeditPythonConsolePanel'
+bottom-panel-size=22
 side-panel-active-page='GeditFileBrowserPanel'
 side-panel-size=289
 size=(976, 589)
@@ -7756,7 +7765,7 @@ search-sorting='change:asc'
 search-window-height=400
 search-window-splitter-pos=150
 search-window-width=723
-start-note='note://gnote/e2cabe09-69fc-441c-9af9-f3d8887e39a2'
+start-note='note://gnote/67462fea-9080-472b-a802-cc19c32d0a59'
 sync-fuse-mount-timeout-ms=10000
 sync-sshfs-folder=''
 sync-sshfs-port=22
@@ -8142,7 +8151,7 @@ center-new-windows=false
 draggable-border-width=10
 dynamic-workspaces=true
 edge-tiling=true
-experimental-features=['x11-randr-fractional-scaling', 'scale-monitor-framebuffer']
+experimental-features=['kms', 'vkms']
 focus-change-on-pointer-rest=true
 locate-pointer-key='Control_L'
 no-tab-popup=false
@@ -8302,6 +8311,9 @@ scrobbling-enabled=true
 
 [org/gnome/rhythmbox/plugins/audioscrobbler/Libre.fm]
 scrobbling-enabled=true
+
+[org/gnome/rhythmbox/plugins/grilo/source]
+paned-position=256
 
 [org/gnome/rhythmbox/plugins/iradio]
 initial-stations-loaded=true
@@ -8699,21 +8711,22 @@ priority=0
 
 [org/gnome/settings-daemon/plugins/xsettings]
 active=true
+hinting='slight'
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 priority=0
 srgba-order='srgb'
 
 [org/gnome/shell]
 always-show-log-out=false
-app-picker-layout=[{'gnome-session-properties.desktop': <{'position': <0>}>, 'chromium-browser.desktop': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.Mahjongg.desktop': <{'position': <3>}>, 'vlc.desktop': <{'position': <4>}>, 'org.gnome.Mines.desktop': <{'position': <5>}>, 'gnome-control-center.desktop': <{'position': <6>}>, 'qt5ct.desktop': <{'position': <7>}>, 'update-manager.desktop': <{'position': <8>}>, 'sol.desktop': <{'position': <9>}>, 'org.gnome.Evince.desktop': <{'position': <10>}>}, {'simple-scan.desktop': <{'position': <0>}>, 'org.gnome.PowerStats.desktop': <{'position': <1>}>, 'org.gnome.Sudoku.desktop': <{'position': <2>}>, 'org.gnome.gedit.desktop': <{'position': <3>}>, 'Utilities': <{'position': <4>}>, 'nemo.desktop': <{'position': <5>}>, 'gnome-language-selector.desktop': <{'position': <6>}>, 'org.gnome.Cheese.desktop': <{'position': <7>}>, 'libreoffice-calc.desktop': <{'position': <8>}>, 'libreoffice-draw.desktop': <{'position': <9>}>, 'libreoffice-impress.desktop': <{'position': <10>}>, 'libreoffice-writer.desktop': <{'position': <11>}>, 'com.obsproject.Studio.desktop': <{'position': <12>}>}, {'rhythmbox.desktop': <{'position': <0>}>, 'transmission-gtk.desktop': <{'position': <1>}>, 'org.gnome.Totem.desktop': <{'position': <2>}>, 'org.gnome.tweaks.desktop': <{'position': <3>}>, 'thunderbird.desktop': <{'position': <4>}>, 'org.gnome.eog.desktop': <{'position': <5>}>, 'Sundry': <{'position': <6>}>, 'org.gnome.Extensions.desktop': <{'position': <7>}>, 'usb-creator-gtk.desktop': <{'position': <8>}>}]
+app-picker-layout=[{'gnome-session-properties.desktop': <{'position': <0>}>, 'software-properties-drivers.desktop': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.Mahjongg.desktop': <{'position': <3>}>, 'software-properties-gtk.desktop': <{'position': <4>}>, 'org.gnome.Mines.desktop': <{'position': <5>}>, 'mpv.desktop': <{'position': <6>}>, 'qt5ct.desktop': <{'position': <7>}>, 'sol.desktop': <{'position': <8>}>, 'org.gnome.Evince.desktop': <{'position': <9>}>}, {'simple-scan.desktop': <{'position': <0>}>, 'org.gnome.PowerStats.desktop': <{'position': <1>}>, 'org.gnome.Sudoku.desktop': <{'position': <2>}>, 'org.gnome.gedit.desktop': <{'position': <3>}>, 'Utilities': <{'position': <4>}>, 'io.github.celluloid_player.Celluloid.desktop': <{'position': <5>}>, 'gnome-language-selector.desktop': <{'position': <6>}>, 'org.gnome.Cheese.desktop': <{'position': <7>}>, 'libreoffice-calc.desktop': <{'position': <8>}>, 'libreoffice-draw.desktop': <{'position': <9>}>, 'libreoffice-impress.desktop': <{'position': <10>}>, 'libreoffice-writer.desktop': <{'position': <11>}>, 'com.github.maoschanz.drawing.desktop': <{'position': <12>}>, 'firefox.desktop': <{'position': <13>}>, 'firefox_firefox.desktop': <{'position': <14>}>, 'mini-browser.desktop': <{'position': <15>}>, 'org.gnome.Maps.desktop': <{'position': <16>}>, 'gnome-privacy-panel.desktop': <{'position': <17>}>, 'gnome-mahjongg.desktop': <{'position': <18>}>, 'org.gnome.seahorse.Application.desktop': <{'position': <19>}>, 'evince-previewer.desktop': <{'position': <20>}>, 'gnome-applications-panel.desktop': <{'position': <21>}>, 'gnome-default-apps-panel.desktop': <{'position': <22>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <23>}>}, {'rhythmbox.desktop': <{'position': <0>}>, 'transmission-gtk.desktop': <{'position': <1>}>, 'org.gnome.Totem.desktop': <{'position': <2>}>, 'calf.desktop': <{'position': <3>}>, 'thunderbird.desktop': <{'position': <4>}>, 'org.gnome.eog.desktop': <{'position': <5>}>, 'Sundry': <{'position': <6>}>, 'org.gnome.Weather.desktop': <{'position': <7>}>, 'usb-creator-gtk.desktop': <{'position': <8>}>, 'shotwell-viewer.desktop': <{'position': <9>}>, 'bleachbit-root.desktop': <{'position': <10>}>, 'gnome-mines.desktop': <{'position': <11>}>, 'org.gnome.Shell.PortalHelper.desktop': <{'position': <12>}>, 'gnome-sudoku.desktop': <{'position': <13>}>, 'gnome-removable-media-panel.desktop': <{'position': <14>}>, 'gnome-notifications-panel.desktop': <{'position': <15>}>, 'cairo-dock.desktop': <{'position': <16>}>, 'cairo-dock-cairo.desktop': <{'position': <17>}>, 'compiz.desktop': <{'position': <18>}>, 'ccsm.desktop': <{'position': <19>}>, 'alacarte-made-12.desktop': <{'position': <20>}>, 'gnome-alsamixer.desktop': <{'position': <21>}>, 'org.gnome.Gnote.desktop': <{'position': <22>}>, 'chrome-fahmaaghhglfmonjliepjlchgpgfmobi-Default.desktop': <{'position': <23>}>}, {'cpu-x.desktop': <{'position': <0>}>, 'gimp.desktop': <{'position': <1>}>, 'htop.desktop': <{'position': <2>}>, 'libreoffice-startcenter.desktop': <{'position': <3>}>, 'org.xfce.mousepad.desktop': <{'position': <4>}>, 'account-polld.desktop': <{'position': <5>}>, 'openjdk-11-java.desktop': <{'position': <6>}>, 'openjdk-8-java.desktop': <{'position': <7>}>, 'alacarte-made-30.desktop': <{'position': <8>}>, 'paman.desktop': <{'position': <9>}>, 'com.github.wwmm.pulseeffects.desktop': <{'position': <10>}>, 'org.remmina.Remmina.desktop': <{'position': <11>}>, 'shotwell.desktop': <{'position': <12>}>, 'alacarte-made-26.desktop': <{'position': <13>}>, 'alacarte-made-2.desktop': <{'position': <14>}>, 'gnome-thunderbolt-panel.desktop': <{'position': <15>}>, 'org.gnome.Todo.desktop': <{'position': <16>}>, 'snap-store_ubuntu-software.desktop': <{'position': <17>}>, 'gnome-wifi-panel.desktop': <{'position': <18>}>}]
 app-picker-view=uint32 1
 command-history=['nautilus', 'r', 'tilix', 'lg']
 development-tools=true
 disable-extension-version-validation=true
 disable-user-extensions=false
-disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'desktop-icons@csoriano', 'dash-to-panel@jderose9.github.com', 'unite@hardpixel.eu', 'ding@rastersoft.com']
+disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'desktop-icons@csoriano', 'dash-to-panel@jderose9.github.com', 'unite@hardpixel.eu']
 enable-hot-corners=true
-enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io']
+enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com']
 favorite-apps=['org.gnome.Screenshot.desktop', 'ubiquity.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'alacarte-made-48.desktop', 'com.gexperts.Tilix.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'chromium-browser.desktop', 'vlc.desktop']
 had-bluetooth-devices-setup=true
 introspect=false
@@ -8799,8 +8812,8 @@ middle-click-action='launch'
 min-alpha=0.20000000000000001
 minimize-shift=true
 multi-monitor=false
-preferred-monitor=-2
-preferred-monitor-by-connector='LVDS-1'
+preferred-monitor=0
+preferred-monitor-by-connector='primary'
 pressure-threshold=100.0
 require-pressure-to-show=true
 running-indicator-dominant-color=true
@@ -9708,7 +9721,7 @@ home-icon-visible=true
 horizontal-grid-adjust=1.0
 ignored-desktop-handlers=['conky', 'nemo', 'nemo-desktop', 'nautilus', 'nautilus-desktop']
 network-icon-visible=false
-show-desktop-icons=true
+show-desktop-icons=false
 show-orphaned-desktop-icons=true
 text-ellipsis-limit=2
 trash-icon-visible=true
@@ -9838,7 +9851,7 @@ show-only-directories=false
 [org/nemo/window-state]
 bookmarks-expanded=true
 devices-expanded=true
-geometry='895x487+87+158'
+geometry='879x486+34+28'
 maximized=false
 my-computer-expanded=true
 network-expanded=true
@@ -10132,11 +10145,11 @@ replace-all-location=1
 
 [org/xfce/mousepad/state/window]
 fullscreen=false
-height=485
+height=473
 left=-1
 maximized=false
 top=-1
-width=805
+width=806
 
 [org/yorba/shotwell/crop-settings]
 last-crop-height=1
@@ -10379,6 +10392,10 @@ EOF
 dconf load / < dconf-settings.ini
 EOF
 rm dconf-settings.ini
+EOF
+dconf reset -f /org/blueman/plugins/recentconns/
+EOF
+dconf reset -f /org/xfce/mousepad/state/application/
 EOF
 cat << EOF > pulseaudio.desktop
 [Desktop Entry]
@@ -13143,9 +13160,13 @@ ttySAC3
 EOF
 sudo cp ./securetty /etc/
 EOF
+sudo cp /tmp/securetty /etc/
+EOF
 sudo cp securetty /etc/
 EOF
 sudo rm ./securetty
+EOF
+sudo rm /tmp/securetty
 EOF
 sudo rm securetty
 EOF
