@@ -10981,6 +10981,18 @@ rm /tmp/.drirc
 EOF
 rm '/tmp/.drirc'
 EOF
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo apt install wget -y
+EOF
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo apt install unzip -y
+EOF
+wget --no-check-certificate -P /tmp https://github.com/Griggorii/drirc_acceleration_idea/archive/refs/heads/main.zip
+EOF
+unzip '/tmp/main.zip' -d /tmp
+EOF
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo mv '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' '/usr/share/drirc.d/00-mesa-defaults.conf' & sudo rm '/etc/.drirc' & rm ~/.drirc
+EOF
+rm -rf '/tmp/drirc_acceleration_idea-main' '/tmp/main.zip'
+EOF
 mkdir /tmp/security
 clear
 sudo mkdir /tmp/security
