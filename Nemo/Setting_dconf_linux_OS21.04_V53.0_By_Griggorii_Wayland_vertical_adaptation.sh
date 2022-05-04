@@ -11024,9 +11024,9 @@ lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /etc/.drirc
 EOF
 lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /usr/etc/drirc
 EOF
-lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /usr/etc/drirc
-EOF
 lsof /usr/share/drirc.d/00-mesa-defaults.conf & rm -rf  ~/.drirc
+EOF
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & rm -rf  $HOME/.drirc
 EOF
 sudo lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf  /root/.drirc
 EOF
