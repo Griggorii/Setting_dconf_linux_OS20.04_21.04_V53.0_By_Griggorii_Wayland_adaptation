@@ -301,6 +301,14 @@ lsof /home/griggorii & systemctl --user mask org.gnome.evolution.dataserver.Addr
 lsof /home/griggorii & systemctl --user mask org.freedesktop.Tracker1.Miner.Extract.service org.freedesktop.Tracker1.Miner.Files.service org.freedesktop.Tracker1.service org.freedesktop.Tracker1.Writeback.service
 
 lsof /home/griggorii & systemctl mask --user --now tracker-miner-fs-3.service
+
+lsof /home/griggorii & systemctl mask --user --now tracker-miner-fs-3.service
+
+lsof /home/griggorii & systemctl mask --user --now gnome-keyring-ssh.service
+
+lsof /home/griggorii & systemctl mask --user --now gpg-agent-ssh.socket
+
+lsof /home/griggorii & systemctl mask --user --now ssh-agent.service
 EOF
 # dconf reset -f /
 EOF
@@ -12451,6 +12459,14 @@ lsof /home/griggorii & systemctl --user mask evolution-addressbook-factory.servi
 lsof /home/griggorii & systemctl --user mask org.gnome.evolution.dataserver.AddressBook.service org.gnome.evolution.dataserver.Calendar.service org.gnome.evolution.dataserver.Sources.service org.gnome.evolution.dataserver.UserPrompter.service
 
 lsof /home/griggorii & systemctl --user mask org.freedesktop.Tracker1.Miner.Extract.service org.freedesktop.Tracker1.Miner.Files.service org.freedesktop.Tracker1.service org.freedesktop.Tracker1.Writeback.service
+
+lsof /home/griggorii & sudo systemctl mask tracker-miner-fs-3
+
+lsof /home/griggorii & sudo systemctl mask gnome-keyring-ssh
+
+lsof /home/griggorii & sudo systemctl mask gpg-agent-ssh
+
+lsof /home/griggorii & sudo systemctl mask gpg-agent
 EOF
 sudo cp /tmp/tracker-miner-apps.desktop /etc/xdg/autostart/
 
