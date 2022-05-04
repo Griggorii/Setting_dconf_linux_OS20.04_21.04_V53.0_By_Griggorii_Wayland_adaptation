@@ -10991,6 +10991,8 @@ unzip '/tmp/main.zip' -d /tmp
 EOF
 lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo mv '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' '/usr/share/drirc.d/00-mesa-defaults.conf' & sudo rm '/etc/.drirc' & rm ~/.drirc
 EOF
+lsof /usr/lib/x86_64-linux-gnu/dri/nouveau_vieux_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-amber-defaults.conf' /usr/share/drirc.d/
+EOF
 rm -rf '/tmp/drirc_acceleration_idea-main' '/tmp/main.zip'
 EOF
 mkdir /tmp/security
