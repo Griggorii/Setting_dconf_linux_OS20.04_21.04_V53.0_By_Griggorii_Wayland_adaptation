@@ -10984,13 +10984,53 @@ lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo apt install wget -y
 EOF
 lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo apt install unzip -y
 EOF
-wget --no-check-certificate -P /tmp https://github.com/Griggorii/drirc_acceleration_idea/archive/refs/heads/main.zip
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & wget --no-check-certificate -P /tmp https://github.com/Griggorii/drirc_acceleration_idea/archive/refs/heads/main.zip
 EOF
 unzip '/tmp/main.zip' -d /tmp
 EOF
-lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo mv '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' '/usr/share/drirc.d/00-mesa-defaults.conf' & sudo rm '/etc/.drirc' & rm ~/.drirc
+lsof /etc/.drirc & sudo mkdir /usr/share/drirc.d
+EOF
+lsof /etc/drirc & sudo mkdir /usr/share/drirc.d
+EOF
+lsof /usr/etc/drirc & sudo mkdir /usr/share/drirc.d
+EOF
+lsof /usr/lib/x86_64-linux-gnu/dri/i965_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /usr/lib/x86_64-linux-gnu/dri/i915_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' /usr/share/drirc.d/
 EOF
 lsof /usr/lib/x86_64-linux-gnu/dri/nouveau_vieux_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-amber-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /lib/x86_64-linux-gnu/dri/i965_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /lib/x86_64-linux-gnu/dri/i915_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /lib/x86_64-linux-gnu/dri/nouveau_vieux_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-amber-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /usr/lib/dri/i965_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /usr/lib/dri/i915_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /usr/lib/dri/nouveau_vieux_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-amber-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /lib/dri/i965_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /lib/dri/i915_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-mesa-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /lib/dri/nouveau_vieux_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-amber-defaults.conf' /usr/share/drirc.d/
+EOF
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /etc/drirc
+EOF
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /etc/.drirc
+EOF
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /usr/etc/drirc
+EOF
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /usr/etc/drirc
+EOF
+lsof /usr/share/drirc.d/00-mesa-defaults.conf & rm -rf  ~/.drirc
+EOF
+sudo lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf  /root/.drirc
+EOF
+sudo lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf  /root/drirc
 EOF
 rm -rf '/tmp/drirc_acceleration_idea-main' '/tmp/main.zip'
 EOF
@@ -14925,13 +14965,13 @@ sudo systemctl disable cron
 EOF
 ### systemctl disable cron
 EOF
-mkdir ~/parasit_changelog_i386
+# mkdir ~/parasit_changelog_i386
 
-mkdir $HOME/parasit_changelog_i386
+# mkdir $HOME/parasit_changelog_i386
 
-mkdir ~/parasit_changelog_i386/doc
+# mkdir ~/parasit_changelog_i386/doc
 
-mkdir $HOME/parasit_changelog_i386/doc
+# mkdir $HOME/parasit_changelog_i386/doc
 
 EOF
 cat > ~/parasit_changelog_i386/Readme.md <<EOL
@@ -14942,191 +14982,191 @@ Restore location terminal in folder parasit_changelog_i386 run command $ sudo cp
 # Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank dollar card VISA 4817 7601 8112 4706 griggorii@gmail.com
 EOL
 
-sudo mv /usr/share/doc/libc6 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libc6 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libbz2-1.0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libbz2-1.0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libzstd1 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libzstd1 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libapparmor1 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libapparmor1 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libcurl3-gnutls ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libcurl3-gnutls ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libnss3 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libnss3 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libpoppler73 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libpoppler73 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libwayland-client0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libwayland-client0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libwayland-cursor0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libwayland-cursor0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libegl-mesa0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libegl-mesa0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libgbm1 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libgbm1 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libxkbcommon0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libxkbcommon0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libgbm1 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libgbm1 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libwayland-server0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libwayland-server0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libwayland-client0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libwayland-client0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libwayland-server0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libwayland-server0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libproxy1v5 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libproxy1v5 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libsoup2.4-1 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libsoup2.4-1 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libbrotli1 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libbrotli1 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libpci3 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libpci3 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libcaca0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libcaca0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libvpx5 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libvpx5 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libopenjp2-7 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libopenjp2-7 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libspeex1 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libspeex1 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libwavpack1 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libwavpack1 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libcurl4 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libcurl4 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/gstreamer1.0-plugins-good ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/gstreamer1.0-plugins-good ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libgstreamer-plugins-good1.0-0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libgstreamer-plugins-good1.0-0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libvulkan1 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libvulkan1 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libsdl2-2.0-0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libsdl2-2.0-0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/mesa-va-drivers ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/mesa-va-drivers ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/mesa-vulkan-drivers ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/mesa-vulkan-drivers ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/mesa-va-drivers ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/mesa-va-drivers ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/mesa-vulkan-drivers ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/mesa-vulkan-drivers ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libexpat1/ ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libexpat1/ ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libgcrypt20 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libgcrypt20 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libgnutls30 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libgnutls30 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libsasl2-modules-db ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libsasl2-modules-db ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libicu66 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libicu66 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libxml2 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libxml2 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libasound2 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libasound2 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libpulse0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libpulse0 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libgd3 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libgd3 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libmysqlclient21 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libmysqlclient21 ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libsasl2-modules ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libsasl2-modules ~/parasit_changelog_i386/doc
 
-sudo mv /usr/share/doc/libglvnd0 ~/parasit_changelog_i386/doc
+# sudo mv /usr/share/doc/libglvnd0 ~/parasit_changelog_i386/doc
 
 # Double command not sudo to root
 
-mv /usr/share/doc/libc6 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libc6 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libbz2-1.0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libbz2-1.0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libzstd1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libzstd1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libapparmor1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libapparmor1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libcurl3-gnutls ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libcurl3-gnutls ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libnss3 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libnss3 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libpoppler73 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libpoppler73 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libwayland-client0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libwayland-client0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libwayland-cursor0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libwayland-cursor0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libegl-mesa0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libegl-mesa0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libgbm1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libgbm1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libxkbcommon0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libxkbcommon0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libgbm1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libgbm1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libwayland-server0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libwayland-server0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libwayland-client0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libwayland-client0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libwayland-server0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libwayland-server0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libproxy1v5 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libproxy1v5 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libsoup2.4-1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libsoup2.4-1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libbrotli1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libbrotli1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libpci3 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libpci3 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libcaca0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libcaca0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libvpx5 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libvpx5 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libopenjp2-7 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libopenjp2-7 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libspeex1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libspeex1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libwavpack1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libwavpack1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libcurl4 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libcurl4 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/gstreamer1.0-plugins-good ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/gstreamer1.0-plugins-good ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libgstreamer-plugins-good1.0-0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libgstreamer-plugins-good1.0-0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libvulkan1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libvulkan1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libsdl2-2.0-0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libsdl2-2.0-0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/mesa-va-drivers ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/mesa-va-drivers ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/mesa-vulkan-drivers ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/mesa-vulkan-drivers ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/mesa-va-drivers ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/mesa-va-drivers ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/mesa-vulkan-drivers ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/mesa-vulkan-drivers ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libexpat1 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libexpat1 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libgcrypt20 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libgcrypt20 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libgnutls30 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libgnutls30 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libsasl2-modules-db ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libsasl2-modules-db ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libicu66 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libicu66 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libxml2 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libxml2 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libasound2 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libasound2 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libpulse0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libpulse0 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libgd3 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libgd3 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libmysqlclient21 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libmysqlclient21 ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libsasl2-modules ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libsasl2-modules ~/parasit_changelog_i386/doc
 
-mv /usr/share/doc/libglvnd0 ~/parasit_changelog_i386/doc
+# mv /usr/share/doc/libglvnd0 ~/parasit_changelog_i386/doc
 EOF
 update-alternatives --config gdm3-theme.gresource
 EOF
