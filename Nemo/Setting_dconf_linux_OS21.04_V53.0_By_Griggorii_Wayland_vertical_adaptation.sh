@@ -10775,13 +10775,25 @@ gsettings set org.gnome.desktop.background picture-uri 'default'
 
 dconf reset -f /org/compiz/profiles/unity-lowgfx/plugins-with-set-keys
 
+gsettings set org.gnome.desktop.background color-shading-type 'solid'
+
+gsettings set org.gnome.desktop.background picture-options 'zoom'
+
+gsettings set org.gnome.desktop.background primary-color '#000000'
+
+gsettings set org.gnome.desktop.background secondary-color '#000000'
+
+gsettings set org.gnome.desktop.background picture-uri '/usr/share/backgrounds/warty-final-ubuntu.png'
+
+gsettings set org.gnome.desktop.background picture-uri-dark '/usr/share/backgrounds/jj_light_by_Hiking93.jpg'
+
+grep -H -r -n  "20.04" /etc/lsb-release && gsettings set org.gnome.desktop.background picture-uri-dark  '/usr/share/backgrounds/hardy_wallpaper_uhd.png'
+
 dconf reset -f /org/gnome/nm-applet/eap/
 
 dconf reset -f /org/blueman/plugins/recentconns
 
-dconf reset -f /org/gnome/desktop/background/
-
-dconf reset -f /org/gnome/desktop/background/
+# dconf reset -f /org/gnome/desktop/background/
 
 dconf reset -f /org/cinnamon/desktop/background/
 
