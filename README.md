@@ -34,7 +34,7 @@ F1 Help
 
 Ctrl-M Sound mute on/off
 
-Ctrl-+ and - right pad +- sound + -
+Ctrl-+ and - right pad +- sound + - | Youtube video 360 VR zoom right pad keyboard + -
 
 ___________________________________________________
 
