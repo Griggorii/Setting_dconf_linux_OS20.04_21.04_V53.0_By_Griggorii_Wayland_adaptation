@@ -21,6 +21,8 @@ Ctrl-S pattern selection | выделению по шаблону
 Ctrl-PrintScreenSysRq screencast video recorder | old dconf Ctrl-Alt + PrintScreenSysRq
 
 Shift-F7 flash screenchot
+
+Shift-F4 thunderbird
 ___________________________________________________
 
 Manipulate theme new scheme ubuntu 22.04 dark/light command
