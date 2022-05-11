@@ -12,7 +12,7 @@ Download new thems + icons https://github.com/Griggorii/Setting_dconf_linux_OS20
 
 $ sudo dpkg -i *.deb
 
-Press Super + Scroll mouse
+Ctrl new | Old dconf Press Super + Scroll mouse
 
 Ctrl-ALT + S resolution
 
