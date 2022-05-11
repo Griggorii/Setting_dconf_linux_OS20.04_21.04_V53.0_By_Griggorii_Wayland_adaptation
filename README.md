@@ -28,6 +28,8 @@ Shift-F3 Calculator
 
 Shift-F2 New window
 
+Ctrl-E Nemo file manger New window
+
 F1 Help
 
 Ctrl-M Sound mute on/off
