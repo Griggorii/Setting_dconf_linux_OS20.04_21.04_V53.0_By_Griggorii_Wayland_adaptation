@@ -30,6 +30,10 @@ Shift-F2 New window
 
 F1 Help
 
+Ctrl-M Sound mute on/off
+
+Ctrl-+ and - right pad +- sound + -
+
 ___________________________________________________
 
 Manipulate theme new scheme ubuntu 22.04 dark/light command
