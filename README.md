@@ -13,6 +13,14 @@ Download new thems + icons https://github.com/Griggorii/Setting_dconf_linux_OS20
 $ sudo dpkg -i *.deb
 
 Press Super + Scroll mouse
+
+Ctrl-ALT + S resolution
+
+Ctrl-S pattern selection | выделению по шаблону
+
+Ctll-PrintScreenSysRq screencast video recorder
+
+Shift-F7 flash screenchot
 ___________________________________________________
 
 Manipulate theme new scheme ubuntu 22.04 dark/light command
