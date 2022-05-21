@@ -6403,6 +6403,16 @@ echo && clear && (sleep 1; killall /usr/bin/* )
 
 gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms']"
 
+gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms']"
+
+gsettings set com.ubuntu.phone default-sim-for-messages 'ask'
+
+gsettings set com.ubuntu.phone default-sim-for-calls 'ask'
+
+gsettings set com.ubuntu.phone mms-group-chat-enabled false
+
+gsettings set com.ubuntu.phone sim-names @a{ss} {}
+
 alias boostrun='powerprofilesctl launch -p performance'
 
 alias goboost='(set -x; powerprofilesctl set performance; sudo cpupower frequency-set -g ondemand >&/dev/null;)'
