@@ -3309,23 +3309,6 @@ window-is-fullscreen=false
 window-is-maximized=false
 window-width=851
 
-[ca/desrt/dconf-editor/Demo]
-boolean=true
-double=3.1415926535897931
-enumeration='White'
-integer-32-signed=-2147483648
-number-with-range=3
-string='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-weird-enum='only-choice'
-weird-range=5
-
-[ca/desrt/dconf-editor/Demo/Conflict]
-a-non-conflicting-key=true
-another-non-conflicting-key=true
-default-value-conflict=2
-type-conflict='test'
-warning-similar=true
-
 [com/canonical/unity/launcher]
 favorites=['application://ubiquity.desktop', 'application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://org.gnome.Software.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'application://obs.desktop', 'application://com.gexperts.Tilix.desktop', 'application://libreoffice-startcenter.desktop', 'application://gnome-system-monitor.desktop', 'application://nemo.desktop', 'unity://expo-icon', 'unity://devices']
 launcher-position='Left'
@@ -3899,56 +3882,6 @@ use-custom-command=false
 use-system-font=false
 use-theme-colors=false
 visible-name='GRIGGORII_TILIX_9'
-
-[com/github/wwmm/pulseeffects]
-audio-activity-timeout=5
-blocksize-in='512'
-blocksize-out='512'
-bypass=false
-custom-sink=''
-custom-source='alsa_input.pci-0000_00_1b.0.analog-stereo'
-enable-all-sinkinputs=true
-enable-all-sourceoutputs=false
-last-used-input-preset='Presets'
-last-used-output-preset='My7'
-niceness=-10
-priority-type='None'
-realtime-priority=4
-show-blocklisted-apps=false
-use-dark-theme=false
-use-default-sink=true
-use-default-source=true
-window-height=660
-window-width=1117
-
-[com/github/wwmm/pulseeffects/sinkinputs]
-buffer-pulsesink=200000
-buffer-pulsesrc=200000
-latency-pulsesink=10000
-latency-pulsesrc=10000
-
-[com/github/wwmm/pulseeffects/sourceoutputs]
-buffer-pulsesink=200000
-buffer-pulsesrc=200000
-latency-pulsesink=10000
-latency-pulsesrc=10000
-
-[com/github/wwmm/pulseeffects/spectrum]
-fill=true
-height=112
-line-width=2.0
-maximum-frequency=20000
-minimum-frequency=20
-n-points=81
-sampling-freq=10
-show=true
-show-bar-border=true
-type='Bars'
-use-custom-color=true
-use-gradient=true
-
-[com/mattjakeman/ExtensionManager]
-style-variant='force-dark'
 
 [com/solus-project/budgie-panel]
 builtin-theme=true
@@ -5513,22 +5446,12 @@ background-picture-uri=''
 background-repeat='default'
 background-size='default'
 
-[com/ubuntu/phone]
-default-sim-for-calls='ask'
-default-sim-for-messages='ask'
-mms-group-chat-enabled=false
-
 [com/ubuntu/sound]
 allow-amplified-volume=true
 
 [com/ubuntu/touch/network]
 flight-mode=false
 gps=true
-
-[com/ubuntu/touch/sound]
-incoming-call-sound='/usr/share/sounds/ubuntu/ringtones/Ubuntu.ogg'
-incoming-message-sound='/usr/share/sounds/ubuntu/notifications/Xylo.ogg'
-silent-mode=false
 
 [com/ubuntu/touch/system]
 auto-brightness=false
@@ -5537,19 +5460,13 @@ brightness-needs-hardware-default=true
 orientation-lock='none'
 rotation-lock=false
 
-[com/ubuntu/user-interface/desktop]
-cursor-size=24
-text-scaling-factor=1.0
-
-[desktop/gnome/crypto/cache]
-gpg-cache-method='session'
-gpg-cache-ttl=300
+[com/ubuntu/update-notifier]
+release-check-time=uint32 1653888479
 
 [desktop/gnome/crypto/pgp]
 ascii-armor=true
 default-key=''
 encrypt-to-self=true
-keyservers=@as []
 last-signer=''
 sort-recipients-by='name'
 
@@ -5572,19 +5489,9 @@ show=0
 show-icon-on-systray=false
 show-im-name=false
 use-custom-font=false
-use-glyph-from-engine-lang=true
 x=-1
 xkb-icon-rgba='#415099'
 y=-1
-
-[desktop/ibus/panel/emoji]
-font='Monospace 16'
-has-partial-match=false
-lang='en'
-load-emoji-at-startup=true
-load-unicode-at-startup=false
-partial-match-condition=0
-partial-match-length=3
 
 [net/launchpad/plank/docks/dock1]
 alignment='center'
@@ -5793,12 +5700,8 @@ gtk-im-preedit-style='callback'
 gtk-im-status-style='callback'
 gtk-key-theme='Default'
 gtk-overlay-scrollbars=true
-gtk-theme='Pop-dark-oomox-griggorii_theme_2020_V4'
-gtk-theme-backup='Adwaita'
 gtk-timeout-initial=200
 gtk-timeout-repeat=20
-icon-theme='oomox-griggorii'
-icon-theme-backup='gnome'
 keyboard-layout-prefer-variant-names=false
 keyboard-layout-show-flags=true
 keyboard-layout-use-upper=false
@@ -5814,7 +5717,6 @@ toolbar-detachable=false
 toolbar-icons-size='large'
 toolbar-style='both-horiz'
 toolkit-accessibility=false
-upscale-fractional-scaling=false
 
 [org/cinnamon/desktop/keybindings/media-keys]
 decrease-text-size=@as []
@@ -5860,7 +5762,6 @@ remove-old-trash-files=false
 allow-keyboard-shortcuts=true
 allow-media-control=true
 ask-for-away-message=false
-custom-screensaver-command=''
 date-format='%A %B %e'
 default-message=''
 embedded-keyboard-command=''
@@ -6051,99 +5952,16 @@ display-whitepoint=6500
 profile-upload-uri='https://github.com/Griggorii/DisplayCal-3.7.1.4-Ubuntu-20.04--Focal-Fossa--portation_griggorii'
 sample-delay=400
 
-[org/freedesktop/tracker/db]
-journal-chunk-size=50
-journal-rotate-destination=''
-
 [org/freedesktop/tracker/extract]
 max-bytes=1048576
 sched-idle='first-index'
 verbosity='errors'
 wait-for-miner-fs=false
 
-[org/freedesktop/tracker/fts]
-enable-stemmer=false
-enable-unaccent=true
-ignore-numbers=true
-ignore-stop-words=true
-max-word-length=30
-max-words-to-index=10000
-
-[org/freedesktop/tracker/miner/files]
-crawling-interval=-1
-enable-monitors=true
-enable-writeback=true
-index-on-battery=true
-index-on-battery-first-time=true
-index-optical-discs=false
-index-removable-devices=false
-initial-sleep=15
-low-disk-space-limit=-1
-removable-days-threshold=3
-sched-idle='first-index'
-throttle=0
-verbosity='errors'
-
-[org/freedesktop/tracker/store]
-graphupdated-delay=1000
-verbosity='errors'
-
 [org/freedesktop/tracker/writeback]
 verbosity='errors'
 
-[org/gnome/Characters]
-font='Cantarell 50'
-
-[org/gnome/Disks]
-image-dir-uri=''
-
-[org/gnome/Disks/benchmark]
-do-write=true
-num-access-samples=1000
-num-samples=100
-sample-size-mib=10
-
-[org/gnome/GWeather]
-distance-unit='default'
-pressure-unit='default'
-radar=''
-speed-unit='default'
-temperature-unit='default'
-
-[org/gnome/Mahjongg]
-bgcolour='#34385b'
-mapset='Easy'
-show-toolbar=true
-tileset='postmodern.svg'
-window-height=600
-window-is-maximized=false
-window-width=900
-
-[org/gnome/Mines]
-mode=0
-nmines=40
-theme='bgcolors'
-use-animations=false
-use-autoflag=false
-use-question-marks=true
-window-height=400
-window-is-maximized=false
-window-width=600
-xsize=16
-ysize=16
-
-[org/gnome/Sudoku]
-highlighter=false
-print-multiple-sudoku-difficulty='easy'
-print-multiple-sudokus-to-print=4
-print-multiple-sudokus-to-print-per-page=2
-show-warnings=true
-window-height=630
-window-is-maximized=false
-window-width=730
-
 [org/gnome/Totem]
-active-plugins=['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'rotation', 'recent', 'movie-properties', 'open-directory', 'media-player-keys', 'autoload-subtitles', 'apple-trailers']
 audio-output-type='stereo'
 autoload-subtitles=false
 brightness=32767
@@ -6163,18 +5981,11 @@ subtitle-font='Sans Bold 20'
 [org/gnome/Totem/opensubtitles]
 language=''
 
-[org/gnome/Totem/pythonconsole]
-rpdb2-password=''
-
-[org/gnome/baobab/ui]
-active-chart='rings'
-window-state=87168
-
 [org/gnome/calculator]
 accuracy=9
 angle-units='degrees'
 base=10
-button-mode='advanced'
+button-mode='basic'
 number-format='engineering'
 precision=2000
 refresh-interval=604800
@@ -6186,11 +5997,6 @@ target-currency=''
 target-units='radian'
 window-position=(34, 28)
 word-size=64
-
-[org/gnome/calendar]
-active-view='month'
-follow-night-light=false
-window-maximized=false
 
 [org/gnome/cheese]
 brightness=0.0
@@ -6224,28 +6030,6 @@ screen-keyboard-enabled=false
 screen-magnifier-enabled=false
 screen-reader-enabled=false
 
-[org/gnome/desktop/a11y/keyboard]
-bouncekeys-beep-reject=false
-bouncekeys-delay=300
-bouncekeys-enable=false
-disable-timeout=200
-enable=false
-feature-state-change-beep=false
-mousekeys-accel-time=300
-mousekeys-enable=false
-mousekeys-init-delay=300
-mousekeys-max-speed=10
-slowkeys-beep-accept=false
-slowkeys-beep-press=false
-slowkeys-beep-reject=false
-slowkeys-delay=300
-slowkeys-enable=false
-stickykeys-enable=false
-stickykeys-modifier-beep=false
-stickykeys-two-key-off=false
-timeout-enable=false
-togglekeys-enable=true
-
 [org/gnome/desktop/a11y/magnifier]
 brightness-blue=0.0
 brightness-green=0.0
@@ -6269,22 +6053,6 @@ screen-position='full-screen'
 scroll-at-edges=false
 show-cross-hairs=false
 
-[org/gnome/desktop/a11y/mouse]
-click-type-window-geometry=''
-click-type-window-orientation='vertical'
-click-type-window-style='both'
-click-type-window-visible=true
-dwell-click-enabled=false
-dwell-gesture-double='up'
-dwell-gesture-drag='down'
-dwell-gesture-secondary='right'
-dwell-gesture-single='left'
-dwell-mode='window'
-dwell-threshold=10
-dwell-time=1.2
-secondary-click-enabled=false
-secondary-click-time=1.2
-
 [org/gnome/desktop/applications/office/calendar]
 exec='evolution -c calendar'
 needs-term=false
@@ -6299,8 +6067,6 @@ exec-arg='-e'
 
 [org/gnome/desktop/background]
 color-shading-type='solid'
-draw-background=true
-picture-opacity=100
 picture-options='zoom'
 picture-uri='/usr/share/backgrounds/warty-final-ubuntu.png'
 primary-color='#000000000000'
@@ -6310,57 +6076,28 @@ show-desktop-icons=false
 [org/gnome/desktop/calendar]
 show-weekdate=true
 
-[org/gnome/desktop/datetime]
-automatic-timezone=false
-
 [org/gnome/desktop/input-sources]
-mru-sources=[('xkb', 'ru'), ('xkb', 'us')]
+mru-sources=[('xkb', 'us'), ('xkb', 'ru')]
 per-window=true
 show-all-sources=false
 sources=[('xkb', 'us'), ('xkb', 'ru')]
+xkb-options=['grp_led:scroll']
 
 [org/gnome/desktop/interface]
-automatic-mnemonics=true
-buttons-have-icons=true
-can-change-accels=false
-clock-format='24h'
-clock-show-date=true
 clock-show-seconds=true
 clock-show-weekday=true
-cursor-blink=true
-cursor-blink-time=1200
-cursor-blink-timeout=10
-cursor-size=24
-cursor-theme='breeze_cursors'
 document-font-name='Sans 10'
-enable-animations=true
 enable-hot-corners=true
 font-name='Ubuntu 11'
-gtk-color-palette='black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90'
-gtk-color-scheme=''
-gtk-enable-primary-paste=true
 gtk-im-module='gtk-im-context-simple'
-gtk-im-preedit-style='callback'
-gtk-im-status-style='callback'
-gtk-key-theme='Default'
 gtk-theme='Pop-dark-oomox-griggorii_theme_2020_V4'
-gtk-timeout-initial=200
-gtk-timeout-repeat=20
 icon-theme='oomox-griggorii'
-locate-pointer=true
-menubar-accel='F10'
 menubar-detachable=true
-menus-have-icons=true
 menus-have-tearoff=true
 monospace-font-name='Ubuntu Mono 11'
-overlay-scrolling=true
 show-battery-percentage=true
-show-input-method-menu=true
-show-unicode-menu=true
 text-scaling-factor=1.0
 toolbar-detachable=true
-toolbar-icons-size='large'
-toolbar-style='both-horiz'
 toolkit-accessibility=false
 
 [org/gnome/desktop/lockdown]
@@ -6381,54 +6118,18 @@ automount-open=false
 autorun-never=true
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-gnome-fileroller', 'rhythmbox', 'org-gnome-gedit', 'lmms']
+application-children=['org-gnome-nautilus', 'org-gnome-gedit', 'gnome-control-center']
 show-banners=true
 show-in-lock-screen=true
-
-[org/gnome/desktop/notifications/application/chromium-browser]
-application-id='chromium-browser.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
 
-[org/gnome/desktop/notifications/application/gnome-network-panel]
-application-id='gnome-network-panel.desktop'
-
-[org/gnome/desktop/notifications/application/gnome-power-panel]
-application-id='gnome-power-panel.desktop'
-
-[org/gnome/desktop/notifications/application/green-recorder]
-application-id='green-recorder.desktop'
-
-[org/gnome/desktop/notifications/application/lmms]
-application-id='lmms.desktop'
-
-[org/gnome/desktop/notifications/application/nemo]
-application-id='nemo.desktop'
-
-[org/gnome/desktop/notifications/application/org-gnome-fileroller]
-application-id='org.gnome.FileRoller.desktop'
-
 [org/gnome/desktop/notifications/application/org-gnome-gedit]
 application-id='org.gnome.gedit.desktop'
 
-[org/gnome/desktop/notifications/application/rhythmbox]
-application-id='rhythmbox.desktop'
-
-[org/gnome/desktop/notifications/application/thunderbird]
-application-id='thunderbird.desktop'
-
-[org/gnome/desktop/peripherals/keyboard]
-numlock-state=false
-remember-numlock-state=true
-repeat=true
-
-[org/gnome/desktop/peripherals/mouse]
-accel-profile='default'
-left-handed=false
-middle-click-emulation=false
-natural-scroll=false
-speed=0.0
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
 
 [org/gnome/desktop/peripherals/touchpad]
 click-method='fingers'
@@ -6441,8 +6142,6 @@ scroll-method='two-finger-scrolling'
 send-events='enabled'
 speed=0.0
 tap-and-drag=true
-tap-and-drag-lock=false
-tap-button-map='default'
 tap-to-click=true
 two-finger-scrolling-enabled=true
 
@@ -6467,33 +6166,13 @@ show-full-name-in-top-bar=true
 usb-protection=false
 usb-protection-level='lockscreen'
 
-[org/gnome/desktop/remote-desktop/rdp]
-tls-cert=''
-tls-key=''
-view-only=true
-
-[org/gnome/desktop/remote-desktop/vnc]
-auth-method='prompt'
-view-only=true
-
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
-embedded-keyboard-command='onboard --xid'
-embedded-keyboard-enabled=true
-idle-activation-enabled=false
-lock-enabled=false
-logout-command=''
-logout-enabled=false
-picture-opacity=100
+idle-activation-enabled=true
 picture-options='zoom'
 picture-uri='/usr/share/backgrounds/warty-final-ubuntu.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
-show-full-name-in-top-bar=true
-show-notifications=false
-status-message-enabled=true
-ubuntu-lock-on-suspend=true
-user-switch-enabled=true
 
 [org/gnome/desktop/search-providers]
 disable-external=false
@@ -6504,22 +6183,6 @@ session-name='ubuntu'
 
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=true
-event-sounds=true
-input-feedback-sounds=true
-theme-name='freedesktop'
-
-[org/gnome/desktop/thumbnail-cache]
-maximum-age=180
-maximum-size=512
-
-[org/gnome/desktop/thumbnailers]
-disable-all=false
-
-[org/gnome/desktop/wm/keybindings]
-switch-applications=@as []
-switch-applications-backward=@as []
-switch-group=@as []
-switch-group-backward=@as []
 
 [org/gnome/desktop/wm/preferences]
 action-double-click-titlebar='toggle-maximize'
@@ -6561,7 +6224,7 @@ statusbar=false
 
 [org/gnome/eog/view]
 autorotate=true
-background-color='rgb(0,0,0)'
+background-color='rgb[0,0,0]'
 extrapolate=true
 interpolate=true
 scroll-wheel-zoom=true
@@ -6570,33 +6233,11 @@ transparency='checked'
 use-background-color=true
 zoom-multiplier=0.050000000000000003
 
-[org/gnome/evince]
-allow-links-change-zoom=true
-auto-reload=true
-override-restrictions=true
-show-caret-navigation-message=true
-
-[org/gnome/evince/default]
-continuous=true
-dual-page=false
-dual-page-odd-left=false
-enable-spellchecking=true
-fullscreen=false
-inverted-colors=false
-show-sidebar=true
-show-toolbar=true
-sidebar-page='links'
-sidebar-size=132
-sizing-mode='automatic'
-window-ratio=(0.98039215686274506, 0.75757575757575757)
-zoom=1.0
-
 [org/gnome/evolution-data-server]
 autoconfig-directory=''
 autoconfig-variables=@as []
 camel-cipher-load-photos=true
 camel-gpg-binary=''
-camel-smtp-helo-argument=''
 migrated=true
 network-monitor-gio-name=''
 oauth2-google-client-id=''
@@ -6617,21 +6258,12 @@ notify-last-snooze-minutes=5
 notify-past-events=true
 notify-window-height=-1
 notify-window-on-top=true
-notify-window-paned-position=-1
 notify-window-width=-1
 notify-window-x=-1
 notify-window-y=-1
 notify-with-tray=false
 reminders-past=@as []
 reminders-snoozed=@as []
-
-[org/gnome/evolution]
-default-address-book='system'
-default-calendar='system-calendar'
-default-mail-account='system'
-default-mail-identity=''
-default-memo-list='system'
-default-task-list='system-task-list'
 
 [org/gnome/evolution/shell]
 start-offline=false
@@ -6650,17 +6282,6 @@ socks-port=0
 use-authentication=false
 use-http-proxy=false
 
-[org/gnome/file-roller/dialogs/add]
-current-folder=''
-exclude-files=''
-exclude-folders=''
-filename=''
-include-files='*'
-no-symlinks=true
-recursive=true
-selected-files=@as []
-update=false
-
 [org/gnome/file-roller/dialogs/extract]
 recreate-folders=true
 skip-newer=false
@@ -6669,27 +6290,14 @@ skip-newer=false
 height=316
 width=558
 
-[org/gnome/file-roller/dialogs/new]
-default-extension='.zip'
-encrypt-header=false
-other-options=false
-volume-size=0
-
 [org/gnome/file-roller/file-selector]
 show-hidden=false
 sidebar-size=168
 
-[org/gnome/file-roller/general]
-compression-level='normal'
-encrypt-header=false
-
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
-name-column-width=343
+name-column-width=250
 show-path=false
-show-size=true
-show-time=true
-show-type=true
 sort-method='name'
 sort-type='ascending'
 
@@ -6700,7 +6308,7 @@ window-height=466
 window-width=815
 
 [org/gnome/gedit/plugins]
-active-plugins=['time', 'spell', 'sort', 'snippets', 'quickopen', 'quickhighlight', 'pythonconsole', 'modelines', 'filebrowser', 'externaltools', 'docinfo']
+active-plugins=['time', 'spell', 'modelines', 'filebrowser', 'docinfo']
 
 [org/gnome/gedit/plugins/externaltools]
 font='Monospace 10'
@@ -6723,14 +6331,6 @@ command-color='#314e6c'
 error-color='#990000'
 font='Monospace 10'
 use-system-font=true
-
-[org/gnome/gedit/plugins/spell]
-highlight-misspelled=false
-
-[org/gnome/gedit/plugins/time]
-custom-format='%d/%m/%Y %H:%M:%S'
-prompt-type='prompt-selected-format'
-selected-format='%c'
 
 [org/gnome/gedit/preferences/editor]
 auto-indent=true
@@ -6755,7 +6355,7 @@ wrap-last-split-mode='word'
 wrap-mode='word'
 
 [org/gnome/gedit/preferences/encodings]
-candidate-encodings=['UTF-8 ', 'ISO-8859-15 ', 'UTF-16 ', 'WINDOWS-1250 ', 'WINDOWS-1251 ', 'ISO-8859-6 ', 'WINDOWS-1256 ', 'ARMSCII-8 ', 'ISO-8859-4 ', 'ISO-8859-13 ', 'WINDOWS-1257 ', 'TCVN ', 'VISCII ', 'WINDOWS-1258 ', 'ISO-8859-7 ', 'WINDOWS-1253 ', 'ISO-8859-1 ', 'WINDOWS-1252 ', 'WINDOWS-1255 ', 'ISO-8859-8 ', 'ISO-8859-14 ', 'ISO-8859-5 ', 'ISO-IR-111 ', 'KOI8R ', 'KOI8-RU ', 'KOI8-R ', 'CP866 ', 'KOI8-U ', 'KOI8U ', 'KOI-8 ', 'KOI8-T ', 'BIG5 ', 'BIG5-HKSCS ', 'EUC-TW ', 'GB18030 ', 'GB2312 ', 'GBK ', 'EUC-KR ', 'ISO-2022-KR ', 'JOHAB ', 'UHC ', 'ISO-8859-16 ', 'ISO-8859-10 ', 'TIS-620 ', 'ISO-8859-9 ', 'WINDOWS-1254 ', 'ISO-8859-2 ', 'ISO-8859-3 ', 'UTF-7 ', 'UTF-16BE ', 'UTF-16LE ', 'UTF-32 ', 'UCS-2 ', 'UCS-4 ', 'CURRENT ', 'SHIFT_JIS ', 'ANSI_X3.110 ', 'ASMO_449 ', 'BIG5HKSCS ', 'BRF ', 'CP10007 ', 'CP1125 ', 'CP1250 ', 'CP1251 ', 'CP1252 ', 'CP1253 ', 'CP1254 ', 'CP1255 ', 'CP1256 ', 'CP1257 ', 'CP1258 ', 'CP737 ', 'CP770 ', 'CP771 ', 'CP772 ', 'CP773 ', 'CP774 ', 'CP775 ', 'CP932 ', 'CSN_369103 ', 'CWI ', 'DEC-MCS ', 'EBCDIC-AT-DE-A ', 'EBCDIC-AT-DE ', 'EBCDIC-CA-FR ', 'EBCDIC-DK-NO-A ', 'EBCDIC-DK-NO ', 'EBCDIC-ES-A ', 'EBCDIC-ES-S ', 'EBCDIC-ES ', 'EBCDIC-FI-SE-A ', 'EBCDIC-FI-SE ', 'EBCDIC-FR ', 'EBCDIC-IS-FRISS ', 'EBCDIC-IT ', 'EBCDIC-PT ', 'EBCDIC-UK ', 'EBCDIC-US ', 'ECMA-CYRILLIC ', 'EUC-CN ', 'EUC-JISX0213 ', 'EUC-JP-MS ', 'EUC-JP ', 'GBBIG5 ', 'GBGBK ', 'GEORGIAN-ACADEMY ', 'GEORGIAN-PS ', 'GOST_19768-74 ', 'GREEK-CCITT ', 'GREEK7-OLD ', 'GREEK7 ', 'HP-GREEK8 ', 'HP-ROMAN8 ', 'HP-ROMAN9 ', 'HP-THAI8 ', 'HP-TURKISH8 ', 'IBM037 ', 'IBM038 ', 'IBM1004 ', 'IBM1008 ', 'IBM1008_420 ', 'IBM1025 ', 'IBM1026 ', 'IBM1046 ', 'IBM1047 ', 'IBM1097 ', 'IBM1112 ', 'IBM1122 ', 'IBM1123 ', 'IBM1124 ', 'IBM1129 ', 'IBM1130 ', 'IBM1132 ', 'IBM1133 ', 'IBM1137 ', 'IBM1140 ', 'IBM1141 ', 'IBM1142 ', 'IBM1143 ', 'IBM1144 ', 'IBM1145 ', 'IBM1146 ', 'IBM1147 ', 'IBM1148 ', 'IBM1149 ', 'IBM1153 ', 'IBM1154 ', 'IBM1155 ', 'IBM1156 ', 'IBM1157 ', 'IBM1158 ', 'IBM1160 ', 'IBM1161 ', 'IBM1162 ', 'IBM1163 ', 'IBM1164 ', 'IBM1166 ', 'IBM1167 ', 'IBM12712 ', 'IBM1364 ', 'IBM1371 ', 'IBM1388 ', 'IBM1390 ', 'IBM1399 ', 'IBM16804 ', 'IBM256 ', 'IBM273 ', 'IBM274 ', 'IBM275 ', 'IBM277 ', 'IBM278 ', 'IBM280 ', 'IBM281 ', 'IBM284 ', 'IBM285 ', 'IBM290 ', 'IBM297 ', 'IBM420 ', 'IBM423 ', 'IBM424 ', 'IBM437 ', 'IBM4517 ', 'IBM4899 ', 'IBM4909 ', 'IBM4971 ', 'IBM500 ', 'IBM5347 ', 'IBM803 ', 'IBM850 ', 'IBM851 ', 'IBM852 ', 'IBM855 ', 'IBM856 ', 'IBM857 ', 'IBM858 ', 'IBM860 ', 'IBM861 ', 'IBM862 ', 'IBM863 ', 'IBM864 ', 'IBM865 ', 'IBM866 ', 'IBM866NAV ', 'IBM868 ', 'IBM869 ', 'IBM870 ', 'IBM871 ', 'IBM874 ', 'IBM875 ', 'IBM880 ', 'IBM891 ', 'IBM901 ', 'IBM902 ', 'IBM903 ', 'IBM9030 ', 'IBM904 ', 'IBM905 ', 'IBM9066 ', 'IBM918 ', 'IBM921 ', 'IBM922 ', 'IBM930 ', 'IBM932 ', 'IBM933 ', 'IBM935 ', 'IBM937 ', 'IBM939 ', 'IBM943 ', 'IBM9448 ', 'IEC_P27-1 ', 'INIS-8 ', 'INIS-CYRILLIC ', 'INIS ', 'ISIRI-3342 ', 'ISO-2022-CN-EXT ', 'ISO-2022-CN ', 'ISO-2022-JP-3 ', 'ISO-2022-JP ', 'ISO-IR-197 ', 'ISO-IR-209 ', 'ISO646 ', 'ISO8859-1 ', 'ISO8859-10 ', 'ISO8859-11 ', 'ISO8859-13 ', 'ISO8859-14 ', 'ISO8859-15 ', 'ISO8859-16 ', 'ISO8859-2 ', 'ISO8859-3 ', 'ISO8859-4 ', 'ISO8859-5 ', 'ISO8859-6 ', 'ISO8859-7 ', 'ISO8859-8 ', 'ISO8859-9 ', 'ISO8859-9E ', 'ISO_10367-BOX ', 'ISO_11548-1 ', 'ISO_2033 ', 'ISO_5427-EXT ', 'ISO_5427 ', 'ISO_5428 ', 'ISO_6937-2 ', 'ISO_6937 ', 'LATIN-GREEK-1 ', 'LATIN-GREEK ', 'MAC-CENTRALEUROPE ', 'MAC-IS ', 'MAC-SAMI ', 'MAC-UK ', 'MACINTOSH ', 'MIK ', 'NATS-DANO ', 'NATS-SEFI ', 'PT154 ', 'RK1048 ', 'SAMI-WS2 ', 'SHIFT_JISX0213 ', 'SJIS ', 'T.61 ', 'TCVN5712-1 ', 'TSCII ', 'UNICODE']
+candidate-encodings=@as []
 
 [org/gnome/gedit/preferences/print]
 margin-bottom=25.0
@@ -6775,20 +6375,12 @@ show-tabs-mode='auto'
 side-panel-visible=true
 statusbar-visible=true
 
-[org/gnome/gedit/state/file-chooser]
-filter-id=0
-open-recent=false
-
-[org/gnome/gedit/state/history-entry]
-replace-with-entry=@as []
-search-for-entry=@as []
-
 [org/gnome/gedit/state/window]
 bottom-panel-active-page='GeditPythonConsolePanel'
 bottom-panel-size=22
 side-panel-active-page='GeditFileBrowserPanel'
-side-panel-size=289
-size=(968, 634)
+side-panel-size=230
+size=(923, 640)
 state=87168
 
 [org/gnome/gnome-screenshot]
@@ -6799,12 +6391,6 @@ include-icc-profile=true
 include-pointer=false
 last-save-directory=''
 take-window-shot=false
-
-[org/gnome/gnome-session]
-auto-save-session=false
-auto-save-session-one-shot=false
-logout-prompt=true
-show-fallback-warning=true
 
 [org/gnome/gnome-system-monitor]
 cpu-colors=[(uint32 0, 'rgb(16,74,21)'), (1, 'rgb(54,192,56)'), (2, 'rgb(89,209,50)'), (3, 'rgb(5,255,14)'), (4, '#3cb44b'), (5, '#42d4f4'), (6, '#4363d8'), (7, '#911eb4'), (8, '#f032e6'), (9, '#fabebe'), (10, '#ffd8b1'), (11, '#fffac8'), (12, '#aaffc3'), (13, '#469990'), (14, '#000075'), (15, '#e6beff')]
@@ -6982,16 +6568,6 @@ columns-order=[0, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 2
 sort-col=15
 sort-order=0
 
-[org/gnome/gnote]
-start-note='note://gnote/e2cabe09-69fc-441c-9af9-f3d8887e39a2'
-
-[org/gnome/libgnomekbd/desktop]
-default-group=-1
-group-per-window=false
-handle-indicators=false
-layout-names-as-group-names=true
-load-extra-items=true
-
 [org/gnome/libgnomekbd/indicator]
 background-color=''
 font-family=''
@@ -7001,13 +6577,8 @@ secondary=0
 show-flags=false
 
 [org/gnome/libgnomekbd/keyboard]
+layouts=['ru', 'cz\trus', 'de\tru', 'ge\tru']
 model=''
-
-[org/gnome/libgnomekbd/preview]
-height=459
-width=1049
-x=170
-y=96
 
 [org/gnome/login-screen]
 allowed-failures=3
@@ -7021,23 +6592,9 @@ enable-smartcard-authentication=true
 fallback-logo=''
 logo='/usr/share/plymouth/ubuntu-logo.png'
 
-[org/gnome/logs]
-ignore-warning=true
-sort-order='descending-time'
-
 [org/gnome/mutter]
-attach-modal-dialogs=true
-auto-maximize=true
 center-new-windows=false
-draggable-border-width=10
-dynamic-workspaces=true
-edge-tiling=true
-experimental-features=['kms', 'vkms']
-focus-change-on-pointer-rest=true
-locate-pointer-key='Control_L'
-no-tab-popup=false
-overlay-key='Super_L'
-workspaces-only-on-primary=true
+experimental-features=['scale-monitor-framebuffer']
 
 [org/gnome/mutter/wayland]
 xwayland-allow-grabs=false
@@ -7048,58 +6605,27 @@ fractional-scale-mode='scale-ui-down'
 [org/gnome/nautilus/compression]
 default-compression-format='zip'
 
-[org/gnome/nautilus/desktop]
-background-fade=true
-font=''
-home-icon-name='Home'
-home-icon-visible=false
-network-icon-name='Network Servers'
-network-icon-visible=false
-text-ellipsis-limit=3
-trash-icon-name='Trash'
-trash-icon-visible=true
-volumes-visible=true
-
 [org/gnome/nautilus/icon-view]
 default-zoom-level='standard'
-thumbnail-size=64
 
 [org/gnome/nautilus/list-view]
-default-zoom-level='standard'
-use-tree-view=true
+default-column-order=['name', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred', 'detailed_type']
+default-visible-columns=['name', 'size', 'date_modified', 'starred']
 
 [org/gnome/nautilus/preferences]
 always-use-location-entry=true
 click-policy='single'
-confirm-trash=true
 default-folder-viewer='icon-view'
-default-sort-in-reverse-order=true
-default-sort-order='name'
-executable-text-activation='display'
-fts-enabled=true
-install-mime-activation=true
-mouse-back-button=8
-mouse-forward-button=9
-mouse-use-extra-buttons=true
-open-folder-on-dnd-hover=false
 recursive-search='always'
 search-filter-time-type='last_modified'
-search-view='icon-view'
-show-create-link=true
+search-view='list-view'
 show-delete-permanently=true
 show-directory-item-counts='always'
-show-hidden-files=false
 show-image-thumbnails='always'
-show-move-to-trash-shortcut-changed-dialog=true
-tabs-open-position='after-current-tab'
-use-experimental-views=false
 
 [org/gnome/nautilus/window-state]
 initial-size=(890, 550)
 maximized=false
-sidebar-width=218
-start-with-location-bar=true
-start-with-sidebar=true
 
 [org/gnome/nm-applet]
 disable-connected-notifications=false
@@ -7121,110 +6647,6 @@ info-stats-graph-points=true
 info-stats-graph-smooth=true
 info-stats-type='discharge-accuracy'
 
-[org/gnome/rhythmbox]
-display-page-tree-height=300
-display-page-tree-visible=true
-follow-playing=true
-maximized=false
-paned-position=160
-position=(34, 28)
-queue-as-sidebar=false
-right-paned-position=400
-show-album-art=true
-show-song-position-slider=true
-size=(789, 506)
-time-display=true
-
-[org/gnome/rhythmbox/library]
-add-dir=''
-layout-filename='%tN - %tt'
-layout-path='%aa/%at'
-strip-chars=false
-
-[org/gnome/rhythmbox/library/source]
-show-browser=true
-
-[org/gnome/rhythmbox/player]
-play-order='linear'
-transition-time=0.0
-use-xfade-backend=false
-volume=1.0
-
-[org/gnome/rhythmbox/plugins]
-active-plugins=['rb', 'alternative-toolbar', 'power-manager', 'notification', 'mtpdevice', 'mpris', 'mmkeys', 'iradio', 'ipod', 'generic-player', 'dbus-media-server', 'daap', 'audioscrobbler', 'audiocd', 'artsearch', 'android']
-no-user-plugins=false
-seen-plugins=['rblirc', 'rb', 'alternative-toolbar', 'webremote', 'soundcloud', 'replaygain', 'pythonconsole', 'notification', 'mtpdevice', 'mpris', 'magnatune', 'lyrics', 'listenbrainz', 'ipod', 'im-status', 'grilo', 'fmradio', 'dbus-media-server', 'daap', 'audioscrobbler', 'artsearch']
-
-[org/gnome/rhythmbox/plugins/alternative_toolbar]
-app-menu-display=false
-compact-progressbar=false
-dark-theme=false
-display-type=1
-enhanced-plugins=true
-enhanced-sidebar=false
-expanders='{1:True}'
-horiz-categories=false
-inline-label=true
-playing-label=false
-repeat-type=2
-show-compact=true
-show-source-toolbar=false
-show-tooltips=true
-start-hidden=false
-volume-control=false
-
-[org/gnome/rhythmbox/plugins/audioscrobbler/Last.fm]
-scrobbling-enabled=true
-
-[org/gnome/rhythmbox/plugins/audioscrobbler/Libre.fm]
-scrobbling-enabled=true
-
-[org/gnome/rhythmbox/plugins/iradio]
-initial-stations-loaded=true
-
-[org/gnome/rhythmbox/plugins/iradio/source]
-show-browser=true
-
-[org/gnome/rhythmbox/plugins/listenbrainz]
-user-token=''
-
-[org/gnome/rhythmbox/plugins/lyrics]
-folder=''
-
-[org/gnome/rhythmbox/plugins/magnatune]
-account-type='none'
-format='ogg'
-
-[org/gnome/rhythmbox/plugins/replaygain]
-limiter=true
-mode='radio'
-preamp=0.0
-
-[org/gnome/rhythmbox/plugins/webremote]
-access-key=''
-
-[org/gnome/rhythmbox/podcast]
-download-interval='hourly'
-download-location=''
-
-[org/gnome/rhythmbox/podcast/source]
-show-browser=true
-
-[org/gnome/rhythmbox/rhythmdb]
-grace-period=45
-locations=['']
-monitor-library=true
-
-[org/gnome/rhythmbox/sharing]
-enable-browsing=true
-enable-sharing=false
-require-password=false
-share-name=''
-share-password=''
-
-[org/gnome/rhythmbox/sources]
-browser-views='artists-albums'
-
 [org/gnome/settings-daemon/peripherals]
 active=true
 priority=0
@@ -7242,8 +6664,6 @@ click-volume=0
 numlock-state='off'
 
 [org/gnome/settings-daemon/peripherals/mouse]
-double-click=400
-drag-threshold=8
 locate-pointer=false
 
 [org/gnome/settings-daemon/peripherals/smartcard]
@@ -7527,7 +6947,7 @@ power-button-action='interactive'
 priority=0
 sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
-sleep-inactive-battery-timeout=1500
+sleep-inactive-battery-timeout=3600
 sleep-inactive-battery-type='suspend'
 time-action=120
 time-critical=300
@@ -7538,15 +6958,7 @@ use-time-for-policy=true
 active=false
 priority=0
 
-[org/gnome/settings-daemon/plugins/remote-display]
-active=true
-priority=0
-
 [org/gnome/settings-daemon/plugins/rfkill]
-active=true
-priority=0
-
-[org/gnome/settings-daemon/plugins/screensaver-proxy]
 active=true
 priority=0
 
@@ -7572,11 +6984,7 @@ default-monitors-setup='follow-lid'
 priority=0
 
 [org/gnome/settings-daemon/plugins/xsettings]
-active=true
-antialiasing='rgba'
 hinting='slight'
-priority=0
-rgba-order='rgb'
 
 [org/gnome/shell]
 always-show-log-out=false
@@ -7609,10 +7017,9 @@ autohide-in-fullscreen=false
 background-color='#02000e'
 background-opacity=0.69999999999999996
 bolt-support=true
-click-action='minimize'
+click-action='previews'
 custom-background-color=false
 custom-theme-customize-running-dots=true
-custom-theme-running-dots=true
 custom-theme-running-dots-border-color='#e95420'
 custom-theme-running-dots-border-width=0
 custom-theme-running-dots-color='#e95420'
@@ -7639,7 +7046,6 @@ min-alpha=0.20000000000000001
 minimize-shift=true
 multi-monitor=true
 preferred-monitor=0
-preferred-monitor-by-connector='primary'
 pressure-threshold=100.0
 require-pressure-to-show=true
 running-indicator-dominant-color=true
@@ -7726,14 +7132,7 @@ show-home=true
 show-trash=true
 
 [org/gnome/shell/extensions/ding]
-add-volumes-opposite=true
 icon-size='small'
-show-drop-place=true
-show-home=true
-show-network-volumes=false
-show-trash=true
-show-volumes=true
-start-corner='top-left'
 
 [org/gnome/shell/extensions/hidetopbar]
 animation-time-autohide=0.99999999999999989
@@ -7745,66 +7144,6 @@ mouse-sensitive=true
 mouse-sensitive-fullscreen-window=false
 mouse-triggers-overview=false
 shortcut-toggles=true
-
-[org/gnome/shell/extensions/native-window-placement]
-use-more-screen=true
-window-captions-on-top=true
-
-[org/gnome/shell/extensions/system-monitor]
-background='#3e0076ff'
-battery-display=false
-battery-graph-width=5
-battery-show-menu=true
-battery-show-text=true
-center-display=false
-compact-display=true
-cpu-display=false
-cpu-graph-width=5
-cpu-individual-cores=true
-cpu-show-menu=true
-cpu-show-text=true
-cpu-style='digit'
-disk-graph-width=5
-disk-show-menu=true
-disk-show-text=true
-disk-style='digit'
-fan-display=false
-fan-graph-width=5
-fan-show-menu=true
-fan-show-text=true
-fan-style='digit'
-freq-display=false
-freq-graph-width=5
-freq-show-menu=true
-freq-show-text=true
-freq-style='digit'
-gpu-display=false
-gpu-graph-width=5
-gpu-show-menu=true
-gpu-show-text=true
-gpu-style='digit'
-icon-display=true
-memory-display=false
-memory-graph-width=5
-memory-show-menu=true
-memory-show-text=true
-memory-style='digit'
-move-clock=false
-net-display=false
-net-graph-width=5
-net-show-menu=true
-net-show-text=true
-net-style='digit'
-show-tooltip=false
-swap-display=false
-swap-graph-width=5
-swap-show-menu=true
-swap-show-text=true
-swap-style='digit'
-thermal-graph-width=5
-thermal-show-menu=true
-thermal-show-text=true
-thermal-style='digit'
 
 [org/gnome/shell/extensions/unite]
 autofocus-windows=true
@@ -7831,29 +7170,12 @@ window-buttons-theme='yaru'
 [org/gnome/shell/extensions/user-theme]
 name='Orchis'
 
-[org/gnome/shell/extensions/window-list]
-display-all-workspaces=false
-grouping-mode='never'
-show-on-all-monitors=false
-
-[org/gnome/shell/keybindings]
-focus-active-notification=@as []
-toggle-message-tray=@as []
-
 [org/gnome/shell/overrides]
 attach-modal-dialogs=true
 dynamic-workspaces=true
 edge-tiling=true
 focus-change-on-pointer-rest=true
 workspaces-only-on-primary=true
-
-[org/gnome/shell/weather]
-automatic-location=true
-locations=@av []
-
-[org/gnome/shell/window-switcher]
-app-icon-mode='both'
-current-workspace-only=true
 
 [org/gnome/simple-scan]
 brightness=0
@@ -7866,21 +7188,12 @@ paper-height=0
 paper-width=0
 photo-dpi=300
 save-directory=''
-save-format='application/pdf'
 selected-device=''
 text-dpi=150
-
-[org/gnome/system-tools/users]
-showall=false
-showroot=false
 
 [org/gnome/system/dns-sd]
 display-local='merged'
 extra-domains=''
-
-[org/gnome/system/location]
-enabled=false
-max-accuracy-level='exact'
 
 [org/gnome/system/smb]
 workgroup=''
@@ -8011,30 +7324,12 @@ use-theme-transparency=false
 use-transparent-background=false
 visible-name='By Griggorii_5'
 
-[org/gnome/todo]
-default-provider='local'
-first-run=true
-view='grid'
-window-maximized=false
-
 [org/gnome/todo/plugins/background]
 run-on-startup=false
 show-notifications=true
 
 [org/gnome/todo/plugins/todo-txt]
 file=''
-
-[org/gnome/yelp]
-font-adjustment=0
-show-cursor=true
-
-[org/gtk/settings/color-chooser]
-custom-colors=[(0.22352941176470589, 0.21176470588235294, 0.20392156862745098, 1.0)]
-selected-color=(true, 0.22352941176470589, 0.21176470588235294, 0.20392156862745098, 1.0)
-
-[org/gtk/settings/debug]
-enable-inspector-keybinding=false
-inspector-warning=true
 
 [org/gtk/settings/file-chooser]
 clock-format='24h'
@@ -8051,34 +7346,15 @@ sort-directories-first=true
 sort-order='ascending'
 startup-mode='cwd'
 type-format='category'
-window-position=(34, 28)
-window-size=(903, 507)
-
-[org/nemo/compact-view]
-all-columns-have-same-width=true
-default-zoom-level='standard'
 
 [org/nemo/desktop]
-background-fade=true
 computer-icon-visible=true
-desktop-layout='true::true'
-font='Noto Sans 10.5'
 home-icon-visible=true
-horizontal-grid-adjust=1.0
 network-icon-visible=false
 show-desktop-icons=true
 show-orphaned-desktop-icons=true
-text-ellipsis-limit=2
 trash-icon-visible=true
-use-desktop-grid=true
-vertical-grid-adjust=1.0
 volumes-visible=true
-
-[org/nemo/icon-view]
-default-use-tighter-layout=true
-default-zoom-level='standard'
-labels-beside-icons=false
-thumbnail-size=64
 
 [org/nemo/list-view]
 default-column-order=['name', 'date_created', 'date_modified', 'type', 'size', 'where', 'owner', 'date_modified_with_time', 'group', 'date_accessed', 'selinux_context', 'detailed_type', 'permissions', 'octal_permissions', 'mime_type', 'date_created_with_time']
@@ -8088,59 +7364,15 @@ search-visible-columns=['name', 'date_created', 'size', 'type', 'where']
 
 [org/nemo/preferences]
 always-use-browser=true
-click-double-parent-folder=false
 click-policy='single'
-close-device-view-on-device-eject=false
-confirm-move-to-trash=true
-confirm-trash=true
-context-menus-show-all-actions=true
-date-format='locale'
-default-folder-viewer='icon-view'
-default-sort-in-reverse-order=false
-default-sort-order='name'
-deferred-attribute-preload-limit=150
-desktop-is-home-dir=false
-disable-menu-warning=false
-enable-delete=true
-enable-mime-actions-make-executable=false
-executable-text-activation='ask'
-ignore-view-metadata=false
-inherit-folder-viewer=false
-inherit-show-thumbnails=false
-last-server-connect-method=5
-mouse-back-button=8
-mouse-forward-button=9
-mouse-use-extra-buttons=true
-never-queue-file-ops=false
-quick-renames-with-pause-in-between=false
-show-advanced-permissions=true
-show-bookmarks-in-to-menus=true
-show-compact-view-icon-toolbar=true
 show-computer-icon-toolbar=true
-show-directory-item-counts='local-only'
-show-edit-icon-toolbar=true
-show-full-path-titles=false
 show-hidden-files=false
 show-home-icon-toolbar=true
-show-icon-view-icon-toolbar=true
-show-image-thumbnails='local-only'
-show-list-view-icon-toolbar=true
-show-location-entry=true
+show-location-entry=false
 show-new-folder-icon-toolbar=true
-show-next-icon-toolbar=true
 show-open-in-terminal-toolbar=true
-show-places-in-to-menus=true
-show-previous-icon-toolbar=true
 show-reload-icon-toolbar=true
-show-root-warning=true
-show-search-icon-toolbar=true
 show-show-thumbnails-toolbar=true
-show-up-icon-toolbar=true
-size-prefixes='base-10'
-sort-directories-first=true
-start-with-dual-pane=false
-swap-trash-delete=false
-tabs-open-position='after-current-tab'
 tooltips-in-icon-view=true
 tooltips-in-list-view=true
 tooltips-on-desktop=true
@@ -8160,12 +7392,10 @@ background-menu-scripts=true
 background-menu-show-hidden-files=true
 desktop-menu-customize=true
 iconview-menu-arrange-items=true
-iconview-menu-organize-by-name=true
 selection-menu-copy=true
 selection-menu-copy-to=true
 selection-menu-cut=true
 selection-menu-duplicate=true
-selection-menu-favorite=true
 selection-menu-make-link=true
 selection-menu-move-to=true
 selection-menu-move-to-trash=true
@@ -8180,28 +7410,12 @@ selection-menu-properties=true
 selection-menu-rename=true
 selection-menu-scripts=true
 
-[org/nemo/sidebar-panels/tree]
-show-only-directories=false
-
 [org/nemo/window-state]
-bookmarks-expanded=true
-devices-expanded=true
-geometry='892x512+34+28'
+geometry='888x536+34+28'
 maximized=false
-my-computer-expanded=true
-network-expanded=true
-side-pane-view='places'
-sidebar-bookmark-breakpoint=0
-sidebar-width=201
-start-with-location-bar=true
-start-with-menu-bar=true
+sidebar-bookmark-breakpoint=5
+sidebar-width=196
 start-with-sidebar=true
-start-with-status-bar=true
-start-with-toolbar=true
-
-[org/x/apps/statusicon]
-sn-watcher-advertise-host=true
-sn-watcher-debug=false
 
 [org/xfce/mousepad/preferences/file]
 add-last-end-of-line=false
@@ -8267,193 +7481,9 @@ wrap-around=true
 
 [org/xfce/mousepad/state/window]
 fullscreen=false
-height=493
-left=-1
+height=506
 maximized=false
-top=-1
-width=817
-
-[org/yorba/shotwell/crop-settings]
-last-crop-height=1
-last-crop-menu-choice=1
-last-crop-width=1
-
-[org/yorba/shotwell/dataimports]
-last-used-dataimports-service=''
-
-[org/yorba/shotwell/plugins/enable-state]
-dataimports-fspot=true
-org-gnome-shotwell-publishing-google-photos=false
-publishing-facebook=true
-publishing-flickr=true
-publishing-gallery3=false
-publishing-piwigo=true
-publishing-rajce=false
-publishing-tumblr=false
-publishing-yandex-fotki=false
-publishing-youtube=true
-transitions-blinds=true
-transitions-chess=true
-transitions-circle=true
-transitions-circles=true
-transitions-clock=true
-transitions-crumble=true
-transitions-fade=true
-transitions-slide=true
-transitions-squares=true
-transitions-stripes=true
-
-[org/yorba/shotwell/preferences/editing]
-external-photo-editor=''
-external-raw-editor='eog %U'
-
-[org/yorba/shotwell/preferences/export]
-constraint='ORIGINAL'
-export-format-mode='SPECIFIED'
-export-metadata=true
-photo-file-format='TIFF'
-quality='HIGH'
-scale=1200
-
-[org/yorba/shotwell/preferences/files]
-auto-import=false
-commit-metadata=false
-directory-pattern='%Y/%m/%d'
-directory-pattern-custom=''
-import-dir=''
-raw-developer-default='CAMERA'
-use-lowercase-filenames=false
-
-[org/yorba/shotwell/preferences/slideshow]
-delay=3.0
-show-title=false
-transition-delay=0.29999999999999999
-transition-effect-id=''
-
-[org/yorba/shotwell/preferences/ui]
-display-basic-properties=true
-display-event-comments=false
-display-extended-properties=false
-display-photo-comments=false
-display-photo-ratings=true
-display-photo-tags=true
-display-photo-titles=false
-display-search-bar=false
-display-sidebar=true
-display-toolbar=true
-event-photos-sort-ascending=true
-event-photos-sort-by=2
-events-sort-ascending=false
-hide-photos-already-imported=false
-keep-relativity=true
-library-photos-sort-ascending=false
-library-photos-sort-by=2
-modify-originals=false
-photo-rating-filter=0
-photo-thumbnail-scale=179
-pin-toolbar-state=false
-show-welcome-dialog=false
-sidebar-position=199
-transparent-background-color='rgb[51,48,47]'
-transparent-background-type='solid'
-use-24-hour-time=false
-use-dark-theme=true
-
-[org/yorba/shotwell/preferences/window]
-direct-height=697
-direct-maximize=false
-direct-width=1024
-library-height=697
-library-maximize=false
-library-width=1024
-sidebar-position=180
-
-[org/yorba/shotwell/printing]
-content-height=5.0
-content-layout=3
-content-ppi=600
-content-units=1
-content-width=7.0
-images-per-page=1
-match-aspect-ratio=true
-print-titles=false
-size-selection=-1
-titles-font='Sans Bold 12'
-
-[org/yorba/shotwell/sharing]
-default-service=1
-last-used-service=''
-
-[org/yorba/shotwell/sharing/facebook]
-access-token=''
-default-size=0
-strip-metadata=false
-uid=''
-user-name=''
-
-[org/yorba/shotwell/sharing/flickr]
-access-phase-token=''
-access-phase-token-secret=''
-access-phase-username=''
-default-size=2
-strip-metadata=false
-visibility=1
-
-[org/yorba/shotwell/sharing/gallery3]
-api-key=''
-last-album=''
-scaling-constraint-id=0
-scaling-pixels=1024
-strip-metadata=false
-url=''
-username=''
-
-[org/yorba/shotwell/sharing/org-gnome-shotwell-publishing-google-photos]
-default-size=2
-last-album=''
-refresh-token=''
-strip-metadata=false
-
-[org/yorba/shotwell/sharing/org-yorba-shotwell-publishing-piwigo]
-last-category=-1
-last-no-upload-tags=false
-last-permission-level=-1
-last-photo-size=-1
-last-title-as-comment=false
-password=''
-remember-password=false
-strip-metadata=false
-url=''
-username=''
-
-[org/yorba/shotwell/sharing/org-yorba-shotwell-publishing-rajce]
-hide-album=false
-last-category=-1
-last-photo-size=-1
-remember=false
-show-album=false
-strip-metadata=false
-token=''
-url=''
-username=''
-
-[org/yorba/shotwell/sharing/org-yorba-shotwell-publishing-tumblr]
-default-blog=0
-default-size=2
-token=''
-token-secret=''
-
-[org/yorba/shotwell/sharing/org-yorba-shotwell-publishing-yandex-fotki]
-auth-token=''
-
-[org/yorba/shotwell/sharing/youtube]
-refresh-token=''
-
-[org/yorba/shotwell/video]
-interpreter-state-cookie=-1
-
-[system/locale]
-region='ru_RU.UTF-8'
+width=801
 
 [system/proxy]
 autoconfig-url=''
