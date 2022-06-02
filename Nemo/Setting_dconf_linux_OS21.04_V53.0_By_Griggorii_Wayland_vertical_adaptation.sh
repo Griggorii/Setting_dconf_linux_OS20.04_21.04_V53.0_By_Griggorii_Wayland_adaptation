@@ -10519,9 +10519,13 @@ sudo mkdir ~/.local/share/gnome-shell/extensions
 EOF
 cd /usr/share/gnome-shell/extensions/
 EOF
-cp -r auto-ovpn@yahoo.com ~/.local/share/gnome-shell/extensions/
+cp -r /usr/share/gnome-shell/extensions/auto-ovpn@yahoo.com ~/.local/share/gnome-shell/extensions/
 EOF
-cp -r gsconnect@andyholmes.github.io ~/.local/share/gnome-shell/extensions/
+cp -r /usr/share/gnome-shell/extensions/gsconnect@andyholmes.github.io ~/.local/share/gnome-shell/extensions/
+EOF
+cp -r /usr/share/gnome-shell/extensions/auto-ovpn@yahoo.com ~/.local/share/gnome-shell/extensions/
+EOF
+sudo rm -rf /usr/share/gnome-shell/extensions/auto-ovpn@yahoo.com
 EOF
 sudo rm -rf /usr/share/gnome-shell/extensions/auto-ovpn@yahoo.com
 EOF
