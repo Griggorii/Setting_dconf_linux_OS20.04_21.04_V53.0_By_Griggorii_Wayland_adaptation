@@ -8991,6 +8991,20 @@ sudo service disable apport-autoreport.service
 
 sudo service mask apport-autoreport.service
 
+# Проба разработчика Griggorii перевода наконец то уже на реал таим работу , возможно это избавит и от заикания звука если вдруг не по ученым глупым бредням в духе скил фактори и ты уже через месяц будешь некий профи программист , а на деле просто левый человек укравший отсюда идею и фактически навредив людям из крупных ИТ компаний  которые хотели бы инвестировать в честный программинг от Griggorii и иных экспертов вынесших из экспериментов реальную составляющию которая оказалась уже рабочей не на рассуждениях , а по факту , не по философским соображениям может  оказаться что linux это некий архив-fs с декодирующимся из initrd архива собранного ядром раскатывающегося в систему , крупные ИТ компаний если не будут поддерживать паразетизм соответственно получат не только "новую OS" но и сверх стабильную OS операционную систему, следовательно замерив скорость lz4 оказался более реал таимовым чем все другое. В крайнем случае заидите и исправьте COMPRESS=lz4 допустим на COMPRESS=zst или иной вариант.
+
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=gzip/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=zst/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=bzip2/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=lzma/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=lzop/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=xz/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+
 EOF
 cat > '/tmp/.drirc' <<EOL
 <driconf>
@@ -9165,19 +9179,65 @@ lsof /lib/dri/i915_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii
 EOF
 lsof /lib/dri/nouveau_vieux_dri.so & sudo cp '/tmp/drirc_acceleration_idea-main/griggorii_mesa_driconf/Ubuntu-new/00-amber-defaults.conf' /usr/share/drirc.d/
 EOF
-lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /etc/drirc
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && rm -rf  ~/.drirc
 EOF
-lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /etc/.drirc
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && rm -rf  ~/.drirc
 EOF
-lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf /usr/etc/drirc
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && rm -rf  ~/.drirc
 EOF
-lsof /usr/share/drirc.d/00-mesa-defaults.conf & rm -rf  ~/.drirc
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && rm -rf  ~/.drirc
 EOF
-lsof /usr/share/drirc.d/00-mesa-defaults.conf & rm -rf  $HOME/.drirc
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && rm -rf  ~/.drirc
 EOF
-sudo lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf  /root/.drirc
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && rm -rf  ~/.drirc
 EOF
-sudo lsof /usr/share/drirc.d/00-mesa-defaults.conf & sudo rm -rf  /root/drirc
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf /etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf /etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf /etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf /etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf /etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf /etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf /etc/.drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf /etc/.drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf /etc/.drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf /etc/.drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf /etc/.drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf /etc/.drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf /usr/etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf /usr/etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf /usr/etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf /usr/etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf /usr/etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf /usr/etc/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf  /root/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf  /root/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf  /root/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf  /root/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-amber-defaults.conf' && sudo rm -rf  /root/drirc
+EOF
+grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo rm -rf  /root/drirc
 EOF
 rm -rf '/tmp/drirc_acceleration_idea-main' '/tmp/main.zip'
 EOF
