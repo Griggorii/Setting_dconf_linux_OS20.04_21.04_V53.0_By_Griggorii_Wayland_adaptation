@@ -10572,7 +10572,11 @@ EOF
 chmod -R a+rw ~/.local/share/gnome-shell/extensions
 EOF
 sudo chmod -R a+rw ~/.local/share/gnome-shell/extensions
-EOF
+
+clear
+
+# enable openvpn | on edited # disable openvpn zombi processes #
+
 sudo systemctl --user unmask openvpn-server@.service
 sudo systemctl --user unmask openvpn-client@.service
 sudo systemctl --user unmask openvpn@.service
@@ -10593,6 +10597,29 @@ sudo systemctl stop openvpn-client@server
 sudo systemctl enable openvpn-client@server.service
 sudo systemctl start openvpn-client@server
 
+# disable openvpn zombi processes /tmp
+
+sudo systemctl --user mask openvpn-server@.service
+sudo systemctl --user mask openvpn-client@.service
+sudo systemctl --user mask openvpn@.service
+
+sudo systemctl disable openvpn-server@.service
+sudo systemctl disable openvpn-client@.service
+sudo systemctl disable openvpn@.service
+
+sudo systemctl stop openvpn@server
+sudo systemctl disable openvpn@server.service
+
+sudo systemctl stop openvpn-server@server
+sudo systemctl disable openvpn-server@server.service
+
+sudo systemctl stop openvpn-client@server
+sudo systemctl disable openvpn-client@server.service
+
+clear
+
+sudo chmod -R a+rw ~/.local/share/gnome-shell/extensions
+EOF
 sudo service org.freedesktop.Tracker1.Miner.Extract.service stop
 
 sudo systemctl disable org.freedesktop.Tracker1.Miner.Extract.service
