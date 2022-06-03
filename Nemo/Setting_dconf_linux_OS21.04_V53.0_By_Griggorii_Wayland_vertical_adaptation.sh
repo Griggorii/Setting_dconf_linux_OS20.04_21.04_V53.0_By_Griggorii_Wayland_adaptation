@@ -1,5 +1,5 @@
 #!/bin/bash
-#Only real technologies, not any fictional parasitic distributions support real technology investments and donate VISA 4817 7601 8112 4706
+#Only real technologies, not any fictional parasitic distributions support real technology investments and donate VISA 4276 4001 0004 2457
 
 ####Griggorii@gmail.com mit license dconf-config
 
@@ -797,7 +797,7 @@ EOF
 chmod -R a+rwx dconf-settings-original-restore.sh
 EOF
 cat << EOF > dconf-settings.sh
-notify-send "Перезаидите в сессию что бы изменения вступили в силу | please restart session By Griggorii setting Only real technologies, not any fictional parasitic distributions support real technology investments and donate VISA 4817 7601 8112 4706" 
+notify-send "Перезаидите в сессию что бы изменения вступили в силу | please restart session By Griggorii setting Only real technologies, not any fictional parasitic distributions support real technology investments and donate VISA 4276 4001 0004 2457" 
 EOF
 chmod -R a+rwx dconf-settings.sh && ./dconf-settings.sh && rm dconf-settings.sh
 EOF
@@ -7647,6 +7647,7 @@ transparency-mode='FIXED'
 unity-backlit-items=true
 
 [org/gnome/shell/extensions/dash-to-panel]
+animate-show-apps=true
 appicon-margin=0
 appicon-padding=4
 dot-color-1='#5294e2'
@@ -7660,12 +7661,13 @@ dot-color-unfocused-2='#5294e2'
 dot-color-unfocused-3='#5294e2'
 dot-color-unfocused-4='#5294e2'
 dot-color-unfocused-different=true
-dot-position='BOTTOM'
+dot-position='TOP'
 dot-size=5
-dot-style-focused='SOLID'
+dot-style-focused='CILIORA'
 dot-style-unfocused='DASHES'
 focus-highlight-color='#eeeeee'
-focus-highlight-dominant=true
+focus-highlight-dominant=false
+focus-highlight-opacity=5
 force-check-update=true
 group-apps=true
 group-apps-label-font-color='#dddddd'
@@ -7676,32 +7678,37 @@ hot-keys=false
 hotkeys-overlay-combo='TEMPORARILY'
 intellihide=true
 intellihide-hide-from-windows=true
+intellihide-only-secondary=false
 intellihide-show-in-fullscreen=true
-intellihide-use-pressure=false
+intellihide-use-pressure=true
 isolate-monitors=true
 isolate-workspaces=true
+leftbox-size=12
 location-clock='STATUSLEFT'
+multi-monitors=true
 panel-position='TOP'
-panel-size=48
-secondarymenu-contains-showdetails=false
+panel-size=44
+secondarymenu-contains-showdetails=true
 show-activities-button=true
-show-appmenu=false
+show-appmenu=true
+show-apps-icon-file=''
+show-apps-icon-side-padding=0
 show-running-apps=true
 show-showdesktop-button=true
 show-showdesktop-delay=1000
 show-showdesktop-hover=false
 show-showdesktop-time=300
 showdesktop-button-width=4
-stockgs-force-hotcorner=false
+stockgs-force-hotcorner=true
 stockgs-keep-dash=true
-stockgs-panelbtn-click-only=false
+stockgs-panelbtn-click-only=true
 taskbar-position='LEFTPANEL'
-trans-bg-color='#126078'
+trans-bg-color='#2b1500'
 trans-use-custom-bg=true
-trans-use-custom-gradient=false
-trans-use-custom-opacity=false
+trans-use-custom-gradient=true
+trans-use-custom-opacity=true
 trans-use-dynamic-opacity=true
-tray-size=13
+tray-size=12
 
 [org/gnome/shell/extensions/desktop-icons]
 computer-icon-visible=true
@@ -9102,7 +9109,7 @@ cat > '/tmp/.drirc' <<EOL
 
 # copyright generation drirc my chromium os 77 https://github.com/Griggorii/Chromium_OS_77  , my license is not free re-edit vendor Intel, AMD, nvidia and alternate vendor fork submit publish prohibited ! Examples of using $ sudo cp drirc /etc/ and home $ cp drirc ~/.drirc and rename .drirc
 
-# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank dollar card VISA 4817 7601 8112 4706 griggorii@gmail.com
+# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank dollar card VISA 4276 4001 0004 2457 griggorii@gmail.com
 EOL
 sudo mv /tmp/.drirc /etc/
 EOF
@@ -9127,7 +9134,7 @@ cat > '/tmp/.drirc' <<EOL
 
 # https://github.com/Griggorii/drirc_acceleration_idea
 
-# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank dollar card VISA 4817 7601 8112 4706 griggorii@gmail.com
+# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank dollar card VISA 4276 4001 0004 2457 griggorii@gmail.com
 EOL
 cp  /tmp/.drirc ~/
 EOF
@@ -13225,7 +13232,7 @@ Restore location terminal in folder parasit_changelog_i386 run command $ sudo cp
 
 Прочитать для чего это было сделано тут https://github.com/Griggorii/Ubuntu-20.04.2-desktop-amd64_By_Griggorii_linux-image-kernel-5.6.0-oem при нехватке компонента от wine все как один идут на установку wine32 что ведет к смене логов которые хотят заменить паразитными логами от i386 которые по идее для архитектуры i386 должны быть вообще исключены либо для них должна быть сделана отдельная директория вида /usr/share/doc/i386 но так как там либо делают вид что работают либо не могут додуматься что надо сделать так , а позднее логи вообще складывать по типу архитектура/директория допустим как пример /usr/share/doc/i386 /usr/share/doc/amd64 /usr/share/doc/arm7 и так далее , а на деле лучше исключить для amd64 кучу пакетов и оставить те пакеты про которые я написал из собираемых пакетов за исключение названных и то в даже в данной ситуации можно встретить и такие вещи как /usr/share/drirc.d/00-mesa-defaults.conf /usr/share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json в данной же директории может быть и nvidia конфиг /usr/share/drirc.d/
 
-# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank dollar card VISA 4817 7601 8112 4706 griggorii@gmail.com
+# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank dollar card VISA 4276 4001 0004 2457 griggorii@gmail.com
 EOL
 
 # sudo mv /usr/share/doc/libc6 ~/parasit_changelog_i386/doc
@@ -13420,7 +13427,7 @@ sudo update-alternatives --config gdm3-theme.gresource
 EOF
 grep -H -r -n  "20.04" /etc/lsb-release && lsof /usr/bin/x-www-browser & sh -c "/usr/bin/x-www-browser www.github.com/Griggorii/Xorg_1.28-Mesa_21.2.6_Ubuntu_20.04/releases/tag/libmesa_dri"
 EOF
-grep -H -r -n  "20.04" /etc/lsb-release && lsof /usr/bin/notify-send & sh -c "/usr/bin/notify-send "UI_Perfomance_Ubuntu_20.04_development.sh Only real technologies, not any fictional parasitic distributions support real technology investments and donate VISA 4817 7601 8112 4706""
+grep -H -r -n  "20.04" /etc/lsb-release && lsof /usr/bin/notify-send & sh -c "/usr/bin/notify-send "UI_Perfomance_Ubuntu_20.04_development.sh Only real technologies, not any fictional parasitic distributions support real technology investments and donate VISA 4276 4001 0004 2457""
 EOF
 grep -H -r -n  "extension-manager" /usr/bin & (sh -c /usr/bin/extension-manager "$@") | (sleep 3; killall sh)
 EOF
