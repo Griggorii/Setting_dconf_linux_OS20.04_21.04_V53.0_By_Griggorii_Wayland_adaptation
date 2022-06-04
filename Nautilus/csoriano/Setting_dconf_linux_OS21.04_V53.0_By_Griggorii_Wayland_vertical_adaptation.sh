@@ -11754,6 +11754,16 @@ sudo apt install libnotify-bin -y
 EOF
 sudo systemctl restart firewalld
 EOF
+sudo systemctl disable systemd-resolved
+sudo service disable systemd-resolved
+sudo service mask systemd-resolved
+sudo systemctl mask systemd-resolved
+sudo systemctl unmask systemd-resolved
+sudo systemctl enable systemd-resolved.service
+sudo systemctl stop systemd-resolved
+sudo systemctl start systemd-resolved
+sudo service network-manager restart
+EOF
 # lightdm --test-mode | (sleep 5; killall lightdm bash )
 EOF
 mkdir /tmp/pipewire
