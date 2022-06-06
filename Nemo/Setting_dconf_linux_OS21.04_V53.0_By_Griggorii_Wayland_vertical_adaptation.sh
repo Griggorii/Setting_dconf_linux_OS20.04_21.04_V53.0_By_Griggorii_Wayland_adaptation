@@ -6044,12 +6044,12 @@ show-hud=['<Alt>']
 active-plugins=['addhelper', 'unityshell', 'place', 'resize', 'water', 'animation', 'opengl', 'blur', 'session', 'unitymtgrabhandles', 'scaleaddon', 'commands', 'colorfilter', 'mousepoll', 'opacify', 'showrepaint', 'wall', 'fade', 'titleinfo', 'thumbnail', 'staticswitcher', 'shift', 'extrawm', 'wallpaper', 'freewins', 'wizard', 'maximumize', 'kdecompat', 'grid', 'mag', 'wobbly', 'resizeinfo', 'td', 'workspacenames', 'animationsim', 'decor', 'neg', 'crashhandler', 'snap', 'clone', 'ezoom', 'trailfocus', 'animationjc', 'winrules', 'annotate', 'ring', 'switcher', 'fadedesktop', 'firepaint', 'animationplus', 'shelf', 'splash', 'workarounds', 'matecompat', 'obs', 'imgjpeg', 'mblur', 'showmouse', 'scale', 'notification', 'bench', 'composite', 'animationaddon', 'cube', 'put', 'vpswitch', 'screenshot', 'move', 'cubeaddon', 'showdesktop', 'rotate', 'expo', 'scalefilter', 'widget', 'core', 'imgsvg', 'imgpng', 'copytex', 'regex', 'compiztoolbox', 'gears', 'gnomecompat']
 
 [org/fedoraproject/FirewallConfig]
-show-active-bindings=true
-show-direct=true
-show-helpers=true
-show-icmp-types=true
-show-ipsets=true
-show-lockdown-whitelist=true
+show-active-bindings=false
+show-direct=false
+show-helpers=false
+show-icmp-types=false
+show-ipsets=false
+show-lockdown-whitelist=false
 
 [org/freedesktop/color-helper]
 display-gamma=2.3999999999999999
@@ -8921,6 +8921,36 @@ gsettings set org.gnome.desktop.background picture-uri '/usr/share/backgrounds/w
 gsettings set org.gnome.desktop.background picture-uri-dark '/usr/share/backgrounds/jj_light_by_Hiking93.jpg'
 
 grep -H -r -n  "20.04" /etc/lsb-release && gsettings set org.gnome.desktop.background picture-uri-dark  '/usr/share/backgrounds/hardy_wallpaper_uhd.png'
+
+# Firewalld fedoraproject
+
+gsettings set org.fedoraproject.FirewallConfig show-icmp-types true
+
+gsettings set org.fedoraproject.FirewallConfig show-lockdown-whitelist true
+
+gsettings set org.fedoraproject.FirewallConfig show-ipsets true
+
+gsettings set org.fedoraproject.FirewallConfig show-helpers true
+
+gsettings set org.fedoraproject.FirewallConfig show-active-bindings true
+
+gsettings set org.fedoraproject.FirewallConfig show-direct true
+
+# OFF/FALSE TEST
+
+gsettings set org.fedoraproject.FirewallConfig show-icmp-types false
+
+gsettings set org.fedoraproject.FirewallConfig show-lockdown-whitelist false
+
+gsettings set org.fedoraproject.FirewallConfig show-ipsets false
+
+gsettings set org.fedoraproject.FirewallConfig show-helpers false
+
+gsettings set org.fedoraproject.FirewallConfig show-active-bindings false
+
+gsettings set org.fedoraproject.FirewallConfig show-direct false
+
+clear
 
 dconf reset -f /org/gnome/nm-applet/eap/
 
@@ -13446,6 +13476,8 @@ grep -H -r -n "egrep" /usr/bin
 lightdm --test-mode
 EOF
 # systemctl status systemd-sysctl
+# Griggorii пригодиться для дальнейшей разработки / полезные заметки в одном из примеров в моем статусе на странице https://github.com/Griggorii есть еще одна команда
+ldconfig -p
 EOF
 clear
 clear
