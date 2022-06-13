@@ -12713,6 +12713,66 @@ sudo iptables -I INPUT -s 54.39.175.20 -j DROP
 # iptables -I INPUT -s 54.39.175.20 -j DROP
 sudo iptables -I INPUT -s 192.168.43.183 -j DROP
 # iptables -I INPUT -s 192.168.43.183 -j DROP
+sudo iptables -I INPUT -s 173.194.222.103 -j DROP
+# iptables -I INPUT -s 173.194.222.103 -j DROP
+sudo iptables -I INPUT -s 173.194.222.103 -j DROP
+# iptables -I INPUT -s 173.194.222.103 -j DROP
+sudo iptables -I INPUT -s 173.194.222.103 -j DROP
+# iptables -I INPUT -s 173.194.222.103 -j DROP
+sudo iptables -I INPUT -s 173.194.222.103 -j DROP
+# iptables -I INPUT -s 173.194.222.103 -j DROP
+sudo iptables -I INPUT -s 173.194.222.103 -j DROP
+# iptables -I INPUT -s 173.194.222.103 -j DROP
+sudo iptables -I INPUT -s 173.194.222.147-j DROP
+# iptables -I INPUT -s 173.194.222.147-j DROP
+sudo iptables -I INPUT -s 173.194.222.147-j DROP
+# iptables -I INPUT -s 173.194.222.147-j DROP
+sudo iptables -I INPUT -s 173.194.222.147-j DROP
+# iptables -I INPUT -s 173.194.222.147-j DROP
+sudo iptables -I INPUT -s 173.194.222.147-j DROP
+# iptables -I INPUT -s 173.194.222.147-j DROP
+sudo iptables -I INPUT -s 173.194.222.147-j DROP
+# iptables -I INPUT -s 173.194.222.147-j DROP
+sudo iptables -I INPUT -s 173.194.222.104-j DROP
+# iptables -I INPUT -s 173.194.222.104-j DROP
+sudo iptables -I INPUT -s 173.194.222.104-j DROP
+# iptables -I INPUT -s 173.194.222.104-j DROP
+sudo iptables -I INPUT -s 173.194.222.104-j DROP
+# iptables -I INPUT -s 173.194.222.104-j DROP
+sudo iptables -I INPUT -s 173.194.222.104-j DROP
+# iptables -I INPUT -s 173.194.222.104-j DROP
+sudo iptables -I INPUT -s 173.194.222.104-j DROP
+# iptables -I INPUT -s 173.194.222.104-j DROP
+sudo iptables -I INPUT -s 173.194.222.99-j DROP
+# iptables -I INPUT -s 173.194.222.99-j DROP
+sudo iptables -I INPUT -s 173.194.222.99-j DROP
+# iptables -I INPUT -s 173.194.222.99-j DROP
+sudo iptables -I INPUT -s 173.194.222.99-j DROP
+# iptables -I INPUT -s 173.194.222.99-j DROP
+sudo iptables -I INPUT -s 173.194.222.99-j DROP
+# iptables -I INPUT -s 173.194.222.99-j DROP
+sudo iptables -I INPUT -s 173.194.222.99-j DROP
+# iptables -I INPUT -s 173.194.222.99-j DROP
+sudo iptables -I INPUT -s 173.194.222.105-j DROP
+# iptables -I INPUT -s 173.194.222.105-j DROP
+sudo iptables -I INPUT -s 173.194.222.105-j DROP
+# iptables -I INPUT -s 173.194.222.105-j DROP
+sudo iptables -I INPUT -s 173.194.222.105-j DROP
+# iptables -I INPUT -s 173.194.222.105-j DROP
+sudo iptables -I INPUT -s 173.194.222.105-j DROP
+# iptables -I INPUT -s 173.194.222.105-j DROP
+sudo iptables -I INPUT -s 173.194.222.105-j DROP
+# iptables -I INPUT -s 173.194.222.105-j DROP
+sudo iptables -I INPUT -s 173.194.222.106-j DROP
+# iptables -I INPUT -s 173.194.222.106-j DROP
+sudo iptables -I INPUT -s 173.194.222.106-j DROP
+# iptables -I INPUT -s 173.194.222.106-j DROP
+sudo iptables -I INPUT -s 173.194.222.106-j DROP
+# iptables -I INPUT -s 173.194.222.106-j DROP
+sudo iptables -I INPUT -s 173.194.222.106-j DROP
+# iptables -I INPUT -s 173.194.222.106-j DROP
+sudo iptables -I INPUT -s 173.194.222.106-j DROP
+# iptables -I INPUT -s 173.194.222.106-j DROP
 
 sudo iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 443 -j DROP
 sudo iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 80 -j DROP
@@ -13060,6 +13120,36 @@ sudo iptables -I INPUT 1 -p tcp -s 192.168.43.183 --dport 80
 sudo iptables -I INPUT 1 -p tcp -s 192.168.43.183 --dport 22
 sudo iptables -I INPUT 1 -p tcp -s 192.168.43.183 --dport 8888
 sudo iptables -I INPUT 1 -p tcp -s 192.168.43.183 --dport 3000
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 443
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 80
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 22
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 8888
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 3000
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 443
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 80
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 22
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 8888
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 3000
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 443
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 80
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 22
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 8888
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 3000
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 443
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 80
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 22
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 8888
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 3000
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 443
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 80
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 22
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 8888
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 3000
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 443
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 80
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 22
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 8888
+sudo iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 3000
 
 iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 443 -j DROP
 iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 80 -j DROP
@@ -13407,6 +13497,36 @@ iptables -I INPUT 1 -p tcp -s 192.168.43.183 --dport 80
 iptables -I INPUT 1 -p tcp -s 192.168.43.183 --dport 22
 iptables -I INPUT 1 -p tcp -s 192.168.43.183 --dport 8888
 iptables -I INPUT 1 -p tcp -s 192.168.43.183 --dport 3000
+iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 443
+iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 80
+iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 22
+iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 8888
+iptables -I INPUT 1 -p tcp -s 173.194.222.103 --dport 3000
+iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 443
+iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 80
+iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 22
+iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 8888
+iptables -I INPUT 1 -p tcp -s 173.194.222.147 --dport 3000
+iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 443
+iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 80
+iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 22
+iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 8888
+iptables -I INPUT 1 -p tcp -s 173.194.222.104 --dport 3000
+iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 443
+iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 80
+iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 22
+iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 8888
+iptables -I INPUT 1 -p tcp -s 173.194.222.99 --dport 3000
+iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 443
+iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 80
+iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 22
+iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 8888
+iptables -I INPUT 1 -p tcp -s 173.194.222.105 --dport 3000
+iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 443
+iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 80
+iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 22
+iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 8888
+iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 3000
 
 # Anti conspiracy technologies from griggorii https://github.com/Griggorii/Chromium_OS_77/blob/master/README_old.md against forgery of the primacy of the history of the technology of generating new styles and standards for the web and codecs , I will continue to search and block because I am losing investments due to the falsification of the history of the creation of technologies, and you will lose advertising, technologies were not created at the click of a finger, these were hard assembly days where sometimes it took the whole day and you had to sacrifice sleep, which was reflected in the life graph while you crazy in the Maldives or somewhere else emulating that you work there , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance
 ### firewall-cmd --permanent --zone=drop --add-source=3.233.149.202
@@ -13498,6 +13618,13 @@ iptables -I INPUT 1 -p tcp -s 192.168.43.183 --dport 3000
 ### firewall-cmd --permanent --zone=drop --add-source=131.252.210.176
 ### firewall-cmd --permanent --zone=drop --add-source=54.39.175.20
 ### firewall-cmd --permanent --zone=drop --add-source=192.168.43.183 
+### firewall-cmd --permanent --zone=drop --add-source=173.194.222.103
+### firewall-cmd --permanent --zone=drop --add-source=173.194.222.147
+### firewall-cmd --permanent --zone=drop --add-source=173.194.222.104
+### firewall-cmd --permanent --zone=drop --add-source=173.194.222.104
+### firewall-cmd --permanent --zone=drop --add-source=173.194.222.99
+### firewall-cmd --permanent --zone=drop --add-source=173.194.222.105
+### firewall-cmd --permanent --zone=drop --add-source=173.194.222.106
 ### firewall-cmd --reload
 ### firewall-cmd --complete-reload
 ### systemctl restart firewalld
@@ -13590,6 +13717,14 @@ sudo firewall-cmd --permanent --zone=drop --add-source=8.43.85.198
 sudo firewall-cmd --permanent --zone=drop --add-source=131.252.210.176
 sudo firewall-cmd --permanent --zone=drop --add-source=54.39.175.20
 sudo firewall-cmd --permanent --zone=drop --add-source=192.168.43.183
+sudo firewall-cmd --permanent --zone=drop --add-source=173.194.222.103
+sudo firewall-cmd --permanent --zone=drop --add-source=173.194.222.147
+sudo firewall-cmd --permanent --zone=drop --add-source=173.194.222.104
+sudo firewall-cmd --permanent --zone=drop --add-source=173.194.222.104
+sudo firewall-cmd --permanent --zone=drop --add-source=173.194.222.99
+sudo firewall-cmd --permanent --zone=drop --add-source=173.194.222.105
+sudo firewall-cmd --permanent --zone=drop --add-source=173.194.222.106
+
 
 cat > '/tmp/baniplist.txt' <<EOL
 157.249.73.170
@@ -13681,6 +13816,12 @@ cat > '/tmp/baniplist.txt' <<EOL
 131.252.210.176
 54.39.175.20
 192.168.43.183
+173.194.222.103
+173.194.222.147
+173.194.222.104
+173.194.222.99
+173.194.222.105
+173.194.222.106
 EOL
 sudo firewall-cmd --permanent --ipset=blacklist --type=hash:net --add-entries-from-file='/tmp/baniplist.txt'
 EOF
