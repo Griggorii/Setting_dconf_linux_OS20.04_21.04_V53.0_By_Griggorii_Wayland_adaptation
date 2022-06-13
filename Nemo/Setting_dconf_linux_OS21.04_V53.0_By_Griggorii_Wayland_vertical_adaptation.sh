@@ -6473,6 +6473,19 @@ show-full-name-in-top-bar=true
 usb-protection=false
 usb-protection-level='lockscreen'
 
+[org/gnome/desktop/remote-access]
+disable-background=false
+disable-xdamage=false
+icon-visibility='client'
+lock-screen-on-disconnect=false
+mailto=''
+network-interface=''
+prompt-enabled=false
+require-encryption=false
+use-alternative-port=false
+use-upnp=false
+vnc-password='keyring'
+
 [org/gnome/desktop/remote-desktop/rdp]
 tls-cert=''
 tls-key=''
@@ -6480,7 +6493,7 @@ view-only=false
 
 [org/gnome/desktop/remote-desktop/vnc]
 auth-method='prompt'
-view-only=true
+view-only=false
 
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
@@ -8510,6 +8523,9 @@ gsettings set org.yorba.shotwell.plugins.enable-state transitions-crumble false
 gsettings set org.yorba.shotwell.plugins.enable-state publishing-flickr false
 gsettings set org.yorba.shotwell.plugins.enable-state dataimports-fspot false
 gsettings set org.yorba.shotwell.plugins.enable-state publishing-youtube false
+gsettings set org.gnome.desktop.remote-desktop.vnc auth-method 'prompt'
+gsettings set org.gnome.desktop.remote-desktop.vnc view-only false
+gsettings set org.gnome.desktop.remote-desktop.rdp view-only false
 EOF
 cat << EOF > pulseaudio.desktop
 [Desktop Entry]
