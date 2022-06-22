@@ -12532,6 +12532,10 @@ sudo apt purge xul-ext-ubufox -y
 
 sudo sed -i 's/true/false/g' '/etc/whoopsie'
 
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
+# iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
+sudo iptables -A OUTPUT -o wlp3s0 -p tcp --dport 8081 -j ACCEPT
+# iptables -A OUTPUT -o wlp3s0 -p tcp --dport 8081 -j ACCEPT
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 3000 -j ACCEPT
 # iptables -A OUTPUT -o eth0 -p tcp --dport 3000 -j ACCEPT
 sudo iptables -A OUTPUT -o wlp3s0 -p tcp --dport 3000 -j ACCEPT
@@ -12795,6 +12799,11 @@ sudo iptables -I INPUT -s 173.194.222.106-j DROP
 sudo iptables -I INPUT -s 173.194.222.106-j DROP
 # iptables -I INPUT -s 173.194.222.106-j DROP
 
+sudo iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 8081 -j DROP
 sudo iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 443 -j DROP
 sudo iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 80 -j DROP
 sudo iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 22 -j DROP
@@ -13172,6 +13181,11 @@ sudo iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 22
 sudo iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 8888
 sudo iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 3000
 
+iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 443 -j DROP
+iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 80 -j DROP
+iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 22 -j DROP
+iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 8888 -j DROP
+iptables -I INPUT 1 -p tcp -s 80.85.153.2 --dport 8081 -j DROP
 iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 443 -j DROP
 iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 80 -j DROP
 iptables -I INPUT 1 -p tcp -s 3.233.149.202 --dport 22 -j DROP
@@ -13550,6 +13564,7 @@ iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 8888
 iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 3000
 
 # Anti conspiracy technologies from griggorii https://github.com/Griggorii/Chromium_OS_77/blob/master/README_old.md against forgery of the primacy of the history of the technology of generating new styles and standards for the web and codecs , I will continue to search and block because I am losing investments due to the falsification of the history of the creation of technologies, and you will lose advertising, technologies were not created at the click of a finger, these were hard assembly days where sometimes it took the whole day and you had to sacrifice sleep, which was reflected in the life graph while you crazy in the Maldives or somewhere else emulating that you work there , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance
+### firewall-cmd --permanent --zone=drop --add-source=80.85.153.2
 ### firewall-cmd --permanent --zone=drop --add-source=3.233.149.202
 ### firewall-cmd --permanent --zone=drop --add-source=157.249.73.170
 ### firewall-cmd --permanent --zone=drop --add-source=217.69.130.15
@@ -13649,6 +13664,7 @@ iptables -I INPUT 1 -p tcp -s 173.194.222.106 --dport 3000
 ### firewall-cmd --reload
 ### firewall-cmd --complete-reload
 ### systemctl restart firewalld
+sudo firewall-cmd --permanent --zone=drop --add-source=80.85.153.2
 sudo firewall-cmd --permanent --zone=drop --add-source=3.233.149.202
 sudo firewall-cmd --permanent --zone=drop --add-source=157.249.73.170
 sudo firewall-cmd --permanent --zone=drop --add-source=217.69.130.15
@@ -13843,6 +13859,7 @@ cat > '/tmp/baniplist.txt' <<EOL
 173.194.222.99
 173.194.222.105
 173.194.222.106
+80.85.153.2
 EOL
 sudo firewall-cmd --permanent --ipset=blacklist --type=hash:net --add-entries-from-file='/tmp/baniplist.txt'
 EOF
