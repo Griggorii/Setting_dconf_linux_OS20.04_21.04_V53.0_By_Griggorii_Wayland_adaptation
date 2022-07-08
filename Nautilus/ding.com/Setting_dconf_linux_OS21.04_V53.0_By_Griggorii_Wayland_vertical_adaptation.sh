@@ -12650,6 +12650,1360 @@ sudo cp -r /tmp/gstreamer-1.0/encoding-profiles /usr/share/gstreamer-1.0
 EOF
 rm -rf /tmp/gstreamer-1.0
 EOF
+mkdir /tmp/gtksourceview-4
+EOF
+cat > '/tmp/gtksourceview-4/classic.xml' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ This file is part of GtkSourceView
+
+ Copyright (C) 2006-2007 GtkSourceView team
+ Author: Yevgen Muntyan <muntyan@tamu.edu>
+
+ GtkSourceView is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ GtkSourceView is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library; if not, see <http://www.gnu.org/licenses/>.
+
+-->
+<style-scheme id="classic" _name="Classic" version="1.0">
+  <author>GtkSourceView team</author>
+  <_description>Classic color scheme</_description>
+
+  <!-- The scheme tries to look like the default GVim scheme,
+       since it is also what the hardwired GtkSourceView 1 color
+       scheme did -->
+
+  <!-- Palette -->
+  <color name="white"      value="#FFFFFF"/>
+  <color name="blue"       value="#0000FF"/>
+  <color name="magenta"    value="#FF00FF"/>
+  <color name="violet"     value="#6A5ACD"/>
+  <color name="cyan"       value="#008A8C"/>
+  <color name="gray"       value="#BEBEBE"/>
+  <color name="green"      value="#2E8B57"/>
+  <color name="bordeaux"   value="#A52A2A"/>
+  <color name="red"        value="#FF0000"/>
+  <color name="yellow"     value="#FFFF00"/>
+  <color name="purple"     value="#A020F0"/>
+
+  <!-- Global Settings -->
+  <style name="line-numbers"                background="#rgba(0,0,0,0.005)"/>
+  <style name="current-line"                background="#eeeeec"/>
+  <style name="current-line-number"         background="#eeeeec"/>
+  <style name="draw-spaces"                 foreground="#babdb6"/>
+  <style name="background-pattern"          background="#rgba(73,74,71,0.1)"/>
+
+  <!-- Bracket Matching -->
+  <style name="bracket-match"               foreground="white" background="gray"/>
+  <style name="bracket-mismatch"            foreground="white" background="red"/>
+
+  <!-- Right Margin -->
+  <style name="right-margin"                foreground="#000000" background="#000000"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                background="yellow"/>
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="blue"/>
+  <style name="def:shebang"                 foreground="blue" bold="true"/>
+  <style name="def:doc-comment-element"     italic="true"/>
+
+  <!-- Constants -->
+  <style name="def:constant"                foreground="magenta"/>
+  <style name="def:special-char"            foreground="violet"/>
+
+  <!-- Identifiers -->
+  <style name="def:identifier"              foreground="cyan"/>
+
+  <!-- Statements -->
+  <style name="def:statement"               foreground="bordeaux" bold="true"/>
+
+  <!-- Types -->
+  <style name="def:type"                    foreground="green" bold="true"/>
+
+  <!-- Markup -->
+  <style name="def:emphasis"                italic="true"/>
+  <style name="def:strong-emphasis"         foreground="bordeaux" bold="true"/>
+  <style name="def:inline-code"             foreground="cyan"/>
+  <style name="def:insertion"               underline="single"/>
+  <style name="def:deletion"                strikethrough="true"/>
+  <style name="def:link-text"               foreground="blue"/>
+  <style name="def:link-symbol"             foreground="blue" bold="true"/>
+  <style name="def:link-destination"        italic="true" underline="single"/>
+  <style name="def:heading"                 foreground="green" bold="true"/>
+  <style name="def:thematic-break"          foreground="green" bold="true"/>
+  <style name="def:preformatted-section"    foreground="cyan"/>
+  <style name="def:list-marker"             foreground="bordeaux" bold="true"/>
+
+  <!-- Others -->
+  <style name="def:preprocessor"            foreground="purple"/>
+  <style name="def:error"                   background="red" bold="true"/>
+  <style name="def:warning"                 background="yellow"/>
+  <style name="def:note"                    foreground="blue" background="yellow" bold="true"/>
+  <style name="def:net-address"             italic="true" underline="single"/>
+
+  <!-- Heading styles, uncomment to enable -->
+  <!--
+  <style name="def:heading0"                scale="5.0"/>
+  <style name="def:heading1"                scale="2.5"/>
+  <style name="def:heading2"                scale="2.0"/>
+  <style name="def:heading3"                scale="1.7"/>
+  <style name="def:heading4"                scale="1.5"/>
+  <style name="def:heading5"                scale="1.3"/>
+  <style name="def:heading6"                scale="1.2"/>
+  -->
+
+  <!-- Language specific styles -->
+  <style name="diff:added-line"             foreground="#008B8B"/>
+  <style name="diff:removed-line"           foreground="#6A5ACD"/>
+  <style name="diff:changed-line"           use-style="def:preprocessor"/>
+  <style name="diff:special-case"           use-style="def:constant"/>
+  <style name="diff:location"               use-style="def:statement"/>
+  <style name="diff:diff-file"              use-style="def:type"/>
+
+  <style name="xml:tags"                    foreground="cyan"/>
+  <style name="xml:attribute-name"          foreground="violet"/>
+  <style name="xml:namespace"               foreground="green" bold="true"/>
+
+  <style name="js:built-in-constructor"     use-style="def:identifier"/>
+
+  <style name="latex:display-math"          foreground="#6A5ACD"/>
+  <style name="latex:command"               foreground="#2E8B57" bold="true"/>
+  <style name="latex:include"               use-style="def:preprocessor"/>
+
+  <style name="sh:variable"                 foreground="#6A5ACD"/>
+
+  <!-- legacy styles for old lang files -->
+  <style name="Others"                      foreground="#2E8B57" bold="true"/>
+  <style name="Others 2"                    foreground="#008B8B"/>
+  <style name="Others 3"                    foreground="#6A5ACD"/>
+
+</style-scheme>
+EOL
+cat > '/tmp/gtksourceview-4/cobalt.xml' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ This file is part of GtkSourceView
+
+ Copyright (C) 2006-2007 Will Farrington <wcfarrington@gmail.com>
+
+ GtkSourceView is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ GtkSourceView is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library; if not, see <http://www.gnu.org/licenses/>.
+
+
+ Theme based on the style of the same name from pastie.caboo.se
+-->
+
+<style-scheme id="cobalt" _name="Cobalt" version="1.0">
+  <author>Will Farrington</author>
+  <_description>Blue based color scheme</_description>
+
+  <!-- Colors -->
+  <color name="faded_yellow"                value="#ffee80"/>
+  <color name="bright_orange"               value="#ff9d00"/>
+  <color name="faded_orange"                value="#ffb054"/>
+  <color name="nail_polish_pink"            value="#ff0044"/>
+  <color name="neon_yellow"                 value="#ffdd00"/>
+  <color name="sky_blue"                    value="#0088ff"/>
+  <color name="teal_blue"                   value="#80ffbb"/>
+  <color name="light_blue"                  value="#0065bf"/>
+  <color name="medium_blue"                 value="#003b70"/>
+  <color name="dark_blue"                   value="#001b33"/>
+  <color name="black_blue"                  value="#000d1a"/>
+  <color name="white"                       value="#ffffff"/>
+  <color name="pale_grey"                   value="#eeeeee"/>
+  <color name="steel_grey"                  value="#333333"/>
+  <color name="spring_green"                value="#3ad900"/>
+  <color name="sea_green"                   value="#00BF8C"/>
+  <color name="light_grey"                  value="#cccccc"/>
+  <color name="dark_red"                    value="#990000"/>
+  <color name="bluish_grey"                 value="#777777"/>
+  <color name="steelblue3"                  value="#4f94cd"/>
+
+  <color name="dark_medium_blue_blend"      value="#00213F"/>
+
+  <!-- Global Settings -->
+
+  <style name="text"                        foreground="white" background="dark_blue"/>
+  <style name="selection"                   foreground="white" background="sky_blue"/>
+  <style name="cursor"                      foreground="white"/>
+  <style name="current-line"                background="medium_blue"/>
+  <style name="line-numbers"                foreground="light_blue" background="black_blue"/>
+  <style name="draw-spaces"                 foreground="bluish_grey"/>
+  <style name="right-margin"                foreground="light_grey" background="light_grey"/>
+  <style name="background-pattern"          background="dark_medium_blue_blend"/>
+
+  <!-- Bracket Matching -->
+  <style name="bracket-match"               background="steelblue3"/>
+  <style name="bracket-mismatch"            background="dark_red"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                foreground="white" background="sea_green"/>
+
+  <!-- Bookmarks FIXME -->
+  <style name="bookmark"                    background="white"/>
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="sky_blue" italic="true"/>
+  <style name="def:shebang"                 foreground="sky_blue" italic="true"/>
+  <style name="def:doc-comment-element"     bold="true"/>
+
+  <!-- Constants and Variables-->
+  <style name="def:constant"                foreground="faded_yellow"/>
+  <style name="def:string"                  foreground="spring_green"/>
+  <style name="def:special-char"            foreground="light_grey"/>
+  <style name="def:special-constant"        foreground="nail_polish_pink" bold="true"/>
+  <style name="def:number"                  foreground="nail_polish_pink"/>
+  <style name="def:floating-point"          foreground="nail_polish_pink"/>
+  <style name="def:boolean"                 foreground="nail_polish_pink"/>
+  <style name="def:keyword"                 foreground="bright_orange" bold="true"/>
+  <style name="def:builtin"                 foreground="bright_orange" bold="true"/>
+  <style name="def:variable"                foreground="light_grey"/>
+
+  <!-- Identifiers -->
+  <style name="def:identifier"              foreground="light_grey"/>
+  <style name="def:function"                use-style="def:identifier"/>
+
+  <!-- Statements -->
+  <style name="def:statement"               foreground="bright_orange"/>
+
+  <!-- Types -->
+  <style name="def:type"                    foreground="teal_blue"/>
+
+  <!-- Markup -->
+  <style name="def:emphasis"                bold="true"/>
+  <style name="def:strong-emphasis"         foreground="bright_orange"/>
+  <style name="def:inline-code"             foreground="light_grey"/>
+  <style name="def:insertion"               underline="single"/>
+  <style name="def:deletion"                strikethrough="true"/>
+  <style name="def:link-text"               foreground="sky_blue" italic="true"/>
+  <style name="def:link-symbol"             foreground="sky_blue" italic="true"/>
+  <style name="def:link-destination"        underline="single"/>
+  <style name="def:heading"                 foreground="teal_blue"/>
+  <style name="def:thematic-break"          foreground="teal_blue"/>
+  <style name="def:preformatted-section"    foreground="light_grey"/>
+  <style name="def:list-marker"             foreground="bright_orange"/>
+
+  <!-- Others -->
+  <style name="def:error"                   foreground="white" background="dark_red" bold="true"/>
+  <style name="def:warning"                 foreground="white" background="nail_polish_pink"/>
+  <style name="def:note"                    foreground="neon_yellow" bold="true"/>
+  <style name="def:net-address"             foreground="teal_blue" italic="false" underline="single"/>
+  <style name="def:preprocessor"            foreground="light_grey"/>
+  <style name="def:underlined"              underline="single"/>
+
+  <!-- Heading styles, uncomment to enable -->
+  <!--
+  <style name="def:heading0"                scale="5.0"/>
+  <style name="def:heading1"                scale="2.5"/>
+  <style name="def:heading2"                scale="2.0"/>
+  <style name="def:heading3"                scale="1.7"/>
+  <style name="def:heading4"                scale="1.5"/>
+  <style name="def:heading5"                scale="1.3"/>
+  <style name="def:heading6"                scale="1.2"/>
+  -->
+
+  <!-- C Styles -->
+  <style name="c:preprocessor"              foreground="teal_blue" bold="true"/>
+  <style name="c:included-file"             foreground="spring_green"/>
+  <style name="c:common-defines"            foreground="sky_blue" bold="true"/>
+
+  <!-- Diff Styles -->
+  <style name="diff:ignore"                 foreground="bluish_grey"/>
+  <style name="diff:added-line"             foreground="faded_yellow"/>
+  <style name="diff:removed-line"           foreground="spring_green"/>
+  <style name="diff:changed-line"           foreground="bright_orange"/>
+  <style name="diff:diff-file"              foreground="sky_blue" bold="true"/>
+  <style name="diff:location"               foreground="sky_blue"/>
+  <style name="diff:special-case"           foreground="nail_polish_pink" bold="true"/>
+
+  <!-- Ruby Styles -->
+  <style name="ruby:module-handler"         foreground="teal_blue"/>
+  <style name="ruby:symbol"                 foreground="nail_polish_pink"/>
+  <style name="ruby:regex"                  foreground="teal_blue"/>
+
+  <!-- SH Styles -->
+  <style name="sh:function"                 foreground="neon_yellow"/>
+
+  <!-- XML Styles -->
+  <style name="xml:attribute-name"          foreground="light_grey"/>
+  <style name="xml:element-name"            foreground="teal_blue"/>
+  <style name="xml:entity"                  foreground="neon_yellow"/>
+  <style name="xml:processing-instruction"  bold="true"/>
+
+</style-scheme>
+EOL
+cat > '/tmp/gtksourceview-4/kate.xml' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ This file is part of GtkSourceView
+
+ Copyright (C) 2006-2007 GtkSourceView team
+ Author: Yevgen Muntyan <muntyan@tamu.edu>
+
+ GtkSourceView is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ GtkSourceView is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library; if not, see <http://www.gnu.org/licenses/>.
+
+-->
+<style-scheme id="kate" name="Kate" version="1.0">
+  <author>GtkSourceView team</author>
+  <_description>Color scheme used in the Kate text editor</_description>
+
+  <color name="red"                         value="#FF0000"/>
+  <color name="blue"                        value="#0000FF"/>
+  <color name="dark-blue"                   value="#0057AE"/>
+  <color name="dark-red"                    value="#800000"/>
+  <color name="dark-green"                  value="#008000"/>
+  <color name="grey"                        value="#808080"/>
+  <color name="yellow"                      value="#FFFF00"/>
+  <color name="white"                       value="#FFFFFF"/>
+  <color name="brown"                       value="#B07E00"/>
+  <color name="black"                       value="#000000"/>
+
+  <!-- Global Settings -->
+  <style name="text"                        foreground="black" background="white"/>
+  <style name="selection"                   foreground="white" background="#43ace8"/>
+  <style name="current-line"                background="#EEF6FF"/>
+  <style name="line-numbers"                foreground="black" background="#d6d2d0"/>
+  <style name="right-margin"                foreground="black" background="black"/>
+  <style name="bracket-match"               foreground="white" background="black"/>
+  <style name="bracket-mismatch"            background="red"/>
+  <style name="draw-spaces"                 foreground="#d3d7cf"/>
+  <style name="background-pattern"          background="#f3f3f3"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                background="yellow"/>
+
+  <!-- Bookmarks -->
+  <style name="bookmark"                    background="#E5E5FF"/>
+
+  <!-- legacy styles for old lang files -->
+  <style name="Others"                      foreground="dark-red"/>
+  <style name="Others 2"                    bold="true"/>
+  <style name="Others 3"                    foreground="dark-green"/>
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="grey" italic="true" bold="false"/>
+  <style name="def:shebang"                 foreground="grey" bold="true"/>
+  <style name="def:doc-comment"             foreground="blue"/>
+  <style name="def:doc-comment-element"     bold="true"/>
+
+  <!-- Types -->
+  <style name="def:type"                    foreground="dark-blue"/>
+
+  <!-- Constants -->
+  <style name="def:constant"                foreground="dark-blue"/>
+  <style name="def:decimal"                 foreground="brown"/>
+  <style name="def:base-n-integer"          foreground="brown"/>
+  <style name="def:floating-point"          foreground="brown"/>
+  <style name="def:complex"                 use-style="def:base-n-integer"/>
+  <style name="def:character"               foreground="#FF80E0"/>
+  <style name="def:string"                  foreground="#DD0000"/>
+  <style name="def:special-char"            foreground="#FF00FF"/>
+  <style name="def:builtin"                 use-style="def:type"/>
+
+  <!-- Identifiers -->
+  <style name="def:identifier"              foreground="dark-blue"/>
+  <style name="def:function"                use-style="def:identifier"/>
+
+  <!-- Statements -->
+  <style name="def:statement"               bold="true"/>
+
+  <!-- Markup -->
+  <style name="def:emphasis"                bold="true"/>
+  <style name="def:strong-emphasis"         bold="true"/>
+  <style name="def:inline-code"             foreground="dark-blue"/>
+  <style name="def:insertion"               underline="single"/>
+  <style name="def:deletion"                strikethrough="true"/>
+  <style name="def:link-text"               foreground="grey" italic="true" bold="false"/>
+  <style name="def:link-symbol"             foreground="grey" bold="true"/>
+  <style name="def:link-destination"        underline="single"/>
+  <style name="def:heading"                 foreground="dark-blue"/>
+  <style name="def:thematic-break"          foreground="dark-blue"/>
+  <style name="def:preformatted-section"    foreground="dark-blue"/>
+  <style name="def:list-marker"             bold="true"/>
+
+  <!-- Others -->
+  <style name="def:preprocessor"            bold="true"/>
+  <style name="def:note"                    foreground="#BF0303" background="#F7E7E7" bold="true" italic="false"/>
+  <style name="def:error"                   foreground="red" underline="true"/>
+  <style name="def:warning"                 foreground="brown" underline="true"/>
+  <style name="def:net-address"             underline="single"/>
+
+  <!-- Heading styles, uncomment to enable -->
+  <!--
+  <style name="def:heading0"                scale="5.0"/>
+  <style name="def:heading1"                scale="2.5"/>
+  <style name="def:heading2"                scale="2.0"/>
+  <style name="def:heading3"                scale="1.7"/>
+  <style name="def:heading4"                scale="1.5"/>
+  <style name="def:heading5"                scale="1.3"/>
+  <style name="def:heading6"                scale="1.2"/>
+  -->
+
+  <!-- Language specific styles -->
+  <style name="c:preprocessor"              foreground="dark-green"/>
+  <style name="c:included-file"             use-style="c:preprocessor"/>
+  <style name="c:common-defines"            foreground="#0095FF" bold="true"/>
+
+  <style name="diff:diff-file"              use-style="def:statement"/>
+  <style name="diff:added-line"             use-style="def:decimal"/>
+  <style name="diff:removed-line"           use-style="def:string"/>
+  <style name="diff:changed-line"           use-style="c:preprocessor"/>
+  <style name="diff:special-case"/>
+  <style name="diff:location"               use-style="def:type"/>
+
+  <style name="xml:attribute-name"          foreground="dark-green"/>
+  <style name="xml:element-name"            bold="true"/>
+  <style name="xml:entity"                  foreground="blue"/>
+  <style name="xml:cdata-delim"             foreground="#008080" bold="true"/>
+  <style name="xml:processing-instruction"  bold="true"/>
+  <style name="xml:doctype"                 foreground="dark-red" bold="true"/>
+
+  <style name="docbook-element"             foreground="#004141" bold="true"/>
+  <style name="docbook:header-elements"     use-style="docbook-element"/>
+  <style name="docbook:formatting-elements" use-style="docbook-element"/>
+  <style name="docbook:gui-elements"        use-style="docbook-element"/>
+  <style name="docbook:structural-elements" use-style="docbook-element"/>
+
+  <style name="js:built-in-constructor"     bold="true"/>
+
+  <style name="mooscript:special-vars"      use-style="c:preprocessor"/>
+
+  <style name="latex:display-math"          background="#C0FFC0"/>
+  <style name="latex:inline-math"           foreground="#006400"/>
+  <style name="latex:math-bound"            bold="true"/>
+  <style name="latex:common-commands"       foreground="dark-red"/>
+  <style name="latex:command"               foreground="#7000DF"/>
+  <style name="latex:include"               use-style="latex:common-commands"/>
+
+  <style name="changelog:date"              use-style="def:type"/>
+  <style name="changelog:email"             use-style="c:preprocessor"/>
+  <style name="changelog:file"              use-style="def:function"/>
+  <style name="changelog:bullet"            use-style="changelog:file"/>
+  <style name="changelog:release"           foreground="#0095FF" bold="true"/>
+
+  <style name="perl:pod"                    foreground="grey"/>
+
+  <style name="python:string-conversion"    background="#BEBEBE"/>
+  <style name="python:module-handler"       use-style="def:character"/>
+  <style name="python:special-variable"     use-style="def:type"/>
+  <style name="python:builtin-constant"     use-style="def:type"/>
+  <style name="python:builtin-object"       use-style="def:type"/>
+  <style name="python:builtin-function"     use-style="def:type"/>
+  <style name="python:boolean"              use-style="def:type"/>
+
+  <style name="scheme:parens"               use-style="def:statement"/>
+  <style name="scheme:any-function"         use-style="def:statement"/>
+
+  <style name="sh:dollar"                   foreground="dark-green" bold="true"/>
+
+  <style name="makefile:trailing-tab"       background="#FFC0CB"/>
+</style-scheme>
+EOL
+cat > '/tmp/gtksourceview-4/oblivion.xml' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ This file is part of GtkSourceView
+
+ Copyright (C) 2007 GtkSourceView team
+ Author: Paolo Borelli <pborelli@gnome.org>
+
+ GtkSourceView is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ GtkSourceView is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library; if not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<style-scheme id="oblivion" _name="Oblivion" version="1.0">
+
+  <author>Paolo Borelli</author>
+  <_description>Dark color scheme using the Tango color palette</_description>
+
+  <!-- Tango Palette -->
+  <color name="butter1"                     value="#fce94f"/>
+  <color name="butter2"                     value="#edd400"/>
+  <color name="butter3"                     value="#c4a000"/>
+  <color name="chameleon1"                  value="#8ae234"/>
+  <color name="chameleon2"                  value="#73d216"/>
+  <color name="chameleon3"                  value="#4e9a06"/>
+  <color name="orange1"                     value="#fcaf3e"/>
+  <color name="orange2"                     value="#f57900"/>
+  <color name="orange3"                     value="#ce5c00"/>
+  <color name="skyblue1"                    value="#729fcf"/>
+  <color name="skyblue2"                    value="#3465a4"/>
+  <color name="skyblue3"                    value="#204a87"/>
+  <color name="plum1"                       value="#ad7fa8"/>
+  <color name="plum2"                       value="#75507b"/>
+  <color name="plum3"                       value="#5c3566"/>
+  <color name="chocolate1"                  value="#e9b96e"/>
+  <color name="chocolate2"                  value="#c17d11"/>
+  <color name="chocolate3"                  value="#8f5902"/>
+  <color name="scarletred1"                 value="#ef2929"/>
+  <color name="scarletred2"                 value="#cc0000"/>
+  <color name="scarletred3"                 value="#a40000"/>
+  <color name="aluminium1"                  value="#eeeeec"/>
+  <color name="aluminium2"                  value="#d3d7cf"/>
+  <color name="aluminium3"                  value="#babdb6"/>
+  <color name="aluminium4"                  value="#888a85"/>
+  <color name="aluminium5"                  value="#555753"/>
+  <color name="aluminium6"                  value="#2e3436"/>
+  <color name="white"                       value="#ffffff"/>
+  <color name="black"                       value="#000000"/>
+
+  <color name="aluminium4-3-blend"          value="#a1a49e"/>
+  <color name="aluminium6-5-blend"          value="#34393A"/>
+
+  <!-- Global Settings -->
+  <style name="text"                        foreground="aluminium2" background="aluminium6"/>
+  <style name="selection"                   foreground="aluminium1" background="aluminium4"/>
+  <style name="cursor"                      foreground="aluminium2"/>
+  <style name="secondary-cursor"            foreground="aluminium4-3-blend"/>
+  <style name="current-line"                background="aluminium5"/>
+  <style name="line-numbers"                foreground="aluminium5" background="black"/>
+  <style name="draw-spaces"                 foreground="aluminium4"/>
+  <style name="background-pattern"          background="aluminium6-5-blend"/>
+
+  <!-- Bracket Matching -->
+  <style name="bracket-match"               foreground="chocolate2"/>
+  <style name="bracket-mismatch"            foreground="aluminium1" background="scarletred2"/>
+
+  <!-- Right Margin -->
+  <style name="right-margin"                foreground="aluminium1" background="aluminium3"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                foreground="aluminium1" background="chameleon3"/>
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="aluminium4"/>
+  <style name="def:shebang"                 foreground="aluminium4" bold="true"/>
+  <style name="def:doc-comment-element"     italic="true"/>
+
+  <!-- Constants -->
+  <style name="def:constant"                foreground="butter2"/>
+  <style name="def:string"                  foreground="butter2"/>
+  <style name="def:special-char"            foreground="orange3"/>
+  <style name="def:special-constant"        foreground="orange3"/>
+  <style name="def:floating-point"          foreground="orange3"/>
+
+  <!-- Identifiers -->
+  <style name="def:identifier"              foreground="skyblue1"/>
+
+  <!-- Statements -->
+  <style name="def:statement"               foreground="white" bold="true"/>
+
+  <!-- Types -->
+  <style name="def:type"                    foreground="chameleon1" bold="true"/>
+
+  <!-- Markup -->
+  <style name="def:emphasis"                italic="true"/>
+  <style name="def:strong-emphasis"         foreground="white" bold="true"/>
+  <style name="def:inline-code"             foreground="skyblue1"/>
+  <style name="def:insertion"               underline="single"/>
+  <style name="def:deletion"                strikethrough="true"/>
+  <style name="def:link-text"               foreground="aluminium4"/>
+  <style name="def:link-symbol"             foreground="aluminium4" bold="true"/>
+  <style name="def:link-destination"        italic="true" underline="single"/>
+  <style name="def:heading"                 foreground="chameleon1" bold="true"/>
+  <style name="def:thematic-break"          foreground="chameleon1" bold="true"/>
+  <style name="def:preformatted-section"    foreground="skyblue1"/>
+  <style name="def:list-marker"             foreground="white" bold="true"/>
+
+  <!-- Others -->
+  <style name="def:preprocessor"            foreground="plum1"/>
+  <style name="def:error"                   foreground="aluminium1" background="scarletred2" bold="true"/>
+  <style name="def:warning"                 foreground="aluminium1" background="plum1"/>
+  <style name="def:note"                    background="butter1" foreground="aluminium4" bold="true"/>
+  <style name="def:net-address"             italic="true" underline="single"/>
+
+  <!-- Heading styles, uncomment to enable -->
+  <!--
+  <style name="def:heading0"                scale="5.0"/>
+  <style name="def:heading1"                scale="2.5"/>
+  <style name="def:heading2"                scale="2.0"/>
+  <style name="def:heading3"                scale="1.7"/>
+  <style name="def:heading4"                scale="1.5"/>
+  <style name="def:heading5"                scale="1.3"/>
+  <style name="def:heading6"                scale="1.2"/>
+  -->
+
+  <!-- Language specific -->
+  <style name="diff:added-line"             foreground="butter2"/>
+  <style name="diff:removed-line"           foreground="skyblue1"/>
+  <style name="diff:changed-line"           foreground="plum1"/>
+  <style name="diff:diff-file"              foreground="chameleon1" bold="true"/>
+  <style name="diff:location"               foreground="chameleon1"/>
+  <style name="diff:special-case"           foreground="white" bold="true"/>
+
+  <style name="latex:command"               foreground="chameleon1" bold="true"/>
+  <style name="latex:include"               use-style="def:preprocessor"/>
+
+</style-scheme>
+EOL
+cat > '/tmp/gtksourceview-4/solarized-dark.xml' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of GtkSourceView
+
+  Copyright (C) 2011 Craig Russell
+  Author: Craig Russell <craig@craig-russell.co.uk>
+
+  GtkSourceView is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  GtkSourceView is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this library; if not, see <http://www.gnu.org/licenses/>.
+
+-->
+<style-scheme id="solarized-dark" _name="Solarized Dark" version="1.0">
+  <author>Craig Russell</author>
+  <_description>Color scheme using Solarized dark color palette</_description>
+
+  <!-- Solarized Palette -->
+  <color name="base03"  value="#002B36"/>
+  <color name="base02"  value="#073642"/>
+  <color name="base01"  value="#586E75"/>
+  <color name="base00"  value="#657B83"/>
+  <color name="base0"   value="#839496"/>
+  <color name="base1"   value="#93A1A1"/>
+  <color name="base2"   value="#EEE8D5"/>
+  <color name="base3"   value="#FDF6E3"/>
+  <color name="yellow"  value="#B58900"/>
+  <color name="orange"  value="#CB4B16"/>
+  <color name="red"     value="#DC322F"/>
+  <color name="magenta" value="#D33682"/>
+  <color name="violet"  value="#6C71C4"/>
+  <color name="blue"    value="#268BD2"/>
+  <color name="cyan"    value="#2AA198"/>
+  <color name="green"   value="#859900"/>
+
+  <color name="base03-02-blend" value="#032F3B"/>
+
+  <!-- Global Settings -->
+  <style name="text"                        foreground="base1" background="base03"/>
+  <style name="selection"                   foreground="base03" background="base00"/>
+  <style name="cursor"                      foreground="base1"/>
+  <style name="secondary-cursor"            foreground="base00"/>
+  <style name="current-line"                background="base02"/>
+  <style name="line-numbers"                foreground="base01" background="base02"/>
+  <style name="background-pattern"          background="base03-02-blend"/>
+
+  <!-- Bracket Matching -->
+  <style name="bracket-match"               foreground="base03" background="base01"/>
+  <style name="bracket-mismatch"            foreground="red" background="base01"/>
+
+  <!-- Right Margin -->
+  <style name="right-margin"                foreground="base2" background="base1"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                foreground="base03" background="yellow"/>
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="base01"/>
+  <style name="def:shebang"                 foreground="base01" bold="true"/>
+  <style name="def:doc-comment-element"     italic="true"/>
+
+  <!-- Constants -->
+  <style name="def:constant"                foreground="cyan"/>
+  <style name="def:special-char"            foreground="green"/>
+
+  <!-- Identifiers -->
+  <style name="def:identifier"              foreground="blue"/>
+
+  <!-- Statements -->
+  <style name="def:statement"               foreground="orange"/>
+
+  <!-- Types -->
+  <style name="def:type"                    foreground="yellow"/>
+
+  <!-- Markup -->
+  <style name="def:emphasis"                italic="true"/>
+  <style name="def:strong-emphasis"         foreground="orange"/>
+  <style name="def:inline-code"             foreground="blue"/>
+  <style name="def:insertion"               underline="single"/>
+  <style name="def:deletion"                strikethrough="true"/>
+  <style name="def:link-text"               foreground="base01"/>
+  <style name="def:link-symbol"             foreground="base01" bold="true"/>
+  <style name="def:link-destination"        italic="true" underline="single"/>
+  <style name="def:heading"                 foreground="yellow"/>
+  <style name="def:thematic-break"          foreground="yellow"/>
+  <style name="def:preformatted-section"    foreground="blue"/>
+  <style name="def:list-marker"             foreground="orange"/>
+
+  <!-- Operators -->
+  <style name="def:operator"                foreground="green"/>
+
+  <!-- Others -->
+  <style name="def:preprocessor"            foreground="violet"/>
+  <style name="def:error"                   foreground="red" bold="true"/>
+  <style name="def:note"                    foreground="magenta" bold="true"/>
+  <style name="def:net-address"             italic="true" underline="single"/>
+
+  <!-- Heading styles, uncomment to enable -->
+  <!--
+  <style name="def:heading0"                scale="5.0"/>
+  <style name="def:heading1"                scale="2.5"/>
+  <style name="def:heading2"                scale="2.0"/>
+  <style name="def:heading3"                scale="1.7"/>
+  <style name="def:heading4"                scale="1.5"/>
+  <style name="def:heading5"                scale="1.3"/>
+  <style name="def:heading6"                scale="1.2"/>
+  -->
+</style-scheme>
+EOL
+cat > '/tmp/gtksourceview-4/solarized-light.xml' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of GtkSourceView
+
+  Copyright (C) 2011 Craig Russell
+  Author: Craig Russell <craig@craig-russell.co.uk>
+
+  GtkSourceView is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  GtkSourceView is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this library; if not, see <http://www.gnu.org/licenses/>.
+
+-->
+<style-scheme id="solarized-light" _name="Solarized Light" version="1.0">
+  <author>Craig Russell</author>
+  <_description>Color scheme using Solarized light color palette</_description>
+
+  <!-- Solarized Palette -->
+  <color name="base03"  value="#002B36"/>
+  <color name="base02"  value="#073642"/>
+  <color name="base01"  value="#586E75"/>
+  <color name="base00"  value="#657B83"/>
+  <color name="base0"   value="#839496"/>
+  <color name="base1"   value="#93A1A1"/>
+  <color name="base2"   value="#EEE8D5"/>
+  <color name="base3"   value="#FDF6E3"/>
+  <color name="base4"   value="#C8CCC2"/>
+  <color name="yellow"  value="#B58900"/>
+  <color name="orange"  value="#CB4B16"/>
+  <color name="red"     value="#DC322F"/>
+  <color name="magenta" value="#D33682"/>
+  <color name="violet"  value="#6C71C4"/>
+  <color name="blue"    value="#268BD2"/>
+  <color name="cyan"    value="#2AA198"/>
+  <color name="green"   value="#859900"/>
+
+  <color name="base3-2-blend" value="#F6EFDC"/>
+
+  <!-- Global Settings -->
+  <style name="text"                        foreground="base01" background="base3"/>
+  <style name="selection"                   foreground="base3" background="base1"/>
+  <style name="cursor"                      foreground="base01"/>
+  <style name="current-line"                background="base2"/>
+  <style name="line-numbers"                foreground="base1" background="base2"/>
+  <style name="background-pattern"          background="base3-2-blend"/>
+  <style name="draw-spaces"                 foreground="base4"/>
+
+  <!-- Bracket Matching -->
+  <style name="bracket-match"               foreground="base3" background="base1"/>
+  <style name="bracket-mismatch"            foreground="red" background="base1"/>
+
+  <!-- Right Margin -->
+  <style name="right-margin"                foreground="base01" background="base01"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                foreground="base3" background="yellow"/>
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="base1"/>
+  <style name="def:shebang"                 foreground="base1" bold="true"/>
+  <style name="def:doc-comment-element"     italic="true"/>
+
+  <!-- Constants -->
+  <style name="def:constant"                foreground="cyan"/>
+  <style name="def:special-char"            foreground="green"/>
+
+  <!-- Identifiers -->
+  <style name="def:identifier"              foreground="blue"/>
+
+  <!-- Statements -->
+  <style name="def:statement"               foreground="orange"/>
+
+  <!-- Types -->
+  <style name="def:type"                    foreground="yellow"/>
+
+  <!-- Markup -->
+  <style name="def:emphasis"                italic="true"/>
+  <style name="def:strong-emphasis"         foreground="orange"/>
+  <style name="def:inline-code"             foreground="blue"/>
+  <style name="def:insertion"               underline="single"/>
+  <style name="def:deletion"                strikethrough="true"/>
+  <style name="def:link-text"               foreground="base1"/>
+  <style name="def:link-symbol"             foreground="base1" bold="true"/>
+  <style name="def:link-destination"        italic="true" underline="single"/>
+  <style name="def:heading"                 foreground="yellow"/>
+  <style name="def:thematic-break"          foreground="yellow"/>
+  <style name="def:preformatted-section"    foreground="blue"/>
+  <style name="def:list-marker"             foreground="orange"/>
+
+  <!-- Operators -->
+  <style name="def:operator"                foreground="green"/>
+
+  <!-- Others -->
+  <style name="def:preprocessor"            foreground="violet"/>
+  <style name="def:error"                   foreground="red" bold="true"/>
+  <style name="def:note"                    foreground="magenta" bold="true"/>
+  <style name="def:net-address"             italic="true" underline="single"/>
+
+  <!-- Heading styles, uncomment to enable -->
+  <!--
+  <style name="def:heading0"                scale="5.0"/>
+  <style name="def:heading1"                scale="2.5"/>
+  <style name="def:heading2"                scale="2.0"/>
+  <style name="def:heading3"                scale="1.7"/>
+  <style name="def:heading4"                scale="1.5"/>
+  <style name="def:heading5"                scale="1.3"/>
+  <style name="def:heading6"                scale="1.2"/>
+  -->
+</style-scheme>
+EOL
+cat > '/tmp/gtksourceview-4/styles.rng' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ This file is part of GtkSourceView
+
+ Copyright (C) 2006-2007 Yevgen Muntyan <muntyan@tamu.edu>
+
+ gtksourceview is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ gtksourceview is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library; if not, see <http://www.gnu.org/licenses/>.
+
+-->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+<start>
+  <element name="style-scheme">
+    <attribute name="id">
+      <data type="string">
+        <param name="pattern">([a-zA-Z0-9_]|-)+</param>
+      </data>
+    </attribute>
+
+    <choice>
+      <attribute name="name"/>
+      <attribute name="_name"/>
+    </choice>
+
+    <optional>
+      <attribute name="parent-scheme"/>
+    </optional>
+
+    <attribute name="version">
+      <value>1.0</value>
+    </attribute>
+
+    <optional>
+      <oneOrMore>
+        <element name="author">
+          <text/>
+        </element>
+      </oneOrMore>        
+    </optional>
+
+    <optional>
+      <choice>
+        <element name="description">
+          <text/>
+        </element>
+        <element name="_description">
+          <text/>
+        </element>
+      </choice>
+    </optional>
+
+    <optional>
+      <oneOrMore>
+          <element name="color">
+              <attribute name="name">
+                <data type="string">
+                  <param name="pattern">([a-zA-Z0-9_]|-)+</param>
+                </data>
+              </attribute>
+              <attribute name="value">
+                <data type="string">
+                  <param name="pattern">#.*</param>
+                </data>
+              </attribute>
+          </element>
+      </oneOrMore>
+    </optional>
+
+    <optional>
+      <oneOrMore>
+          <element name="style">
+              <attribute name="name"/>
+
+              <optional>
+                <choice>
+                  <attribute name="use-style"/>
+                  <ref name="style-elements"/>
+                </choice>
+              </optional>
+          </element>
+      </oneOrMore>
+    </optional>
+  </element>
+</start>
+
+<define name="boolean-value">
+  <choice>
+    <value>true</value>
+    <value>false</value>
+  </choice>
+</define>
+
+<define name="style-elements">
+  <optional>
+    <attribute name="foreground"/>
+  </optional>
+  <optional>
+    <attribute name="background"/>
+  </optional>
+  <optional>
+    <attribute name="line-background"/>
+  </optional>
+  <optional>
+    <attribute name="bold">
+      <ref name="boolean-value"/>
+    </attribute>
+  </optional>
+  <optional>
+    <attribute name="italic">
+      <ref name="boolean-value"/>
+    </attribute>
+  </optional>
+  <optional>
+    <attribute name="underline"/>
+  </optional>
+  <optional>
+    <attribute name="strikethrough">
+      <ref name="boolean-value"/>
+    </attribute>
+  </optional>
+  <optional>
+    <attribute name="scale"/>
+  </optional>
+</define>
+
+</grammar>
+EOL
+cat > '/tmp/gtksourceview-4/tango.xml' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ This file is part of GtkSourceView
+
+ Copyright (C) 2006-2007 GtkSourceView team
+ Author: Michael Monreal <michael.monreal@gmail.com>
+
+ GtkSourceView is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ GtkSourceView is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library; if not, see <http://www.gnu.org/licenses/>.
+
+-->
+<style-scheme id="tango" _name="Tango" version="1.0">
+  <author>Michael Monreal</author>
+  <_description>Color scheme using Tango color palette</_description>
+
+  <!-- Tango Palette -->
+  <color name="butter1"                     value="#fce94f"/>
+  <color name="butter2"                     value="#edd400"/>
+  <color name="butter3"                     value="#c4a000"/>
+  <color name="chameleon1"                  value="#8ae234"/>
+  <color name="chameleon2"                  value="#73d216"/>
+  <color name="chameleon3"                  value="#4e9a06"/>
+  <color name="orange1"                     value="#fcaf3e"/>
+  <color name="orange2"                     value="#f57900"/>
+  <color name="orange3"                     value="#ce5c00"/>
+  <color name="skyblue1"                    value="#729fcf"/>
+  <color name="skyblue2"                    value="#3465a4"/>
+  <color name="skyblue3"                    value="#204a87"/>
+  <color name="plum1"                       value="#ad7fa8"/>
+  <color name="plum2"                       value="#75507b"/>
+  <color name="plum3"                       value="#5c3566"/>
+  <color name="chocolate1"                  value="#e9b96e"/>
+  <color name="chocolate2"                  value="#c17d11"/>
+  <color name="chocolate3"                  value="#8f5902"/>
+  <color name="scarletred1"                 value="#ef2929"/>
+  <color name="scarletred2"                 value="#cc0000"/>
+  <color name="scarletred3"                 value="#a40000"/>
+  <color name="aluminium1"                  value="#eeeeec"/>
+  <color name="aluminium2"                  value="#d3d7cf"/>
+  <color name="aluminium3"                  value="#babdb6"/>
+  <color name="aluminium4"                  value="#888a85"/>
+  <color name="aluminium5"                  value="#555753"/>
+  <color name="aluminium6"                  value="#2e3436"/>
+
+  <!-- Global Settings -->
+  <style name="line-numbers"                background="#rgba(18,20,21,0.005)"/>
+  <style name="current-line"                background="aluminium1"/>
+  <style name="current-line-number"         background="aluminium1"/>
+  <style name="draw-spaces"                 foreground="aluminium3"/>
+  <style name="background-pattern"          background="#f3f3f3"/>
+
+  <!-- Bracket Matching -->
+  <style name="bracket-match"               foreground="aluminium1" background="aluminium3"/>
+  <style name="bracket-mismatch"            foreground="aluminium1" background="scarletred3"/>
+
+  <!-- Right Margin -->
+  <style name="right-margin"                foreground="aluminium6" background="aluminium6"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                background="butter1"/>
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="skyblue3"/>
+  <style name="def:shebang"                 foreground="skyblue3" bold="true"/>
+  <style name="def:doc-comment-element"     italic="true"/>
+
+  <!-- Constants -->
+  <style name="def:constant"                foreground="plum1"/>
+  <style name="def:special-char"            foreground="plum3"/>
+
+  <!-- Identifiers -->
+  <style name="def:identifier"              foreground="skyblue2"/>
+
+  <!-- Statements -->
+  <style name="def:statement"               foreground="scarletred3" bold="true"/>
+
+  <!-- Types -->
+  <style name="def:type"                    foreground="chameleon3" bold="true"/>
+
+  <!-- Markup -->
+  <style name="def:emphasis"                italic="true"/>
+  <style name="def:strong-emphasis"         foreground="scarletred3" bold="true"/>
+  <style name="def:inline-code"             foreground="skyblue2"/>
+  <style name="def:insertion"               underline="single"/>
+  <style name="def:deletion"                strikethrough="true"/>
+  <style name="def:link-text"               foreground="skyblue3"/>
+  <style name="def:link-symbol"             foreground="skyblue3" bold="true"/>
+  <style name="def:link-destination"        italic="true" underline="single"/>
+  <style name="def:heading"                 foreground="chameleon3" bold="true"/>
+  <style name="def:thematic-break"          foreground="chameleon3" bold="true"/>
+  <style name="def:preformatted-section"    foreground="skyblue2"/>
+  <style name="def:list-marker"             foreground="scarletred3" bold="true"/>
+
+  <!-- Others -->
+  <style name="def:preprocessor"            foreground="chocolate3"/>
+  <style name="def:error"                   background="scarletred2" bold="true"/>
+  <style name="def:warning"                 background="plum1"/>
+  <style name="def:note"                    background="orange1" bold="true"/>
+  <style name="def:net-address"             italic="true" underline="single"/>
+
+  <!-- Heading styles, uncomment to enable -->
+  <!--
+  <style name="def:heading0"                scale="5.0"/>
+  <style name="def:heading1"                scale="2.5"/>
+  <style name="def:heading2"                scale="2.0"/>
+  <style name="def:heading3"                scale="1.7"/>
+  <style name="def:heading4"                scale="1.5"/>
+  <style name="def:heading5"                scale="1.3"/>
+  <style name="def:heading6"                scale="1.2"/>
+  -->
+
+  <!-- Language specific -->
+  <style name="diff:added-line"             foreground="chameleon3"/>
+  <style name="diff:removed-line"           foreground="plum3"/>
+  <style name="diff:changed-line"           use-style="def:preprocessor"/>
+  <style name="diff:diff-file"              use-style="def:type"/>
+  <style name="diff:location"               use-style="def:statement"/>
+  <style name="diff:special-case"           use-style="def:constant"/>
+
+  <style name="xml:tags"                    foreground="chameleon3"/>
+  <style name="xml:namespace"               bold="true"/>
+
+  <style name="js:built-in-constructor"     foreground="chameleon3"/>
+
+  <style name="latex:display-math"          foreground="plum3"/>
+  <style name="latex:command"               foreground="chameleon3" bold="true"/>
+  <style name="latex:include"               use-style="def:preprocessor"/>
+  <style name="latex:special-char"          use-style="def:constant"/>
+
+  <style name="sh:variable"                 foreground="plum3"/>
+  <style name="sh:variable-definition"      foreground="chameleon3"/>
+
+</style-scheme>
+EOL
+cat > '/tmp/gtksourceview-4/Yaru-dark.xml' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+    <style-scheme id="Yaru-dark" _name="Yaru-dark" version="1.0">
+    <author>Martin Wimpress</author>
+    <_description>A GtkSourceView style to match Yaru-dark</_description>
+    <!-- Primary Accent -->
+    <color name="primary" value="#E95420" />
+
+    <!-- Blacks -->
+    <color name="black" value="#000000" />
+    <color name="jet" value="#2B2928" />
+    <color name="inkstone" value="#393634" />
+    <color name="slate" value="#5D5D5D" />
+    <color name="graphite" value="#666666" />
+    <!-- Whites -->
+    <color name="white" value="#FFFFFF" />
+    <color name="porcelain" value="#F7F7F7" />
+    <color name="chalk" value="#E5E5E5" />
+    <color name="silk" value="#CDCDCD" />
+    <color name="ash" value="#878787" />
+    <!-- Purples -->
+    <color name="aubergine" value="#924D8B" />
+    <color name="purple" value="#762572" />
+    <color name="light_aubergine" value="#77216F" />
+    <color name="mid_aubergine" value="#5E2750" />
+    <color name="dark_aubergine" value="#2C001E" />
+    <!-- Reds -->
+    <color name="red" value="#c7162b" />
+    <!-- Oranges -->
+    <color name="orange" value="#E95420" />
+    <color name="satsuma" value="#ED764D" />
+    <color name="clementine" value="#F29879" />
+    <!-- Yellows -->
+    <color name="yellow" value="#f99b11" />
+    <!-- Greens -->
+    <color name="green" value="#0e8420" />
+    <!-- Blues -->
+    <color name="blue" value="#19B6EE" />
+    <color name="linkblue" value="#007aa6" />
+    <color name="darkblue" value="#335280" />
+
+    <!-- UI -->
+    <style name="text" foreground="chalk" background="inkstone" />
+    <style name="selection" foreground="white" background="primary" />
+    <style name="selection-unfocused" foreground="silk" background="primary" />
+    <style name="cursor" foreground="orange" />
+    <style name="secondary-cursor" foreground="satsuma" />
+    <style name="current-line" background="jet" />
+    <style name="line-numbers" foreground="silk" background="jet" bold="True" />
+    <style name="current-line-number" background="jet" />
+    <style name="bracket-match" foreground="green" background="inkstone" />
+    <style name="bracket-mismatch" foreground="red" background="inkstone" />
+    <style name="right-margin" foreground="ash" background="black" />
+    <style name="draw-spaces" foreground="ash" background="inkstone" />
+    <style name="search-match" foreground="white" background="green" />
+
+    <!-- Comments -->
+    <style name="def:comment" foreground="aubergine" italic="True" />
+    <style name="def:shebang" foreground="aubergine" bold="True" />
+    <style name="def:doc-comment" foreground="aubergine" italic="True" />
+    <style name="def:doc-comment-element" italic="True" />
+    <style name="def:net-address-in-comment" foreground="white" italic="False" underline="True" />
+
+    <!-- Constants and Variables-->
+    <style name="def:constant" foreground="green" />
+    <style name="def:string" foreground="yellow" />
+    <style name="def:special-char" foreground="green" />
+    <style name="def:special-constant" foreground="green" bold="True" />
+    <style name="def:number" foreground="blue" />
+    <style name="def:complex" foreground="blue" />
+    <style name="def:floating-point" foreground="blue" />
+    <style name="def:decimal" foreground="blue" />
+    <style name="def:keyword" foreground="green" />
+    <style name="def:builtin" foreground="green" bold="True" />
+    <style name="def:variable" foreground="purple"/>
+    <style name="def:preprocessor" foreground="white" bold="True" />
+    <style name="def:operator" foreground="white" bold="True" />
+    <style name="sh:variable-definition" foreground="white" bold="True" />
+
+    <!-- Identifiers -->
+    <style name="def:identifier" foreground="light_aubergine" />
+    <style name="def:function" foreground="light_aubergine" bold="True" />
+
+    <!-- Statements -->
+    <style name="def:statement" foreground="satsuma" bold="True" />
+
+    <!-- Types -->
+    <style name="def:type" foreground="linkblue" bold="True" />
+
+    <!-- Annotations -->
+    <style name="def:error" foreground="red" background="jet" bold="True" underline="True" strikethrough="False" />
+    <style name="def:warning" foreground="orange" background="jet" bold="True" underline="True" strikethrough="False" />
+    <style name="def:note" foreground="black" background="clementine" bold="True" italic="False" />
+    <style name="def:underlined" foreground="chalk" underline="True" />
+</style-scheme>
+EOL
+cat > '/tmp/gtksourceview-4/Yaru-light.xml' <<EOL
+<?xml version="1.0" encoding="UTF-8"?>
+    <style-scheme id="Yaru-light" _name="Yaru-light" version="1.0">
+    <author>Martin Wimpress</author>
+    <_description>A GtkSourceView style to match Yaru-light</_description>
+    <!-- Primary Accent -->
+    <color name="primary" value="#E95420" />
+
+    <!-- Blacks -->
+    <color name="black" value="#000000" />
+    <color name="jet" value="#181818" />
+    <color name="inkstone" value="#333333" />
+    <color name="slate" value="#5D5D5D" />
+    <color name="graphite" value="#666666" />
+    <!-- Whites -->
+    <color name="white" value="#FFFFFF" />
+    <color name="porcelain" value="#F7F7F7" />
+    <color name="chalk" value="#E5E5E5" />
+    <color name="silk" value="#CDCDCD" />
+    <color name="ash" value="#878787" />
+    <!-- Purples -->
+    <color name="aubergine" value="#924D8B" />
+    <color name="purple" value="#762572" />
+    <color name="light_aubergine" value="#77216F" />
+    <color name="mid_aubergine" value="#5E2750" />
+    <color name="dark_aubergine" value="#2C001E" />
+    <!-- Reds -->
+    <color name="red" value="#c7162b" />
+    <!-- Oranges -->
+    <color name="orange" value="#E95420" />
+    <color name="satsuma" value="#ED764D" />
+    <color name="clementine" value="#F29879" />
+    <!-- Yellows -->
+    <color name="yellow" value="#f99b11" />
+    <!-- Greens -->
+    <color name="green" value="#0e8420" />
+    <!-- Blues -->
+    <color name="blue" value="#19B6EE" />
+    <color name="linkblue" value="#007aa6" />
+    <color name="darkblue" value="#335280" />
+
+    <!-- UI -->
+    <style name="text" foreground="jet" background="white" />
+    <style name="selection" foreground="white" background="primary" />
+    <style name="selection-unfocused" foreground="silk" background="primary" />
+    <style name="cursor" foreground="orange" />
+    <style name="secondary-cursor" foreground="satsuma" />
+    <style name="current-line" background="silk" />
+    <style name="line-numbers" foreground="jet" background="silk" bold="True" />
+    <style name="current-line-number" background="silk" />
+    <style name="bracket-match" foreground="green" background="porcelain" />
+    <style name="bracket-mismatch" foreground="red" background="porcelain" />
+    <style name="right-margin" foreground="slate" background="ash" />
+    <style name="draw-spaces" foreground="graphite" background="white" />
+    <style name="search-match" foreground="white" background="green" />
+
+    <!-- Comments -->
+    <style name="def:comment" foreground="aubergine" italic="True" />
+    <style name="def:shebang" foreground="aubergine" bold="True" />
+    <style name="def:doc-comment" foreground="aubergine" italic="True" />
+    <style name="def:doc-comment-element" italic="True" />
+    <style name="def:net-address-in-comment" foreground="black" italic="False" underline="True" />
+
+    <!-- Constants and Variables-->
+    <style name="def:constant" foreground="green" />
+    <style name="def:string" foreground="yellow" />
+    <style name="def:special-char" foreground="green" />
+    <style name="def:special-constant" foreground="green" bold="True" />
+    <style name="def:number" foreground="blue" />
+    <style name="def:complex" foreground="blue" />
+    <style name="def:floating-point" foreground="blue" />
+    <style name="def:decimal" foreground="blue" />
+    <style name="def:keyword" foreground="green" />
+    <style name="def:builtin" foreground="green" bold="True" />
+    <style name="def:variable" foreground="purple"/>
+    <style name="def:preprocessor" foreground="black" bold="True" />
+    <style name="def:operator" foreground="black" bold="True" />
+    <style name="sh:variable-definition" foreground="black" bold="True" />
+
+    <!-- Identifiers -->
+    <style name="def:identifier" foreground="light_aubergine" />
+    <style name="def:function" foreground="light_aubergine" bold="True" />
+
+    <!-- Statements -->
+    <style name="def:statement" foreground="satsuma" bold="True" />
+
+    <!-- Types -->
+    <style name="def:type" foreground="linkblue" bold="True" />
+
+    <!-- Annotations -->
+    <style name="def:error" foreground="red" background="porcelain" bold="True" underline="True" strikethrough="False" />
+    <style name="def:warning" foreground="orange" background="porcelain" bold="True" underline="True" strikethrough="False" />
+    <style name="def:note" foreground="black" background="clementine" bold="True" italic="False" />
+    <style name="def:underlined" foreground="jet" underline="True" />
+</style-scheme>
+EOL
+sudo cp -r /tmp/gtksourceview-4/* /usr/share/gtksourceview-4/styles/
+EOF
+rm -rf '/tmp/gtksourceview-4'
+EOF
 sudo chmod -x '/usr/lib/X11/xedit/lisp/indent.lsp' '/usr/lib/X11/xedit/lisp/lisp.lsp' '/usr/lib/X11/xedit/lisp/syntax.lsp' '/usr/lib/X11/xedit/lisp/xedit.lsp' '/usr/lib/X11/xedit/lisp/progmodes/auto.lsp' '/usr/lib/X11/xedit/lisp/progmodes/c.lsp' '/usr/lib/X11/xedit/lisp/progmodes/html.lsp' '/usr/lib/X11/xedit/lisp/progmodes/imake.lsp' '/usr/lib/X11/xedit/lisp/progmodes/lisp.lsp' '/usr/lib/X11/xedit/lisp/progmodes/make.lsp' '/usr/lib/X11/xedit/lisp/progmodes/man.lsp' '/usr/lib/X11/xedit/lisp/progmodes/patch.lsp' '/usr/lib/X11/xedit/lisp/progmodes/perl.lsp' '/usr/lib/X11/xedit/lisp/progmodes/python.lsp' '/usr/lib/X11/xedit/lisp/progmodes/rpm.lsp' '/usr/lib/X11/xedit/lisp/progmodes/sgml.lsp' '/usr/lib/X11/xedit/lisp/progmodes/sh.lsp' '/usr/lib/X11/xedit/lisp/progmodes/xconf.lsp' '/usr/lib/X11/xedit/lisp/progmodes/xlog.lsp' '/usr/lib/X11/xedit/lisp/progmodes/xrdb.lsp' '/usr/lib/X11/x11perfcomp/fillblnk' '/usr/lib/X11/x11perfcomp/perfboth' '/usr/lib/X11/x11perfcomp/perfratio' '/usr/lib/X11/x11perfcomp/Xmark' '/usr/lib/X11/config/Amoeba.cf' '/usr/lib/X11/config/apollo.cf' '/usr/lib/X11/config/bsd.cf' '/usr/lib/X11/config/bsdi.cf' '/usr/lib/X11/config/bsdiLib.rules' '/usr/lib/X11/config/bsdiLib.tmpl' '/usr/lib/X11/config/bsdLib.rules' '/usr/lib/X11/config/bsdLib.tmpl' '/usr/lib/X11/config/cde.rules' '/usr/lib/X11/config/cde.tmpl' '/usr/lib/X11/config/convex.cf' '/usr/lib/X11/config/cray.cf' '/usr/lib/X11/config/cross.def' '/usr/lib/X11/config/cross.rules' '/usr/lib/X11/config/cygwin.cf' '/usr/lib/X11/config/cygwin.rules' '/usr/lib/X11/config/cygwin.tmpl' '/usr/lib/X11/config/darwin.cf' '/usr/lib/X11/config/darwinLib.rules' '/usr/lib/X11/config/darwinLib.tmpl' '/usr/lib/X11/config/date.def' '/usr/lib/X11/config/DGUX.cf' '/usr/lib/X11/config/dmx.cf' '/usr/lib/X11/config/DragonFly.cf' '/usr/lib/X11/config/FreeBSD.cf' '/usr/lib/X11/config/fujitsu.cf' '/usr/lib/X11/config/generic.cf' '/usr/lib/X11/config/gnu.cf' '/usr/lib/X11/config/gnuLib.rules' '/usr/lib/X11/config/gnuLib.tmpl' '/usr/lib/X11/config/host.def' '/usr/lib/X11/config/hp.cf' '/usr/lib/X11/config/hpLib.rules' '/usr/lib/X11/config/hpLib.tmpl' '/usr/lib/X11/config/ibm.cf' '/usr/lib/X11/config/ibmLib.rules' '/usr/lib/X11/config/ibmLib.tmpl' '/usr/lib/X11/config/Imake.cf' '/usr/lib/X11/config/Imake.rules' '/usr/lib/X11/config/Imake.tmpl' '/usr/lib/X11/config/isc.cf' '/usr/lib/X11/config/Library.tmpl' '/usr/lib/X11/config/linux.cf' '/usr/lib/X11/config/lnxdoc.rules' '/usr/lib/X11/config/lnxdoc.tmpl' '/usr/lib/X11/config/lnxLib.rules' '/usr/lib/X11/config/lnxLib.tmpl' '/usr/lib/X11/config/luna.cf' '/usr/lib/X11/config/lynx.cf' '/usr/lib/X11/config/mach.cf' '/usr/lib/X11/config/macII.cf' '/usr/lib/X11/config/mingw.cf' '/usr/lib/X11/config/mingw.rules' '/usr/lib/X11/config/mingw.tmpl' '/usr/lib/X11/config/minix.cf' '/usr/lib/X11/config/Mips.cf' '/usr/lib/X11/config/Motif.rules' '/usr/lib/X11/config/Motif.tmpl' '/usr/lib/X11/config/moto.cf' '/usr/lib/X11/config/ncr.cf' '/usr/lib/X11/config/nec.cf' '/usr/lib/X11/config/necLib.rules' '/usr/lib/X11/config/necLib.tmpl' '/usr/lib/X11/config/NetBSD.cf' '/usr/lib/X11/config/noop.rules' '/usr/lib/X11/config/nto.cf' '/usr/lib/X11/config/nto.rules' '/usr/lib/X11/config/Oki.cf' '/usr/lib/X11/config/oldlib.rules' '/usr/lib/X11/config/OpenBSD.cf' '/usr/lib/X11/config/OpenBSDLib.rules' '/usr/lib/X11/config/OpenBSDLib.tmpl' '/usr/lib/X11/config/os2.cf' '/usr/lib/X11/config/os2.rules' '/usr/lib/X11/config/os2Lib.rules' '/usr/lib/X11/config/os2Lib.tmpl' '/usr/lib/X11/config/osf1.cf' '/usr/lib/X11/config/osfLib.rules' '/usr/lib/X11/config/osfLib.tmpl' '/usr/lib/X11/config/pegasus.cf' '/usr/lib/X11/config/QNX4.cf' '/usr/lib/X11/config/QNX4.rules' '/usr/lib/X11/config/sco.cf' '/usr/lib/X11/config/sco5.cf' '/usr/lib/X11/config/scoLib.rules' '/usr/lib/X11/config/sequent.cf' '/usr/lib/X11/config/sequentLib.rules' '/usr/lib/X11/config/Server.tmpl' '/usr/lib/X11/config/ServerLib.tmpl' '/usr/lib/X11/config/sgi.cf' '/usr/lib/X11/config/sgiLib.rules' '/usr/lib/X11/config/sgiLib.tmpl' '/usr/lib/X11/config/site.def' '/usr/lib/X11/config/sony.cf' '/usr/lib/X11/config/sun.cf' '/usr/lib/X11/config/sunLib.rules' '/usr/lib/X11/config/sunLib.tmpl' '/usr/lib/X11/config/sv3Lib.rules' '/usr/lib/X11/config/sv3Lib.tmpl' '/usr/lib/X11/config/sv4Lib.rules' '/usr/lib/X11/config/sv4Lib.tmpl' '/usr/lib/X11/config/svr3.cf' '/usr/lib/X11/config/svr4.cf' '/usr/lib/X11/config/Threads.tmpl' '/usr/lib/X11/config/ultrix.cf' '/usr/lib/X11/config/usl.cf' '/usr/lib/X11/config/version.def' '/usr/lib/X11/config/Win32.cf' '/usr/lib/X11/config/Win32.rules' '/usr/lib/X11/config/WinLib.tmpl' '/usr/lib/X11/config/x386.cf' '/usr/lib/X11/config/X11.rules' '/usr/lib/X11/config/X11.tmpl' '/usr/lib/X11/config/xf86.rules' '/usr/lib/X11/config/xf86.tmpl' '/usr/lib/X11/config/xf86site.def' '/usr/lib/X11/config/xfree86.cf' '/usr/lib/X11/config/xorg.cf' '/usr/lib/X11/config/xorg.tmpl' '/usr/lib/X11/config/xorgsite.def' '/usr/lib/X11/config/xorgversion.def' /usr/include/x86_64-linux-gnu/libunwind-common.h /usr/include/x86_64-linux-gnu/libunwind-dynamic.h /usr/include/x86_64-linux-gnu/libunwind-x86_64.h /usr/include/x86_64-linux-gnu/libunwind.h /lib/x86_64-linux-gnu/dbus-1.0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a /usr/bin/mesa-overlay-control.py /usr/include/sha1.h /usr/include/linux/dma-buf.h /usr/include/xa_composite.h /usr/include/xa_context.h /usr/include/xa_tracker.h /usr/include/xlocale.h /usr/include/locale.h /usr/include/libsync.h /usr/include/xf86drm.h /usr/include/xf86drmMode.h /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_gallium.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_gallium.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_trace.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_trace.so.1.0.0 /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_kmsro.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_msm.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_nouveau.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_iris.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r300.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r600.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_radeonsi.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_swrast.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_vmwgfx.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r300.la /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_swrast.la /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r600.la /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_vmwgfx.la /usr/lib/x86_64-linux-gnu/libGLU.a /usr/lib/x86_64-linux-gnu/libGLU.so.1.3.1 /usr/lib/x86_64-linux-gnu/libGLU.so.1 /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libMesaOpenCL.so.1.0.0 /usr/lib/x86_64-linux-gnu/libMesaOpenCL.so.1 /usr/lib/x86_64-linux-gnu/libMesaOpenCL.so /usr/lib/x86_64-linux-gnu/libdrm.so.2.4.0 /usr/lib/x86_64-linux-gnu/libdrm.so.2 /usr/lib/x86_64-linux-gnu/libdrm.so /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/x86_64-linux-gnu/crtn.o /usr/lib/x86_64-linux-gnu/libdrm.la /usr/lib/x86_64-linux-gnu/libwayland-server.la /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1 /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.la /usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_intel.so /usr/lib/x86_64-linux-gnu/libdrm_intel.so.1 /usr/lib/x86_64-linux-gnu/libdrm_intel.la /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so.2.0.0 /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so.2 /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so /usr/lib/x86_64-linux-gnu/libdrm_nouveau.la /usr/lib/x86_64-linux-gnu/libdrm_radeon.so.1.0.1 /usr/lib/x86_64-linux-gnu/libdrm_radeon.so /usr/lib/x86_64-linux-gnu/libdrm_radeon.so.1  /usr/lib/x86_64-linux-gnu/libdrm_radeon.la /usr/lib/x86_64-linux-gnu/libEGL.so.1.1.0 /usr/lib/x86_64-linux-gnu/libEGL.so.1 /usr/lib/x86_64-linux-gnu/libEGL.so /usr/lib/x86_64-linux-gnu/libEGL.la /usr/lib/x86_64-linux-gnu/libgbm.so.1.0.0 /usr/lib/x86_64-linux-gnu/libgbm.so.1 /usr/lib/x86_64-linux-gnu/libgbm.so /usr/lib/x86_64-linux-gnu/libgbm.la /usr/lib/x86_64-linux-gnu/libGL.so.1.7.0 /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGL.la /usr/lib/x86_64-linux-gnu/libglapi.so.0.0.0 /usr/lib/x86_64-linux-gnu/libglapi.so.0 /usr/lib/x86_64-linux-gnu/libglapi.so /usr/lib/x86_64-linux-gnu/libglapi.la /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so.1.1.0 /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so.1.2.0 /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so.1 /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so /usr/lib/x86_64-linux-gnu/libGLESv1_CM.la /usr/lib/x86_64-linux-gnu/libGLESv2.so.2.1.0  /usr/lib/x86_64-linux-gnu/libGLESv2.so.2  /usr/lib/x86_64-linux-gnu/libGLESv2.so /usr/lib/x86_64-linux-gnu/libGLESv2.la /usr/lib/x86_64-linux-gnu/libswrAVX.so.0.0.0 /usr/lib/x86_64-linux-gnu/libswrAVX2.so.0.0.0 /usr/lib/x86_64-linux-gnu/libswrAVX2.so.0 /usr/lib/x86_64-linux-gnu/libswrAVX2.so /usr/lib/x86_64-linux-gnu/libswrAVX2.la /usr/lib/x86_64-linux-gnu/libswrAVX.so.0 /usr/lib/x86_64-linux-gnu/libswrAVX.so /usr/lib/x86_64-linux-gnu/libswrAVX.la /usr/lib/x86_64-linux-gnu/libOSMesa.so.8.0.0 /usr/lib/x86_64-linux-gnu/libOSMesa.so.8 /usr/lib/x86_64-linux-gnu/libOSMesa.la /usr/lib/x86_64-linux-gnu/libOSMesa.so.6 /usr/lib/x86_64-linux-gnu/libOSMesa.so /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0 /usr/lib/x86_64-linux-gnu/libGLX_mesa.so /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0 /usr/lib/x86_64-linux-gnu/libGLX_indirect.so.0 /usr/lib/x86_64-linux-gnu/libVkLayer_MESA_overlay.so /usr/lib/x86_64-linux-gnu/libEGL_mesa.so /usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0 /usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0.0.0 /usr/share/glvnd/egl_vendor.d/50_mesa.json /usr/lib/x86_64-linux-gnu/libwayland-egl.so.1.0.0 /usr/lib/x86_64-linux-gnu/libwayland-egl.so.1 /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-egl.la /usr/lib/x86_64-linux-gnu/libxatracker.so.2.5.0 /usr/lib/x86_64-linux-gnu/libxatracker.so.2 /usr/lib/x86_64-linux-gnu/libxatracker.so /usr/lib/x86_64-linux-gnu/libxatracker.la /usr/lib/x86_64-linux-gnu/libpng16.so.16.37.0 /usr/lib/x86_64-linux-gnu/libpng16.so.16 /usr/lib/x86_64-linux-gnu/libpng16.so /usr/lib/x86_64-linux-gnu/libpng16.a /usr/lib/x86_64-linux-gnu/libdrm_etnaviv.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_etnaviv.so.1 /usr/lib/x86_64-linux-gnu/libdrm_etnaviv.so /usr/lib/x86_64-linux-gnu/libdrm_exynos.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_exynos.so.1 /usr/lib/x86_64-linux-gnu/libdrm_exynos.so /usr/lib/x86_64-linux-gnu/libdrm_exynos.la /usr/lib/x86_64-linux-gnu/libdrm_freedreno.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_freedreno.so.1 /usr/lib/x86_64-linux-gnu/libdrm_freedreno.la /usr/lib/x86_64-linux-gnu/libdrm_freedreno.so /usr/lib/x86_64-linux-gnu/libdrm_omap.so.1.0.0  /usr/lib/x86_64-linux-gnu/libdrm_omap.la /usr/lib/x86_64-linux-gnu/libdrm_omap.so.1 /usr/lib/x86_64-linux-gnu/libdrm_omap.so /usr/lib/x86_64-linux-gnu/libdrm_tegra.so.0.0.0 /usr/lib/x86_64-linux-gnu/libdrm_tegra.so.0 /usr/lib/x86_64-linux-gnu/libdrm_tegra.so /usr/lib/x86_64-linux-gnu/libdrm_tegra.la /usr/lib/x86_64-linux-gnu/libkms.so.1.0.0 /usr/lib/x86_64-linux-gnu/libkms.so.1 /usr/lib/x86_64-linux-gnu/libkms.so /usr/lib/x86_64-linux-gnu/libkms.la /usr/lib/x86_64-linux-gnu/libXvMCr600.so /usr/lib/x86_64-linux-gnu/libXvMCr600.so.1 /usr/lib/x86_64-linux-gnu/libXvMCr600.so.1.0 /usr/lib/x86_64-linux-gnu/libXvMCr600.so.1.0.0 /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so.1 /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so.1.0 /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so.1.0.0 /usr/lib/x86_64-linux-gnu/libVkLayer_MESA_device_select.so /usr/lib/x86_64-linux-gnu/libvulkan_intel.so /usr/lib/x86_64-linux-gnu/libvulkan_intel.la /usr/lib/x86_64-linux-gnu/libvulkan_radeon.so /usr/lib/x86_64-linux-gnu/libvulkan_lvp.so /usr/lib/x86_64-linux-gnu/libvulkan_freedreno.so /usr/lib/x86_64-linux-gnu/libvulkan_broadcom.so /usr/lib/x86_64-linux-gnu/libglslang.a /usr/lib/x86_64-linux-gnu/libpng.so.3.50.0 /usr/lib/x86_64-linux-gnu/libpng.so /usr/lib/x86_64-linux-gnu/libpng.so.3 /usr/lib/x86_64-linux-gnu/libpng.a /usr/lib/x86_64-linux-gnu/libpng12.a /usr/lib/x86_64-linux-gnu/libpng12.la /usr/lib/x86_64-linux-gnu/libpng.la /usr/lib/x86_64-linux-gnu/libpng12.so.0.50.0 /usr/lib/x86_64-linux-gnu/libpng12.so.0 /usr/lib/x86_64-linux-gnu/libpng12.so /usr/lib/x86_64-linux-gnu/libomxil-bellagio0 /usr/lib/libomxil-bellagio.a /usr/lib/libomxil-bellagio.so.0.0.0 /usr/lib/libomxil-bellagio.so.0 /usr/lib/libomxil-bellagio.so /usr/lib/x86_64-linux-gnu/d3d/d3dadapter9.so.1.0.0 /usr/lib/x86_64-linux-gnu/d3d/d3dadapter9.so.1 /usr/lib/x86_64-linux-gnu/d3d/d3dadapter9.so /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_amdgpu.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_etnaviv.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_exynos.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_freedreno.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_intel.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_nouveau.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_omap.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_radeon.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_tegra.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_vc4.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libkms.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glesv1_cm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/dri.pc /usr/lib/x86_64-linux-gnu/pkgconfig/gbm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/egl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/xatracker.pc /usr/lib/x86_64-linux-gnu/pkgconfig/gl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libpng12.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libpng16.pc /usr/lib/x86_64-linux-gnu/pkgconfig/wayland-egl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libpng.pc /usr/lib/x86_64-linux-gnu/pkgconfig/d3d.pc /usr/lib/x86_64-linux-gnu/pkgconfig/opengl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glesv2.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glu.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glx.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/osmesa.pc /usr/lib/pkgconfig/libomxil-bellagio.pc /usr/lib/x86_64-linux-gnu/cmake/glm/glmConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/glm/glmConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/glm/glmTargets.cmake /usr/lib/x86_64-linux-gnu/libGLESv2.so.2.0.0 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/cc1 /usr/lib/x86_64-linux-gnu/libwayland-client.la /usr/share/drirc.d/00-mesa-defaults.conf /usr/lib/x86_64-linux-gnu/dri/lima_dri.so /usr/lib/x86_64-linux-gnu/dri/mcde_dri.so /usr/lib/x86_64-linux-gnu/dri/mediatek_dri.so /usr/lib/x86_64-linux-gnu/dri/meson_dri.so /usr/lib/x86_64-linux-gnu/dri/mi0283qt_dri.so /usr/lib/x86_64-linux-gnu/dri/msm_dri.so /usr/lib/x86_64-linux-gnu/dri/mxsfb-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/nouveau_dri.so /usr/lib/x86_64-linux-gnu/dri/nouveau_drv_video.so /usr/lib/x86_64-linux-gnu/dri/nouveau_vieux_dri.so /usr/lib/x86_64-linux-gnu/dri/panfrost_dri.so /usr/lib/x86_64-linux-gnu/dri/pl111_dri.so /usr/lib/x86_64-linux-gnu/dri/r200_dri.so /usr/lib/x86_64-linux-gnu/dri/r300_dri.so /usr/lib/x86_64-linux-gnu/dri/r600_drv_video.so /usr/lib/x86_64-linux-gnu/dri/radeon_dri.so /usr/lib/x86_64-linux-gnu/dri/radeonsi_dri.so /usr/lib/x86_64-linux-gnu/dri/radeonsi_drv_video.so /usr/lib/x86_64-linux-gnu/dri/rockchip_dri.so /usr/lib/x86_64-linux-gnu/dri/st7586_dri.so /usr/lib/x86_64-linux-gnu/dri/st7735r_dri.so /usr/lib/x86_64-linux-gnu/dri/stm_dri.so /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so /usr/lib/x86_64-linux-gnu/dri/tegra_dri.so /usr/lib/x86_64-linux-gnu/dri/v3d_dri.so /usr/lib/x86_64-linux-gnu/dri/vc4_dri.so /usr/lib/x86_64-linux-gnu/dri/vmwgfx_dri.so /usr/lib/x86_64-linux-gnu/dri/zink_dri.so /usr/lib/x86_64-linux-gnu/dri/armada-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/d3d12_dri.so /usr/lib/x86_64-linux-gnu/dri/etnaviv_dri.so /usr/lib/x86_64-linux-gnu/dri/exynos_dri.so /usr/lib/x86_64-linux-gnu/dri/hx8357d_dri.so /usr/lib/x86_64-linux-gnu/dri/i915_dri.so /usr/lib/x86_64-linux-gnu/dri/i965_dri.so /usr/lib/x86_64-linux-gnu/dri/ili9225_dri.so /usr/lib/x86_64-linux-gnu/dri/ili9341_dri.so /usr/lib/x86_64-linux-gnu/dri/imx-dcss_dri.so /usr/lib/x86_64-linux-gnu/dri/imx-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/ingenic-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/iris_dri.so /usr/lib/x86_64-linux-gnu/dri/kgsl_dri.so /usr/lib/x86_64-linux-gnu/dri/kms_swrast_dri.so /usr/lib/x86_64-linux-gnu/dri/virtio_gpu_dri.so  /usr/lib/x86_64-linux-gnu/dri/r600_dri.so /usr/lib/x86_64-linux-gnu/dri/libgallium_dri.so /usr/lib/x86_64-linux-gnu/dri/libgallium_drv_video.so /usr/lib/x86_64-linux-gnu/dri/libmesa_dri_drivers.so /usr/lib/x86_64-linux-gnu/libexpat.so.1 /usr/lib/x86_64-linux-gnu/libexpat.so.1.6.11 /usr/lib/x86_64-linux-gnu/dri/*
 
 # chmod -x '/usr/lib/X11/xedit/lisp/indent.lsp' '/usr/lib/X11/xedit/lisp/lisp.lsp' '/usr/lib/X11/xedit/lisp/syntax.lsp' '/usr/lib/X11/xedit/lisp/xedit.lsp' '/usr/lib/X11/xedit/lisp/progmodes/auto.lsp' '/usr/lib/X11/xedit/lisp/progmodes/c.lsp' '/usr/lib/X11/xedit/lisp/progmodes/html.lsp' '/usr/lib/X11/xedit/lisp/progmodes/imake.lsp' '/usr/lib/X11/xedit/lisp/progmodes/lisp.lsp' '/usr/lib/X11/xedit/lisp/progmodes/make.lsp' '/usr/lib/X11/xedit/lisp/progmodes/man.lsp' '/usr/lib/X11/xedit/lisp/progmodes/patch.lsp' '/usr/lib/X11/xedit/lisp/progmodes/perl.lsp' '/usr/lib/X11/xedit/lisp/progmodes/python.lsp' '/usr/lib/X11/xedit/lisp/progmodes/rpm.lsp' '/usr/lib/X11/xedit/lisp/progmodes/sgml.lsp' '/usr/lib/X11/xedit/lisp/progmodes/sh.lsp' '/usr/lib/X11/xedit/lisp/progmodes/xconf.lsp' '/usr/lib/X11/xedit/lisp/progmodes/xlog.lsp' '/usr/lib/X11/xedit/lisp/progmodes/xrdb.lsp' '/usr/lib/X11/x11perfcomp/fillblnk' '/usr/lib/X11/x11perfcomp/perfboth' '/usr/lib/X11/x11perfcomp/perfratio' '/usr/lib/X11/x11perfcomp/Xmark' '/usr/lib/X11/config/Amoeba.cf' '/usr/lib/X11/config/apollo.cf' '/usr/lib/X11/config/bsd.cf' '/usr/lib/X11/config/bsdi.cf' '/usr/lib/X11/config/bsdiLib.rules' '/usr/lib/X11/config/bsdiLib.tmpl' '/usr/lib/X11/config/bsdLib.rules' '/usr/lib/X11/config/bsdLib.tmpl' '/usr/lib/X11/config/cde.rules' '/usr/lib/X11/config/cde.tmpl' '/usr/lib/X11/config/convex.cf' '/usr/lib/X11/config/cray.cf' '/usr/lib/X11/config/cross.def' '/usr/lib/X11/config/cross.rules' '/usr/lib/X11/config/cygwin.cf' '/usr/lib/X11/config/cygwin.rules' '/usr/lib/X11/config/cygwin.tmpl' '/usr/lib/X11/config/darwin.cf' '/usr/lib/X11/config/darwinLib.rules' '/usr/lib/X11/config/darwinLib.tmpl' '/usr/lib/X11/config/date.def' '/usr/lib/X11/config/DGUX.cf' '/usr/lib/X11/config/dmx.cf' '/usr/lib/X11/config/DragonFly.cf' '/usr/lib/X11/config/FreeBSD.cf' '/usr/lib/X11/config/fujitsu.cf' '/usr/lib/X11/config/generic.cf' '/usr/lib/X11/config/gnu.cf' '/usr/lib/X11/config/gnuLib.rules' '/usr/lib/X11/config/gnuLib.tmpl' '/usr/lib/X11/config/host.def' '/usr/lib/X11/config/hp.cf' '/usr/lib/X11/config/hpLib.rules' '/usr/lib/X11/config/hpLib.tmpl' '/usr/lib/X11/config/ibm.cf' '/usr/lib/X11/config/ibmLib.rules' '/usr/lib/X11/config/ibmLib.tmpl' '/usr/lib/X11/config/Imake.cf' '/usr/lib/X11/config/Imake.rules' '/usr/lib/X11/config/Imake.tmpl' '/usr/lib/X11/config/isc.cf' '/usr/lib/X11/config/Library.tmpl' '/usr/lib/X11/config/linux.cf' '/usr/lib/X11/config/lnxdoc.rules' '/usr/lib/X11/config/lnxdoc.tmpl' '/usr/lib/X11/config/lnxLib.rules' '/usr/lib/X11/config/lnxLib.tmpl' '/usr/lib/X11/config/luna.cf' '/usr/lib/X11/config/lynx.cf' '/usr/lib/X11/config/mach.cf' '/usr/lib/X11/config/macII.cf' '/usr/lib/X11/config/mingw.cf' '/usr/lib/X11/config/mingw.rules' '/usr/lib/X11/config/mingw.tmpl' '/usr/lib/X11/config/minix.cf' '/usr/lib/X11/config/Mips.cf' '/usr/lib/X11/config/Motif.rules' '/usr/lib/X11/config/Motif.tmpl' '/usr/lib/X11/config/moto.cf' '/usr/lib/X11/config/ncr.cf' '/usr/lib/X11/config/nec.cf' '/usr/lib/X11/config/necLib.rules' '/usr/lib/X11/config/necLib.tmpl' '/usr/lib/X11/config/NetBSD.cf' '/usr/lib/X11/config/noop.rules' '/usr/lib/X11/config/nto.cf' '/usr/lib/X11/config/nto.rules' '/usr/lib/X11/config/Oki.cf' '/usr/lib/X11/config/oldlib.rules' '/usr/lib/X11/config/OpenBSD.cf' '/usr/lib/X11/config/OpenBSDLib.rules' '/usr/lib/X11/config/OpenBSDLib.tmpl' '/usr/lib/X11/config/os2.cf' '/usr/lib/X11/config/os2.rules' '/usr/lib/X11/config/os2Lib.rules' '/usr/lib/X11/config/os2Lib.tmpl' '/usr/lib/X11/config/osf1.cf' '/usr/lib/X11/config/osfLib.rules' '/usr/lib/X11/config/osfLib.tmpl' '/usr/lib/X11/config/pegasus.cf' '/usr/lib/X11/config/QNX4.cf' '/usr/lib/X11/config/QNX4.rules' '/usr/lib/X11/config/sco.cf' '/usr/lib/X11/config/sco5.cf' '/usr/lib/X11/config/scoLib.rules' '/usr/lib/X11/config/sequent.cf' '/usr/lib/X11/config/sequentLib.rules' '/usr/lib/X11/config/Server.tmpl' '/usr/lib/X11/config/ServerLib.tmpl' '/usr/lib/X11/config/sgi.cf' '/usr/lib/X11/config/sgiLib.rules' '/usr/lib/X11/config/sgiLib.tmpl' '/usr/lib/X11/config/site.def' '/usr/lib/X11/config/sony.cf' '/usr/lib/X11/config/sun.cf' '/usr/lib/X11/config/sunLib.rules' '/usr/lib/X11/config/sunLib.tmpl' '/usr/lib/X11/config/sv3Lib.rules' '/usr/lib/X11/config/sv3Lib.tmpl' '/usr/lib/X11/config/sv4Lib.rules' '/usr/lib/X11/config/sv4Lib.tmpl' '/usr/lib/X11/config/svr3.cf' '/usr/lib/X11/config/svr4.cf' '/usr/lib/X11/config/Threads.tmpl' '/usr/lib/X11/config/ultrix.cf' '/usr/lib/X11/config/usl.cf' '/usr/lib/X11/config/version.def' '/usr/lib/X11/config/Win32.cf' '/usr/lib/X11/config/Win32.rules' '/usr/lib/X11/config/WinLib.tmpl' '/usr/lib/X11/config/x386.cf' '/usr/lib/X11/config/X11.rules' '/usr/lib/X11/config/X11.tmpl' '/usr/lib/X11/config/xf86.rules' '/usr/lib/X11/config/xf86.tmpl' '/usr/lib/X11/config/xf86site.def' '/usr/lib/X11/config/xfree86.cf' '/usr/lib/X11/config/xorg.cf' '/usr/lib/X11/config/xorg.tmpl' '/usr/lib/X11/config/xorgsite.def' '/usr/lib/X11/config/xorgversion.def' /usr/include/x86_64-linux-gnu/libunwind-common.h /usr/include/x86_64-linux-gnu/libunwind-dynamic.h /usr/include/x86_64-linux-gnu/libunwind-x86_64.h /usr/include/x86_64-linux-gnu/libunwind.h /lib/x86_64-linux-gnu/dbus-1.0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a /usr/bin/mesa-overlay-control.py /usr/include/sha1.h /usr/include/linux/dma-buf.h /usr/include/xa_composite.h /usr/include/xa_context.h /usr/include/xa_tracker.h /usr/include/xlocale.h /usr/include/locale.h /usr/include/libsync.h /usr/include/xf86drm.h /usr/include/xf86drmMode.h /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_gallium.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_gallium.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_trace.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_trace.so.1.0.0 /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_kmsro.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_msm.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_nouveau.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_iris.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r300.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r600.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_radeonsi.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_swrast.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_vmwgfx.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r300.la /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_swrast.la /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r600.la /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_vmwgfx.la /usr/lib/x86_64-linux-gnu/libGLU.a /usr/lib/x86_64-linux-gnu/libGLU.so.1.3.1 /usr/lib/x86_64-linux-gnu/libGLU.so.1 /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libMesaOpenCL.so.1.0.0 /usr/lib/x86_64-linux-gnu/libMesaOpenCL.so.1 /usr/lib/x86_64-linux-gnu/libMesaOpenCL.so /usr/lib/x86_64-linux-gnu/libdrm.so.2.4.0 /usr/lib/x86_64-linux-gnu/libdrm.so.2 /usr/lib/x86_64-linux-gnu/libdrm.so /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/x86_64-linux-gnu/crtn.o /usr/lib/x86_64-linux-gnu/libdrm.la /usr/lib/x86_64-linux-gnu/libwayland-server.la /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1 /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.la /usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_intel.so /usr/lib/x86_64-linux-gnu/libdrm_intel.so.1 /usr/lib/x86_64-linux-gnu/libdrm_intel.la /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so.2.0.0 /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so.2 /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so /usr/lib/x86_64-linux-gnu/libdrm_nouveau.la /usr/lib/x86_64-linux-gnu/libdrm_radeon.so.1.0.1 /usr/lib/x86_64-linux-gnu/libdrm_radeon.so /usr/lib/x86_64-linux-gnu/libdrm_radeon.so.1  /usr/lib/x86_64-linux-gnu/libdrm_radeon.la /usr/lib/x86_64-linux-gnu/libEGL.so.1.1.0 /usr/lib/x86_64-linux-gnu/libEGL.so.1 /usr/lib/x86_64-linux-gnu/libEGL.so /usr/lib/x86_64-linux-gnu/libEGL.la /usr/lib/x86_64-linux-gnu/libgbm.so.1.0.0 /usr/lib/x86_64-linux-gnu/libgbm.so.1 /usr/lib/x86_64-linux-gnu/libgbm.so /usr/lib/x86_64-linux-gnu/libgbm.la /usr/lib/x86_64-linux-gnu/libGL.so.1.7.0 /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGL.la /usr/lib/x86_64-linux-gnu/libglapi.so.0.0.0 /usr/lib/x86_64-linux-gnu/libglapi.so.0 /usr/lib/x86_64-linux-gnu/libglapi.so /usr/lib/x86_64-linux-gnu/libglapi.la /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so.1.1.0 /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so.1.2.0 /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so.1 /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so /usr/lib/x86_64-linux-gnu/libGLESv1_CM.la /usr/lib/x86_64-linux-gnu/libGLESv2.so.2.1.0  /usr/lib/x86_64-linux-gnu/libGLESv2.so.2  /usr/lib/x86_64-linux-gnu/libGLESv2.so /usr/lib/x86_64-linux-gnu/libGLESv2.la /usr/lib/x86_64-linux-gnu/libswrAVX.so.0.0.0 /usr/lib/x86_64-linux-gnu/libswrAVX2.so.0.0.0 /usr/lib/x86_64-linux-gnu/libswrAVX2.so.0 /usr/lib/x86_64-linux-gnu/libswrAVX2.so /usr/lib/x86_64-linux-gnu/libswrAVX2.la /usr/lib/x86_64-linux-gnu/libswrAVX.so.0 /usr/lib/x86_64-linux-gnu/libswrAVX.so /usr/lib/x86_64-linux-gnu/libswrAVX.la /usr/lib/x86_64-linux-gnu/libOSMesa.so.8.0.0 /usr/lib/x86_64-linux-gnu/libOSMesa.so.8 /usr/lib/x86_64-linux-gnu/libOSMesa.la /usr/lib/x86_64-linux-gnu/libOSMesa.so.6 /usr/lib/x86_64-linux-gnu/libOSMesa.so /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0 /usr/lib/x86_64-linux-gnu/libGLX_mesa.so /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0 /usr/lib/x86_64-linux-gnu/libGLX_indirect.so.0 /usr/lib/x86_64-linux-gnu/libVkLayer_MESA_overlay.so /usr/lib/x86_64-linux-gnu/libEGL_mesa.so /usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0 /usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0.0.0 /usr/share/glvnd/egl_vendor.d/50_mesa.json /usr/lib/x86_64-linux-gnu/libwayland-egl.so.1.0.0 /usr/lib/x86_64-linux-gnu/libwayland-egl.so.1 /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-egl.la /usr/lib/x86_64-linux-gnu/libxatracker.so.2.5.0 /usr/lib/x86_64-linux-gnu/libxatracker.so.2 /usr/lib/x86_64-linux-gnu/libxatracker.so /usr/lib/x86_64-linux-gnu/libxatracker.la /usr/lib/x86_64-linux-gnu/libpng16.so.16.37.0 /usr/lib/x86_64-linux-gnu/libpng16.so.16 /usr/lib/x86_64-linux-gnu/libpng16.so /usr/lib/x86_64-linux-gnu/libpng16.a /usr/lib/x86_64-linux-gnu/libdrm_etnaviv.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_etnaviv.so.1 /usr/lib/x86_64-linux-gnu/libdrm_etnaviv.so /usr/lib/x86_64-linux-gnu/libdrm_exynos.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_exynos.so.1 /usr/lib/x86_64-linux-gnu/libdrm_exynos.so /usr/lib/x86_64-linux-gnu/libdrm_exynos.la /usr/lib/x86_64-linux-gnu/libdrm_freedreno.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_freedreno.so.1 /usr/lib/x86_64-linux-gnu/libdrm_freedreno.la /usr/lib/x86_64-linux-gnu/libdrm_freedreno.so /usr/lib/x86_64-linux-gnu/libdrm_omap.so.1.0.0  /usr/lib/x86_64-linux-gnu/libdrm_omap.la /usr/lib/x86_64-linux-gnu/libdrm_omap.so.1 /usr/lib/x86_64-linux-gnu/libdrm_omap.so /usr/lib/x86_64-linux-gnu/libdrm_tegra.so.0.0.0 /usr/lib/x86_64-linux-gnu/libdrm_tegra.so.0 /usr/lib/x86_64-linux-gnu/libdrm_tegra.so /usr/lib/x86_64-linux-gnu/libdrm_tegra.la /usr/lib/x86_64-linux-gnu/libkms.so.1.0.0 /usr/lib/x86_64-linux-gnu/libkms.so.1 /usr/lib/x86_64-linux-gnu/libkms.so /usr/lib/x86_64-linux-gnu/libkms.la /usr/lib/x86_64-linux-gnu/libXvMCr600.so /usr/lib/x86_64-linux-gnu/libXvMCr600.so.1 /usr/lib/x86_64-linux-gnu/libXvMCr600.so.1.0 /usr/lib/x86_64-linux-gnu/libXvMCr600.so.1.0.0 /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so.1 /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so.1.0 /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so.1.0.0 /usr/lib/x86_64-linux-gnu/libVkLayer_MESA_device_select.so /usr/lib/x86_64-linux-gnu/libvulkan_intel.so /usr/lib/x86_64-linux-gnu/libvulkan_intel.la /usr/lib/x86_64-linux-gnu/libvulkan_radeon.so /usr/lib/x86_64-linux-gnu/libvulkan_lvp.so /usr/lib/x86_64-linux-gnu/libvulkan_freedreno.so /usr/lib/x86_64-linux-gnu/libvulkan_broadcom.so /usr/lib/x86_64-linux-gnu/libglslang.a /usr/lib/x86_64-linux-gnu/libpng.so.3.50.0 /usr/lib/x86_64-linux-gnu/libpng.so /usr/lib/x86_64-linux-gnu/libpng.so.3 /usr/lib/x86_64-linux-gnu/libpng.a /usr/lib/x86_64-linux-gnu/libpng12.a /usr/lib/x86_64-linux-gnu/libpng12.la /usr/lib/x86_64-linux-gnu/libpng.la /usr/lib/x86_64-linux-gnu/libpng12.so.0.50.0 /usr/lib/x86_64-linux-gnu/libpng12.so.0 /usr/lib/x86_64-linux-gnu/libpng12.so /usr/lib/x86_64-linux-gnu/libomxil-bellagio0 /usr/lib/libomxil-bellagio.a /usr/lib/libomxil-bellagio.so.0.0.0 /usr/lib/libomxil-bellagio.so.0 /usr/lib/libomxil-bellagio.so /usr/lib/x86_64-linux-gnu/d3d/d3dadapter9.so.1.0.0 /usr/lib/x86_64-linux-gnu/d3d/d3dadapter9.so.1 /usr/lib/x86_64-linux-gnu/d3d/d3dadapter9.so /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_amdgpu.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_etnaviv.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_exynos.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_freedreno.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_intel.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_nouveau.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_omap.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_radeon.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_tegra.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_vc4.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libkms.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glesv1_cm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/dri.pc /usr/lib/x86_64-linux-gnu/pkgconfig/gbm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/egl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/xatracker.pc /usr/lib/x86_64-linux-gnu/pkgconfig/gl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libpng12.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libpng16.pc /usr/lib/x86_64-linux-gnu/pkgconfig/wayland-egl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libpng.pc /usr/lib/x86_64-linux-gnu/pkgconfig/d3d.pc /usr/lib/x86_64-linux-gnu/pkgconfig/opengl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glesv2.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glu.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glx.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/osmesa.pc /usr/lib/pkgconfig/libomxil-bellagio.pc /usr/lib/x86_64-linux-gnu/cmake/glm/glmConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/glm/glmConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/glm/glmTargets.cmake /usr/lib/x86_64-linux-gnu/libGLESv2.so.2.0.0 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/cc1 /usr/lib/x86_64-linux-gnu/libwayland-client.la /usr/share/drirc.d/00-mesa-defaults.conf /usr/lib/x86_64-linux-gnu/dri/lima_dri.so /usr/lib/x86_64-linux-gnu/dri/mcde_dri.so /usr/lib/x86_64-linux-gnu/dri/mediatek_dri.so /usr/lib/x86_64-linux-gnu/dri/meson_dri.so /usr/lib/x86_64-linux-gnu/dri/mi0283qt_dri.so /usr/lib/x86_64-linux-gnu/dri/msm_dri.so /usr/lib/x86_64-linux-gnu/dri/mxsfb-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/nouveau_dri.so /usr/lib/x86_64-linux-gnu/dri/nouveau_drv_video.so /usr/lib/x86_64-linux-gnu/dri/nouveau_vieux_dri.so /usr/lib/x86_64-linux-gnu/dri/panfrost_dri.so /usr/lib/x86_64-linux-gnu/dri/pl111_dri.so /usr/lib/x86_64-linux-gnu/dri/r200_dri.so /usr/lib/x86_64-linux-gnu/dri/r300_dri.so /usr/lib/x86_64-linux-gnu/dri/r600_drv_video.so /usr/lib/x86_64-linux-gnu/dri/radeon_dri.so /usr/lib/x86_64-linux-gnu/dri/radeonsi_dri.so /usr/lib/x86_64-linux-gnu/dri/radeonsi_drv_video.so /usr/lib/x86_64-linux-gnu/dri/rockchip_dri.so /usr/lib/x86_64-linux-gnu/dri/st7586_dri.so /usr/lib/x86_64-linux-gnu/dri/st7735r_dri.so /usr/lib/x86_64-linux-gnu/dri/stm_dri.so /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so /usr/lib/x86_64-linux-gnu/dri/tegra_dri.so /usr/lib/x86_64-linux-gnu/dri/v3d_dri.so /usr/lib/x86_64-linux-gnu/dri/vc4_dri.so /usr/lib/x86_64-linux-gnu/dri/vmwgfx_dri.so /usr/lib/x86_64-linux-gnu/dri/zink_dri.so /usr/lib/x86_64-linux-gnu/dri/armada-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/d3d12_dri.so /usr/lib/x86_64-linux-gnu/dri/etnaviv_dri.so /usr/lib/x86_64-linux-gnu/dri/exynos_dri.so /usr/lib/x86_64-linux-gnu/dri/hx8357d_dri.so /usr/lib/x86_64-linux-gnu/dri/i915_dri.so /usr/lib/x86_64-linux-gnu/dri/i965_dri.so /usr/lib/x86_64-linux-gnu/dri/ili9225_dri.so /usr/lib/x86_64-linux-gnu/dri/ili9341_dri.so /usr/lib/x86_64-linux-gnu/dri/imx-dcss_dri.so /usr/lib/x86_64-linux-gnu/dri/imx-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/ingenic-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/iris_dri.so /usr/lib/x86_64-linux-gnu/dri/kgsl_dri.so /usr/lib/x86_64-linux-gnu/dri/kms_swrast_dri.so /usr/lib/x86_64-linux-gnu/dri/virtio_gpu_dri.so  /usr/lib/x86_64-linux-gnu/dri/r600_dri.so /usr/lib/x86_64-linux-gnu/dri/libgallium_dri.so /usr/lib/x86_64-linux-gnu/dri/libgallium_drv_video.so /usr/lib/x86_64-linux-gnu/dri/libmesa_dri_drivers.so /usr/lib/x86_64-linux-gnu/libexpat.so.1 /usr/lib/x86_64-linux-gnu/libexpat.so.1.6.11 /usr/lib/x86_64-linux-gnu/dri/*
