@@ -3,6 +3,7 @@
 
 ####Griggorii@gmail.com mit license dconf-config
 
+xhost -local:host
 
 # (sh -c "unshare -m --map-root-user") | (sleep 3; killall sh)
 
