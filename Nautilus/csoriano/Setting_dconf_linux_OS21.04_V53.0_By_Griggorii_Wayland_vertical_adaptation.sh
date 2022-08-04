@@ -15484,6 +15484,10 @@ sudo chmod -R a+rw ~/.local/share/applications/sync-monitor-calendar.desktop
 EOF
 sudo rm -rf /lost+found/*
 EOF
+sudo rm -rf '/var/lib/gdm3/.local/share/applications' '/var/lib/gdm3/.local/share/flatpak' '/var/lib/gdm3/.local/share/gnome-shell' '/var/lib/gdm3/.local/share/gvfs-metadata' '/var/lib/gdm3/.local/share/ibus-table' '/var/lib/gdm3/.local/share/sounds' '/var/lib/gdm3/.local/share/tracker' '/var/lib/gdm3/.local/share/gsettings-data-convert' '/var/lib/gdm3/.local/share/session_migration-(null)' '/var/lib/gdm3/.gconf' '/var/lib/gdm3/.config/dconf' '/var/lib/gdm3/.config/gnome-session' '/var/lib/gdm3/.config/goa-1.0' '/var/lib/gdm3/.config/ibus' '/var/lib/gdm3/.cache' /var/lib/gdm3/.local/share/session_migration*
+EOF
+sudo rm '/var/lib/gdm3/core'
+EOF
 mkdir ~/.local/share/gnome-shell/extensions
 EOF
 sudo mkdir ~/.local/share/gnome-shell/extensions
