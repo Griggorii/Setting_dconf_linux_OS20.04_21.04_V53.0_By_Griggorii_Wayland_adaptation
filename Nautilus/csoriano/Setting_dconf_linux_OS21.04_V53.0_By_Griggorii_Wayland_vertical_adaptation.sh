@@ -14161,6 +14161,29 @@ sudo mv ./Droid.theme /usr/share/onboard/themes/
 EOF
 rm ./Droid.theme
 EOF
+cat > '/tmp/HTop TILIX.desktop' <<EOL
+[Desktop Entry]
+Version=1.0
+Name=HTop TILIX
+Type=Application
+Comment=Show System Processes
+Comment[ru]=Просмотр списка процессов в системе
+Terminal=false
+Exec=tilix -t "Resource Usage" -e htop -t
+Icon=htop
+Categories=ConsoleOnly;System;
+OnlyShowIn=XFCE;Budgie;X-Cinnamon;KDE;Unity;GNOME;
+GenericName=Process Viewer
+GenericName[ru]=Монитор процессов
+Keywords=system;process;task
+Name[ru]=HTop TILIX
+EOL
+lsof '/bin/htop' & lsof '/bin/tilix' & sudo cp '/tmp/HTop TILIX.desktop' /usr/share/applications/
+EOF
+lsof '/usr/bin/htop' & lsof '/usr/bin/tilix' & sudo cp '/tmp/HTop TILIX.desktop' /usr/share/applications
+EOF
+rm '/tmp/HTop TILIX.desktop'
+EOF
 rm ~/.config/autostart/nemo-desktop.desktop
 EOF
 rm ~/.config/autostart/nemo-desktop
