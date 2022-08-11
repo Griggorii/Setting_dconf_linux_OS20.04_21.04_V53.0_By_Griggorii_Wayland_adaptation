@@ -18840,6 +18840,47 @@ sudo apt purge xul-ext-ubufox -y
 
 sudo sed -i 's/true/false/g' '/etc/whoopsie'
 
+sudo systemctl disable systemd-hostnamed
+
+sudo systemctl stop systemd-hostnamed
+
+sudo systemctl disable hostname.service
+
+sudo systemctl disable hostname1.service
+
+sudo systemctl mask org.freedesktop.hostname.service
+
+sudo systemctl mask org.freedesktop.hostname1.service
+
+sudo systemctl --user mask org.freedesktop.hostname.service
+
+sudo systemctl --user mask org.freedesktop.hostname1.service
+
+systemctl --user mask org.freedesktop.hostname.service
+
+systemctl --user mask org.freedesktop.hostname1.service
+
+
+sudo systemctl disable systemd-localed
+
+sudo systemctl stop systemd-localed
+
+sudo systemctl disable locale.service
+
+sudo systemctl disable locale1.service
+
+sudo systemctl mask dbus-org.freedesktop.locale.service
+
+sudo systemctl mask dbus-org.freedesktop.locale1.service
+
+sudo systemctl --user mask dbus-org.freedesktop.locale.service
+
+sudo systemctl --user mask dbus-org.freedesktop.locale1.service
+
+systemctl --user mask dbus-org.freedesktop.locale.service
+
+systemctl --user mask dbus-org.freedesktop.locale1.service
+
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
 # iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
 sudo iptables -A OUTPUT -o wlp3s0 -p tcp --dport 8081 -j ACCEPT
