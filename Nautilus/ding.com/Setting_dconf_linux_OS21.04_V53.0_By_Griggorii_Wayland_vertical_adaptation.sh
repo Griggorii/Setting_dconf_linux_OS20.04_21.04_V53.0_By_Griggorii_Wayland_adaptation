@@ -18812,6 +18812,10 @@ sudo apt purge libgitlab-api-v4-perl -y
 
 sudo apt purge xul-ext-ubufox -y
 
+sudo apt install ed -y
+
+sudo apt purge ed -y
+
 sudo sed -i 's/true/false/g' '/etc/whoopsie'
 
 sudo systemctl disable systemd-hostnamed
