@@ -13793,6 +13793,10 @@ grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPR
 
 grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=xz/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
 
+sudo apt install -y lz4 liblz4-1
+
+sudo modprobe lz4
+
 EOF
 cat > '/tmp/.drirc' <<EOL
 </driconf>
