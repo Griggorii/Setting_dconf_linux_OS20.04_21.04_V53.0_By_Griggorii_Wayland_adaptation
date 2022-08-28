@@ -3,6 +3,8 @@
 
 ####Griggorii@gmail.com mit license dconf-config
 
+🟢
+
 xhost -local:host
 
 # (sh -c "unshare -m --map-root-user") | (sleep 3; killall sh)
@@ -14133,14 +14135,22 @@ sudo mv nautilus-autostart.desktop /etc/xdg/autostart/
 EOF
 rm nautilus-autostart.desktop
 EOF
-cat << EOF > environment
+cat > '/tmp/environment' <<EOL
 export QT_QPA_PLATFORMTHEME=qt5ct
 QT_X11_NO_MITSHM=1
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+
+# Project Griggorii acceleration full speed game or benchmarks in linux
+# https://github.com/Griggorii/drirc_acceleration_idea |  ok tearing vblank_mode=0 > wayland tearing no
+
+mesa_glthread=false
+vblank_mode=1
+EOL
+sudo mv '/tmp/environment' '/etc/environment'
 EOF
-sudo mv ./environment /etc/
+sudo cp '/tmp/environment' /etc/
 EOF
-rm ./environment 
+rm '/tmp/environment'
 EOF
 sudo rm /usr/share/onboard/themes/Droid.theme
 EOF
