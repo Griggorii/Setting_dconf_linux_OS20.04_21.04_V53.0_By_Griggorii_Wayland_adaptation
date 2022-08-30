@@ -18908,6 +18908,28 @@ systemctl --user mask dbus-org.freedesktop.locale.service
 
 systemctl --user mask dbus-org.freedesktop.locale1.service
 
+sudo systemctl stop fwupd-refresh.timer
+
+sudo systemctl disable fwupd-refresh.timer
+
+sudo systemctl stop apt-daily.timer
+
+sudo systemctl disable  apt-daily.timer
+
+sudo systemctl stop apt-daily-upgrade.timer
+
+sudo systemctl disable apt-daily-upgrade.timer
+
+sudo systemctl stop motd-news.timer
+
+sudo systemctl disable motd-news.timer
+
+sudo systemctl enable remote-fs.target
+
+lsof /home/griggorii & sudo systemctl stop remote-fs.target
+
+lsof /home/griggorii & sudo systemctl disable remote-fs.target
+
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
 # iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
 sudo iptables -A OUTPUT -o wlp3s0 -p tcp --dport 8081 -j ACCEPT
