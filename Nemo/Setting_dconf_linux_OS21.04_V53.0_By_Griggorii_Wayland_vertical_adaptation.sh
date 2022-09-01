@@ -9662,14 +9662,14 @@ view-only=true
 vnc-password='keyring'
 
 [org/gnome/desktop/remote-desktop/rdp]
-enable=true
+enable=false
 tls-cert=''
 tls-key=''
 view-only=false
 
 [org/gnome/desktop/remote-desktop/vnc]
-auth-method='prompt'
-view-only=true
+auth-method='password'
+view-only=false
 
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
@@ -12266,7 +12266,7 @@ startup=false
 [org/mate/desktop/applications/browser]
 exec='mozilla'
 needs-term=false
-nremote=true
+nremote=false
 
 [org/mate/desktop/applications/calculator]
 exec='mate-calc'
@@ -13651,6 +13651,22 @@ gsettings set org.nemo.preferences always-use-browser true
 
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ active-plugins \
  "['addhelper', 'unityshell', 'place', 'resize', 'water', 'animation', 'opengl', 'blur', 'session', 'unitymtgrabhandles', 'scaleaddon', 'commands', 'colorfilter', 'mousepoll', 'opacify', 'showrepaint', 'wall', 'fade', 'titleinfo', 'thumbnail', 'staticswitcher', 'shift', 'extrawm', 'wallpaper', 'freewins', 'wizard', 'maximumize', 'kdecompat', 'grid', 'mag', 'wobbly', 'resizeinfo', 'td', 'workspacenames', 'animationsim', 'decor', 'neg', 'crashhandler', 'snap', 'clone', 'ezoom', 'trailfocus', 'animationjc', 'winrules', 'annotate', 'ring', 'switcher', 'fadedesktop', 'firepaint', 'animationplus', 'shelf', 'splash', 'workarounds', 'matecompat', 'obs', 'imgjpeg', 'mblur', 'showmouse', 'scale', 'notification', 'bench', 'composite', 'animationaddon', 'cube', 'put', 'vpswitch', 'screenshot', 'move', 'cubeaddon', 'showdesktop', 'rotate', 'expo', 'scalefilter', 'widget', 'core', 'imgsvg', 'imgpng', 'copytex', 'regex', 'compiztoolbox', 'gears', 'gnomecompat']"
+
+gsettings set com.canonical.unity.settings-daemon.plugins.remote-display active false
+
+gsettings set org.gnome.desktop.remote-desktop.rdp enable false
+
+gsettings set org.gnome.desktop.remote-desktop.vnc auth-method password
+
+gsettings set org.gnome.desktop.remote-desktop.vnc view-only false
+
+gsettings set org.mate.desktop.applications.browser needs-term false
+
+gsettings set org.mate.desktop.applications.browser nremote false
+
+gsettings set org.mate.desktop.applications.browser.needs-term false
+
+gsettings set org.mate.desktop.applications.browser.nremote false
 
 grep -H -r -n  "20.04" /etc/lsb-release && gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
 
