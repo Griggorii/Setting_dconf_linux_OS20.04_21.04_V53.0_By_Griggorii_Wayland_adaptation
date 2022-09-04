@@ -11468,6 +11468,7 @@ antialiasing='grayscale'
 hinting='slight'
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 priority=0
+rgba-order='rgb'
 srgba-order='srgb'
 
 [org/gnome/shell]
