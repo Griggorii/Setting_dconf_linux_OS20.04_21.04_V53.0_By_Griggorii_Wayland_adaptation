@@ -18935,7 +18935,6 @@ systemctl --user mask org.freedesktop.hostname.service
 
 systemctl --user mask org.freedesktop.hostname1.service
 
-
 sudo systemctl disable systemd-localed
 
 sudo systemctl stop systemd-localed
@@ -18977,6 +18976,26 @@ sudo systemctl enable remote-fs.target
 lsof /home/griggorii & sudo systemctl stop remote-fs.target
 
 lsof /home/griggorii & sudo systemctl disable remote-fs.target
+
+sudo systemctl stop fwupd.service
+
+sudo systemctl disable fwupd.service
+
+sudo systemctl mask fwupd.service
+
+sudo systemctl --user mask fwupd.service
+
+sudo systemctl mask org.freedesktop.fwupd.service
+
+sudo systemctl --user mask org.freedesktop.fwupd.service
+
+sudo rm -rf /etc/pki
+
+lsof /home/griggorii & sudo apt purge fwupd fwupd-signed -y
+
+lsof /home/griggorii & sudo apt purge fwupd-signed -y
+
+lsof /home/griggorii & sudo apt purge fwupd -y
 
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
 # iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
