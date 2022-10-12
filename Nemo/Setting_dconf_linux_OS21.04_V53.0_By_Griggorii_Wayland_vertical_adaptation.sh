@@ -35225,6 +35225,14 @@ grep -H -r -n  "20.04" /etc/lsb-release && lsof /usr/bin/notify-send & sh -c "/u
 EOF
 grep -H -r -n  "extension-manager" /usr/bin & (sh -c /usr/bin/extension-manager "$@") | (sleep 3; killall sh)
 EOF
+cd ..
+EOF
+cd ..
+EOF
+cd ..
+EOF
+cd ..
+EOF
 clear
 grep -H -r -n "egrep" /usr/bin
 timeout 5 lightdm --test-mode
