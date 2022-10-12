@@ -35211,6 +35211,8 @@ cd ..
 EOF
 cd ..
 EOF
+df -l
+EOF
 clear
 grep -H -r -n "egrep" /usr/bin
 timeout 5 lightdm --test-mode
