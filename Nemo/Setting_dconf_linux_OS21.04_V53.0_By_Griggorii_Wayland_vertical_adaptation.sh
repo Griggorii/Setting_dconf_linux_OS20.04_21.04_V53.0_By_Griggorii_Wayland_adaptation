@@ -3338,39 +3338,40 @@ window-height=452
 window-width=645
 
 [ca/desrt/dconf-editor]
-behaviour='always-confirm-implicit'
-mouse-back-button=8
-mouse-forward-button=9
-mouse-use-extra-buttons=true
-refresh-settings-schema-source=true
-restore-view=true
+small-keys-list-rows=false
 saved-pathbar-path='/org/gnome/desktop/lockdown/'
 saved-view='/org/gnome/desktop/lockdown/'
-show-warning=false
-small-keys-list-rows=false
-sort-case-sensitive=false
-use-shortpaths=false
 window-height=490
-window-is-fullscreen=false
-window-is-maximized=false
 window-width=851
+restore-view=true
+show-warning=false
+use-shortpaths=false
+window-is-fullscreen=false
+behaviour='always-confirm-implicit'
+mouse-back-button=8
+sort-case-sensitive=false
+mouse-forward-button=9
+mouse-use-extra-buttons=true
+window-is-maximized=false
+refresh-settings-schema-source=true
 
 [ca/desrt/dconf-editor/Demo]
-boolean=true
-double=3.1415926535897931
-enumeration='White'
-integer-32-signed=-2147483648
-number-with-range=3
 string='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+boolean=true
+flags=['Red', 'White', 'Blue', 'Yellow', 'Green']
+enumeration='White'
+number-with-range=3
+double=3.1415926535897931
+integer-32-signed=-2147483648
 weird-enum='only-choice'
 weird-range=5
 
 [ca/desrt/dconf-editor/Demo/Conflict]
+default-value-conflict=2
+warning-similar=true
+type-conflict='test'
 a-non-conflicting-key=true
 another-non-conflicting-key=true
-default-value-conflict=2
-type-conflict='test'
-warning-similar=true
 
 [com/canonical/a11y-profile-manager]
 active-profile=''
