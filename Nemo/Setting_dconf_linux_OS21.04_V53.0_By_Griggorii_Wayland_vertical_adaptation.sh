@@ -33565,6 +33565,12 @@ sudo chmod -x '/usr/lib/X11/xedit/lisp/indent.lsp' '/usr/lib/X11/xedit/lisp/lisp
 
 # sudo apt purge rygel* -y && sudo apt autoremove -y
 
+# griggorii test 2023 nouveau 0000:01:00.0: enabling device (0006 -> 0007)
+
+sudo bash -c "/usr/bin/echo 0007 > /proc/self/root/sys/devices/pci0000:00/firmware_node/LNXVIDEO:01/input/input13/id/product"
+
+sudo bash -c "/usr/bin/echo 0007 > /proc/self/root/sys/devices/pci0000:00/firmware_node/device:36/LNXVIDEO:00/input/input12/id/product"
+
 sudo killall unattended
 
 sudo killall unattended-upgrades
