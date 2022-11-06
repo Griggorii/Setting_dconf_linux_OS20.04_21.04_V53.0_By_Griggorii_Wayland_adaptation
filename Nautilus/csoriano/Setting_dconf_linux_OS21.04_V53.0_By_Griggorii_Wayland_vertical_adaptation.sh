@@ -15958,11 +15958,15 @@ sudo bash -c "echo dev.raid.speed_limit_min=200000 >> /etc/sysctl.d/raid_speed_l
 EOF
 sudo rm /etc/sysctl.d/raid_speed_limit_max.conf
 EOF
+sudo rm /etc/sysctl.d/raid_speed_limit_min.conf
+EOF
 # rm /etc/sysctl.d/raid_speed_limit_max.conf
 EOF
 # bash -c "echo dev.raid.speed_limit_max=2000000 >> /etc/sysctl.d/raid_speed_limit_max.conf"
 EOF
 sudo bash -c "echo dev.raid.speed_limit_max=2000000 >> /etc/sysctl.d/raid_speed_limit_max.conf"
+EOF
+sudo bash -c "echo dev.raid.speed_limit_min=1000000 >> /etc/sysctl.d/raid_speed_limit_min.conf"
 EOF
 sudo rm /etc/sysctl.d/60-dirty.conf
 EOF
