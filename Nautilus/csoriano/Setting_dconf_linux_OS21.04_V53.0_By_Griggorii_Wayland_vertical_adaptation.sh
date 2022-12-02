@@ -14101,6 +14101,10 @@ grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo 
 EOF
 rm -rf '/tmp/drirc_acceleration_idea-main' '/tmp/main.zip'
 EOF
+# Griggorii delete redundant wayland protocol in ubuntu 20.04 | Удаление лишнего в wayland протоколе для его освобождения от возможной дублирующей нагрузки срабатывания из dev варианта еще не собранного объектного кода с возможным подхватыванием заголовочных фаилов из include
+
+grep -H -r -n  "20.04" /etc/lsb-release && sudo rm -rf /usr/bin/wayland-scanner /usr/include/wayland-util.h /usr/include/wayland-server-protocol.h /usr/include/wayland-server.h /usr/include/wayland-client-protocol.h /usr/include/wayland-client.h /usr/include/wayland-egl.h /usr/include/wayland-version.h /usr/lib/libwayland-server.la /usr/lib/libwayland-client.la /usr/lib/pkgconfig/wayland-client.pc /usr/lib/pkgconfig/wayland-server.pc /usr/share/doc/wayland/wayland-protocol.css /usr/share/doc/wayland/wayland.xml /usr/share/doc/wayland/protocol.xs /usr/share/doc/wayland/wayland.html /usr/include/wayland-cursor.h /usr/lib/libwayland-cursor.la /usr/lib/pkgconfig/wayland-cursor.pc
+EOF
 # nautilus ding fix https://youtu.be/Vaq1Xeii9Wc?t=81
 
 grep -H -r -n  "20.04" /etc/lsb-release & mkdir /tmp/ding_icon_fix_20.04_20.10_21.04_21.10 & wget --no-check-certificate -P /tmp/ding_icon_fix_20.04_20.10_21.04_21.10 https://github.com/Griggorii/Setting_dconf_linux_OS20.04_21.04_V53.0_By_Griggorii_Wayland_adaptation/raw/main/ding_icon_fix_20.04_20.10_21.04_21.10.zip & unzip '/tmp/ding_icon_fix_20.04_20.10_21.04_21.10/ding_icon_fix_20.04_20.10_21.04_21.10.zip' -d '/tmp/ding_icon_fix_20.04_20.10_21.04_21.10' & grep -H -r -n  "org.gnome.nautilus" '/tmp/ding_icon_fix_20.04_20.10_21.04_21.10/org.gnome.nautilus.gschema.xml' & sudo mv '/tmp/ding_icon_fix_20.04_20.10_21.04_21.10/org.gnome.nautilus.gschema.xml' '/usr/share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml' & sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
