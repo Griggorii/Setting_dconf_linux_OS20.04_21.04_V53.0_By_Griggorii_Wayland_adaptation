@@ -16029,7 +16029,15 @@ EOF
 sudo apt purge -y clibcpufreq0
 EOF
 # Example energy batary power save command | sudo cpupower frequency-set --governor powersave
-EOF
+cat > '/tmp/50-scaling-governor.rules' <<EOL
+SUBSYSTEM=="module", ACTION=="add", KERNEL=="acpi_cpufreq", RUN+=" /bin/sh -c ' echo performance > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor ' "
+EOL
+sudo mv '/tmp/50-scaling-governor.rules' /etc/udev/rules.d/
+EOL
+sudo cp '/tmp/50-scaling-governor.rules' /etc/udev/rules.d/
+EOL
+rm '/tmp/50-scaling-governor.rules'
+EOL
 sudo echo 'GOVERNOR="performance"' | sudo tee /etc/default/cpufrequtils
 EOF
 sudo cpupower frequency-set --governor performance
