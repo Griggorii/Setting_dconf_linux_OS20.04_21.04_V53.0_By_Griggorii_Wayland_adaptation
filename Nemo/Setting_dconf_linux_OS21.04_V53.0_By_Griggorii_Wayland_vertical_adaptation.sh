@@ -16000,7 +16000,19 @@ sudo rm /etc/sysctl.d/60-dirty.conf
 EOF
 # rm /etc/sysctl.d/60-dirty.conf
 EOF
-sudo bash -c "echo >> /etc/sysctl.d/60-dirty.conf" && sudo echo -e "\nvm.dirty_bytes = 67108864\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_background_bytes = 16777216\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_expire_centisecs = 500\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_background_ratio = 10\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_expire_centisecs = 1500\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_ratio = 20\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_writeback_centisecs = 1500\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.drop_caches = 0\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_writeback_centisecs = 1500\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.lowmem_reserve_ratio = 256	256	32	0	0\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.max_map_count = 65530\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.max_map_count = 65530\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf
+sudo bash -c "echo >> /etc/sysctl.d/60-dirty.conf" && sudo echo -e "\nvm.dirty_bytes = 67108864\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_background_bytes = 16777216\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_expire_centisecs = 60000\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_background_ratio = 5\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_expire_centisecs = 1500\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_ratio = 60\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.dirty_writeback_centisecs = 60000\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.drop_caches = 0\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.lowmem_reserve_ratio = 256	256	32	0	0\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.max_map_count = 65530\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.max_map_count = 65530\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.laptop_mode = 0\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf && sudo echo -e "\nvm.page-cluster = 0\n"|sudo tee --append /etc/sysctl.d/60-dirty.conf
+EOF
+sudo sed -i 's/kernel.kptr_restrict = 1/kernel.kptr_restrict = 2/g' '/etc/sysctl.d/10-kernel-hardening.conf'
+EOF
+sudo sed -i 's/kernel.kptr_restrict = 0/kernel.kptr_restrict = 2/g' '/etc/sysctl.d/10-kernel-hardening.conf'
+EOF
+sudo sed -i 's/kernel.kptr_restrict=1/kernel.kptr_restrict = 2/g' '/etc/sysctl.d/10-kernel-hardening.conf'
+EOF
+sudo sed -i 's/kernel.kptr_restrict=0/kernel.kptr_restrict = 2/g' '/etc/sysctl.d/10-kernel-hardening.conf'
+EOF
+sudo sysctl -w kernel.kptr_restrict=2
+EOF
+sudo sysctl -w kernel.sysctl_writes_strict=1
 EOF
 sudo rm /etc/sysctl.d/gt_mhz.conf
 EOF
@@ -16116,9 +16128,52 @@ cat << EOF > sysctl.conf
 # See https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html
 # for what other values do
 # kernel.sysrq=438
-vm.vfs_cache_pressure=1000
-vm.dirty_background_ratio=50
-vm.dirty_ratio=80
+vm.overcommit_memory = 1
+vm.dirty_background_ratio = 5
+vm.dirty_expire_centisecs = 60000
+vm.dirty_ratio = 60
+vm.dirty_writeback_centisecs = 60000
+vm.laptop_mode = 0
+vm.page-cluster = 0
+kernel.sysctl_writes_strict = 1
+net.ipv4.conf.all.rp_filter=1
+net.ipv4.conf.all.accept_source_route=0
+net.ipv4.conf.lo.accept_source_route=0
+net.ipv4.conf.eth0.accept_source_route=0
+net.ipv4.conf.default.accept_source_route=0
+net.ipv4.conf.all.accept_redirects=0
+net.ipv4.conf.all.secure_redirects=0
+net.ipv4.conf.all.send_redirects=0
+net.ipv4.icmp_echo_ignore_broadcasts=1
+net.ipv4.icmp_ignore_bogus_error_responses=1
+net.ipv4.icmp_echo_ignore_all=0
+net.ipv4.tcp_syncookies=0
+net.ipv4.tcp_max_syn_backlog=4096
+net.ipv4.tcp_synack_retries=1
+net.ipv4.tcp_max_orphans=65536
+net.ipv4.tcp_fin_timeout=10
+net.ipv4.tcp_keepalive_time=60
+net.ipv4.tcp_keepalive_intvl=15
+net.ipv4.tcp_keepalive_probes=5
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=15000
+net.ipv4.tcp_rmem="4096 87380 16777216"
+net.ipv4.tcp_wmem="4096 65536 16777216"
+net.core.rmem_default=229376
+net.core.wmem_default=229376
+net.core.rmem_max=16777216
+net.core.wmem_max=16777216
+net.ipv4.tcp_orphan_retries=0
+net.ipv4.netfilter.ip_conntrack_max=16777216
+net.ipv4.tcp_timestamps=1
+net.ipv4.tcp_sack=1
+net.ipv4.tcp_congestion_control=htcp
+net.ipv4.tcp_no_metrics_save=1
+net.ipv4.ip_local_port_range="1024 65535"
+net.ipv4.tcp_tw_reuse=1
+net.ipv4.tcp_window_scaling=1
+net.ipv4.tcp_rfc1337=1
+net.ipv4.ip_forward=0
 EOF
 sudo cp ./sysctl.conf /etc/
 EOF
