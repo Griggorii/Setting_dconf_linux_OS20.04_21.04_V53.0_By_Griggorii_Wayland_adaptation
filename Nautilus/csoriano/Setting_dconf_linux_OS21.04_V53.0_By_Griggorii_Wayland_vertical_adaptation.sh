@@ -10080,7 +10080,7 @@ window-height=466
 window-width=815
 
 [org/gnome/gedit/plugins]
-active-plugins=['time', 'modelines', 'snippets', 'docinfo', 'filebrowser', 'spell', 'sort', 'quickopen', 'pythonconsole', 'externaltools', 'quickhighlight']
+active-plugins=['time', 'modelines', 'snippets', 'wordcompletion', 'drawspaces', 'synctex', 'charmap', 'docinfo', 'filebrowser', 'spell', 'sort', 'quickopen', 'colorschemer', 'colorpicker', 'bracketcompletion', 'terminal', 'pythonconsole', 'findinfiles', 'externaltools', 'bookmarks', 'commander', 'codecomment', 'multiedit', 'git', 'joinlines', 'textsize', 'smartspaces', 'translate', 'quickhighlight']
 
 [org/gnome/gedit/plugins/drawspaces]
 show-white-space=true
@@ -10177,7 +10177,7 @@ print-wrap-mode='word'
 [org/gnome/gedit/preferences/ui]
 bottom-panel-visible=true
 show-tabs-mode='auto'
-side-panel-visible=true
+side-panel-visible=false
 statusbar-visible=true
 
 [org/gnome/gedit/state/file-chooser]
@@ -10188,15 +10188,15 @@ open-recent=false
 filter-id=0
 
 [org/gnome/gedit/state/history-entry]
-replace-with-entry=@as []
-search-for-entry=@as []
+replace-with-entry=['https://github.com/Griggorii/Xorg_1.28-Mesa_21.2.6_Ubuntu_20.04']
+search-for-entry=['https://bugs\\&.freedesktop\\&.org/enter_bug\\&.cgi?product=DRI']
 
 [org/gnome/gedit/state/window]
-bottom-panel-active-page='GeditPythonConsolePanel'
-bottom-panel-size=22
+bottom-panel-active-page='GeditTerminalPanel'
+bottom-panel-size=50
 side-panel-active-page='GeditFileBrowserPanel'
-side-panel-size=226
-size=(878, 565)
+side-panel-size=274
+size=(846, 517)
 state=87168
 
 [org/gnome/gitg/preferences/commit/message]
@@ -16006,13 +16006,15 @@ sudo apt purge -y clibcpufreq0
 EOF
 # Example energy batary power save command | sudo cpupower frequency-set --governor powersave
 cat > '/tmp/50-scaling-governor.rules' <<EOL
-SUBSYSTEM=="module", ACTION=="add", KERNEL=="acpi_cpufreq", RUN+=" /bin/sh -c ' echo performance > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor ' && modprobe msr && x86_energy_perf_policy performance "
+SUBSYSTEM=="module", ACTION=="add", KERNEL=="acpi_cpufreq", RUN+=" /bin/sh -c ' echo performance > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor ' && sudo sh -c "/usr/bin/echo 0f > /sys/kernel/debug/dri/1/pstate" && sudo sh -c "/usr/bin/echo 0f > /sys/kernel/debug/dri/129/pstate" && sh -c "/usr/bin/echo 1 /sys/module/processor/parameters/ignore_ppc" && sh -c "/usr/bin/echo 0 /sys/devices/system/cpu/cpu*/power/energy_perf_bias" && sh -c "/usr/bin/echo performance /sys/devices/system/cpu/cpufreq/policy*/scaling_governor" && tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor <<<performance && modprobe msr && x86_energy_perf_policy performance "
 EOL
 sudo cp '/tmp/50-scaling-governor.rules' /etc/udev/rules.d/
 EOL
 sudo cp '/tmp/50-scaling-governor.rules' /lib/udev/rules.d/
 EOL
 sudo cp '/tmp/50-scaling-governor.rules' /usr/lib/udev/rules.d/
+EOL
+lsof /usr/lib/udev/rules.d/50-scaling-governor.rules & sudo rm '/etc/udev/rules.d/50-scaling-governor.rules'
 EOL
 rm '/tmp/50-scaling-governor.rules'
 EOL
@@ -16132,53 +16134,91 @@ cat << EOF > sysctl.conf
 # See https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html
 # for what other values do
 # kernel.sysrq=438
+kernel.modprobe = /sbin/modprobe
+kernel.modules_disabled = 0
+debug.kprobes-optimization = 1
+fs.binfmt_misc.llvm-5-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-6-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-7-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-8-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-9-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-10-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-11-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-12-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-13-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-14-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.llvm-15-runtime/binfmt = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.wine = interpreter /usr/lib/binfmt-support/run-detectors
+fs.binfmt_misc.jar = interpreter /usr/bin/jexec
+fs.binfmt_misc.cli = interpreter /usr/lib/binfmt-support/run-detectors
+fs.protected_hardlinks = 1
+fs.protected_regular = 2
+fs.protected_symlinks = 1
+fs.quota.allocated_dquots = 0
+fs.quota.cache_hits = 0
+fs.quota.drops = 0
+fs.quota.free_dquots = 0
+fs.quota.lookups = 0
+fs.quota.reads = 0
+fs.quota.syncs = 0
+fs.quota.writes = 0
+vm.zone_reclaim_mode = 0
+sunrpc.rpc_debug = 0
+sunrpc.nfs_debug = 0
+sunrpc.nfsd_debug = 0
+sunrpc.nlm_debug = 0
+fscache.object_max_active = 64
+fscache.operation_max_active = 32
 vm.overcommit_memory = 1
 vm.dirty_background_ratio = 5
-vm.dirty_expire_centisecs = 60000
-vm.dirty_ratio = 60
-vm.dirty_writeback_centisecs = 60000
+vm.dirty_expire_centisecs = 1500
+vm.dirty_ratio = 20
+vm.dirty_writeback_centisecs = 1500
 vm.laptop_mode = 0
 vm.page-cluster = 0
 kernel.sysctl_writes_strict = 1
-net.ipv4.conf.all.rp_filter=1
-net.ipv4.conf.all.accept_source_route=0
-net.ipv4.conf.lo.accept_source_route=0
-net.ipv4.conf.eth0.accept_source_route=0
-net.ipv4.conf.default.accept_source_route=0
-net.ipv4.conf.all.accept_redirects=0
-net.ipv4.conf.all.secure_redirects=0
-net.ipv4.conf.all.send_redirects=0
-net.ipv4.icmp_echo_ignore_broadcasts=1
-net.ipv4.icmp_ignore_bogus_error_responses=1
-net.ipv4.icmp_echo_ignore_all=0
-net.ipv4.tcp_syncookies=0
-net.ipv4.tcp_max_syn_backlog=4096
-net.ipv4.tcp_synack_retries=1
-net.ipv4.tcp_max_orphans=65536
-net.ipv4.tcp_fin_timeout=10
-net.ipv4.tcp_keepalive_time=60
-net.ipv4.tcp_keepalive_intvl=15
-net.ipv4.tcp_keepalive_probes=5
-net.core.netdev_max_backlog=1000
-net.core.somaxconn=15000
-net.ipv4.tcp_rmem="4096 87380 16777216"
-net.ipv4.tcp_wmem="4096 65536 16777216"
-net.core.rmem_default=229376
-net.core.wmem_default=229376
-net.core.rmem_max=16777216
-net.core.wmem_max=16777216
-net.ipv4.tcp_orphan_retries=0
-net.ipv4.netfilter.ip_conntrack_max=16777216
-net.ipv4.tcp_timestamps=1
-net.ipv4.tcp_sack=1
-net.ipv4.tcp_congestion_control=htcp
-net.ipv4.tcp_no_metrics_save=1
-net.ipv4.ip_local_port_range="1024 65535"
-net.ipv4.tcp_tw_reuse=1
-net.ipv4.tcp_window_scaling=1
-net.ipv4.tcp_rfc1337=1
-net.ipv4.ip_forward=0
-processor.ignore_ppc=1
+net.ipv4.conf.all.rp_filter = 1
+kernel.kptr_restrict = 2
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.lo.accept_source_route = 0
+net.ipv4.conf.eth0.accept_source_route = 0
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.all.secure_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.icmp_ignore_bogus_error_responses = 1
+net.ipv4.icmp_echo_ignore_all = 0
+net.ipv4.tcp_syncookies = 0
+net.ipv4.tcp_max_syn_backlog = 128
+net.ipv4.tcp_synack_retries = 1
+net.ipv4.tcp_max_orphans = 16384
+net.ipv4.tcp_fin_timeout = 10
+net.ipv4.tcp_keepalive_time = 60
+net.ipv4.tcp_keepalive_intvl = 15
+net.ipv4.tcp_keepalive_probes = 5
+net.core.netdev_max_backlog = 1000
+net.core.somaxconn = 128
+net.ipv4.tcp_rmem = "4096 87380 16777216"
+net.ipv4.tcp_wmem = "4096 65536 16777216"
+net.core.rmem_default = 229376
+net.core.wmem_default = 229376
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.ipv4.tcp_orphan_retries = 0
+net.ipv4.netfilter.ip_conntrack_max = 16777216
+net.ipv4.tcp_timestamps = 1
+net.ipv4.tcp_sack = 1
+net.ipv4.tcp_congestion_control = cubic
+net.ipv4.tcp_no_metrics_save = 1
+net.ipv4.ip_local_port_range = "128 65535"
+net.ipv4.tcp_tw_reuse = 0
+net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_rfc1337 = 1
+net.ipv4.ip_forward = 0
+processor.ignore_ppc = 1
+nouveau.config=NvClkMode=15
+iomem=relaxed
 EOF
 sudo cp ./sysctl.conf /etc/
 EOF
@@ -34021,6 +34061,46 @@ sudo chmod -x '/usr/lib/X11/xedit/lisp/indent.lsp' '/usr/lib/X11/xedit/lisp/lisp
 # chmod -x '/usr/lib/X11/xedit/lisp/indent.lsp' '/usr/lib/X11/xedit/lisp/lisp.lsp' '/usr/lib/X11/xedit/lisp/syntax.lsp' '/usr/lib/X11/xedit/lisp/xedit.lsp' '/usr/lib/X11/xedit/lisp/progmodes/auto.lsp' '/usr/lib/X11/xedit/lisp/progmodes/c.lsp' '/usr/lib/X11/xedit/lisp/progmodes/html.lsp' '/usr/lib/X11/xedit/lisp/progmodes/imake.lsp' '/usr/lib/X11/xedit/lisp/progmodes/lisp.lsp' '/usr/lib/X11/xedit/lisp/progmodes/make.lsp' '/usr/lib/X11/xedit/lisp/progmodes/man.lsp' '/usr/lib/X11/xedit/lisp/progmodes/patch.lsp' '/usr/lib/X11/xedit/lisp/progmodes/perl.lsp' '/usr/lib/X11/xedit/lisp/progmodes/python.lsp' '/usr/lib/X11/xedit/lisp/progmodes/rpm.lsp' '/usr/lib/X11/xedit/lisp/progmodes/sgml.lsp' '/usr/lib/X11/xedit/lisp/progmodes/sh.lsp' '/usr/lib/X11/xedit/lisp/progmodes/xconf.lsp' '/usr/lib/X11/xedit/lisp/progmodes/xlog.lsp' '/usr/lib/X11/xedit/lisp/progmodes/xrdb.lsp' '/usr/lib/X11/x11perfcomp/fillblnk' '/usr/lib/X11/x11perfcomp/perfboth' '/usr/lib/X11/x11perfcomp/perfratio' '/usr/lib/X11/x11perfcomp/Xmark' '/usr/lib/X11/config/Amoeba.cf' '/usr/lib/X11/config/apollo.cf' '/usr/lib/X11/config/bsd.cf' '/usr/lib/X11/config/bsdi.cf' '/usr/lib/X11/config/bsdiLib.rules' '/usr/lib/X11/config/bsdiLib.tmpl' '/usr/lib/X11/config/bsdLib.rules' '/usr/lib/X11/config/bsdLib.tmpl' '/usr/lib/X11/config/cde.rules' '/usr/lib/X11/config/cde.tmpl' '/usr/lib/X11/config/convex.cf' '/usr/lib/X11/config/cray.cf' '/usr/lib/X11/config/cross.def' '/usr/lib/X11/config/cross.rules' '/usr/lib/X11/config/cygwin.cf' '/usr/lib/X11/config/cygwin.rules' '/usr/lib/X11/config/cygwin.tmpl' '/usr/lib/X11/config/darwin.cf' '/usr/lib/X11/config/darwinLib.rules' '/usr/lib/X11/config/darwinLib.tmpl' '/usr/lib/X11/config/date.def' '/usr/lib/X11/config/DGUX.cf' '/usr/lib/X11/config/dmx.cf' '/usr/lib/X11/config/DragonFly.cf' '/usr/lib/X11/config/FreeBSD.cf' '/usr/lib/X11/config/fujitsu.cf' '/usr/lib/X11/config/generic.cf' '/usr/lib/X11/config/gnu.cf' '/usr/lib/X11/config/gnuLib.rules' '/usr/lib/X11/config/gnuLib.tmpl' '/usr/lib/X11/config/host.def' '/usr/lib/X11/config/hp.cf' '/usr/lib/X11/config/hpLib.rules' '/usr/lib/X11/config/hpLib.tmpl' '/usr/lib/X11/config/ibm.cf' '/usr/lib/X11/config/ibmLib.rules' '/usr/lib/X11/config/ibmLib.tmpl' '/usr/lib/X11/config/Imake.cf' '/usr/lib/X11/config/Imake.rules' '/usr/lib/X11/config/Imake.tmpl' '/usr/lib/X11/config/isc.cf' '/usr/lib/X11/config/Library.tmpl' '/usr/lib/X11/config/linux.cf' '/usr/lib/X11/config/lnxdoc.rules' '/usr/lib/X11/config/lnxdoc.tmpl' '/usr/lib/X11/config/lnxLib.rules' '/usr/lib/X11/config/lnxLib.tmpl' '/usr/lib/X11/config/luna.cf' '/usr/lib/X11/config/lynx.cf' '/usr/lib/X11/config/mach.cf' '/usr/lib/X11/config/macII.cf' '/usr/lib/X11/config/mingw.cf' '/usr/lib/X11/config/mingw.rules' '/usr/lib/X11/config/mingw.tmpl' '/usr/lib/X11/config/minix.cf' '/usr/lib/X11/config/Mips.cf' '/usr/lib/X11/config/Motif.rules' '/usr/lib/X11/config/Motif.tmpl' '/usr/lib/X11/config/moto.cf' '/usr/lib/X11/config/ncr.cf' '/usr/lib/X11/config/nec.cf' '/usr/lib/X11/config/necLib.rules' '/usr/lib/X11/config/necLib.tmpl' '/usr/lib/X11/config/NetBSD.cf' '/usr/lib/X11/config/noop.rules' '/usr/lib/X11/config/nto.cf' '/usr/lib/X11/config/nto.rules' '/usr/lib/X11/config/Oki.cf' '/usr/lib/X11/config/oldlib.rules' '/usr/lib/X11/config/OpenBSD.cf' '/usr/lib/X11/config/OpenBSDLib.rules' '/usr/lib/X11/config/OpenBSDLib.tmpl' '/usr/lib/X11/config/os2.cf' '/usr/lib/X11/config/os2.rules' '/usr/lib/X11/config/os2Lib.rules' '/usr/lib/X11/config/os2Lib.tmpl' '/usr/lib/X11/config/osf1.cf' '/usr/lib/X11/config/osfLib.rules' '/usr/lib/X11/config/osfLib.tmpl' '/usr/lib/X11/config/pegasus.cf' '/usr/lib/X11/config/QNX4.cf' '/usr/lib/X11/config/QNX4.rules' '/usr/lib/X11/config/sco.cf' '/usr/lib/X11/config/sco5.cf' '/usr/lib/X11/config/scoLib.rules' '/usr/lib/X11/config/sequent.cf' '/usr/lib/X11/config/sequentLib.rules' '/usr/lib/X11/config/Server.tmpl' '/usr/lib/X11/config/ServerLib.tmpl' '/usr/lib/X11/config/sgi.cf' '/usr/lib/X11/config/sgiLib.rules' '/usr/lib/X11/config/sgiLib.tmpl' '/usr/lib/X11/config/site.def' '/usr/lib/X11/config/sony.cf' '/usr/lib/X11/config/sun.cf' '/usr/lib/X11/config/sunLib.rules' '/usr/lib/X11/config/sunLib.tmpl' '/usr/lib/X11/config/sv3Lib.rules' '/usr/lib/X11/config/sv3Lib.tmpl' '/usr/lib/X11/config/sv4Lib.rules' '/usr/lib/X11/config/sv4Lib.tmpl' '/usr/lib/X11/config/svr3.cf' '/usr/lib/X11/config/svr4.cf' '/usr/lib/X11/config/Threads.tmpl' '/usr/lib/X11/config/ultrix.cf' '/usr/lib/X11/config/usl.cf' '/usr/lib/X11/config/version.def' '/usr/lib/X11/config/Win32.cf' '/usr/lib/X11/config/Win32.rules' '/usr/lib/X11/config/WinLib.tmpl' '/usr/lib/X11/config/x386.cf' '/usr/lib/X11/config/X11.rules' '/usr/lib/X11/config/X11.tmpl' '/usr/lib/X11/config/xf86.rules' '/usr/lib/X11/config/xf86.tmpl' '/usr/lib/X11/config/xf86site.def' '/usr/lib/X11/config/xfree86.cf' '/usr/lib/X11/config/xorg.cf' '/usr/lib/X11/config/xorg.tmpl' '/usr/lib/X11/config/xorgsite.def' '/usr/lib/X11/config/xorgversion.def' /usr/include/x86_64-linux-gnu/libunwind-common.h /usr/include/x86_64-linux-gnu/libunwind-dynamic.h /usr/include/x86_64-linux-gnu/libunwind-x86_64.h /usr/include/x86_64-linux-gnu/libunwind.h /lib/x86_64-linux-gnu/dbus-1.0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a /usr/bin/mesa-overlay-control.py /usr/include/sha1.h /usr/include/linux/dma-buf.h /usr/include/xa_composite.h /usr/include/xa_context.h /usr/include/xa_tracker.h /usr/include/xlocale.h /usr/include/locale.h /usr/include/libsync.h /usr/include/xf86drm.h /usr/include/xf86drmMode.h /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_gallium.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_gallium.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nouveau.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r300.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_r600.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0.0 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_trace.so.1 /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_trace.so.1.0.0 /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_kmsro.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_msm.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_nouveau.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_iris.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r300.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r600.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_radeonsi.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_swrast.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_vmwgfx.so /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r300.la /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_swrast.la /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_r600.la /usr/lib/x86_64-linux-gnu/gallium-pipe/pipe_vmwgfx.la /usr/lib/x86_64-linux-gnu/libGLU.a /usr/lib/x86_64-linux-gnu/libGLU.so.1.3.1 /usr/lib/x86_64-linux-gnu/libGLU.so.1 /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libMesaOpenCL.so.1.0.0 /usr/lib/x86_64-linux-gnu/libMesaOpenCL.so.1 /usr/lib/x86_64-linux-gnu/libMesaOpenCL.so /usr/lib/x86_64-linux-gnu/libdrm.so.2.4.0 /usr/lib/x86_64-linux-gnu/libdrm.so.2 /usr/lib/x86_64-linux-gnu/libdrm.so /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/x86_64-linux-gnu/crtn.o /usr/lib/x86_64-linux-gnu/libdrm.la /usr/lib/x86_64-linux-gnu/libwayland-server.la /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1 /usr/lib/x86_64-linux-gnu/libdrm_amdgpu.la /usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_intel.so /usr/lib/x86_64-linux-gnu/libdrm_intel.so.1 /usr/lib/x86_64-linux-gnu/libdrm_intel.la /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so.2.0.0 /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so.2 /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so /usr/lib/x86_64-linux-gnu/libdrm_nouveau.la /usr/lib/x86_64-linux-gnu/libdrm_radeon.so.1.0.1 /usr/lib/x86_64-linux-gnu/libdrm_radeon.so /usr/lib/x86_64-linux-gnu/libdrm_radeon.so.1  /usr/lib/x86_64-linux-gnu/libdrm_radeon.la /usr/lib/x86_64-linux-gnu/libEGL.so.1.1.0 /usr/lib/x86_64-linux-gnu/libEGL.so.1 /usr/lib/x86_64-linux-gnu/libEGL.so /usr/lib/x86_64-linux-gnu/libEGL.la /usr/lib/x86_64-linux-gnu/libgbm.so.1.0.0 /usr/lib/x86_64-linux-gnu/libgbm.so.1 /usr/lib/x86_64-linux-gnu/libgbm.so /usr/lib/x86_64-linux-gnu/libgbm.la /usr/lib/x86_64-linux-gnu/libGL.so.1.7.0 /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGL.la /usr/lib/x86_64-linux-gnu/libglapi.so.0.0.0 /usr/lib/x86_64-linux-gnu/libglapi.so.0 /usr/lib/x86_64-linux-gnu/libglapi.so /usr/lib/x86_64-linux-gnu/libglapi.la /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so.1.1.0 /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so.1.2.0 /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so.1 /usr/lib/x86_64-linux-gnu/libGLESv1_CM.so /usr/lib/x86_64-linux-gnu/libGLESv1_CM.la /usr/lib/x86_64-linux-gnu/libGLESv2.so.2.1.0  /usr/lib/x86_64-linux-gnu/libGLESv2.so.2  /usr/lib/x86_64-linux-gnu/libGLESv2.so /usr/lib/x86_64-linux-gnu/libGLESv2.la /usr/lib/x86_64-linux-gnu/libswrAVX.so.0.0.0 /usr/lib/x86_64-linux-gnu/libswrAVX2.so.0.0.0 /usr/lib/x86_64-linux-gnu/libswrAVX2.so.0 /usr/lib/x86_64-linux-gnu/libswrAVX2.so /usr/lib/x86_64-linux-gnu/libswrAVX2.la /usr/lib/x86_64-linux-gnu/libswrAVX.so.0 /usr/lib/x86_64-linux-gnu/libswrAVX.so /usr/lib/x86_64-linux-gnu/libswrAVX.la /usr/lib/x86_64-linux-gnu/libOSMesa.so.8.0.0 /usr/lib/x86_64-linux-gnu/libOSMesa.so.8 /usr/lib/x86_64-linux-gnu/libOSMesa.la /usr/lib/x86_64-linux-gnu/libOSMesa.so.6 /usr/lib/x86_64-linux-gnu/libOSMesa.so /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0 /usr/lib/x86_64-linux-gnu/libGLX_mesa.so /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0 /usr/lib/x86_64-linux-gnu/libGLX_indirect.so.0 /usr/lib/x86_64-linux-gnu/libVkLayer_MESA_overlay.so /usr/lib/x86_64-linux-gnu/libEGL_mesa.so /usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0 /usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0.0.0 /usr/share/glvnd/egl_vendor.d/50_mesa.json /usr/lib/x86_64-linux-gnu/libwayland-egl.so.1.0.0 /usr/lib/x86_64-linux-gnu/libwayland-egl.so.1 /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-egl.la /usr/lib/x86_64-linux-gnu/libxatracker.so.2.5.0 /usr/lib/x86_64-linux-gnu/libxatracker.so.2 /usr/lib/x86_64-linux-gnu/libxatracker.so /usr/lib/x86_64-linux-gnu/libxatracker.la /usr/lib/x86_64-linux-gnu/libpng16.so.16.37.0 /usr/lib/x86_64-linux-gnu/libpng16.so.16 /usr/lib/x86_64-linux-gnu/libpng16.so /usr/lib/x86_64-linux-gnu/libpng16.a /usr/lib/x86_64-linux-gnu/libdrm_etnaviv.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_etnaviv.so.1 /usr/lib/x86_64-linux-gnu/libdrm_etnaviv.so /usr/lib/x86_64-linux-gnu/libdrm_exynos.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_exynos.so.1 /usr/lib/x86_64-linux-gnu/libdrm_exynos.so /usr/lib/x86_64-linux-gnu/libdrm_exynos.la /usr/lib/x86_64-linux-gnu/libdrm_freedreno.so.1.0.0 /usr/lib/x86_64-linux-gnu/libdrm_freedreno.so.1 /usr/lib/x86_64-linux-gnu/libdrm_freedreno.la /usr/lib/x86_64-linux-gnu/libdrm_freedreno.so /usr/lib/x86_64-linux-gnu/libdrm_omap.so.1.0.0  /usr/lib/x86_64-linux-gnu/libdrm_omap.la /usr/lib/x86_64-linux-gnu/libdrm_omap.so.1 /usr/lib/x86_64-linux-gnu/libdrm_omap.so /usr/lib/x86_64-linux-gnu/libdrm_tegra.so.0.0.0 /usr/lib/x86_64-linux-gnu/libdrm_tegra.so.0 /usr/lib/x86_64-linux-gnu/libdrm_tegra.so /usr/lib/x86_64-linux-gnu/libdrm_tegra.la /usr/lib/x86_64-linux-gnu/libkms.so.1.0.0 /usr/lib/x86_64-linux-gnu/libkms.so.1 /usr/lib/x86_64-linux-gnu/libkms.so /usr/lib/x86_64-linux-gnu/libkms.la /usr/lib/x86_64-linux-gnu/libXvMCr600.so /usr/lib/x86_64-linux-gnu/libXvMCr600.so.1 /usr/lib/x86_64-linux-gnu/libXvMCr600.so.1.0 /usr/lib/x86_64-linux-gnu/libXvMCr600.so.1.0.0 /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so.1 /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so.1.0 /usr/lib/x86_64-linux-gnu/libXvMCnouveau.so.1.0.0 /usr/lib/x86_64-linux-gnu/libVkLayer_MESA_device_select.so /usr/lib/x86_64-linux-gnu/libvulkan_intel.so /usr/lib/x86_64-linux-gnu/libvulkan_intel.la /usr/lib/x86_64-linux-gnu/libvulkan_radeon.so /usr/lib/x86_64-linux-gnu/libvulkan_lvp.so /usr/lib/x86_64-linux-gnu/libvulkan_freedreno.so /usr/lib/x86_64-linux-gnu/libvulkan_broadcom.so /usr/lib/x86_64-linux-gnu/libglslang.a /usr/lib/x86_64-linux-gnu/libpng.so.3.50.0 /usr/lib/x86_64-linux-gnu/libpng.so /usr/lib/x86_64-linux-gnu/libpng.so.3 /usr/lib/x86_64-linux-gnu/libpng.a /usr/lib/x86_64-linux-gnu/libpng12.a /usr/lib/x86_64-linux-gnu/libpng12.la /usr/lib/x86_64-linux-gnu/libpng.la /usr/lib/x86_64-linux-gnu/libpng12.so.0.50.0 /usr/lib/x86_64-linux-gnu/libpng12.so.0 /usr/lib/x86_64-linux-gnu/libpng12.so /usr/lib/x86_64-linux-gnu/libomxil-bellagio0/libomx_mesa.la /usr/lib/x86_64-linux-gnu/libomxil-bellagio0/libomx_mesa.so /usr/lib/libomxil-bellagio.a /usr/lib/libomxil-bellagio.so.0.0.0 /usr/lib/libomxil-bellagio.so.0 /usr/lib/libomxil-bellagio.so /usr/lib/x86_64-linux-gnu/d3d/d3dadapter9.so.1.0.0 /usr/lib/x86_64-linux-gnu/d3d/d3dadapter9.so.1 /usr/lib/x86_64-linux-gnu/d3d/d3dadapter9.so /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_amdgpu.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_etnaviv.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_exynos.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_freedreno.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_intel.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_nouveau.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_omap.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_radeon.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_tegra.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libdrm_vc4.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libkms.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glesv1_cm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/dri.pc /usr/lib/x86_64-linux-gnu/pkgconfig/gbm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/egl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/xatracker.pc /usr/lib/x86_64-linux-gnu/pkgconfig/gl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libpng12.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libpng16.pc /usr/lib/x86_64-linux-gnu/pkgconfig/wayland-egl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/libpng.pc /usr/lib/x86_64-linux-gnu/pkgconfig/d3d.pc /usr/lib/x86_64-linux-gnu/pkgconfig/opengl.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glesv2.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glu.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glx.pc /usr/lib/x86_64-linux-gnu/pkgconfig/glm.pc /usr/lib/x86_64-linux-gnu/pkgconfig/osmesa.pc /usr/lib/pkgconfig/libomxil-bellagio.pc /usr/lib/x86_64-linux-gnu/cmake/glm/glmConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/glm/glmConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/glm/glmTargets.cmake /usr/lib/x86_64-linux-gnu/libGLESv2.so.2.0.0 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/cc1 /usr/lib/x86_64-linux-gnu/libwayland-client.la /usr/share/drirc.d/00-mesa-defaults.conf /usr/lib/x86_64-linux-gnu/dri/lima_dri.so /usr/lib/x86_64-linux-gnu/dri/mcde_dri.so /usr/lib/x86_64-linux-gnu/dri/mediatek_dri.so /usr/lib/x86_64-linux-gnu/dri/meson_dri.so /usr/lib/x86_64-linux-gnu/dri/mi0283qt_dri.so /usr/lib/x86_64-linux-gnu/dri/msm_dri.so /usr/lib/x86_64-linux-gnu/dri/mxsfb-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/nouveau_dri.so /usr/lib/x86_64-linux-gnu/dri/nouveau_drv_video.so /usr/lib/x86_64-linux-gnu/dri/nouveau_vieux_dri.so /usr/lib/x86_64-linux-gnu/dri/panfrost_dri.so /usr/lib/x86_64-linux-gnu/dri/pl111_dri.so /usr/lib/x86_64-linux-gnu/dri/r200_dri.so /usr/lib/x86_64-linux-gnu/dri/r300_dri.so /usr/lib/x86_64-linux-gnu/dri/r600_drv_video.so /usr/lib/x86_64-linux-gnu/dri/radeon_dri.so /usr/lib/x86_64-linux-gnu/dri/radeonsi_dri.so /usr/lib/x86_64-linux-gnu/dri/radeonsi_drv_video.so /usr/lib/x86_64-linux-gnu/dri/rockchip_dri.so /usr/lib/x86_64-linux-gnu/dri/st7586_dri.so /usr/lib/x86_64-linux-gnu/dri/st7735r_dri.so /usr/lib/x86_64-linux-gnu/dri/stm_dri.so /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so /usr/lib/x86_64-linux-gnu/dri/tegra_dri.so /usr/lib/x86_64-linux-gnu/dri/v3d_dri.so /usr/lib/x86_64-linux-gnu/dri/vc4_dri.so /usr/lib/x86_64-linux-gnu/dri/vmwgfx_dri.so /usr/lib/x86_64-linux-gnu/dri/zink_dri.so /usr/lib/x86_64-linux-gnu/dri/armada-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/d3d12_dri.so /usr/lib/x86_64-linux-gnu/dri/etnaviv_dri.so /usr/lib/x86_64-linux-gnu/dri/exynos_dri.so /usr/lib/x86_64-linux-gnu/dri/hx8357d_dri.so /usr/lib/x86_64-linux-gnu/dri/i915_dri.so /usr/lib/x86_64-linux-gnu/dri/i965_dri.so /usr/lib/x86_64-linux-gnu/dri/ili9225_dri.so /usr/lib/x86_64-linux-gnu/dri/ili9341_dri.so /usr/lib/x86_64-linux-gnu/dri/imx-dcss_dri.so /usr/lib/x86_64-linux-gnu/dri/imx-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/ingenic-drm_dri.so /usr/lib/x86_64-linux-gnu/dri/iris_dri.so /usr/lib/x86_64-linux-gnu/dri/kgsl_dri.so /usr/lib/x86_64-linux-gnu/dri/kms_swrast_dri.so /usr/lib/x86_64-linux-gnu/dri/virtio_gpu_dri.so  /usr/lib/x86_64-linux-gnu/dri/r600_dri.so /usr/lib/x86_64-linux-gnu/dri/libgallium_dri.so /usr/lib/x86_64-linux-gnu/dri/libgallium_drv_video.so /usr/lib/x86_64-linux-gnu/dri/libmesa_dri_drivers.so /usr/lib/x86_64-linux-gnu/libexpat.so.1 /usr/lib/x86_64-linux-gnu/libexpat.so.1.6.11 /usr/lib/x86_64-linux-gnu/dri/*
 
 ### Griggorii не трогать права /usr/share/X11/* /usr/lib/xorg/modules/* /usr/lib/xorg/* /usr/lib/xorg/modules/extensions/
+
+grep -H -r -n  "buntu" /etc/lsb-release && lsof /usr/lib/xorg/modules/extensions/libglx.so & sudo rm -rf '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+
+grep -H -r -n  "buntu" /etc/lsb-release && lsof /lib/xorg/modules/extensions/libglx.so & sudo rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+
+grep -H -r -n  "buntu" /etc/lsb-release && lsof '/usr/lib/xorg/modules/extensions/libglx.so' & sudo rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+
+grep -H -r -n  "buntu" /etc/lsb-release && lsof '/lib/xorg/modules/extensions/libglx.so' & sudo rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+
+cat > '/tmp/kvm_intel.conf' <<EOL
+options kvm_intel nested=1
+EOL
+
+cat > '/tmp/nvidia-kms.conf' <<EOL
+options nvidia-drm modeset=1
+EOL
+
+cat > '/tmp/qemu-system-x86.conf' <<EOL
+options kvm_intel nested=1
+EOL
+
+cat > '/tmp/vmwgfx-fbdev.conf' <<EOL
+options vmwgfx enable_fbdev=1
+EOL
+
+sudo cp '/tmp/kvm_intel.conf' /etc/modprobe.d/
+
+sudo cp '/tmp/nvidia-kms.conf' /lib/modprobe.d/
+
+sudo cp '/tmp/nvidia-kms.conf' /usr/lib/modprobe.d/
+
+sudo cp '/tmp/qemu-system-x86.conf' /lib/modprobe.d/
+
+sudo cp '/tmp/qemu-system-x86.conf' /usr/lib/modprobe.d/
+
+sudo cp '/tmp/vmwgfx-fbdev.conf' /lib/modprobe.d/
+
+sudo cp '/tmp/vmwgfx-fbdev.conf' /usr/lib/modprobe.d/
+
+rm -rf '/tmp/kvm_intel.conf' '/tmp/nvidia-kms.conf' '/tmp/qemu-system-x86.conf' '/tmp/vmwgfx-fbdev.conf'
 
 # Anti conspiracy technologies from griggorii https://github.com/Griggorii/Chromium_OS_77/blob/master/README_old.md against forgery of the primacy of the history of the technology of generating new styles and standards for the web and codecs , I will continue to search and block because I am losing investments due to the falsification of the history of the creation of technologies, and you will lose advertising, technologies were not created at the click of a finger, these were hard assembly days where sometimes it took the whole day and you had to sacrifice sleep, which was reflected in the life graph while you crazy in the Maldives or somewhere else emulating that you work there , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance
 
