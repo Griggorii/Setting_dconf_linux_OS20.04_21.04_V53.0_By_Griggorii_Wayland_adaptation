@@ -12558,7 +12558,7 @@ volumes-visible=true
 
 [org/nemo/icon-view]
 captions=['none', 'size', 'date_modified']
-default-use-tighter-layout=true
+default-use-tighter-layout=false
 default-zoom-level='standard'
 labels-beside-icons=false
 thumbnail-size=64
@@ -12602,6 +12602,7 @@ mouse-forward-button=9
 mouse-use-extra-buttons=true
 never-queue-file-ops=false
 quick-renames-with-pause-in-between=false
+saved-searches=@as []
 show-advanced-permissions=true
 show-bookmarks-in-to-menus=true
 show-compact-view-icon-toolbar=true
@@ -12630,7 +12631,7 @@ sort-directories-first=true
 start-with-dual-pane=false
 swap-trash-delete=false
 tabs-open-position='after-current-tab'
-thumbnail-limit=uint64 1073741824
+thumbnail-limit=uint64 104857600
 tooltips-in-icon-view=true
 tooltips-in-list-view=true
 tooltips-on-desktop=true
@@ -12680,7 +12681,7 @@ show-only-directories=false
 [org/nemo/window-state]
 bookmarks-expanded=true
 devices-expanded=true
-geometry='872x531+34+28'
+geometry='900x521+50+50'
 maximized=false
 my-computer-expanded=true
 network-expanded=true
@@ -13760,7 +13761,35 @@ clear
 
 gsettings set org.gnome.desktop.background picture-uri ''
 
-cat > '/tmp/primary-color.sh' <<EOL
+gsettings set org.gnome.desktop.background primary-color '#219C03'
+gsettings set org.gnome.desktop.background primary-color '#119C03'
+gsettings set org.gnome.desktop.background primary-color '#319C03'
+gsettings set org.gnome.desktop.background primary-color '#419C03'
+gsettings set org.gnome.desktop.background primary-color '#519C03'
+gsettings set org.gnome.desktop.background primary-color '#619C03'
+gsettings set org.gnome.desktop.background primary-color '#719C03'
+gsettings set org.gnome.desktop.background primary-color '#819C03'
+gsettings set org.gnome.desktop.background primary-color '#919C03'
+gsettings set org.gnome.desktop.background primary-color '#390S09'
+gsettings set org.gnome.desktop.background primary-color '#390D09'
+gsettings set org.gnome.desktop.background primary-color '#319C03'
+gsettings set org.gnome.desktop.background primary-color '#390S09'
+gsettings set org.gnome.desktop.background primary-color '#390D09'
+gsettings set org.gnome.desktop.background primary-color '#390S09'
+gsettings set org.gnome.desktop.background primary-color '#390D09'
+gsettings set org.gnome.desktop.background primary-color '#390S09'
+gsettings set org.gnome.desktop.background primary-color '#390D09'
+gsettings set org.gnome.desktop.background primary-color '#475S5D'
+gsettings set org.gnome.desktop.background primary-color '#099F5D'
+gsettings set org.gnome.desktop.background primary-color '#475S5D'
+gsettings set org.gnome.desktop.background primary-color '#099F1D'
+gsettings set org.gnome.desktop.background primary-color '#390S09'
+gsettings set org.gnome.desktop.background primary-color '#390D09'
+gsettings set org.gnome.desktop.background primary-color '#390S09'
+gsettings set org.gnome.desktop.background primary-color '#721F5D'
+gsettings set org.gnome.desktop.background primary-color '#390D09'
+gsettings set org.gnome.desktop.background primary-color '#721F5D'
+gsettings set org.gnome.desktop.background primary-color '#099F1D'
 gsettings set org.gnome.desktop.background primary-color '#5B4747'
 gsettings set org.gnome.desktop.background primary-color '#5B4847'
 gsettings set org.gnome.desktop.background primary-color '#5B4B47'
@@ -13861,120 +13890,15 @@ gsettings set org.gnome.desktop.background primary-color '#5B474B'
 gsettings set org.gnome.desktop.background primary-color '#5B4749'
 gsettings set org.gnome.desktop.background primary-color '#5B4748'
 gsettings set org.gnome.desktop.background primary-color '#5B4747'
-rm '/tmp/primary-color.sh'
-EOL
-cat > '/tmp/2primary-color.sh' <<EOL
-gsettings set org.gnome.desktop.background primary-color '#5B4747'
-gsettings set org.gnome.desktop.background primary-color '#5B4847'
-gsettings set org.gnome.desktop.background primary-color '#5B4B47'
-gsettings set org.gnome.desktop.background primary-color '#5B4C47'
-gsettings set org.gnome.desktop.background primary-color '#5B4D47'
-gsettings set org.gnome.desktop.background primary-color '#5B4E47'
-gsettings set org.gnome.desktop.background primary-color '#5B4F47'
-gsettings set org.gnome.desktop.background primary-color '#5B5147'
-gsettings set org.gnome.desktop.background primary-color '#5B5247'
-gsettings set org.gnome.desktop.background primary-color '#5B5347'
-gsettings set org.gnome.desktop.background primary-color '#5B5447'
-gsettings set org.gnome.desktop.background primary-color '#5B5547'
-gsettings set org.gnome.desktop.background primary-color '#5B5747'
-gsettings set org.gnome.desktop.background primary-color '#5B5847'
-gsettings set org.gnome.desktop.background primary-color '#5B5947'
-gsettings set org.gnome.desktop.background primary-color '#5B5A47'
-gsettings set org.gnome.desktop.background primary-color '#5B5B47'
-gsettings set org.gnome.desktop.background primary-color '#595B47'
-gsettings set org.gnome.desktop.background primary-color '#585B47'
-gsettings set org.gnome.desktop.background primary-color '#575B47'
-gsettings set org.gnome.desktop.background primary-color '#565B47'
-gsettings set org.gnome.desktop.background primary-color '#555B47'
-gsettings set org.gnome.desktop.background primary-color '#535B47'
-gsettings set org.gnome.desktop.background primary-color '#525B47'
-gsettings set org.gnome.desktop.background primary-color '#515B47'
-gsettings set org.gnome.desktop.background primary-color '#505B47'
-gsettings set org.gnome.desktop.background primary-color '#4F5B47'
-gsettings set org.gnome.desktop.background primary-color '#4D5B47'
-gsettings set org.gnome.desktop.background primary-color '#4C5B47'
-gsettings set org.gnome.desktop.background primary-color '#4B5B47'
-gsettings set org.gnome.desktop.background primary-color '#4A5B47'
-gsettings set org.gnome.desktop.background primary-color '#495B47'
-gsettings set org.gnome.desktop.background primary-color '#475B47'
-gsettings set org.gnome.desktop.background primary-color '#475B48'
-gsettings set org.gnome.desktop.background primary-color '#475B49'
-gsettings set org.gnome.desktop.background primary-color '#475B4A'
-gsettings set org.gnome.desktop.background primary-color '#475B4B'
-gsettings set org.gnome.desktop.background primary-color '#475B4D'
-gsettings set org.gnome.desktop.background primary-color '#475B4E'
-gsettings set org.gnome.desktop.background primary-color '#475B4F'
-gsettings set org.gnome.desktop.background primary-color '#475B50'
-gsettings set org.gnome.desktop.background primary-color '#475B51'
-gsettings set org.gnome.desktop.background primary-color '#475B53'
-gsettings set org.gnome.desktop.background primary-color '#475B54'
-gsettings set org.gnome.desktop.background primary-color '#475B55'
-gsettings set org.gnome.desktop.background primary-color '#475B56'
-gsettings set org.gnome.desktop.background primary-color '#475B57'
-gsettings set org.gnome.desktop.background primary-color '#475B59'
-gsettings set org.gnome.desktop.background primary-color '#475B5A'
-gsettings set org.gnome.desktop.background primary-color '#475B5B'
-gsettings set org.gnome.desktop.background primary-color '#475A5B'
-gsettings set org.gnome.desktop.background primary-color '#47595B'
-gsettings set org.gnome.desktop.background primary-color '#47575B'
-gsettings set org.gnome.desktop.background primary-color '#47565B'
-gsettings set org.gnome.desktop.background primary-color '#47555B'
-gsettings set org.gnome.desktop.background primary-color '#47545B'
-gsettings set org.gnome.desktop.background primary-color '#47535B'
-gsettings set org.gnome.desktop.background primary-color '#47515B'
-gsettings set org.gnome.desktop.background primary-color '#47505B'
-gsettings set org.gnome.desktop.background primary-color '#474F5B'
-gsettings set org.gnome.desktop.background primary-color '#474E5B'
-gsettings set org.gnome.desktop.background primary-color '#474D5B'
-gsettings set org.gnome.desktop.background primary-color '#474B5B'
-gsettings set org.gnome.desktop.background primary-color '#474A5B'
-gsettings set org.gnome.desktop.background primary-color '#47495B'
-gsettings set org.gnome.desktop.background primary-color '#47485B'
-gsettings set org.gnome.desktop.background primary-color '#47475B'
-gsettings set org.gnome.desktop.background primary-color '#49475B'
-gsettings set org.gnome.desktop.background primary-color '#4A475B'
-gsettings set org.gnome.desktop.background primary-color '#4B475B'
-gsettings set org.gnome.desktop.background primary-color '#4C475B'
-gsettings set org.gnome.desktop.background primary-color '#4D475B'
-gsettings set org.gnome.desktop.background primary-color '#4F475B'
-gsettings set org.gnome.desktop.background primary-color '#50475B'
-gsettings set org.gnome.desktop.background primary-color '#51475B'
-gsettings set org.gnome.desktop.background primary-color '#52475B'
-gsettings set org.gnome.desktop.background primary-color '#53475B'
-gsettings set org.gnome.desktop.background primary-color '#55475B'
-gsettings set org.gnome.desktop.background primary-color '#56475B'
-gsettings set org.gnome.desktop.background primary-color '#57475B'
-gsettings set org.gnome.desktop.background primary-color '#58475B'
-gsettings set org.gnome.desktop.background primary-color '#59475B'
-gsettings set org.gnome.desktop.background primary-color '#5B475B'
-gsettings set org.gnome.desktop.background primary-color '#5B475A'
-gsettings set org.gnome.desktop.background primary-color '#5B4759'
-gsettings set org.gnome.desktop.background primary-color '#5B4758'
-gsettings set org.gnome.desktop.background primary-color '#5B4757'
-gsettings set org.gnome.desktop.background primary-color '#5B4755'
-gsettings set org.gnome.desktop.background primary-color '#5B4754'
-gsettings set org.gnome.desktop.background primary-color '#5B4753'
-gsettings set org.gnome.desktop.background primary-color '#5B4752'
-gsettings set org.gnome.desktop.background primary-color '#5B4751'
-gsettings set org.gnome.desktop.background primary-color '#5B474F'
-gsettings set org.gnome.desktop.background primary-color '#5B474E'
-gsettings set org.gnome.desktop.background primary-color '#5B474D'
-gsettings set org.gnome.desktop.background primary-color '#5B474C'
-gsettings set org.gnome.desktop.background primary-color '#5B474B'
-gsettings set org.gnome.desktop.background primary-color '#5B4749'
-gsettings set org.gnome.desktop.background primary-color '#5B4748'
-rm '/tmp/2primary-color.sh'
-EOL
-cat > '/tmp/primary-run.sh' <<EOL
-/bin/sh -c '/tmp/primary-color.sh' && /bin/sh -c '/tmp/2primary-color.sh' && rm '/tmp/primary-run.sh'
-EOL
-chmod 4755 '/tmp/primary-run.sh'
-
-chmod 4755 '/tmp/primary-color.sh'
-
-chmod 4755 '/tmp/2primary-color.sh'
-
-/bin/sh -c '/tmp/primary-run.sh'
+gsettings set org.gnome.desktop.background primary-color '#390S09'
+gsettings set org.gnome.desktop.background primary-color '#390D09'
+gsettings set org.gnome.desktop.background primary-color '#390S09'
+gsettings set org.gnome.desktop.background primary-color '#721F5D'
+gsettings set org.gnome.desktop.background primary-color '#390D09'
+gsettings set org.gnome.desktop.background primary-color '#721F5D'
+gsettings set org.gnome.desktop.background primary-color '#099F1D'
+gsettings set org.gnome.desktop.background primary-color '#734AAD'
+gsettings set org.gnome.desktop.background primary-color '#734ASD'
 
 gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 
@@ -34291,6 +34215,10 @@ sudo chmod -x '/usr/lib/X11/xedit/lisp/indent.lsp' '/usr/lib/X11/xedit/lisp/lisp
 
 # Anti conspiracy technologies from griggorii https://github.com/Griggorii/Chromium_OS_77/blob/master/README_old.md against forgery of the primacy of the history of the technology of generating new styles and standards for the web and codecs , I will continue to search and block because I am losing investments due to the falsification of the history of the creation of technologies, and you will lose advertising, technologies were not created at the click of a finger, these were hard assembly days where sometimes it took the whole day and you had to sacrifice sleep, which was reflected in the life graph while you crazy in the Maldives or somewhere else emulating that you work there , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance
 
+rm -rf '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+
+sudo rm -rf '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+
 cat > '/tmp/nvidia-graphics-drivers.conf' <<EOL
 blacklist nouveau
 blacklist lbm-nouveau
@@ -34302,25 +34230,34 @@ cp '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/tmp'
 
 cp '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/tmp'
 
-cp '/etc/modprobe.d/nvidia-graphics-drivers.conf' '/tmp'
+cp '/etc/modprobe.d/nvidia-graphics-drivers.conf' 
 
-lsof /usr/lib/xorg/modules/extensions/libglx.so & rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+sudo cp '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/tmp'
 
-lsof /usr/lib/xorg/modules/extensions/libglx.so & rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+sudo cp '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/tmp'
 
-lsof /usr/lib/xorg/modules/extensions/libglx.so & sudo rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+sudo cp '/etc/modprobe.d/nvidia-graphics-drivers.conf' '/tmp'
 
-lsof /usr/lib/xorg/modules/extensions/libglx.so & sudo rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+lsof /lib/xorg/modules/extensions/libglx.so &&  rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+
+lsof /usr/lib/xorg/modules/extensions/libglx.so &&  rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+
+lsof /lib/xorg/modules/extensions/libglx.so &&  sudo rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
+
+lsof /usr/lib/xorg/modules/extensions/libglx.so &&  sudo rm -rf  '/lib/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf' '/etc/modprobe.d/nvidia-graphics-drivers.conf'
 
 cat > '/tmp/kvm_intel.conf' <<EOL
 options kvm_intel nested=1
 EOL
+
 cat > '/tmp/nvidia-kms.conf' <<EOL
 options nvidia-drm modeset=1
 EOL
+
 cat > '/tmp/qemu-system-x86.conf' <<EOL
 options kvm_intel nested=1
 EOL
+
 cat > '/tmp/vmwgfx-fbdev.conf' <<EOL
 options vmwgfx enable_fbdev=1
 EOL
@@ -34347,59 +34284,37 @@ sudo mv '/etc/modprobe.d/kvm_intel.conf' '/lib/modprobe.d/kvm_intel.conf'
 
 sudo mv '/etc/modprobe.d/kvm_intel.conf' '/usr/lib/modprobe.d/kvm_intel.conf'
 
-cp '/tmp/kvm_intel.conf' /etc/modprobe.d/
-
-cp '/tmp/nvidia-kms.conf' /lib/modprobe.d/
-
-cp '/tmp/nvidia-kms.conf' /usr/lib/modprobe.d/
-
-cp '/tmp/qemu-system-x86.conf' /lib/modprobe.d/
-
-cp '/tmp/qemu-system-x86.conf' /usr/lib/modprobe.d/
-
-cp '/tmp/vmwgfx-fbdev.conf' /lib/modprobe.d/
-
-cp '/tmp/vmwgfx-fbdev.conf' /usr/lib/modprobe.d/
-
-mv '/etc/modprobe.d/kvm_intel.conf'  /lib/modprobe.d/
-
-mv '/etc/modprobe.d/kvm_intel.conf'  /usr/lib/modprobe.d/
-
-mv '/etc/modprobe.d/kvm_intel.conf' '/lib/modprobe.d/kvm_intel.conf'
-
-mv '/etc/modprobe.d/kvm_intel.conf' '/usr/lib/modprobe.d/kvm_intel.conf'
-
 rm -rf '/tmp/kvm_intel.conf' '/tmp/nvidia-kms.conf' '/tmp/qemu-system-x86.conf' '/tmp/vmwgfx-fbdev.conf'
 
 ls '/usr/src' > '/tmp/griggorii_check_nvidia_or_nouvea'
 
-grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' & cp '/tmp/nvidia-graphics-drivers.conf' '/etc/modprobe.d'
+grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' &&  cp '/tmp/nvidia-graphics-drivers.conf' '/etc/modprobe.d'
 
-grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' & sudo cp '/tmp/nvidia-graphics-drivers.conf' '/etc/modprobe.d'
+grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' &&  sudo cp '/tmp/nvidia-graphics-drivers.conf' '/etc/modprobe.d'
 
-grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' & cp '/tmp/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d'
+grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' &&  cp '/tmp/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d'
 
-grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' & cp '/tmp/nvidia-graphics-drivers.conf' '/lib/modprobe.d'
+grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' &&  cp '/tmp/nvidia-graphics-drivers.conf' '/lib/modprobe.d'
 
-grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' & sudo cp '/tmp/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d'
+grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' &&  sudo cp '/tmp/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d'
 
-grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' & sudo cp '/tmp/nvidia-graphics-drivers.conf' '/lib/modprobe.d'
+grep -H -r -n "bbswitch" '/tmp/griggorii_check_nvidia_or_nouvea' &&  sudo cp '/tmp/nvidia-graphics-drivers.conf' '/lib/modprobe.d'
 
-grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' & cp '/tmp/nvidia-graphics-drivers.conf' '/etc/modprobe.d'
+grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' &&  cp '/tmp/nvidia-graphics-drivers.conf' '/etc/modprobe.d'
 
-grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' & sudo cp '/tmp/nvidia-graphics-drivers.conf' '/etc/modprobe.d'
+grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' &&  sudo cp '/tmp/nvidia-graphics-drivers.conf' '/etc/modprobe.d'
 
-grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' & cp '/tmp/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d'
+grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' &&  cp '/tmp/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d'
 
-grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' & cp '/tmp/nvidia-graphics-drivers.conf' '/lib/modprobe.d'
+grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' &&  cp '/tmp/nvidia-graphics-drivers.conf' '/lib/modprobe.d'
 
-grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' & sudo cp '/tmp/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d'
+grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' &&  sudo cp '/tmp/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d'
 
-grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' & sudo cp '/tmp/nvidia-graphics-drivers.conf' '/lib/modprobe.d'
+grep -H -r -n "nvidia-" '/tmp/griggorii_check_nvidia_or_nouvea' &&  sudo cp '/tmp/nvidia-graphics-drivers.conf' '/lib/modprobe.d'
 
-mv '/etc/modprobe.d/nvidia-graphics-drivers.conf' '/lib/modprobe.d/nvidia-graphics-drivers.conf'
+sudo mv '/etc/modprobe.d/nvidia-graphics-drivers.conf' '/lib/modprobe.d/nvidia-graphics-drivers.conf'
 
-mv '/etc/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf'
+sudo mv '/etc/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvidia-graphics-drivers.conf'
 
 rm -rf '/tmp/griggorii_check_nvidia_or_nouvea' '/tmp/nvidia-graphics-drivers.conf'
 
