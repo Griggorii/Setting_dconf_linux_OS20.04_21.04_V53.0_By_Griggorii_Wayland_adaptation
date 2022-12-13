@@ -3367,43 +3367,46 @@ window-height=452
 window-width=645
 
 [ca/desrt/dconf-editor]
-small-keys-list-rows=false
-saved-pathbar-path='/org/gnome/desktop/lockdown/'
-saved-view='/org/gnome/desktop/lockdown/'
-window-height=490
-window-width=851
-restore-view=true
-show-warning=false
-use-shortpaths=false
-window-is-fullscreen=false
 behaviour='always-confirm-implicit'
 mouse-back-button=8
-sort-case-sensitive=false
 mouse-forward-button=9
 mouse-use-extra-buttons=true
-window-is-maximized=false
 refresh-settings-schema-source=true
+restore-view=true
+saved-pathbar-path='/org/gnome/desktop/lockdown/'
+saved-view='/org/gnome/desktop/lockdown/'
+show-warning=false
+small-keys-list-rows=false
+sort-case-sensitive=false
+use-shortpaths=false
+window-height=521
+window-is-fullscreen=false
+window-is-maximized=false
+window-width=976
 
 [ca/desrt/dconf-editor/Demo]
-string='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 boolean=true
-flags=['Red', 'White', 'Blue', 'Yellow', 'Green']
-enumeration='White'
-number-with-range=3
 double=3.1415926535897931
+enumeration='White'
+flags=['Red', 'White', 'Blue', 'Yellow', 'Green']
 integer-32-signed=-2147483648
+number-with-range=3
+string='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 weird-enum='only-choice'
 weird-range=5
 
 [ca/desrt/dconf-editor/Demo/Conflict]
-default-value-conflict=2
-warning-similar=true
-type-conflict='test'
 a-non-conflicting-key=true
 another-non-conflicting-key=true
+default-value-conflict=2
+type-conflict='test'
+warning-similar=true
 
 [com/canonical/a11y-profile-manager]
 active-profile=''
+
+[com/canonical/desktop/interface]
+scrollbar-mode='overlay-auto'
 
 [com/canonical/indicator/appmenu]
 menu-mode='global'
@@ -3625,7 +3628,7 @@ priority=0
 active=true
 ambient-enabled=true
 button-hibernate='hibernate'
-button-power='suspend'
+button-power='interactive'
 button-sleep='hibernate'
 button-suspend='suspend'
 critical-battery-action='hibernate'
@@ -3654,7 +3657,7 @@ active=true
 priority=0
 
 [com/canonical/unity/settings-daemon/plugins/remote-display]
-active=true
+active=false
 priority=0
 
 [com/canonical/unity/settings-daemon/plugins/rfkill]
@@ -3848,6 +3851,31 @@ win-view-sidebar='F12'
 [com/gexperts/Tilix/profiles]
 default='GRIGGORII_TILIX_1'
 list=['GRIGGORII_TILIX_1', 'GRIGGORII_TILIX_2', 'GRIGGORII_TILIX_3', 'GRIGGORII_TILIX_4', 'GRIGGORII_TILIX_5', 'GRIGGORII_TILIX_6', 'GRIGGORII_TILIX_7', 'GRIGGORII_TILIX_8', 'GRIGGORII_TILIX_9']
+
+[com/gexperts/Tilix/profiles/0a1407fe-7c1d-4fe6-98e6-f9863431f084]
+background-color='#393634'
+background-transparency-percent=0
+badge-color='#AC7EA8'
+badge-color-set=false
+bold-color='#0000A5A5FFFF'
+bold-color-set=false
+cursor-background-color='#8C3FBF'
+cursor-colors-set=true
+cursor-foreground-color='#FFFFFF'
+font='Monospace Bold 12'
+foreground-color='#C1C17D7D1111'
+highlight-background-color='#CCCC00000000'
+highlight-colors-set=false
+highlight-foreground-color='#000046466C6C'
+palette=['#2E3436', '#CC0403', '#19CB00', '#CECB00', '#000027275B5B', '#CB1ED1', '#0DCDCD', '#E5E5E5', '#4D4D4D', '#CC0000', '#23FD00', '#FFFD00', '#F57900', '#FD28FF', '#14FFFF', '#FFFFFF']
+use-system-font=false
+use-theme-colors=false
+visible-name='By Griggorii'
+
+[com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+font='Monospace Bold 12'
+use-system-font=false
+visible-name='По умолчанию'
 
 [com/gexperts/Tilix/profiles/GRIGGORII_TILIX_1]
 background-color='#33302F'
@@ -4268,8 +4296,8 @@ default-width=1000
 devel-only=false
 direct-color-edit=false
 last-active-tool='line'
-last-left-rgba=['0.6431372549019608', '0.0', '0.0', '1.0']
-last-right-rgba=['1.0', '1.0', '0.0', '0.5']
+last-left-rgba=['0.9607843137254902', '0.4745098039215686', '0.0', '1.0']
+last-right-rgba=['0.6431372549019608', '0.0', '0.0', '1.0']
 last-size=5
 maximized=false
 preview-size=250
@@ -4292,13 +4320,13 @@ audio-activity-timeout=5
 blocksize-in='512'
 blocksize-out='512'
 bypass=false
-custom-sink=''
+custom-sink='alsa_output.pci-0000_00_1b.0.analog-stereo'
 custom-source='alsa_input.pci-0000_00_1b.0.analog-stereo'
 enable-all-sinkinputs=true
 enable-all-sourceoutputs=false
 last-used-input-preset='Presets'
 last-used-output-preset='My7'
-last-used-preset='Akai HD-230'
+last-used-preset='Akai HD-230_V12'
 niceness=-10
 priority-type='None'
 realtime-priority=4
@@ -4306,8 +4334,8 @@ show-blocklisted-apps=false
 use-dark-theme=false
 use-default-sink=true
 use-default-source=true
-window-height=660
-window-width=1117
+window-height=586
+window-width=1061
 
 [com/github/wwmm/pulseeffects/sinkinputs]
 buffer-pulsesink=200000
@@ -4318,13 +4346,13 @@ plugins=['limiter', 'autogain', 'gate', 'multiband_gate', 'compressor', 'multiba
 
 [com/github/wwmm/pulseeffects/sinkinputs/autogain]
 detect-silence=true
-input-gain=0.0
+input-gain=-1.0
 installed=true
-output-gain=0.0
-post-messages=true
+output-gain=-1.0
+post-messages=false
 reset=true
 state=true
-target=-19.0
+target=-30.0
 use-geometric-mean=true
 weight-i=1
 weight-m=1
@@ -4342,7 +4370,7 @@ listen=false
 output-gain=0.0
 post-messages=false
 scope=100.0
-state=false
+state=true
 
 [com/github/wwmm/pulseeffects/sinkinputs/compressor]
 attack=20.0
@@ -4371,7 +4399,7 @@ installed=true
 ir-width=100
 kernel-path=''
 output-gain=0.0
-post-messages=true
+post-messages=false
 state=false
 
 [com/github/wwmm/pulseeffects/sinkinputs/crossfeed]
@@ -4425,7 +4453,7 @@ mute-band7=false
 mute-band8=false
 mute-band9=false
 output-gain=0.0
-post-messages=true
+post-messages=false
 state=true
 
 [com/github/wwmm/pulseeffects/sinkinputs/deesser]
@@ -4442,7 +4470,7 @@ mode='Wide'
 post-messages=false
 ratio=3.0
 sc-listen=false
-state=false
+state=true
 threshold=-18.0
 
 [com/github/wwmm/pulseeffects/sinkinputs/delay]
@@ -4460,7 +4488,7 @@ installed=false
 mode='IIR'
 num-bands=30
 output-gain=0.0
-post-messages=true
+post-messages=false
 split-channels=false
 state=true
 
@@ -4937,7 +4965,7 @@ frequency=305.81799999999998
 inertia=74.0
 input-gain=0.0
 installed=true
-mode='6dB/oct Bandreject'
+mode='24dB/oct Highpass'
 output-gain=0.0
 post-messages=false
 resonance=0.70699999999999996
@@ -4974,7 +5002,7 @@ installed=true
 link=-12.01
 loudness=-1.9800000000000015
 output=-3.7000000000000064
-post-messages=true
+post-messages=false
 state=true
 
 [com/github/wwmm/pulseeffects/sinkinputs/maximizer]
@@ -5026,7 +5054,7 @@ solo0=false
 solo1=false
 solo2=false
 solo3=false
-state=false
+state=true
 threshold0=-12.0
 threshold1=-12.0
 threshold2=-12.0
@@ -5097,20 +5125,20 @@ semitones=0
 state=false
 
 [com/github/wwmm/pulseeffects/sinkinputs/reverb]
-amount=-8.0
-bass-cut=300.0
-decay-time=1.45397
-diffusion=1.0
-dry=6.0
-hf-damp=9795.5799999999999
+amount=-61.0
+bass-cut=259.0
+decay-time=0.40000000000000002
+diffusion=0.0
+dry=2.0
+hf-damp=9907.0
 input-gain=0.0
 installed=true
 output-gain=0.0
 post-messages=false
-predelay=10.0
-room-size='Tunnel-like'
+predelay=0.0
+room-size='Small'
 state=false
-treble-cut=5000.0
+treble-cut=4918.0
 
 [com/github/wwmm/pulseeffects/sinkinputs/rnnoise]
 installed=false
@@ -5119,13 +5147,13 @@ post-messages=false
 state=false
 
 [com/github/wwmm/pulseeffects/sinkinputs/stereotools]
-balance-in=7.5286998857393428e-16
+balance-in=7.4593109467002705e-16
 balance-out=0.0
 delay=0.0
 input-gain=0.0
 installed=true
 mlev=0.0
-mode='LR > LR (Stereo Default)'
+mode='LR > RL (Stereo Flip Channels)'
 mpan=0.0
 mutel=false
 muter=false
@@ -5137,7 +5165,7 @@ sbal=0.0
 sc-level=1.0
 slev=0.0
 softclip=true
-state=false
+state=true
 stereo-base=0.0
 stereo-phase=0.0
 
@@ -7698,7 +7726,7 @@ background-size='default'
 [com/ubuntu/phone]
 default-sim-for-calls='ask'
 default-sim-for-messages='ask'
-mms-group-chat-enabled=false
+mms-group-chat-enabled=true
 
 [com/ubuntu/sound]
 allow-amplified-volume=true
@@ -7713,8 +7741,8 @@ incoming-message-sound='/usr/share/sounds/ubuntu/notifications/Xylo.ogg'
 silent-mode=false
 
 [com/ubuntu/touch/system]
-auto-brightness=false
-brightness=80
+auto-brightness=true
+brightness=100
 brightness-needs-hardware-default=true
 orientation-lock='none'
 rotation-lock=false
@@ -7819,7 +7847,7 @@ settings-migrated=true
 use-skip-buttons-for-playlist=true
 
 [io/github/celluloid-player/celluloid/window-state]
-height=531
+height=602
 last-folder-uri=''
 loop-playlist=false
 maximized=false
@@ -7827,7 +7855,7 @@ playlist-width=250
 show-controls=true
 show-playlist=false
 volume=1.0
-width=873
+width=1024
 
 [io/github/gnome-mpv]
 always-autohide-cursor=false
@@ -7860,7 +7888,7 @@ width=794
 alignment='center'
 auto-pinning=true
 current-workspace-only=false
-dock-items=['budgie-welcome.dockitem', 'org.gnome.Software.dockitem', 'rhythmbox.dockitem', 'libreoffice-writer.dockitem', 'libreoffice-calc.dockitem', 'nemo.dockitem', 'firefox.dockitem']
+dock-items=['pavucontrol.dockitem', 'org.gnome.baobab.dockitem', 'gparted.dockitem', 'org.gnome.DiskUtility.dockitem', 'Thunar.dockitem', 'nemo.dockitem', 'xfce-display-settings.dockitem', 'libreoffice-startcenter.dockitem', 'exo-preferred-applications.dockitem', 'steam.dockitem', 'liteusermanager.dockitem', 'PlayOnLinux.dockitem', 'obs.dockitem', 'lxterminal.dockitem', 'synaptic.dockitem', 'ca.desrt.dconf-editor.dockitem', 'thunderbird.dockitem', 'gnome-shell-extension-prefs.dockitem', 'org.gnome.Totem.dockitem', 'onboard.dockitem', 'gnome-system-monitor.dockitem', 'onboard-settings.dockitem', 'budgie-desktop-settings.dockitem', 'ninja-ide.dockitem', 'chromium-browser.dockitem', 'firefox.dockitem', 'alacarte-made-29.dockitem', 'alacarte-made-19.dockitem']
 hide-delay=500
 hide-mode='dodge-maximized'
 icon-size=24
@@ -8835,7 +8863,7 @@ window-is-maximized=false
 window-width=730
 
 [org/gnome/Totem]
-active-plugins=['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'rotation', 'recent', 'pythonconsole', 'movie-properties', 'opensubtitles', 'open-directory', 'mpris', 'totem-im-status', 'autoload-subtitles', 'apple-trailers']
+active-plugins=['vimeo', 'skipto', 'screenshot', 'screensaver', 'save-file', 'rotation', 'recent', 'pythonconsole', 'movie-properties', 'opensubtitles', 'media_player_keys', 'totem-im-status', 'autoload-subtitles', 'apple-trailers']
 audio-output-type='stereo'
 autoload-subtitles=false
 brightness=32767
@@ -8859,15 +8887,15 @@ language=''
 rpdb2-password=''
 
 [org/gnome/Weather]
-automatic-location=false
-locations=[<(uint32 2, <('Ulaanbaatar', 'ZMUB', true, [(0.8351400470792868, 1.8634298705303767)], [(0.83630360573171358, 1.8660478644083685)])>)>, <(uint32 2, <('Moscow', 'UUWW', true, [(0.97127572873484425, 0.65042604039431762)], [(0.97305983920281813, 0.65651530216830811)])>)>, <(uint32 2, <('Ulan-Ude', 'UIUU', true, [(0.90466232313262995, 1.8779742751458985)], [(0.90453526316308486, 1.8781452126928389)])>)>]
+automatic-location=true
+locations=[<(uint32 2, <('Changi Airport', 'WSSS', false, [(0.023852838928353343, 1.8148515280476727)], @a(dd) [])>)>, <(uint32 2, <('Ulaanbaatar', 'ZMUB', true, [(0.8351400470792868, 1.8634298705303767)], [(0.83630360573171358, 1.8660478644083685)])>)>, <(uint32 2, <('Moscow', 'UUWW', true, [(0.97127572873484425, 0.65042604039431762)], [(0.97305983920281813, 0.65651530216830811)])>)>, <(uint32 2, <('Ulan-Ude', 'UIUU', true, [(0.90466232313262995, 1.8779742751458985)], [(0.90453526316308486, 1.8781452126928389)])>)>]
 
 [org/gnome/Weather/Application]
 locations=[<(uint32 2, <('Irkutsk', 'UIII', true, [(0.91222542819346697, 1.8206693038565154)], [(0.91276841757705507, 1.8203153859907963)])>)>]
 
 [org/gnome/baobab/ui]
 active-chart='rings'
-window-size=(1094, 595)
+window-size=(894, 483)
 window-state=87168
 
 [org/gnome/boxes]
@@ -9120,7 +9148,7 @@ active-view='month'
 follow-night-light=false
 weather-settings=(true, false, '', @mv nothing)
 window-maximized=false
-window-position=(0, 0)
+window-position=(34, 28)
 window-size=(1366, 722)
 
 [org/gnome/charmap]
@@ -9156,6 +9184,13 @@ video-y-resolution=480
 [org/gnome/control-center]
 last-panel='info-overview'
 show-development-warning=true
+
+[org/gnome/deja-dup]
+backend='goa'
+prompt-check='2019-04-13T04:32:29.509344Z'
+
+[org/gnome/deja-dup/file]
+migrated=true
 
 [org/gnome/deja-dup/gcs]
 folder='GriggoriiX64'
@@ -9297,9 +9332,9 @@ color-shading-type='solid'
 draw-background=true
 picture-opacity=100
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/hardy_wallpaper_uhd.png'
+picture-uri=''
 picture-uri-dark='/usr/share/backgrounds/jj_light_by_Hiking93.jpg'
-primary-color='#000000'
+primary-color='#734ASD'
 secondary-color='#000000'
 show-desktop-icons=false
 
@@ -9318,7 +9353,7 @@ mru-sources=[('xkb', 'ru'), ('xkb', 'us')]
 per-window=true
 show-all-sources=false
 sources=[('xkb', 'us'), ('xkb', 'ru')]
-xkb-options=['grp_led:scroll']
+xkb-options=['grp_led:scroll', 'lv3:ralt_switch']
 
 [org/gnome/desktop/interface]
 automatic-mnemonics=true
@@ -9391,7 +9426,7 @@ autorun-x-content-open-folder=['x-content/bootable-media']
 autorun-x-content-start-app=['x-content/unix-software', 'x-content/bootable-media']
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-gnome-dejadup', 'org-gnome-fileroller', 'org-gnome-baobab', 'org-gnome-gedit', 'rhythmbox', 'org-gnome-terminal']
+application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-xfce-mousepad', 'org-gnome-terminal']
 show-banners=true
 show-in-lock-screen=true
 
@@ -9554,6 +9589,9 @@ application-id='org.gnome.gedit.desktop'
 application-id='org.gnome.Nautilus.desktop'
 details-in-lock-screen=true
 
+[org/gnome/desktop/notifications/application/org-gnome-screenshot]
+application-id='org.gnome.Screenshot.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-seahorse-application]
 application-id='org.gnome.seahorse.Application.desktop'
 
@@ -9620,11 +9658,14 @@ application-id='xfce-display-settings.desktop'
 [org/gnome/desktop/notifications/application/xfce4-notifyd-config]
 application-id='xfce4-notifyd-config.desktop'
 
+[org/gnome/desktop/notifications/application/yandex-browser]
+application-id='yandex-browser.desktop'
+
 [org/gnome/desktop/notifications/application/yelp]
 application-id='yelp.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
-numlock-state=false
+numlock-state=true
 remember-numlock-state=true
 repeat=true
 
@@ -9712,8 +9753,8 @@ logout-command=''
 logout-enabled=false
 picture-opacity=100
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/hardy_wallpaper_uhd.png'
-primary-color='#000000'
+picture-uri='file:///usr/share/backgrounds/gnome/Terraform-green.jpg'
+primary-color='#ffffff'
 secondary-color='#000000'
 show-full-name-in-top-bar=true
 show-notifications=false
@@ -9734,7 +9775,7 @@ session-name='ubuntu'
 allow-volume-above-100-percent=true
 event-sounds=true
 input-feedback-sounds=true
-theme-name='freedesktop'
+theme-name='Yaru'
 
 [org/gnome/desktop/thumbnail-cache]
 maximum-age=180
@@ -9903,7 +9944,7 @@ show-toolbar=true
 sidebar-page='links'
 sidebar-size=132
 sizing-mode='automatic'
-window-ratio=(0.99123013339605515, 0.8562945368171021)
+window-ratio=(0.99166337176706831, 0.85637592304199739)
 zoom=1.0
 
 [org/gnome/evolution-data-server]
@@ -10029,7 +10070,7 @@ x=0
 y=0
 
 [org/gnome/file-roller/dialogs/add]
-current-folder=''
+current-folder='file:///tmp'
 exclude-files=''
 exclude-folders=''
 filename=''
@@ -10052,7 +10093,7 @@ default-extension='.zip'
 encrypt-header=false
 expand-options=false
 other-options=false
-volume-size=0
+volume-size=104857
 
 [org/gnome/file-roller/file-selector]
 show-hidden=false
@@ -10065,22 +10106,22 @@ encrypt-header=false
 
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
-name-column-width=371
+name-column-width=398
 show-path=false
 show-size=true
 show-time=true
 show-type=true
-sort-method='time'
-sort-type='descending'
+sort-method='name'
+sort-type='ascending'
 
 [org/gnome/file-roller/ui]
 sidebar-width=200
 view-sidebar=true
-window-height=466
-window-width=815
+window-height=490
+window-width=842
 
 [org/gnome/gedit/plugins]
-active-plugins=['time', 'modelines', 'snippets', 'wordcompletion', 'drawspaces', 'synctex', 'charmap', 'docinfo', 'filebrowser', 'spell', 'sort', 'quickopen', 'colorschemer', 'colorpicker', 'bracketcompletion', 'terminal', 'pythonconsole', 'findinfiles', 'externaltools', 'bookmarks', 'commander', 'codecomment', 'multiedit', 'git', 'joinlines', 'textsize', 'smartspaces', 'translate', 'quickhighlight']
+active-plugins=['time', 'modelines', 'snippets', 'wordcompletion', 'synctex', 'charmap', 'docinfo', 'filebrowser', 'spell', 'sort', 'quickopen', 'colorschemer', 'colorpicker', 'bracketcompletion', 'terminal', 'pythonconsole', 'findinfiles', 'externaltools', 'commander', 'codecomment', 'multiedit', 'git', 'joinlines', 'textsize', 'smartspaces', 'translate', 'quickhighlight']
 
 [org/gnome/gedit/plugins/drawspaces]
 show-white-space=false
@@ -10189,10 +10230,10 @@ filter-id=0
 
 [org/gnome/gedit/state/history-entry]
 replace-with-entry=['https://github.com/Griggorii/Xorg_1.28-Mesa_21.2.6_Ubuntu_20.04']
-search-for-entry=['https://bugs\\&.freedesktop\\&.org/enter_bug\\&.cgi?product=DRI']
+search-for-entry=['https://bugs&.freedesktop&.org/enter_bug&.cgi?product=DRI']
 
 [org/gnome/gedit/state/window]
-bottom-panel-active-page='GeditTerminalPanel'
+bottom-panel-active-page='GeditPythonConsolePanel'
 bottom-panel-size=50
 side-panel-active-page='GeditFileBrowserPanel'
 side-panel-size=274
@@ -10297,11 +10338,11 @@ y-centered=false
 auto-save-directory=''
 border-effect='none'
 default-file-type='png'
-delay=1
+delay=4
 include-border=true
 include-icc-profile=true
 include-pointer=false
-last-save-directory=''
+last-save-directory='file:///'
 take-window-shot=false
 
 [org/gnome/gnome-session]
@@ -10311,11 +10352,11 @@ logout-prompt=true
 show-fallback-warning=true
 
 [org/gnome/gnome-system-log]
-fontsize=11
-height=765
+fontsize=13
+height=741
 logfile='/var/log/Xorg.0.log'
 logfiles=['/var/log/Xorg.0.log']
-width=668
+width=1130
 
 [org/gnome/gnome-system-monitor]
 cpu-colors=[(uint32 0, 'rgb(16,74,21)'), (1, 'rgb(54,192,56)'), (2, 'rgb(89,209,50)'), (3, 'rgb(5,255,14)'), (4, '#3cb44b'), (5, '#42d4f4'), (6, '#4363d8'), (7, '#911eb4'), (8, '#f032e6'), (9, '#fabebe'), (10, '#ffd8b1'), (11, '#fffac8'), (12, '#aaffc3'), (13, '#469990'), (14, '#000075'), (15, '#e6beff')]
@@ -10343,7 +10384,7 @@ smooth-refresh=true
 solaris-mode=true
 swap-color='#49A835'
 update-interval=5000
-window-state=(880, 573, 34, 28)
+window-state=(874, 564, 160, 65)
 
 [org/gnome/gnome-system-monitor/disktreenew]
 col-0-visible=true
@@ -10490,7 +10531,7 @@ col-8-width=71
 col-9-visible=true
 col-9-width=80
 columns-order=[0, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
-sort-col=4
+sort-col=0
 sort-order=0
 
 [org/gnome/gnote]
@@ -10900,7 +10941,7 @@ center-new-windows=false
 draggable-border-width=10
 dynamic-workspaces=true
 edge-tiling=true
-experimental-features=['kms', 'vkms', 'scale-monitor-framebuffer']
+experimental-features=['x11-randr-fractional-scaling']
 focus-change-on-pointer-rest=true
 locate-pointer-key='Control_L'
 no-tab-popup=false
@@ -10968,7 +11009,7 @@ use-experimental-views=false
 
 [org/gnome/nautilus/window-state]
 geometry='811x460+310+161'
-initial-size=(851, 539)
+initial-size=(866, 539)
 maximized=false
 sidebar-width=218
 start-with-location-bar=true
@@ -10982,6 +11023,10 @@ disable-wifi-create=false
 show-applet=true
 stamp=0
 suppress-wireless-networks-available=false
+
+[org/gnome/nm-applet/eap/d75b3fa1-377c-3363-9748-7ae0dab58d7c]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
 
 [org/gnome/orca]
 active-profile=['Default', 'default']
@@ -11006,17 +11051,17 @@ info-stats-graph-smooth=true
 info-stats-type='discharge-accuracy'
 
 [org/gnome/rhythmbox]
-display-page-tree-height=224
+display-page-tree-height=439
 display-page-tree-visible=true
 follow-playing=true
 maximized=false
-paned-position=160
+paned-position=192
 position=(34, 28)
 queue-as-sidebar=true
 right-paned-position=400
 show-album-art=true
 show-song-position-slider=true
-size=(930, 548)
+size=(888, 494)
 statusbar-visible=false
 time-display=true
 
@@ -11030,7 +11075,7 @@ strip-chars=false
 media-type='audio/x-vorbis'
 
 [org/gnome/rhythmbox/library/source]
-show-browser=true
+show-browser=false
 
 [org/gnome/rhythmbox/player]
 play-order='linear'
@@ -11056,7 +11101,7 @@ inline-label=true
 playing-label=false
 repeat-type=2
 show-compact=true
-show-source-toolbar=false
+show-source-toolbar=true
 show-tooltips=true
 start-hidden=false
 volume-control=false
@@ -11066,6 +11111,9 @@ scrobbling-enabled=true
 
 [org/gnome/rhythmbox/plugins/audioscrobbler/Libre.fm]
 scrobbling-enabled=true
+
+[org/gnome/rhythmbox/plugins/grilo/source]
+paned-position=256
 
 [org/gnome/rhythmbox/plugins/iradio]
 initial-stations-loaded=true
@@ -11096,7 +11144,7 @@ download-interval='hourly'
 download-location='file:///'
 
 [org/gnome/rhythmbox/podcast/source]
-show-browser=true
+show-browser=false
 
 [org/gnome/rhythmbox/rhythmdb]
 grace-period=45
@@ -11112,7 +11160,7 @@ share-password=''
 
 [org/gnome/rhythmbox/sources]
 browser-views='artists-albums'
-visible-columns=['post-time', 'duration', 'track-number', 'album', 'genre', 'artist']
+visible-columns=['post-time', 'duration', 'track-number', 'album', 'genre', 'artist', 'bitrate', 'rating']
 
 [org/gnome/settings-daemon/peripherals]
 active=true
@@ -11131,6 +11179,8 @@ click-volume=0
 numlock-state='off'
 
 [org/gnome/settings-daemon/peripherals/mouse]
+double-click=400
+drag-threshold=8
 locate-pointer=false
 
 [org/gnome/settings-daemon/peripherals/smartcard]
@@ -11481,10 +11531,10 @@ command-history=['nautilus', 'r', 'tilix', 'lg']
 development-tools=true
 disable-extension-version-validation=true
 disable-user-extensions=false
-disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'dash-to-panel@jderose9.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'desktop-icons@csoriano']
+disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'dash-to-panel@jderose9.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'desktop-icons@csoriano']
 enable-hot-corners=true
-enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io', 'ding@rastersoft.com']
-favorite-apps=['org.gnome.Screenshot.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Extensions.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'chromium-browser.desktop', 'vlc.desktop']
+enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io', 'ding@rastersoft.com', 'unite@hardpixel.eu']
+favorite-apps=['org.gnome.Screenshot.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'chromium-browser.desktop', 'vlc.desktop', 'org.gnome.Terminal.desktop']
 had-bluetooth-devices-setup=true
 introspect=false
 remember-mount-password=false
@@ -11876,8 +11926,8 @@ focus-change-on-pointer-rest=true
 workspaces-only-on-primary=true
 
 [org/gnome/shell/weather]
-automatic-location=false
-locations=[<(uint32 2, <('Ulaanbaatar', 'ZMUB', true, [(0.8351400470792868, 1.8634298705303767)], [(0.83630360573171358, 1.8660478644083685)])>)>, <(uint32 2, <('Moscow', 'UUWW', true, [(0.97127572873484425, 0.65042604039431762)], [(0.97305983920281813, 0.65651530216830811)])>)>, <(uint32 2, <('Ulan-Ude', 'UIUU', true, [(0.90466232313262995, 1.8779742751458985)], [(0.90453526316308486, 1.8781452126928389)])>)>]
+automatic-location=true
+locations=[<(uint32 2, <('Changi Airport', 'WSSS', false, [(0.023852838928353343, 1.8148515280476727)], @a(dd) [])>)>, <(uint32 2, <('Ulaanbaatar', 'ZMUB', true, [(0.8351400470792868, 1.8634298705303767)], [(0.83630360573171358, 1.8660478644083685)])>)>, <(uint32 2, <('Moscow', 'UUWW', true, [(0.97127572873484425, 0.65042604039431762)], [(0.97305983920281813, 0.65651530216830811)])>)>, <(uint32 2, <('Ulan-Ude', 'UIUU', true, [(0.90466232313262995, 1.8779742751458985)], [(0.90453526316308486, 1.8781452126928389)])>)>]
 
 [org/gnome/shell/window-switcher]
 app-icon-mode='both'
@@ -11902,7 +11952,7 @@ selected-device=''
 text-dpi=150
 
 [org/gnome/software]
-check-timestamp=int64 1659502926
+check-timestamp=int64 1670760215
 download-updates=false
 first-run=false
 install-timestamp=int64 1617723968
@@ -11972,7 +12022,7 @@ bold-is-bright=false
 cursor-background-color='rgb(0,86,138)'
 cursor-colors-set=true
 cursor-foreground-color='rgb(254,210,76)'
-font='Monospace Bold 12'
+font='Monospace Bold Semi-Condensed 12'
 foreground-color='rgb(132,200,7)'
 highlight-background-color='rgb(53,127,20)'
 highlight-colors-set=true
@@ -12149,7 +12199,7 @@ custom-colors=[(0.0, 0.57254904508590698, 0.90196079015731812, 1.0)]
 selected-color=(true, 0.0, 0.57254904508590698, 0.90196079015731812, 1.0)
 
 [org/gtk/settings/color-chooser]
-custom-colors=[(0.062745098039215685, 0.29019607843137257, 0.082352941176470587, 1.0), (1.0, 1.0, 0.0, 0.5), (0.22352941176470589, 0.21176470588235294, 0.20392156862745098, 1.0)]
+custom-colors=[(0.062745098039215685, 0.29019607843137257, 0.082352941176470587, 1.0), (0.054901960784313725, 0.72941176470588232, 0.050980392156862744, 1.0), (0.51764705882352946, 0.78431372549019607, 0.027450980392156862, 1.0), (0.66666666666666663, 0.0, 0.0, 1.0), (0.050980392156862724, 0.3411764705882353, 0.062745098039215616, 1.0), (0.054901960784313919, 0.72941176470588232, 0.050980392156862779, 1.0), (0.047058823529411757, 0.25882352941176473, 0.054901960784313739, 1.0), (0.054901960784313718, 0.36470588235294116, 0.066666666666666721, 1.0)]
 selected-color=(true, 0.062745098039215685, 0.29019607843137257, 0.082352941176470587, 1.0)
 
 [org/gtk/settings/debug]
@@ -12168,14 +12218,14 @@ location-mode='path-bar'
 show-hidden=false
 show-size-column=true
 show-type-column=true
-sidebar-width=173
+sidebar-width=163
 sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 startup-mode='cwd'
 type-format='category'
-window-position=(0, 29)
-window-size=(932, 507)
+window-position=(225, 103)
+window-size=(917, 515)
 
 [org/mate/caja/compact-view]
 all-columns-have-same-width=true
@@ -12682,7 +12732,7 @@ show-only-directories=false
 [org/nemo/window-state]
 bookmarks-expanded=true
 devices-expanded=true
-geometry='900x521+50+50'
+geometry='900x521+59+82'
 maximized=false
 my-computer-expanded=true
 network-expanded=true
@@ -13000,7 +13050,7 @@ toolbar-visible=false
 toolbar-visible-in-fullscreen='auto'
 
 [org/xfce/mousepad/state/search]
-direction=1
+direction=2
 enable-regex=false
 highlight-all=true
 match-case=false
@@ -13011,11 +13061,11 @@ wrap-around=true
 
 [org/xfce/mousepad/state/window]
 fullscreen=false
-height=489
+height=uint32 488
 left=-1
 maximized=false
 top=-1
-width=843
+width=uint32 811
 
 [org/yorba/shotwell/crop-settings]
 last-crop-height=1
@@ -13770,100 +13820,10 @@ gsettings set org.gnome.desktop.background primary-color '#719C03'
 gsettings set org.gnome.desktop.background primary-color '#819C03'
 gsettings set org.gnome.desktop.background primary-color '#919C03'
 gsettings set org.gnome.desktop.background primary-color '#390S09'
-gsettings set org.gnome.desktop.background primary-color '#390D09'
-gsettings set org.gnome.desktop.background primary-color '#319C03'
-gsettings set org.gnome.desktop.background primary-color '#390S09'
-gsettings set org.gnome.desktop.background primary-color '#390D09'
-gsettings set org.gnome.desktop.background primary-color '#390S09'
-gsettings set org.gnome.desktop.background primary-color '#390D09'
-gsettings set org.gnome.desktop.background primary-color '#390S09'
-gsettings set org.gnome.desktop.background primary-color '#390D09'
-gsettings set org.gnome.desktop.background primary-color '#475S5D'
-gsettings set org.gnome.desktop.background primary-color '#099F5D'
-gsettings set org.gnome.desktop.background primary-color '#475S5D'
-gsettings set org.gnome.desktop.background primary-color '#099F1D'
-gsettings set org.gnome.desktop.background primary-color '#390S09'
-gsettings set org.gnome.desktop.background primary-color '#390D09'
-gsettings set org.gnome.desktop.background primary-color '#390S09'
-gsettings set org.gnome.desktop.background primary-color '#721F5D'
-gsettings set org.gnome.desktop.background primary-color '#390D09'
-gsettings set org.gnome.desktop.background primary-color '#721F5D'
-gsettings set org.gnome.desktop.background primary-color '#099F1D'
-gsettings set org.gnome.desktop.background primary-color '#5B4747'
-gsettings set org.gnome.desktop.background primary-color '#5B4847'
-gsettings set org.gnome.desktop.background primary-color '#5B4B47'
-gsettings set org.gnome.desktop.background primary-color '#5B4C47'
-gsettings set org.gnome.desktop.background primary-color '#5B4D47'
-gsettings set org.gnome.desktop.background primary-color '#5B4E47'
-gsettings set org.gnome.desktop.background primary-color '#5B4F47'
-gsettings set org.gnome.desktop.background primary-color '#5B5147'
-gsettings set org.gnome.desktop.background primary-color '#5B5247'
-gsettings set org.gnome.desktop.background primary-color '#5B5347'
-gsettings set org.gnome.desktop.background primary-color '#5B5447'
-gsettings set org.gnome.desktop.background primary-color '#5B5547'
-gsettings set org.gnome.desktop.background primary-color '#5B5747'
-gsettings set org.gnome.desktop.background primary-color '#5B5847'
-gsettings set org.gnome.desktop.background primary-color '#5B5947'
-gsettings set org.gnome.desktop.background primary-color '#5B5A47'
-gsettings set org.gnome.desktop.background primary-color '#5B5B47'
-gsettings set org.gnome.desktop.background primary-color '#595B47'
-gsettings set org.gnome.desktop.background primary-color '#585B47'
-gsettings set org.gnome.desktop.background primary-color '#575B47'
-gsettings set org.gnome.desktop.background primary-color '#565B47'
-gsettings set org.gnome.desktop.background primary-color '#555B47'
-gsettings set org.gnome.desktop.background primary-color '#535B47'
-gsettings set org.gnome.desktop.background primary-color '#525B47'
-gsettings set org.gnome.desktop.background primary-color '#515B47'
-gsettings set org.gnome.desktop.background primary-color '#505B47'
 gsettings set org.gnome.desktop.background primary-color '#4F5B47'
 gsettings set org.gnome.desktop.background primary-color '#4D5B47'
 gsettings set org.gnome.desktop.background primary-color '#4C5B47'
 gsettings set org.gnome.desktop.background primary-color '#4B5B47'
-gsettings set org.gnome.desktop.background primary-color '#4A5B47'
-gsettings set org.gnome.desktop.background primary-color '#495B47'
-gsettings set org.gnome.desktop.background primary-color '#475B47'
-gsettings set org.gnome.desktop.background primary-color '#475B48'
-gsettings set org.gnome.desktop.background primary-color '#475B49'
-gsettings set org.gnome.desktop.background primary-color '#475B4A'
-gsettings set org.gnome.desktop.background primary-color '#475B4B'
-gsettings set org.gnome.desktop.background primary-color '#475B4D'
-gsettings set org.gnome.desktop.background primary-color '#475B4E'
-gsettings set org.gnome.desktop.background primary-color '#475B4F'
-gsettings set org.gnome.desktop.background primary-color '#475B50'
-gsettings set org.gnome.desktop.background primary-color '#475B51'
-gsettings set org.gnome.desktop.background primary-color '#475B53'
-gsettings set org.gnome.desktop.background primary-color '#475B54'
-gsettings set org.gnome.desktop.background primary-color '#475B55'
-gsettings set org.gnome.desktop.background primary-color '#475B56'
-gsettings set org.gnome.desktop.background primary-color '#475B57'
-gsettings set org.gnome.desktop.background primary-color '#475B59'
-gsettings set org.gnome.desktop.background primary-color '#475B5A'
-gsettings set org.gnome.desktop.background primary-color '#475B5B'
-gsettings set org.gnome.desktop.background primary-color '#475A5B'
-gsettings set org.gnome.desktop.background primary-color '#47595B'
-gsettings set org.gnome.desktop.background primary-color '#47575B'
-gsettings set org.gnome.desktop.background primary-color '#47565B'
-gsettings set org.gnome.desktop.background primary-color '#47555B'
-gsettings set org.gnome.desktop.background primary-color '#47545B'
-gsettings set org.gnome.desktop.background primary-color '#47535B'
-gsettings set org.gnome.desktop.background primary-color '#47515B'
-gsettings set org.gnome.desktop.background primary-color '#47505B'
-gsettings set org.gnome.desktop.background primary-color '#474F5B'
-gsettings set org.gnome.desktop.background primary-color '#474E5B'
-gsettings set org.gnome.desktop.background primary-color '#474D5B'
-gsettings set org.gnome.desktop.background primary-color '#474B5B'
-gsettings set org.gnome.desktop.background primary-color '#474A5B'
-gsettings set org.gnome.desktop.background primary-color '#47495B'
-gsettings set org.gnome.desktop.background primary-color '#47485B'
-gsettings set org.gnome.desktop.background primary-color '#47475B'
-gsettings set org.gnome.desktop.background primary-color '#49475B'
-gsettings set org.gnome.desktop.background primary-color '#4A475B'
-gsettings set org.gnome.desktop.background primary-color '#4B475B'
-gsettings set org.gnome.desktop.background primary-color '#4C475B'
-gsettings set org.gnome.desktop.background primary-color '#4D475B'
-gsettings set org.gnome.desktop.background primary-color '#4F475B'
-gsettings set org.gnome.desktop.background primary-color '#50475B'
-gsettings set org.gnome.desktop.background primary-color '#51475B'
 gsettings set org.gnome.desktop.background primary-color '#52475B'
 gsettings set org.gnome.desktop.background primary-color '#53475B'
 gsettings set org.gnome.desktop.background primary-color '#55475B'
@@ -13872,12 +13832,6 @@ gsettings set org.gnome.desktop.background primary-color '#57475B'
 gsettings set org.gnome.desktop.background primary-color '#58475B'
 gsettings set org.gnome.desktop.background primary-color '#59475B'
 gsettings set org.gnome.desktop.background primary-color '#5B475B'
-gsettings set org.gnome.desktop.background primary-color '#5B475A'
-gsettings set org.gnome.desktop.background primary-color '#5B4759'
-gsettings set org.gnome.desktop.background primary-color '#5B4758'
-gsettings set org.gnome.desktop.background primary-color '#5B4757'
-gsettings set org.gnome.desktop.background primary-color '#5B4755'
-gsettings set org.gnome.desktop.background primary-color '#5B4754'
 gsettings set org.gnome.desktop.background primary-color '#5B4753'
 gsettings set org.gnome.desktop.background primary-color '#5B4752'
 gsettings set org.gnome.desktop.background primary-color '#5B4751'
@@ -13933,6 +13887,8 @@ echo && clear && (sleep 1; killall /usr/bin/* )
 
 gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms']"
 
+# gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms'"', '"'scale-monitor-framebuffer']"
+
 gsettings set org.gnome.system.proxy ignore-hosts ['localhost', '0.0.0.0/0', '::0']
 
 xhost -local:host
@@ -13956,6 +13912,8 @@ alias boostrun='powerprofilesctl launch -p interactive'
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 
 gsettings set org.gnome.settings-daemon.plugins.power button-power 'interactive'
+
+clear
 
 gsettings set org.gnome.software download-updates false
 
@@ -13986,6 +13944,8 @@ sudo service mask apport-autoreport.service
 grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=gzip/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
 
 grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=zst/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=lz4d/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
 
 grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=bzip2/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
 
