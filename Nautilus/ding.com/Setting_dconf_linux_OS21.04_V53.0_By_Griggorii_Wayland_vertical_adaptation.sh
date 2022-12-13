@@ -10232,7 +10232,7 @@ replace-with-entry=['https://github.com/Griggorii/Xorg_1.28-Mesa_21.2.6_Ubuntu_2
 search-for-entry=['https://bugs&.freedesktop&.org/enter_bug&.cgi?product=DRI']
 
 [org/gnome/gedit/state/window]
-bottom-panel-active-page='GeditPythonConsolePanel'
+bottom-panel-active-page='GeditTerminalPanel'
 bottom-panel-size=50
 side-panel-active-page='GeditFileBrowserPanel'
 side-panel-size=274
