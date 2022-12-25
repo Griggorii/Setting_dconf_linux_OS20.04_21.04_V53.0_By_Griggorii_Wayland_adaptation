@@ -3350,10 +3350,10 @@ show-warning=false
 small-keys-list-rows=false
 sort-case-sensitive=false
 use-shortpaths=false
-window-height=521
+window-height=534
 window-is-fullscreen=false
 window-is-maximized=false
-window-width=976
+window-width=991
 
 [ca/desrt/dconf-editor/Demo]
 boolean=true
@@ -3687,7 +3687,7 @@ enable-transparency=true
 enable-wide-handle=false
 encodings=['UTF-8', 'ISO-8859-1', 'ISO-8859-2', 'ISO-8859-4', 'ISO-8859-3', 'ISO-8859-5', 'ISO-8859-7', 'ISO-8859-6', 'ISO-8859-8', 'ISO-8859-8-I', 'ISO-8859-9', 'ISO-8859-10', 'ISO-8859-14', 'ISO-8859-13', 'ISO-8859-15', 'ISO-8859-16', 'ARMSCII-8', 'BIG5', 'BIG5-HKSCS', 'CP866', 'EUC-JP', 'EUC-KR', 'EUC-TW', 'GB18030', 'GBK', 'GB2312', 'GEORGIAN-PS', 'IBM850', 'IBM852', 'IBM855', 'IBM857', 'IBM862', 'IBM864', 'ISO-2022-JP', 'ISO-2022-KR', 'ISO-IR-111', 'KOI8-R', 'KOI8-U', 'MAC_ARABIC', 'MAC_CE', 'MAC_CROATIAN', 'MAC-CYRILLIC', 'MAC_DEVANAGARI', 'MAC_FARSI', 'MAC_GREEK', 'MAC_GUJARATI', 'MAC_GURMUKHI', 'MAC_HEBREW', 'MAC_ICELANDIC', 'MAC_ROMAN', 'MAC_ROMANIAN', 'MAC_TURKISH', 'MAC_UKRAINIAN', 'SHIFT_JIS', 'TCVN', 'TIS-620', 'UHC', 'VISCII', 'WINDOWS-1250', 'WINDOWS-1251', 'WINDOWS-1252', 'WINDOWS-1253', 'WINDOWS-1254', 'WINDOWS-1255', 'WINDOWS-1256', 'WINDOWS-1257', 'WINDOWS-1258']
 focus-follow-mouse=true
-menu-accelerator-enabled=false
+menu-accelerator-enabled=true
 middle-click-close=false
 new-instance-mode='new-window'
 notify-on-process-complete=true
@@ -3822,31 +3822,6 @@ win-view-sidebar='F12'
 [com/gexperts/Tilix/profiles]
 default='GRIGGORII_TILIX_1'
 list=['GRIGGORII_TILIX_1', 'GRIGGORII_TILIX_2', 'GRIGGORII_TILIX_3', 'GRIGGORII_TILIX_4', 'GRIGGORII_TILIX_5', 'GRIGGORII_TILIX_6', 'GRIGGORII_TILIX_7', 'GRIGGORII_TILIX_8', 'GRIGGORII_TILIX_9']
-
-[com/gexperts/Tilix/profiles/0a1407fe-7c1d-4fe6-98e6-f9863431f084]
-background-color='#393634'
-background-transparency-percent=0
-badge-color='#AC7EA8'
-badge-color-set=false
-bold-color='#0000A5A5FFFF'
-bold-color-set=false
-cursor-background-color='#8C3FBF'
-cursor-colors-set=true
-cursor-foreground-color='#FFFFFF'
-font='Monospace Bold 12'
-foreground-color='#C1C17D7D1111'
-highlight-background-color='#CCCC00000000'
-highlight-colors-set=false
-highlight-foreground-color='#000046466C6C'
-palette=['#2E3436', '#CC0403', '#19CB00', '#CECB00', '#000027275B5B', '#CB1ED1', '#0DCDCD', '#E5E5E5', '#4D4D4D', '#CC0000', '#23FD00', '#FFFD00', '#F57900', '#FD28FF', '#14FFFF', '#FFFFFF']
-use-system-font=false
-use-theme-colors=false
-visible-name='By Griggorii'
-
-[com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
-font='Monospace Bold 12'
-use-system-font=false
-visible-name='По умолчанию'
 
 [com/gexperts/Tilix/profiles/GRIGGORII_TILIX_1]
 background-color='#33302F'
@@ -4266,14 +4241,14 @@ default-height=600
 default-width=1000
 devel-only=false
 direct-color-edit=false
-last-active-tool='line'
+last-active-tool='select'
 last-left-rgba=['0.9607843137254902', '0.4745098039215686', '0.0', '1.0']
 last-right-rgba=['0.6431372549019608', '0.0', '0.0', '1.0']
-last-size=5
+last-size=29
 maximized=false
 preview-size=250
 replace-alpha='white'
-show-labels=false
+show-labels=true
 
 [com/github/maoschanz/drawing/tools-options]
 last-active-shape='polygon'
@@ -8037,6 +8012,9 @@ needs-term=false
 exec='gnome-terminal'
 exec-arg='-x'
 
+[org/cinnamon/desktop/background]
+primary-color='#734ASD'
+
 [org/cinnamon/desktop/input-sources]
 show-all-sources=false
 
@@ -8866,7 +8844,7 @@ locations=[<(uint32 2, <('Irkutsk', 'UIII', true, [(0.91222542819346697, 1.82066
 
 [org/gnome/baobab/ui]
 active-chart='rings'
-window-size=(894, 483)
+window-size=(1060, 659)
 window-state=87168
 
 [org/gnome/boxes]
@@ -9111,7 +9089,7 @@ source-currency=''
 source-units='degree'
 target-currency=''
 target-units='radian'
-window-position=(34, 28)
+window-position=(530, 44)
 word-size=64
 
 [org/gnome/calendar]
@@ -9155,10 +9133,6 @@ video-y-resolution=480
 [org/gnome/control-center]
 last-panel='info-overview'
 show-development-warning=true
-
-[org/gnome/deja-dup]
-backend='goa'
-prompt-check='2019-04-13T04:32:29.509344Z'
 
 [org/gnome/deja-dup/file]
 migrated=true
@@ -9301,12 +9275,12 @@ exec-arg='-e'
 [org/gnome/desktop/background]
 color-shading-type='solid'
 draw-background=true
-picture-opacity=100
+picture-opacity=50
 picture-options='zoom'
 picture-uri=''
-picture-uri-dark='/usr/share/backgrounds/jj_light_by_Hiking93.jpg'
+picture-uri-dark='file:///usr/share/backgrounds/warty-final-ubuntu.png'
 primary-color='#734ASD'
-secondary-color='#000000'
+secondary-color='#2c001e'
 show-desktop-icons=false
 
 [org/gnome/desktop/calendar]
@@ -9320,9 +9294,8 @@ require-password='never'
 
 [org/gnome/desktop/input-sources]
 current=uint32 0
-mru-sources=[('xkb', 'ru'), ('xkb', 'us')]
+mru-sources=[('xkb', 'us'), ('xkb', 'ru')]
 per-window=true
-show-all-sources=false
 sources=[('xkb', 'us'), ('xkb', 'ru')]
 xkb-options=['grp_led:scroll', 'lv3:ralt_switch']
 
@@ -9334,16 +9307,16 @@ clock-format='24h'
 clock-show-date=true
 clock-show-seconds=true
 clock-show-weekday=true
-color-scheme='default'
+color-scheme='prefer-dark'
 cursor-blink=true
 cursor-blink-time=1200
 cursor-blink-timeout=10
 cursor-size=24
-cursor-theme='breeze_cursors'
+cursor-theme='Yaru'
 document-font-name='Sans 10'
 enable-animations=true
 enable-hot-corners=true
-font-antialiasing='rgba'
+font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='Ubuntu 11'
 font-rgba-order='rgb'
@@ -9354,10 +9327,10 @@ gtk-im-module='gtk-im-context-simple'
 gtk-im-preedit-style='callback'
 gtk-im-status-style='callback'
 gtk-key-theme='Default'
-gtk-theme='Pop-dark-oomox-griggorii_theme_2020_V4'
+gtk-theme='Yaru-olive-dark'
 gtk-timeout-initial=200
 gtk-timeout-repeat=20
-icon-theme='oomox-griggorii'
+icon-theme='Yaru-olive'
 locate-pointer=true
 menubar-accel='F10'
 menubar-detachable=true
@@ -9397,7 +9370,7 @@ autorun-x-content-open-folder=['x-content/bootable-media']
 autorun-x-content-start-app=['x-content/unix-software', 'x-content/bootable-media']
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-xfce-mousepad', 'org-gnome-terminal']
+application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-gnome-fileroller', 'org-gnome-gedit', 'org-gnome-nautilus', 'org-gnome-baobab', 'org-gnome-terminal', 'org-gnome-eog', 'xsnow', 'gnome-bluetooth-panel', 'org-xfce-mousepad', 'org-gnome-shell-extensions', 'rhythmbox']
 show-banners=true
 show-in-lock-screen=true
 
@@ -9569,6 +9542,9 @@ application-id='org.gnome.seahorse.Application.desktop'
 [org/gnome/desktop/notifications/application/org-gnome-shell-extensions-gsconnect]
 application-id='org.gnome.Shell.Extensions.GSConnect.desktop'
 
+[org/gnome/desktop/notifications/application/org-gnome-shell-extensions]
+application-id='org.gnome.Shell.Extensions.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-software]
 application-id='org.gnome.Software.desktop'
 
@@ -9629,6 +9605,9 @@ application-id='xfce-display-settings.desktop'
 [org/gnome/desktop/notifications/application/xfce4-notifyd-config]
 application-id='xfce4-notifyd-config.desktop'
 
+[org/gnome/desktop/notifications/application/xsnow]
+application-id='xsnow.desktop'
+
 [org/gnome/desktop/notifications/application/yandex-browser]
 application-id='yandex-browser.desktop'
 
@@ -9676,6 +9655,7 @@ disable-microphone=false
 disable-sound-output=false
 hide-identity=false
 old-files-age=uint32 0
+privacy-screen=true
 recent-files-max-age=0
 remember-app-usage=true
 remember-recent-files=false
@@ -9684,7 +9664,6 @@ remove-old-trash-files=false
 report-technical-problems=false
 send-software-usage-stats=false
 show-full-name-in-top-bar=true
-usb-protection=false
 usb-protection-level='lockscreen'
 
 [org/gnome/desktop/remote-access]
@@ -9700,7 +9679,7 @@ prompt-enabled=true
 require-encryption=true
 use-alternative-port=false
 use-upnp=false
-view-only=true
+view-only=false
 vnc-password='keyring'
 
 [org/gnome/desktop/remote-desktop/rdp]
@@ -9724,9 +9703,9 @@ logout-command=''
 logout-enabled=false
 picture-opacity=100
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/gnome/Terraform-green.jpg'
-primary-color='#ffffff'
-secondary-color='#000000'
+picture-uri='file:///usr/share/backgrounds/warty-final-ubuntu.png'
+primary-color='#2c001e'
+secondary-color='#2c001e'
 show-full-name-in-top-bar=true
 show-notifications=false
 status-message-enabled=true
@@ -9740,7 +9719,7 @@ sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gn
 
 [org/gnome/desktop/session]
 idle-delay=uint32 0
-session-name='ubuntu'
+session-name='griggorii_os'
 
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=true
@@ -9915,7 +9894,7 @@ show-toolbar=true
 sidebar-page='links'
 sidebar-size=132
 sizing-mode='automatic'
-window-ratio=(0.99166337176706831, 0.85637592304199739)
+window-ratio=(0.99159663865546221, 0.76128266033254155)
 zoom=1.0
 
 [org/gnome/evolution-data-server]
@@ -10077,7 +10056,7 @@ encrypt-header=false
 
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
-name-column-width=398
+name-column-width=393
 show-path=false
 show-size=true
 show-time=true
@@ -10088,7 +10067,7 @@ sort-type='ascending'
 [org/gnome/file-roller/ui]
 sidebar-width=200
 view-sidebar=true
-window-height=490
+window-height=482
 window-width=842
 
 [org/gnome/gedit/plugins]
@@ -10107,7 +10086,7 @@ filter-pattern=''
 open-at-first-doc=true
 root='file:///'
 tree-view=true
-virtual-root='file:///'
+virtual-root=''
 
 [org/gnome/gedit/plugins/filebrowser/nautilus]
 click-policy='double'
@@ -10163,7 +10142,7 @@ highlight-current-line=false
 insert-spaces=false
 max-undo-actions=2000
 restore-cursor-position=true
-scheme='tango'
+scheme='Yaru-dark'
 search-highlighting=true
 smart-home-end='after'
 syntax-highlighting=true
@@ -10313,7 +10292,7 @@ delay=4
 include-border=true
 include-icc-profile=true
 include-pointer=false
-last-save-directory='file:///'
+last-save-directory='file:///home/griggorii/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F'
 take-window-shot=false
 
 [org/gnome/gnome-session]
@@ -10355,7 +10334,7 @@ smooth-refresh=true
 solaris-mode=true
 swap-color='#49A835'
 update-interval=5000
-window-state=(874, 564, 160, 65)
+window-state=(874, 552, 270, 158)
 
 [org/gnome/gnome-system-monitor/disktreenew]
 col-0-visible=true
@@ -10448,7 +10427,7 @@ sort-order=0
 
 [org/gnome/gnome-system-monitor/proctree]
 col-0-visible=true
-col-0-width=228
+col-0-width=272
 col-1-visible=true
 col-1-width=98
 col-10-visible=true
@@ -10466,9 +10445,9 @@ col-15-width=0
 col-16-visible=true
 col-16-width=48
 col-17-visible=true
-col-17-width=48
+col-17-width=162
 col-18-visible=true
-col-18-width=70
+col-18-width=171
 col-19-visible=true
 col-19-width=41
 col-2-visible=true
@@ -10912,7 +10891,7 @@ center-new-windows=false
 draggable-border-width=10
 dynamic-workspaces=true
 edge-tiling=true
-experimental-features=['x11-randr-fractional-scaling']
+experimental-features=['kms', 'vkms']
 focus-change-on-pointer-rest=true
 locate-pointer-key='Control_L'
 no-tab-popup=false
@@ -10995,7 +10974,11 @@ show-applet=true
 stamp=0
 suppress-wireless-networks-available=false
 
-[org/gnome/nm-applet/eap/d75b3fa1-377c-3363-9748-7ae0dab58d7c]
+[org/gnome/nm-applet/eap/0bfe967d-f36a-419d-8655-57e3d8712812]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[org/gnome/nm-applet/eap/4f81f370-6235-4073-8316-5f174f96bb04]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
@@ -11027,7 +11010,7 @@ display-page-tree-visible=true
 follow-playing=true
 maximized=false
 paned-position=192
-position=(34, 28)
+position=(140, 59)
 queue-as-sidebar=true
 right-paned-position=400
 show-album-art=true
@@ -11072,7 +11055,7 @@ inline-label=true
 playing-label=false
 repeat-type=2
 show-compact=true
-show-source-toolbar=true
+show-source-toolbar=false
 show-tooltips=true
 start-hidden=false
 volume-control=false
@@ -11150,8 +11133,6 @@ click-volume=0
 numlock-state='off'
 
 [org/gnome/settings-daemon/peripherals/mouse]
-double-click=400
-drag-threshold=8
 locate-pointer=false
 
 [org/gnome/settings-daemon/peripherals/smartcard]
@@ -11487,25 +11468,22 @@ priority=0
 
 [org/gnome/settings-daemon/plugins/xsettings]
 active=true
-antialiasing='grayscale'
-hinting='slight'
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 priority=0
-rgba-order='rgb'
 srgba-order='srgb'
 
 [org/gnome/shell]
 always-show-log-out=false
 app-picker-layout=[{'gnome-session-properties.desktop': <{'position': <0>}>, 'software-properties-drivers.desktop': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.Mahjongg.desktop': <{'position': <3>}>, 'software-properties-gtk.desktop': <{'position': <4>}>, 'org.gnome.Mines.desktop': <{'position': <5>}>, 'sol.desktop': <{'position': <6>}>}, {'simple-scan.desktop': <{'position': <0>}>, 'org.gnome.PowerStats.desktop': <{'position': <1>}>, 'org.gnome.Sudoku.desktop': <{'position': <2>}>, 'org.gnome.gedit.desktop': <{'position': <3>}>, 'Utilities': <{'position': <4>}>, 'gnome-language-selector.desktop': <{'position': <5>}>, 'org.gnome.Cheese.desktop': <{'position': <6>}>, 'libreoffice-calc.desktop': <{'position': <7>}>, 'libreoffice-draw.desktop': <{'position': <8>}>, 'libreoffice-impress.desktop': <{'position': <9>}>, 'libreoffice-writer.desktop': <{'position': <10>}>, 'firewall-config.desktop': <{'position': <11>}>, 'firefox_firefox.desktop': <{'position': <12>}>, 'update-manager.desktop': <{'position': <13>}>, 'mini-browser.desktop': <{'position': <14>}>, 'libreoffice-math.desktop': <{'position': <15>}>, 'sync-monitor-calendar.desktop': <{'position': <16>}>}, {'rhythmbox.desktop': <{'position': <0>}>, 'transmission-gtk.desktop': <{'position': <1>}>, 'org.gnome.Totem.desktop': <{'position': <2>}>, 'thunderbird.desktop': <{'position': <3>}>, 'usb-creator-gtk.desktop': <{'position': <4>}>, 'yelp.desktop': <{'position': <5>}>}, {'libreoffice-startcenter.desktop': <{'position': <0>}>, 'org.remmina.Remmina.desktop': <{'position': <1>}>, 'shotwell.desktop': <{'position': <2>}>, 'org.gnome.Todo.desktop': <{'position': <3>}>, 'snap-store_ubuntu-software.desktop': <{'position': <4>}>, 'org.gnome.Terminal.desktop': <{'position': <5>}>}]
 app-picker-view=uint32 1
-command-history=['nautilus', 'r', 'tilix', 'lg']
+command-history=['nautilus', 'tilix', 'lg', 'r']
 development-tools=true
 disable-extension-version-validation=true
 disable-user-extensions=false
-disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'dash-to-panel@jderose9.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'desktop-icons@csoriano']
+disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'dash-to-panel@jderose9.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'desktop-icons@csoriano', 'unite@hardpixel.eu', 'window-list@gnome-shell-extensions.gcampax.github.com']
 enable-hot-corners=true
-enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io', 'ding@rastersoft.com', 'unite@hardpixel.eu']
-favorite-apps=['org.gnome.Screenshot.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'chromium-browser.desktop', 'vlc.desktop', 'org.gnome.Terminal.desktop']
+enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io', 'ding@rastersoft.com']
+favorite-apps=['org.gnome.Screenshot.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'com.gexperts.Tilix.desktop', 'chromium-browser.desktop', 'vlc.desktop', 'org.gnome.Terminal.desktop']
 had-bluetooth-devices-setup=true
 introspect=false
 remember-mount-password=false
@@ -11882,8 +11860,8 @@ name='Orchis'
 
 [org/gnome/shell/extensions/window-list]
 display-all-workspaces=false
-grouping-mode='never'
-show-on-all-monitors=false
+grouping-mode='auto'
+show-on-all-monitors=true
 
 [org/gnome/shell/keybindings]
 focus-active-notification=@as []
@@ -11923,7 +11901,7 @@ selected-device=''
 text-dpi=150
 
 [org/gnome/software]
-check-timestamp=int64 1670760215
+check-timestamp=int64 1671833102
 download-updates=false
 first-run=false
 install-timestamp=int64 1617723968
@@ -12045,13 +12023,6 @@ use-theme-transparency=false
 use-transparent-background=false
 visible-name='By Griggorii_3'
 
-[org/gnome/terminal/legacy/profiles:/:a9ad44fb-657c-493b-80af-3ec223cf944b]
-background-color='rgb(238,238,236)'
-foreground-color='rgb(46,52,54)'
-use-system-font=false
-use-theme-colors=true
-visible-name='gnome'
-
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 background-color='rgb(43,41,40)'
 bold-color-same-as-fg=true
@@ -12170,8 +12141,8 @@ custom-colors=[(0.0, 0.57254904508590698, 0.90196079015731812, 1.0)]
 selected-color=(true, 0.0, 0.57254904508590698, 0.90196079015731812, 1.0)
 
 [org/gtk/settings/color-chooser]
-custom-colors=[(0.062745098039215685, 0.29019607843137257, 0.082352941176470587, 1.0), (0.054901960784313725, 0.72941176470588232, 0.050980392156862744, 1.0), (0.51764705882352946, 0.78431372549019607, 0.027450980392156862, 1.0), (0.66666666666666663, 0.0, 0.0, 1.0), (0.050980392156862724, 0.3411764705882353, 0.062745098039215616, 1.0), (0.054901960784313919, 0.72941176470588232, 0.050980392156862779, 1.0), (0.047058823529411757, 0.25882352941176473, 0.054901960784313739, 1.0), (0.054901960784313718, 0.36470588235294116, 0.066666666666666721, 1.0)]
-selected-color=(true, 0.062745098039215685, 0.29019607843137257, 0.082352941176470587, 1.0)
+custom-colors=[(0.22352941176470589, 0.21176470588235294, 0.20392156862745098, 1.0), (0.93333333333333335, 0.11372549019607843, 0.0, 1.0), (0.17647058823529413, 0.49019607843137253, 0.70196078431372544, 1.0), (0.28627450980392155, 0.6588235294117647, 0.20784313725490197, 1.0), (0.6705882352941176, 0.094117647058823528, 0.32156862745098042, 1.0), (0.21176470588235294, 0.75294117647058822, 0.2196078431372549, 1.0), (0.019607843137254902, 1.0, 0.054901960784313725, 1.0), (0.34901960784313724, 0.81960784313725488, 0.19607843137254902, 1.0)]
+selected-color=(true, 0.22352941176470589, 0.21176470588235294, 0.20392156862745098, 1.0)
 
 [org/gtk/settings/debug]
 enable-inspector-keybinding=false
@@ -12195,7 +12166,7 @@ sort-directories-first=true
 sort-order='ascending'
 startup-mode='cwd'
 type-format='category'
-window-position=(225, 103)
+window-position=(34, 28)
 window-size=(917, 515)
 
 [org/mate/caja/compact-view]
@@ -12715,91 +12686,6 @@ start-with-menu-bar=true
 start-with-sidebar=true
 start-with-status-bar=true
 start-with-toolbar=true
-
-[org/onboard]
-current-settings-page=8
-key-label-font='Ubuntu'
-layout='/usr/share/onboard/layouts/Full Keyboard.onboard'
-schema-version='2.3'
-show-status-icon=true
-show-tooltips=true
-start-minimized=false
-status-icon-provider='AppIndicator'
-system-theme-associations={'HighContrast': 'HighContrast', 'HighContrastInverse': 'HighContrastInverse', 'LowContrast': 'LowContrast', 'ContrastHighInverse': 'HighContrastInverse', 'Default': '', 'Pop-dark-slim': '/usr/share/onboard/themes/Ambiance.theme', 'Pop-dark': '/usr/share/onboard/themes/Droid.theme'}
-system-theme-tracking-enabled=false
-theme='/usr/share/onboard/themes/Droid.theme'
-use-system-defaults=false
-xembed-background-color='#0000007F'
-xembed-background-image-enabled=true
-xembed-onboard=true
-xembed-unity-greeter-offset-x=85.0
-
-[org/onboard/auto-show]
-enabled=false
-hide-on-key-press=true
-hide-on-key-press-pause=1800.0
-keyboard-device-detection-enabled=false
-reposition-method-docked='prevent-occlusion'
-reposition-method-floating='prevent-occlusion'
-tablet-mode-detection-enabled=true
-tablet-mode-enter-key=0
-tablet-mode-leave-key=0
-tablet-mode-state-file=''
-tablet-mode-state-file-pattern='1'
-
-[org/onboard/icon-palette]
-in-use=false
-window-handles='E SE S SW W NW N NE M'
-
-[org/onboard/icon-palette/landscape]
-height=45
-width=53
-x=1060
-y=685
-
-[org/onboard/icon-palette/portrait]
-height=64
-width=64
-x=100
-y=50
-
-[org/onboard/keyboard]
-audio-feedback-enabled=false
-audio-feedback-place-in-space=false
-default-key-action='delayed-stroke'
-input-event-source='XInput'
-inter-key-stroke-delay=0.0
-key-synth='auto'
-long-press-delay=0.5
-modifier-update-delay=1.0
-show-click-buttons=false
-show-secondary-labels=false
-sticky-key-release-delay=0.0
-sticky-key-release-on-hide-delay=5.0
-touch-feedback-enabled=true
-touch-feedback-size=0
-touch-input='multi'
-
-[org/onboard/lockdown]
-disable-click-buttons=false
-disable-dwell-activation=false
-disable-hover-click=false
-disable-preferences=false
-disable-quit=false
-disable-touch-handles=false
-
-[org/onboard/scanner]
-alternate=false
-backtrack=5
-cycles=2
-device-detach=false
-device-name='Default'
-enabled=false
-feedback-flash=true
-interval=1.2
-interval-fast=0.050000000000000003
-mode='Autoscan'
-user-scan=false
 
 [org/onboard/theme-settings]
 background-gradient=81.0
@@ -34406,6 +34292,8 @@ sudo systemctl mask org.freedesktop.fwupd.service
 sudo systemctl --user mask org.freedesktop.fwupd.service
 
 sudo rm -rf /etc/pki
+
+lsof /home/griggorii & sudo apt fwupd fwupd-signed libfwupdplugin5 libxmlb2 -y
 
 lsof /home/griggorii & sudo apt purge fwupd fwupd-signed -y
 
