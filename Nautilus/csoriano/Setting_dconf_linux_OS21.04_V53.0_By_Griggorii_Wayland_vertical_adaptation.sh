@@ -3382,7 +3382,7 @@ use-shortpaths=false
 window-height=534
 window-is-fullscreen=false
 window-is-maximized=false
-window-width=991
+window-width=1301
 
 [ca/desrt/dconf-editor/Demo]
 boolean=true
@@ -4290,1590 +4290,6 @@ last-size=5
 last-text-background='outline'
 use-antialiasing=true
 
-[com/github/wwmm/pulseeffects]
-audio-activity-timeout=5
-blocksize-in='512'
-blocksize-out='512'
-bypass=false
-custom-sink='alsa_output.pci-0000_00_1b.0.analog-stereo'
-custom-source='alsa_input.pci-0000_00_1b.0.analog-stereo'
-enable-all-sinkinputs=true
-enable-all-sourceoutputs=false
-last-used-input-preset='Presets'
-last-used-output-preset='My7'
-last-used-preset='Akai HD-230_V12'
-niceness=-10
-priority-type='None'
-realtime-priority=4
-show-blocklisted-apps=false
-use-dark-theme=false
-use-default-sink=true
-use-default-source=true
-window-height=586
-window-width=1061
-
-[com/github/wwmm/pulseeffects/sinkinputs]
-buffer-pulsesink=200000
-buffer-pulsesrc=200000
-latency-pulsesink=10000
-latency-pulsesrc=10000
-plugins=['limiter', 'autogain', 'gate', 'multiband_gate', 'compressor', 'multiband_compressor', 'convolver', 'bass_enhancer', 'exciter', 'crystalizer', 'stereo_tools', 'reverb', 'equalizer', 'deesser', 'crossfeed', 'loudness', 'maximizer', 'filter', 'delay', 'pitch']
-
-[com/github/wwmm/pulseeffects/sinkinputs/autogain]
-detect-silence=true
-input-gain=-1.0
-installed=true
-output-gain=-1.0
-post-messages=false
-reset=true
-state=true
-target=-30.0
-use-geometric-mean=true
-weight-i=1
-weight-m=1
-weight-s=1
-
-[com/github/wwmm/pulseeffects/sinkinputs/bassenhancer]
-amount=0.0
-blend=0.0
-floor=20.0
-floor-active=true
-harmonics=8.5
-input-gain=0.0
-installed=true
-listen=false
-output-gain=0.0
-post-messages=false
-scope=100.0
-state=true
-
-[com/github/wwmm/pulseeffects/sinkinputs/compressor]
-attack=20.0
-input-gain=0.0
-installed=false
-knee=-6.0
-makeup=0.0
-mode='Downward'
-output-gain=0.0
-post-messages=false
-ratio=2.0
-release=250.0
-sidechain-listen=false
-sidechain-lookahead=0.0
-sidechain-mode='RMS'
-sidechain-preamp=0.0
-sidechain-reactivity=10.0
-sidechain-source='Middle'
-sidechain-type='Feed-forward'
-state=false
-threshold=-18.0
-
-[com/github/wwmm/pulseeffects/sinkinputs/convolver]
-input-gain=0.0
-installed=true
-ir-width=100
-kernel-path=''
-output-gain=0.0
-post-messages=false
-state=false
-
-[com/github/wwmm/pulseeffects/sinkinputs/crossfeed]
-fcut=700
-feed=4.5
-installed=true
-post-messages=false
-state=false
-
-[com/github/wwmm/pulseeffects/sinkinputs/crystalizer]
-aggressive=false
-bypass-band0=false
-bypass-band1=false
-bypass-band10=false
-bypass-band11=false
-bypass-band12=false
-bypass-band2=false
-bypass-band3=false
-bypass-band4=false
-bypass-band5=false
-bypass-band6=false
-bypass-band7=false
-bypass-band8=false
-bypass-band9=false
-input-gain=0.0
-installed=true
-intensity-band0=12.0
-intensity-band1=10.0
-intensity-band10=-8.0
-intensity-band11=-10.0
-intensity-band12=-12.0
-intensity-band2=8.0
-intensity-band3=6.0
-intensity-band4=4.0
-intensity-band5=2.0
-intensity-band6=0.0
-intensity-band7=-2.0
-intensity-band8=-4.0
-intensity-band9=-6.0
-mute-band0=false
-mute-band1=false
-mute-band10=false
-mute-band11=false
-mute-band12=false
-mute-band2=false
-mute-band3=false
-mute-band4=false
-mute-band5=false
-mute-band6=false
-mute-band7=false
-mute-band8=false
-mute-band9=false
-output-gain=0.0
-post-messages=false
-state=true
-
-[com/github/wwmm/pulseeffects/sinkinputs/deesser]
-detection='RMS'
-f1-freq=6000.0
-f1-level=0.0
-f2-freq=4500.0
-f2-level=12.0
-f2-q=1.0
-installed=true
-laxity=15
-makeup=0.0
-mode='Wide'
-post-messages=false
-ratio=3.0
-sc-listen=false
-state=true
-threshold=-18.0
-
-[com/github/wwmm/pulseeffects/sinkinputs/delay]
-input-gain=0.0
-installed=false
-output-gain=0.0
-post-messages=false
-state=false
-time-l=0.0
-time-r=0.0
-
-[com/github/wwmm/pulseeffects/sinkinputs/equalizer]
-input-gain=0.0
-installed=false
-mode='IIR'
-num-bands=30
-output-gain=0.0
-post-messages=false
-split-channels=false
-state=true
-
-[com/github/wwmm/pulseeffects/sinkinputs/equalizer/leftchannel]
-band0-frequency=22.59
-band0-gain=0.0
-band0-mute=false
-band0-q=4.3600000000000003
-band0-slope='x1'
-band0-solo=false
-band0-type='Bell'
-band1-frequency=28.440000000000001
-band1-gain=0.0
-band1-mute=false
-band1-q=4.3600000000000003
-band1-slope='x1'
-band1-solo=false
-band1-type='Bell'
-band10-frequency=225.88999999999999
-band10-gain=0.0
-band10-mute=false
-band10-q=4.3600000000000003
-band10-slope='x1'
-band10-solo=false
-band10-type='Bell'
-band11-frequency=284.38
-band11-gain=0.0
-band11-mute=false
-band11-q=4.3600000000000003
-band11-slope='x1'
-band11-solo=false
-band11-type='Bell'
-band12-frequency=358.01999999999998
-band12-gain=0.0
-band12-mute=false
-band12-q=4.3600000000000003
-band12-slope='x1'
-band12-solo=false
-band12-type='Bell'
-band13-frequency=450.72000000000003
-band13-gain=0.0
-band13-mute=false
-band13-q=4.3600000000000003
-band13-slope='x1'
-band13-solo=false
-band13-type='Bell'
-band14-frequency=567.41999999999996
-band14-gain=0.0
-band14-mute=false
-band14-q=4.3600000000000003
-band14-slope='x1'
-band14-solo=false
-band14-type='Bell'
-band15-frequency=714.34000000000003
-band15-gain=0.0
-band15-mute=false
-band15-q=4.3600000000000003
-band15-slope='x1'
-band15-solo=false
-band15-type='Bell'
-band16-frequency=899.28999999999996
-band16-gain=0.0
-band16-mute=false
-band16-q=4.3600000000000003
-band16-slope='x1'
-band16-solo=false
-band16-type='Bell'
-band17-frequency=1132.1500000000001
-band17-gain=0.0
-band17-mute=false
-band17-q=4.3600000000000003
-band17-slope='x1'
-band17-solo=false
-band17-type='Bell'
-band18-frequency=1425.29
-band18-gain=0.0
-band18-mute=false
-band18-q=4.3600000000000003
-band18-slope='x1'
-band18-solo=false
-band18-type='Bell'
-band19-frequency=1794.3299999999999
-band19-gain=0.0
-band19-mute=false
-band19-q=4.3600000000000003
-band19-slope='x1'
-band19-solo=false
-band19-type='Bell'
-band2-frequency=35.799999999999997
-band2-gain=0.0
-band2-mute=false
-band2-q=4.3600000000000003
-band2-slope='x1'
-band2-solo=false
-band2-type='Bell'
-band20-frequency=2258.9299999999998
-band20-gain=0.0
-band20-mute=false
-band20-q=4.3600000000000003
-band20-slope='x1'
-band20-solo=false
-band20-type='Bell'
-band21-frequency=2843.8200000000002
-band21-gain=0.0
-band21-mute=false
-band21-q=4.3600000000000003
-band21-slope='x1'
-band21-solo=false
-band21-type='Bell'
-band22-frequency=3580.1599999999999
-band22-gain=0.0
-band22-mute=false
-band22-q=4.3600000000000003
-band22-slope='x1'
-band22-solo=false
-band22-type='Bell'
-band23-frequency=4507.1499999999996
-band23-gain=0.0
-band23-mute=false
-band23-q=4.3600000000000003
-band23-slope='x1'
-band23-solo=false
-band23-type='Bell'
-band24-frequency=5674.1599999999999
-band24-gain=0.0
-band24-mute=false
-band24-q=4.3600000000000003
-band24-slope='x1'
-band24-solo=false
-band24-type='Bell'
-band25-frequency=7143.3500000000004
-band25-gain=0.0
-band25-mute=false
-band25-q=4.3600000000000003
-band25-slope='x1'
-band25-solo=false
-band25-type='Bell'
-band26-frequency=8992.9400000000005
-band26-gain=0.0
-band26-mute=false
-band26-q=4.3600000000000003
-band26-slope='x1'
-band26-solo=false
-band26-type='Bell'
-band27-frequency=11321.450000000001
-band27-gain=0.0
-band27-mute=false
-band27-q=4.3600000000000003
-band27-slope='x1'
-band27-solo=false
-band27-type='Bell'
-band28-frequency=14252.860000000001
-band28-gain=0.0
-band28-mute=false
-band28-q=4.3600000000000003
-band28-slope='x1'
-band28-solo=false
-band28-type='Bell'
-band29-frequency=17943.279999999999
-band29-gain=0.0
-band29-mute=false
-band29-q=4.3600000000000003
-band29-slope='x1'
-band29-solo=false
-band29-type='Bell'
-band3-frequency=45.07
-band3-gain=0.0
-band3-mute=false
-band3-q=4.3600000000000003
-band3-slope='x1'
-band3-solo=false
-band3-type='Bell'
-band4-frequency=56.740000000000002
-band4-gain=0.0
-band4-mute=false
-band4-q=4.3600000000000003
-band4-slope='x1'
-band4-solo=false
-band4-type='Bell'
-band5-frequency=71.430000000000007
-band5-gain=0.0
-band5-mute=false
-band5-q=4.3600000000000003
-band5-slope='x1'
-band5-solo=false
-band5-type='Bell'
-band6-frequency=89.930000000000007
-band6-gain=0.0
-band6-mute=false
-band6-q=4.3600000000000003
-band6-slope='x1'
-band6-solo=false
-band6-type='Bell'
-band7-frequency=113.20999999999999
-band7-gain=0.0
-band7-mute=false
-band7-q=4.3600000000000003
-band7-slope='x1'
-band7-solo=false
-band7-type='Bell'
-band8-frequency=142.53
-band8-gain=0.0
-band8-mute=false
-band8-q=4.3600000000000003
-band8-slope='x1'
-band8-solo=false
-band8-type='Bell'
-band9-frequency=179.43000000000001
-band9-gain=0.0
-band9-mute=false
-band9-q=4.3600000000000003
-band9-slope='x1'
-band9-solo=false
-band9-type='Bell'
-
-[com/github/wwmm/pulseeffects/sinkinputs/equalizer/rightchannel]
-band0-frequency=22.59
-band0-gain=0.0
-band0-mode='RLC (BT)'
-band0-mute=false
-band0-q=4.3600000000000003
-band0-slope='x1'
-band0-solo=false
-band0-type='Bell'
-band1-frequency=28.440000000000001
-band1-gain=0.0
-band1-mode='RLC (BT)'
-band1-mute=false
-band1-q=4.3600000000000003
-band1-slope='x1'
-band1-solo=false
-band1-type='Bell'
-band10-frequency=225.88999999999999
-band10-gain=0.0
-band10-mode='RLC (BT)'
-band10-mute=false
-band10-q=4.3600000000000003
-band10-slope='x1'
-band10-solo=false
-band10-type='Bell'
-band11-frequency=284.38
-band11-gain=0.0
-band11-mode='RLC (BT)'
-band11-mute=false
-band11-q=4.3600000000000003
-band11-slope='x1'
-band11-solo=false
-band11-type='Bell'
-band12-frequency=358.01999999999998
-band12-gain=0.0
-band12-mode='RLC (BT)'
-band12-mute=false
-band12-q=4.3600000000000003
-band12-slope='x1'
-band12-solo=false
-band12-type='Bell'
-band13-frequency=450.72000000000003
-band13-gain=0.0
-band13-mode='RLC (BT)'
-band13-mute=false
-band13-q=4.3600000000000003
-band13-slope='x1'
-band13-solo=false
-band13-type='Bell'
-band14-frequency=567.41999999999996
-band14-gain=0.0
-band14-mode='RLC (BT)'
-band14-mute=false
-band14-q=4.3600000000000003
-band14-slope='x1'
-band14-solo=false
-band14-type='Bell'
-band15-frequency=714.34000000000003
-band15-gain=0.0
-band15-mode='RLC (BT)'
-band15-mute=false
-band15-q=4.3600000000000003
-band15-slope='x1'
-band15-solo=false
-band15-type='Bell'
-band16-frequency=899.28999999999996
-band16-gain=0.0
-band16-mode='RLC (BT)'
-band16-mute=false
-band16-q=4.3600000000000003
-band16-slope='x1'
-band16-solo=false
-band16-type='Bell'
-band17-frequency=1132.1500000000001
-band17-gain=0.0
-band17-mode='RLC (BT)'
-band17-mute=false
-band17-q=4.3600000000000003
-band17-slope='x1'
-band17-solo=false
-band17-type='Bell'
-band18-frequency=1425.29
-band18-gain=0.0
-band18-mode='RLC (BT)'
-band18-mute=false
-band18-q=4.3600000000000003
-band18-slope='x1'
-band18-solo=false
-band18-type='Bell'
-band19-frequency=1794.3299999999999
-band19-gain=0.0
-band19-mode='RLC (BT)'
-band19-mute=false
-band19-q=4.3600000000000003
-band19-slope='x1'
-band19-solo=false
-band19-type='Bell'
-band2-frequency=35.799999999999997
-band2-gain=0.0
-band2-mode='RLC (BT)'
-band2-mute=false
-band2-q=4.3600000000000003
-band2-slope='x1'
-band2-solo=false
-band2-type='Bell'
-band20-frequency=2258.9299999999998
-band20-gain=0.0
-band20-mode='RLC (BT)'
-band20-mute=false
-band20-q=4.3600000000000003
-band20-slope='x1'
-band20-solo=false
-band20-type='Bell'
-band21-frequency=2843.8200000000002
-band21-gain=0.0
-band21-mode='RLC (BT)'
-band21-mute=false
-band21-q=4.3600000000000003
-band21-slope='x1'
-band21-solo=false
-band21-type='Bell'
-band22-frequency=3580.1599999999999
-band22-gain=0.0
-band22-mode='RLC (BT)'
-band22-mute=false
-band22-q=4.3600000000000003
-band22-slope='x1'
-band22-solo=false
-band22-type='Bell'
-band23-frequency=4507.1499999999996
-band23-gain=0.0
-band23-mode='RLC (BT)'
-band23-mute=false
-band23-q=4.3600000000000003
-band23-slope='x1'
-band23-solo=false
-band23-type='Bell'
-band24-frequency=5674.1599999999999
-band24-gain=0.0
-band24-mode='RLC (BT)'
-band24-mute=false
-band24-q=4.3600000000000003
-band24-slope='x1'
-band24-solo=false
-band24-type='Bell'
-band25-frequency=7143.3500000000004
-band25-gain=0.0
-band25-mode='RLC (BT)'
-band25-mute=false
-band25-q=4.3600000000000003
-band25-slope='x1'
-band25-solo=false
-band25-type='Bell'
-band26-frequency=8992.9400000000005
-band26-gain=0.0
-band26-mode='RLC (BT)'
-band26-mute=false
-band26-q=4.3600000000000003
-band26-slope='x1'
-band26-solo=false
-band26-type='Bell'
-band27-frequency=11321.450000000001
-band27-gain=0.0
-band27-mode='RLC (BT)'
-band27-mute=false
-band27-q=4.3600000000000003
-band27-slope='x1'
-band27-solo=false
-band27-type='Bell'
-band28-frequency=14252.860000000001
-band28-gain=0.0
-band28-mode='RLC (BT)'
-band28-mute=false
-band28-q=4.3600000000000003
-band28-slope='x1'
-band28-solo=false
-band28-type='Bell'
-band29-frequency=17943.279999999999
-band29-gain=0.0
-band29-mode='RLC (BT)'
-band29-mute=false
-band29-q=4.3600000000000003
-band29-slope='x1'
-band29-solo=false
-band29-type='Bell'
-band3-frequency=45.07
-band3-gain=0.0
-band3-mode='RLC (BT)'
-band3-mute=false
-band3-q=4.3600000000000003
-band3-slope='x1'
-band3-solo=false
-band3-type='Bell'
-band4-frequency=56.740000000000002
-band4-gain=0.0
-band4-mode='RLC (BT)'
-band4-mute=false
-band4-q=4.3600000000000003
-band4-slope='x1'
-band4-solo=false
-band4-type='Bell'
-band5-frequency=71.430000000000007
-band5-gain=0.0
-band5-mode='RLC (BT)'
-band5-mute=false
-band5-q=4.3600000000000003
-band5-slope='x1'
-band5-solo=false
-band5-type='Bell'
-band6-frequency=89.930000000000007
-band6-gain=0.0
-band6-mode='RLC (BT)'
-band6-mute=false
-band6-q=4.3600000000000003
-band6-slope='x1'
-band6-solo=false
-band6-type='Bell'
-band7-frequency=113.20999999999999
-band7-gain=0.0
-band7-mode='RLC (BT)'
-band7-mute=false
-band7-q=4.3600000000000003
-band7-slope='x1'
-band7-solo=false
-band7-type='Bell'
-band8-frequency=142.53
-band8-gain=0.0
-band8-mode='RLC (BT)'
-band8-mute=false
-band8-q=4.3600000000000003
-band8-slope='x1'
-band8-solo=false
-band8-type='Bell'
-band9-frequency=179.43000000000001
-band9-gain=0.0
-band9-mode='RLC (BT)'
-band9-mute=false
-band9-q=4.3600000000000003
-band9-slope='x1'
-band9-solo=false
-band9-type='Bell'
-
-[com/github/wwmm/pulseeffects/sinkinputs/exciter]
-amount=0.0
-blend=0.0
-ceil=16000.0
-ceil-active=false
-harmonics=9.9999999999999947
-input-gain=0.0
-installed=true
-listen=false
-output-gain=0.0
-post-messages=false
-scope=6937.0
-state=false
-
-[com/github/wwmm/pulseeffects/sinkinputs/filter]
-frequency=305.81799999999998
-inertia=74.0
-input-gain=0.0
-installed=true
-mode='24dB/oct Highpass'
-output-gain=0.0
-post-messages=false
-resonance=0.70699999999999996
-state=false
-
-[com/github/wwmm/pulseeffects/sinkinputs/gate]
-attack=20.0
-detection='RMS'
-installed=true
-knee=9.0
-makeup=0.0
-post-messages=false
-range=-24.0
-ratio=1.0
-release=250.0
-state=false
-stereo-link='Maximum'
-threshold=-41.0
-
-[com/github/wwmm/pulseeffects/sinkinputs/limiter]
-asc=false
-asc-level=0.5
-input-gain=0.0
-installed=true
-limit=0.0
-lookahead=5.0
-oversampling=1
-post-messages=false
-release=50.0
-state=false
-
-[com/github/wwmm/pulseeffects/sinkinputs/loudness]
-installed=true
-link=-12.01
-loudness=-1.9800000000000015
-output=-3.7000000000000064
-post-messages=false
-state=true
-
-[com/github/wwmm/pulseeffects/sinkinputs/maximizer]
-ceiling=0.0
-installed=true
-post-messages=false
-release=3.1600000000000001
-state=false
-threshold=0.0
-
-[com/github/wwmm/pulseeffects/sinkinputs/multibandcompressor]
-attack0=150.0
-attack1=150.0
-attack2=150.0
-attack3=150.0
-bypass0=false
-bypass1=false
-bypass2=false
-bypass3=false
-detection0='RMS'
-detection1='RMS'
-detection2='RMS'
-detection3='RMS'
-freq0=120.0
-freq1=1000.0
-freq2=6000.0
-input-gain=0.0
-installed=true
-knee0=9.0
-knee1=9.0
-knee2=9.0
-knee3=9.0
-makeup0=0.0
-makeup1=0.0
-makeup2=0.0
-makeup3=0.0
-mode='LR8'
-output-gain=0.0
-post-messages=false
-ratio0=2.0
-ratio1=2.0
-ratio2=2.0
-ratio3=2.0
-release0=300.0
-release1=300.0
-release2=300.0
-release3=300.0
-solo0=false
-solo1=false
-solo2=false
-solo3=false
-state=true
-threshold0=-12.0
-threshold1=-12.0
-threshold2=-12.0
-threshold3=-12.0
-
-[com/github/wwmm/pulseeffects/sinkinputs/multibandgate]
-attack0=150.0
-attack1=150.0
-attack2=150.0
-attack3=150.0
-bypass0=false
-bypass1=false
-bypass2=false
-bypass3=false
-detection0='RMS'
-detection1='RMS'
-detection2='RMS'
-detection3='RMS'
-freq0=120.0
-freq1=1000.0
-freq2=6000.0
-input-gain=0.0
-installed=true
-knee0=9.0
-knee1=9.0
-knee2=9.0
-knee3=9.0
-makeup0=0.0
-makeup1=0.0
-makeup2=0.0
-makeup3=0.0
-mode='LR8'
-output-gain=0.0
-post-messages=false
-range0=-24.0
-range1=-24.0
-range2=-24.0
-range3=-24.0
-ratio0=2.0
-ratio1=2.0
-ratio2=2.0
-ratio3=2.0
-release0=300.0
-release1=300.0
-release2=300.0
-release3=300.0
-solo0=false
-solo1=false
-solo2=false
-solo3=false
-state=false
-threshold0=-12.0
-threshold1=-12.0
-threshold2=-12.0
-threshold3=-12.0
-
-[com/github/wwmm/pulseeffects/sinkinputs/pitch]
-cents=0.0
-crispness=3
-faster=false
-formant-preserving=false
-input-gain=0.0
-installed=true
-octaves=0
-output-gain=0.0
-post-messages=false
-semitones=0
-state=false
-
-[com/github/wwmm/pulseeffects/sinkinputs/reverb]
-amount=-61.0
-bass-cut=259.0
-decay-time=0.40000000000000002
-diffusion=0.0
-dry=2.0
-hf-damp=9907.0
-input-gain=0.0
-installed=true
-output-gain=0.0
-post-messages=false
-predelay=0.0
-room-size='Small'
-state=false
-treble-cut=4918.0
-
-[com/github/wwmm/pulseeffects/sinkinputs/rnnoise]
-installed=false
-model-path=''
-post-messages=false
-state=false
-
-[com/github/wwmm/pulseeffects/sinkinputs/stereotools]
-balance-in=7.4593109467002705e-16
-balance-out=0.0
-delay=0.0
-input-gain=0.0
-installed=true
-mlev=0.0
-mode='LR > RL (Stereo Flip Channels)'
-mpan=0.0
-mutel=false
-muter=false
-output-gain=0.0
-phasel=false
-phaser=false
-post-messages=false
-sbal=0.0
-sc-level=1.0
-slev=0.0
-softclip=true
-state=true
-stereo-base=0.0
-stereo-phase=0.0
-
-[com/github/wwmm/pulseeffects/sourceoutputs]
-buffer-pulsesink=200000
-buffer-pulsesrc=200000
-latency-pulsesink=10000
-latency-pulsesrc=10000
-
-[com/github/wwmm/pulseeffects/sourceoutputs/compressor]
-attack=20.0
-input-gain=0.0
-installed=false
-knee=-6.0
-makeup=0.0
-mode='Downward'
-output-gain=0.0
-post-messages=false
-ratio=4.0
-release=100.0
-sidechain-listen=false
-sidechain-lookahead=0.0
-sidechain-mode='RMS'
-sidechain-preamp=0.0
-sidechain-reactivity=10.0
-sidechain-source='Middle'
-sidechain-type='Feed-forward'
-state=false
-threshold=-12.0
-
-[com/github/wwmm/pulseeffects/sourceoutputs/deesser]
-detection='RMS'
-f1-freq=6000.0
-f1-level=0.0
-f2-freq=4500.0
-f2-level=12.0
-f2-q=1.0
-installed=true
-laxity=15
-makeup=0.0
-mode='Wide'
-post-messages=false
-ratio=3.0
-sc-listen=false
-state=false
-threshold=-18.0
-
-[com/github/wwmm/pulseeffects/sourceoutputs/equalizer]
-input-gain=0.0
-installed=false
-mode='IIR'
-num-bands=30
-output-gain=0.0
-post-messages=false
-split-channels=false
-state=false
-
-[com/github/wwmm/pulseeffects/sourceoutputs/equalizer/leftchannel]
-band0-frequency=22.59
-band0-gain=0.0
-band0-mute=false
-band0-q=4.3600000000000003
-band0-slope='x1'
-band0-solo=false
-band0-type='Bell'
-band1-frequency=28.440000000000001
-band1-gain=0.0
-band1-mute=false
-band1-q=4.3600000000000003
-band1-slope='x1'
-band1-solo=false
-band1-type='Bell'
-band10-frequency=225.88999999999999
-band10-gain=0.0
-band10-mute=false
-band10-q=4.3600000000000003
-band10-slope='x1'
-band10-solo=false
-band10-type='Bell'
-band11-frequency=284.38
-band11-gain=0.0
-band11-mute=false
-band11-q=4.3600000000000003
-band11-slope='x1'
-band11-solo=false
-band11-type='Bell'
-band12-frequency=358.01999999999998
-band12-gain=0.0
-band12-mute=false
-band12-q=4.3600000000000003
-band12-slope='x1'
-band12-solo=false
-band12-type='Bell'
-band13-frequency=450.72000000000003
-band13-gain=0.0
-band13-mute=false
-band13-q=4.3600000000000003
-band13-slope='x1'
-band13-solo=false
-band13-type='Bell'
-band14-frequency=567.41999999999996
-band14-gain=0.0
-band14-mute=false
-band14-q=4.3600000000000003
-band14-slope='x1'
-band14-solo=false
-band14-type='Bell'
-band15-frequency=714.34000000000003
-band15-gain=0.0
-band15-mute=false
-band15-q=4.3600000000000003
-band15-slope='x1'
-band15-solo=false
-band15-type='Bell'
-band16-frequency=899.28999999999996
-band16-gain=0.0
-band16-mute=false
-band16-q=4.3600000000000003
-band16-slope='x1'
-band16-solo=false
-band16-type='Bell'
-band17-frequency=1132.1500000000001
-band17-gain=0.0
-band17-mute=false
-band17-q=4.3600000000000003
-band17-slope='x1'
-band17-solo=false
-band17-type='Bell'
-band18-frequency=1425.29
-band18-gain=0.0
-band18-mute=false
-band18-q=4.3600000000000003
-band18-slope='x1'
-band18-solo=false
-band18-type='Bell'
-band19-frequency=1794.3299999999999
-band19-gain=0.0
-band19-mute=false
-band19-q=4.3600000000000003
-band19-slope='x1'
-band19-solo=false
-band19-type='Bell'
-band2-frequency=35.799999999999997
-band2-gain=0.0
-band2-mute=false
-band2-q=4.3600000000000003
-band2-slope='x1'
-band2-solo=false
-band2-type='Bell'
-band20-frequency=2258.9299999999998
-band20-gain=0.0
-band20-mute=false
-band20-q=4.3600000000000003
-band20-slope='x1'
-band20-solo=false
-band20-type='Bell'
-band21-frequency=2843.8200000000002
-band21-gain=0.0
-band21-mute=false
-band21-q=4.3600000000000003
-band21-slope='x1'
-band21-solo=false
-band21-type='Bell'
-band22-frequency=3580.1599999999999
-band22-gain=0.0
-band22-mute=false
-band22-q=4.3600000000000003
-band22-slope='x1'
-band22-solo=false
-band22-type='Bell'
-band23-frequency=4507.1499999999996
-band23-gain=0.0
-band23-mute=false
-band23-q=4.3600000000000003
-band23-slope='x1'
-band23-solo=false
-band23-type='Bell'
-band24-frequency=5674.1599999999999
-band24-gain=0.0
-band24-mute=false
-band24-q=4.3600000000000003
-band24-slope='x1'
-band24-solo=false
-band24-type='Bell'
-band25-frequency=7143.3500000000004
-band25-gain=0.0
-band25-mute=false
-band25-q=4.3600000000000003
-band25-slope='x1'
-band25-solo=false
-band25-type='Bell'
-band26-frequency=8992.9400000000005
-band26-gain=0.0
-band26-mute=false
-band26-q=4.3600000000000003
-band26-slope='x1'
-band26-solo=false
-band26-type='Bell'
-band27-frequency=11321.450000000001
-band27-gain=0.0
-band27-mute=false
-band27-q=4.3600000000000003
-band27-slope='x1'
-band27-solo=false
-band27-type='Bell'
-band28-frequency=14252.860000000001
-band28-gain=0.0
-band28-mute=false
-band28-q=4.3600000000000003
-band28-slope='x1'
-band28-solo=false
-band28-type='Bell'
-band29-frequency=17943.279999999999
-band29-gain=0.0
-band29-mute=false
-band29-q=4.3600000000000003
-band29-slope='x1'
-band29-solo=false
-band29-type='Bell'
-band3-frequency=45.07
-band3-gain=0.0
-band3-mute=false
-band3-q=4.3600000000000003
-band3-slope='x1'
-band3-solo=false
-band3-type='Bell'
-band4-frequency=56.740000000000002
-band4-gain=0.0
-band4-mute=false
-band4-q=4.3600000000000003
-band4-slope='x1'
-band4-solo=false
-band4-type='Bell'
-band5-frequency=71.430000000000007
-band5-gain=0.0
-band5-mute=false
-band5-q=4.3600000000000003
-band5-slope='x1'
-band5-solo=false
-band5-type='Bell'
-band6-frequency=89.930000000000007
-band6-gain=0.0
-band6-mute=false
-band6-q=4.3600000000000003
-band6-slope='x1'
-band6-solo=false
-band6-type='Bell'
-band7-frequency=113.20999999999999
-band7-gain=0.0
-band7-mute=false
-band7-q=4.3600000000000003
-band7-slope='x1'
-band7-solo=false
-band7-type='Bell'
-band8-frequency=142.53
-band8-gain=0.0
-band8-mute=false
-band8-q=4.3600000000000003
-band8-slope='x1'
-band8-solo=false
-band8-type='Bell'
-band9-frequency=179.43000000000001
-band9-gain=0.0
-band9-mute=false
-band9-q=4.3600000000000003
-band9-slope='x1'
-band9-solo=false
-band9-type='Bell'
-
-[com/github/wwmm/pulseeffects/sourceoutputs/equalizer/rightchannel]
-band0-frequency=22.59
-band0-gain=0.0
-band0-mode='RLC (BT)'
-band0-mute=false
-band0-q=4.3600000000000003
-band0-slope='x1'
-band0-solo=false
-band0-type='Bell'
-band1-frequency=28.440000000000001
-band1-gain=0.0
-band1-mode='RLC (BT)'
-band1-mute=false
-band1-q=4.3600000000000003
-band1-slope='x1'
-band1-solo=false
-band1-type='Bell'
-band10-frequency=225.88999999999999
-band10-gain=0.0
-band10-mode='RLC (BT)'
-band10-mute=false
-band10-q=4.3600000000000003
-band10-slope='x1'
-band10-solo=false
-band10-type='Bell'
-band11-frequency=284.38
-band11-gain=0.0
-band11-mode='RLC (BT)'
-band11-mute=false
-band11-q=4.3600000000000003
-band11-slope='x1'
-band11-solo=false
-band11-type='Bell'
-band12-frequency=358.01999999999998
-band12-gain=0.0
-band12-mode='RLC (BT)'
-band12-mute=false
-band12-q=4.3600000000000003
-band12-slope='x1'
-band12-solo=false
-band12-type='Bell'
-band13-frequency=450.72000000000003
-band13-gain=0.0
-band13-mode='RLC (BT)'
-band13-mute=false
-band13-q=4.3600000000000003
-band13-slope='x1'
-band13-solo=false
-band13-type='Bell'
-band14-frequency=567.41999999999996
-band14-gain=0.0
-band14-mode='RLC (BT)'
-band14-mute=false
-band14-q=4.3600000000000003
-band14-slope='x1'
-band14-solo=false
-band14-type='Bell'
-band15-frequency=714.34000000000003
-band15-gain=0.0
-band15-mode='RLC (BT)'
-band15-mute=false
-band15-q=4.3600000000000003
-band15-slope='x1'
-band15-solo=false
-band15-type='Bell'
-band16-frequency=899.28999999999996
-band16-gain=0.0
-band16-mode='RLC (BT)'
-band16-mute=false
-band16-q=4.3600000000000003
-band16-slope='x1'
-band16-solo=false
-band16-type='Bell'
-band17-frequency=1132.1500000000001
-band17-gain=0.0
-band17-mode='RLC (BT)'
-band17-mute=false
-band17-q=4.3600000000000003
-band17-slope='x1'
-band17-solo=false
-band17-type='Bell'
-band18-frequency=1425.29
-band18-gain=0.0
-band18-mode='RLC (BT)'
-band18-mute=false
-band18-q=4.3600000000000003
-band18-slope='x1'
-band18-solo=false
-band18-type='Bell'
-band19-frequency=1794.3299999999999
-band19-gain=0.0
-band19-mode='RLC (BT)'
-band19-mute=false
-band19-q=4.3600000000000003
-band19-slope='x1'
-band19-solo=false
-band19-type='Bell'
-band2-frequency=35.799999999999997
-band2-gain=0.0
-band2-mode='RLC (BT)'
-band2-mute=false
-band2-q=4.3600000000000003
-band2-slope='x1'
-band2-solo=false
-band2-type='Bell'
-band20-frequency=2258.9299999999998
-band20-gain=0.0
-band20-mode='RLC (BT)'
-band20-mute=false
-band20-q=4.3600000000000003
-band20-slope='x1'
-band20-solo=false
-band20-type='Bell'
-band21-frequency=2843.8200000000002
-band21-gain=0.0
-band21-mode='RLC (BT)'
-band21-mute=false
-band21-q=4.3600000000000003
-band21-slope='x1'
-band21-solo=false
-band21-type='Bell'
-band22-frequency=3580.1599999999999
-band22-gain=0.0
-band22-mode='RLC (BT)'
-band22-mute=false
-band22-q=4.3600000000000003
-band22-slope='x1'
-band22-solo=false
-band22-type='Bell'
-band23-frequency=4507.1499999999996
-band23-gain=0.0
-band23-mode='RLC (BT)'
-band23-mute=false
-band23-q=4.3600000000000003
-band23-slope='x1'
-band23-solo=false
-band23-type='Bell'
-band24-frequency=5674.1599999999999
-band24-gain=0.0
-band24-mode='RLC (BT)'
-band24-mute=false
-band24-q=4.3600000000000003
-band24-slope='x1'
-band24-solo=false
-band24-type='Bell'
-band25-frequency=7143.3500000000004
-band25-gain=0.0
-band25-mode='RLC (BT)'
-band25-mute=false
-band25-q=4.3600000000000003
-band25-slope='x1'
-band25-solo=false
-band25-type='Bell'
-band26-frequency=8992.9400000000005
-band26-gain=0.0
-band26-mode='RLC (BT)'
-band26-mute=false
-band26-q=4.3600000000000003
-band26-slope='x1'
-band26-solo=false
-band26-type='Bell'
-band27-frequency=11321.450000000001
-band27-gain=0.0
-band27-mode='RLC (BT)'
-band27-mute=false
-band27-q=4.3600000000000003
-band27-slope='x1'
-band27-solo=false
-band27-type='Bell'
-band28-frequency=14252.860000000001
-band28-gain=0.0
-band28-mode='RLC (BT)'
-band28-mute=false
-band28-q=4.3600000000000003
-band28-slope='x1'
-band28-solo=false
-band28-type='Bell'
-band29-frequency=17943.279999999999
-band29-gain=0.0
-band29-mode='RLC (BT)'
-band29-mute=false
-band29-q=4.3600000000000003
-band29-slope='x1'
-band29-solo=false
-band29-type='Bell'
-band3-frequency=45.07
-band3-gain=0.0
-band3-mode='RLC (BT)'
-band3-mute=false
-band3-q=4.3600000000000003
-band3-slope='x1'
-band3-solo=false
-band3-type='Bell'
-band4-frequency=56.740000000000002
-band4-gain=0.0
-band4-mode='RLC (BT)'
-band4-mute=false
-band4-q=4.3600000000000003
-band4-slope='x1'
-band4-solo=false
-band4-type='Bell'
-band5-frequency=71.430000000000007
-band5-gain=0.0
-band5-mode='RLC (BT)'
-band5-mute=false
-band5-q=4.3600000000000003
-band5-slope='x1'
-band5-solo=false
-band5-type='Bell'
-band6-frequency=89.930000000000007
-band6-gain=0.0
-band6-mode='RLC (BT)'
-band6-mute=false
-band6-q=4.3600000000000003
-band6-slope='x1'
-band6-solo=false
-band6-type='Bell'
-band7-frequency=113.20999999999999
-band7-gain=0.0
-band7-mode='RLC (BT)'
-band7-mute=false
-band7-q=4.3600000000000003
-band7-slope='x1'
-band7-solo=false
-band7-type='Bell'
-band8-frequency=142.53
-band8-gain=0.0
-band8-mode='RLC (BT)'
-band8-mute=false
-band8-q=4.3600000000000003
-band8-slope='x1'
-band8-solo=false
-band8-type='Bell'
-band9-frequency=179.43000000000001
-band9-gain=0.0
-band9-mode='RLC (BT)'
-band9-mute=false
-band9-q=4.3600000000000003
-band9-slope='x1'
-band9-solo=false
-band9-type='Bell'
-
-[com/github/wwmm/pulseeffects/sourceoutputs/filter]
-frequency=2000.0
-inertia=20.0
-input-gain=0.0
-installed=true
-mode='12dB/oct Lowpass'
-output-gain=0.0
-post-messages=false
-resonance=-3.0
-state=false
-
-[com/github/wwmm/pulseeffects/sourceoutputs/gate]
-attack=20.0
-detection='RMS'
-installed=true
-knee=9.0
-makeup=0.0
-post-messages=false
-range=-24.0
-ratio=2.0
-release=250.0
-state=false
-stereo-link='Average'
-threshold=-18.0
-
-[com/github/wwmm/pulseeffects/sourceoutputs/limiter]
-asc=false
-asc-level=0.5
-autovolume-state=false
-autovolume-target=-12
-autovolume-threshold=-50
-autovolume-tolerance=1
-autovolume-window=1000.0
-input-gain=0.0
-installed=true
-limit=0.0
-lookahead=5.0
-oversampling=1
-post-messages=false
-release=50.0
-state=false
-
-[com/github/wwmm/pulseeffects/sourceoutputs/maximizer]
-installed=true
-post-messages=false
-state=false
-
-[com/github/wwmm/pulseeffects/sourceoutputs/multibandcompressor]
-attack0=150.0
-attack1=150.0
-attack2=150.0
-attack3=150.0
-bypass0=false
-bypass1=false
-bypass2=false
-bypass3=false
-detection0='RMS'
-detection1='RMS'
-detection2='RMS'
-detection3='RMS'
-freq0=120.0
-freq1=1000.0
-freq2=6000.0
-input-gain=0.0
-installed=true
-knee0=9.0
-knee1=9.0
-knee2=9.0
-knee3=9.0
-makeup0=0.0
-makeup1=0.0
-makeup2=0.0
-makeup3=0.0
-mode='LR8'
-output-gain=0.0
-post-messages=false
-ratio0=2.0
-ratio1=2.0
-ratio2=2.0
-ratio3=2.0
-release0=300.0
-release1=300.0
-release2=300.0
-release3=300.0
-solo0=false
-solo1=false
-solo2=false
-solo3=false
-state=false
-threshold0=-12.0
-threshold1=-12.0
-threshold2=-12.0
-threshold3=-12.0
-
-[com/github/wwmm/pulseeffects/sourceoutputs/multibandgate]
-attack0=150.0
-attack1=150.0
-attack2=150.0
-attack3=150.0
-bypass0=false
-bypass1=false
-bypass2=false
-bypass3=false
-detection0='RMS'
-detection1='RMS'
-detection2='RMS'
-detection3='RMS'
-freq0=120.0
-freq1=1000.0
-freq2=6000.0
-input-gain=0.0
-installed=true
-knee0=9.0
-knee1=9.0
-knee2=9.0
-knee3=9.0
-makeup0=0.0
-makeup1=0.0
-makeup2=0.0
-makeup3=0.0
-mode='LR8'
-output-gain=0.0
-post-messages=false
-range0=-24.0
-range1=-24.0
-range2=-24.0
-range3=-24.0
-ratio0=2.0
-ratio1=2.0
-ratio2=2.0
-ratio3=2.0
-release0=300.0
-release1=300.0
-release2=300.0
-release3=300.0
-solo0=false
-solo1=false
-solo2=false
-solo3=false
-state=false
-threshold0=-12.0
-threshold1=-12.0
-threshold2=-12.0
-threshold3=-12.0
-
-[com/github/wwmm/pulseeffects/sourceoutputs/pitch]
-cents=0.0
-crispness=3
-faster=false
-formant-preserving=false
-input-gain=0.0
-installed=true
-octaves=0
-output-gain=0.0
-post-messages=false
-semitones=0
-state=false
-
-[com/github/wwmm/pulseeffects/sourceoutputs/reverb]
-amount=-12.0
-bass-cut=300.0
-decay-time=1.5
-diffusion=0.5
-dry=0.0
-hf-damp=5000.0
-input-gain=0.0
-installed=true
-output-gain=0.0
-post-messages=false
-predelay=0.0
-room-size='Large'
-state=false
-treble-cut=5000.0
-
-[com/github/wwmm/pulseeffects/sourceoutputs/rnnoise]
-installed=false
-model-path='Standard RNNoise Model'
-post-messages=false
-
-[com/github/wwmm/pulseeffects/sourceoutputs/stereotools]
-installed=true
-post-messages=false
-state=false
-
-[com/github/wwmm/pulseeffects/sourceoutputs/webrtc]
-compression-gain-db=9
-delay-agnostic=false
-echo-cancel=true
-echo-suppression-level='moderate'
-extended-filter=true
-gain-control=true
-gain-control-mode='adaptive-digital'
-high-pass-filter=true
-installed=true
-limiter=true
-noise-suppression=true
-noise-suppression-level='moderate'
-post-messages=false
-state=false
-target-level-dbfs=3
-voice-detection=false
-voice-detection-frame-size-ms=10
-voice-detection-likelihood='low'
-
-[com/github/wwmm/pulseeffects/spectrum]
-color=[0.15698888888888884, 0.66333333333333333, 0.33171338028169001, 1.0]
-exponent=1.0
-fill=true
-gradient-color=[0.0, 0.0, 0.0, 1.0]
-height=112
-line-width=2.0
-maximum-frequency=20000
-minimum-frequency=20
-n-points=81
-sampling-freq=10
-scale=1.0
-show=true
-show-bar-border=true
-type='Bars'
-use-custom-color=true
-use-gradient=true
-
 [com/hughski/ColorHug/Backlight]
 gamma=1.0
 integration=0.20000000000000001
@@ -5895,7 +4311,7 @@ sort-enabled-first=true
 style-variant='force-dark'
 
 [com/solus-project/budgie-panel]
-builtin-theme=false
+builtin-theme=true
 dark-theme=false
 migration-level=1
 notification-position='BUDGIE_NOTIFICATION_POSITION_TOP_RIGHT'
@@ -6055,6 +4471,11 @@ position=2
 alignment='end'
 name='Clock'
 position=10
+
+[com/solus-project/budgie-panel/applets/{0b451c7c-8525-11ed-aea1-298557a7bfa4}]
+alignment='end'
+name='Budgie Brightness Control'
+position=2
 
 [com/solus-project/budgie-panel/applets/{0bab372a-26c2-11e9-b617-525400320717}]
 alignment='end'
@@ -6223,7 +4644,7 @@ position=6
 [com/solus-project/budgie-panel/applets/{2d6cfe84-dabd-11e9-b23b-0b98712e6d7b}]
 alignment='center'
 name='Workspace Switcher'
-position=1
+position=2
 
 [com/solus-project/budgie-panel/applets/{3245f3ac-72f4-11e8-94cb-67756189a5cb}]
 alignment='end'
@@ -6318,6 +4739,11 @@ position=1
 [com/solus-project/budgie-panel/applets/{49d0cd42-b0db-11e8-88f2-f788eed09528}]
 alignment='end'
 name='System Tray'
+position=0
+
+[com/solus-project/budgie-panel/applets/{4ab4e3d4-8524-11ed-aea1-298557a7bfa4}]
+alignment='center'
+name='System Monitor'
 position=0
 
 [com/solus-project/budgie-panel/applets/{4b3105d2-763b-11e9-b441-9fea6856116e}]
@@ -6422,7 +4848,7 @@ position=2
 [com/solus-project/budgie-panel/applets/{6141566e-ff82-11ec-9e01-59e187e8395f}]
 alignment='end'
 name='Spacer'
-position=5
+position=7
 
 [com/solus-project/budgie-panel/applets/{630a883a-b436-11e8-9fed-3fa40103cb8b}]
 alignment='end'
@@ -6477,7 +4903,7 @@ position=3
 [com/solus-project/budgie-panel/applets/{7390ec3a-ff82-11ec-9e01-59e187e8395f}]
 alignment='end'
 name='Spacer'
-position=3
+position=5
 
 [com/solus-project/budgie-panel/applets/{740a8e42-26c2-11e9-b617-525400320717}]
 alignment='center'
@@ -6523,6 +4949,11 @@ position=6
 alignment='center'
 name='System Monitor'
 position=0
+
+[com/solus-project/budgie-panel/applets/{803208d4-8524-11ed-aea1-298557a7bfa4}]
+alignment='end'
+name='Clock'
+position=13
 
 [com/solus-project/budgie-panel/applets/{807b023e-b5a6-11e8-9c0b-4fd83cf1c1b5}]
 alignment='center'
@@ -6630,7 +5061,7 @@ position=1
 [com/solus-project/budgie-panel/applets/{a228ecfa-ff82-11ec-9e01-59e187e8395f}]
 alignment='end'
 name='Keyboard Layout'
-position=1
+position=3
 
 [com/solus-project/budgie-panel/applets/{a2839b06-463a-11e8-8265-7d5ff59b157b}]
 alignment='end'
@@ -6649,12 +5080,12 @@ position=0
 [com/solus-project/budgie-panel/applets/{a35a8566-dabb-11e9-b23b-0b98712e6d7b}]
 alignment='start'
 name='Spacer'
-position=1
+position=2
 
 [com/solus-project/budgie-panel/applets/{a35a8567-dabb-11e9-b23b-0b98712e6d7b}]
 alignment='start'
 name='ShowTime'
-position=2
+position=3
 
 [com/solus-project/budgie-panel/applets/{a35a8568-dabb-11e9-b23b-0b98712e6d7b}]
 alignment='end'
@@ -6669,7 +5100,7 @@ position=0
 [com/solus-project/budgie-panel/applets/{a35a856a-dabb-11e9-b23b-0b98712e6d7b}]
 alignment='end'
 name='System Tray'
-position=7
+position=11
 
 [com/solus-project/budgie-panel/applets/{a35a856d-dabb-11e9-b23b-0b98712e6d7b}]
 alignment='end'
@@ -6684,17 +5115,12 @@ position=7
 [com/solus-project/budgie-panel/applets/{a35a856f-dabb-11e9-b23b-0b98712e6d7b}]
 alignment='center'
 name='Places'
-position=2
-
-[com/solus-project/budgie-panel/applets/{a35a8570-dabb-11e9-b23b-0b98712e6d7b}]
-alignment='end'
-name='Notifications'
-position=10
+position=1
 
 [com/solus-project/budgie-panel/applets/{a35a8571-dabb-11e9-b23b-0b98712e6d7b}]
 alignment='end'
 name='Status Indicator'
-position=0
+position=1
 
 [com/solus-project/budgie-panel/applets/{a35a8572-dabb-11e9-b23b-0b98712e6d7b}]
 alignment='end'
@@ -6714,7 +5140,7 @@ position=13
 [com/solus-project/budgie-panel/applets/{a35a8575-dabb-11e9-b23b-0b98712e6d7b}]
 alignment='end'
 name='Raven Trigger'
-position=17
+position=14
 
 [com/solus-project/budgie-panel/applets/{a4149dbc-72f4-11e8-94cb-67756189a5cb}]
 alignment='end'
@@ -6947,7 +5373,7 @@ position=12
 [com/solus-project/budgie-panel/applets/{b194ed7a-dabd-11e9-b23b-0b98712e6d7b}]
 alignment='end'
 name='DropBy'
-position=13
+position=8
 
 [com/solus-project/budgie-panel/applets/{b24ee343-09de-11ea-af56-cdd5f8c5d00f}]
 alignment='start'
@@ -7136,6 +5562,11 @@ alignment='end'
 name='Spacer'
 position=4
 
+[com/solus-project/budgie-panel/applets/{bf1240a0-8524-11ed-aea1-298557a7bfa4}]
+alignment='end'
+name='Notifications'
+position=9
+
 [com/solus-project/budgie-panel/applets/{c10c7b24-6197-11e8-96a0-e7f827d77ada}]
 alignment='center'
 name='Places'
@@ -7189,7 +5620,7 @@ position=17
 [com/solus-project/budgie-panel/applets/{d04c57b2-ff81-11ec-9e01-59e187e8395f}]
 alignment='end'
 name='RotationLock'
-position=4
+position=6
 
 [com/solus-project/budgie-panel/applets/{d334e756-b5a6-11e8-9c0b-4fd83cf1c1b5}]
 alignment='end'
@@ -7234,12 +5665,17 @@ position=3
 [com/solus-project/budgie-panel/applets/{e5bc8c6a-ff82-11ec-9e01-59e187e8395f}]
 alignment='end'
 name='User Indicator'
-position=8
+position=12
 
 [com/solus-project/budgie-panel/applets/{e796985c-26c1-11e9-b617-525400320717}]
 alignment='start'
 name='Icon Task List'
 position=1
+
+[com/solus-project/budgie-panel/applets/{e860514a-8524-11ed-aea1-298557a7bfa4}]
+alignment='end'
+name='RotationLock'
+position=0
 
 [com/solus-project/budgie-panel/applets/{ecd7122e-763a-11e9-b441-9fea6856116e}]
 alignment='end'
@@ -7310,6 +5746,11 @@ position=2
 alignment='end'
 name='Spacer'
 position=6
+
+[com/solus-project/budgie-panel/applets/{f6088350-8522-11ed-aea1-298557a7bfa4}]
+alignment='start'
+name='Budgie Menu'
+position=1
 
 [com/solus-project/budgie-panel/applets/{f61819e2-ff7a-11ec-9e01-59e187e8395f}]
 alignment='end'
@@ -7433,6 +5874,12 @@ menu-categories-hover=true
 [com/solus-project/budgie-panel/instance/budgie-menu/{dbe864fe-26c1-11e9-b617-525400320717}]
 menu-categories-hover=true
 menu-headers=true
+
+[com/solus-project/budgie-panel/instance/budgie-menu/{f6088350-8522-11ed-aea1-298557a7bfa4}]
+enable-menu-label=false
+menu-categories-hover=true
+menu-compact=false
+menu-headers=false
 
 [com/solus-project/budgie-panel/instance/icon-tasklist/{2c9cc9b8-763a-11e9-b441-9fea6856116e}]
 lock-icons=false
@@ -7574,6 +6021,9 @@ size=2
 [com/solus-project/budgie-panel/instance/spacer/{f560374a-763a-11e9-b441-9fea6856116e}]
 size=0
 
+[com/solus-project/budgie-panel/instance/workspaces/{2d6cfe84-dabd-11e9-b23b-0b98712e6d7b}]
+addbutton-visibility='always'
+
 [com/solus-project/budgie-panel/panels/{01fa7f64-0944-11ea-9873-cd0a3e495e06}]
 applets=['01fa7f74-0944-11ea-9873-cd0a3e495e06', '01fa7f6e-0944-11ea-9873-cd0a3e495e06', '01fa7f73-0944-11ea-9873-cd0a3e495e06', '01fa7f6d-0944-11ea-9873-cd0a3e495e06', '01fa7f69-0944-11ea-9873-cd0a3e495e06', '01fa7f72-0944-11ea-9873-cd0a3e495e06', '01fa7f6c-0944-11ea-9873-cd0a3e495e06', '01fa7f68-0944-11ea-9873-cd0a3e495e06', '01fa7f6b-0944-11ea-9873-cd0a3e495e06', '01fa7f67-0944-11ea-9873-cd0a3e495e06', '01fa7f71-0944-11ea-9873-cd0a3e495e06', '01fa7f70-0944-11ea-9873-cd0a3e495e06', '01fa7f6a-0944-11ea-9873-cd0a3e495e06', '01fa7f75-0944-11ea-9873-cd0a3e495e06', '01fa7f66-0944-11ea-9873-cd0a3e495e06', '01fa7f6f-0944-11ea-9873-cd0a3e495e06', '01fa7f65-0944-11ea-9873-cd0a3e495e06']
 location='top'
@@ -7618,14 +6068,14 @@ size=39
 transparency='dynamic'
 
 [com/solus-project/budgie-panel/panels/{a35a8564-dabb-11e9-b23b-0b98712e6d7b}]
-applets=['6141566e-ff82-11ec-9e01-59e187e8395f', 'a35a8567-dabb-11e9-b23b-0b98712e6d7b', 'a35a8571-dabb-11e9-b23b-0b98712e6d7b', '5e185c3a-ff7d-11ec-9e01-59e187e8395f', 'a35a8570-dabb-11e9-b23b-0b98712e6d7b', 'a35a856a-dabb-11e9-b23b-0b98712e6d7b', 'a35a8575-dabb-11e9-b23b-0b98712e6d7b', 'a35a856f-dabb-11e9-b23b-0b98712e6d7b', 'd573befa-ff82-11ec-9e01-59e187e8395f', 'a35a8566-dabb-11e9-b23b-0b98712e6d7b', 'b194ed7a-dabd-11e9-b23b-0b98712e6d7b', '7390ec3a-ff82-11ec-9e01-59e187e8395f', '2d6cfe84-dabd-11e9-b23b-0b98712e6d7b', '53fbf018-ff82-11ec-9e01-59e187e8395f', 'e5bc8c6a-ff82-11ec-9e01-59e187e8395f', 'd04c57b2-ff81-11ec-9e01-59e187e8395f', 'e5640cf4-dabc-11e9-b23b-0b98712e6d7b', 'a228ecfa-ff82-11ec-9e01-59e187e8395f']
-autohide='automatic'
+applets=['f6088350-8522-11ed-aea1-298557a7bfa4', 'a35a856a-dabb-11e9-b23b-0b98712e6d7b', 'bf1240a0-8524-11ed-aea1-298557a7bfa4', 'a35a8575-dabb-11e9-b23b-0b98712e6d7b', '0b451c7c-8525-11ed-aea1-298557a7bfa4', '7390ec3a-ff82-11ec-9e01-59e187e8395f', 'a35a856f-dabb-11e9-b23b-0b98712e6d7b', '6141566e-ff82-11ec-9e01-59e187e8395f', 'a228ecfa-ff82-11ec-9e01-59e187e8395f', 'b194ed7a-dabd-11e9-b23b-0b98712e6d7b', '4ab4e3d4-8524-11ed-aea1-298557a7bfa4', 'a35a8567-dabb-11e9-b23b-0b98712e6d7b', 'a35a8571-dabb-11e9-b23b-0b98712e6d7b', 'e5bc8c6a-ff82-11ec-9e01-59e187e8395f', 'a35a8566-dabb-11e9-b23b-0b98712e6d7b', '2d6cfe84-dabd-11e9-b23b-0b98712e6d7b', 'e5640cf4-dabc-11e9-b23b-0b98712e6d7b', 'd04c57b2-ff81-11ec-9e01-59e187e8395f', 'e860514a-8524-11ed-aea1-298557a7bfa4', '803208d4-8524-11ed-aea1-298557a7bfa4']
+autohide='intelligent'
 dock-mode=false
 enable-shadow=true
-location='top'
+location='bottom'
 size=39
 theme-regions=true
-transparency='dynamic'
+transparency='always'
 
 [com/solus-project/budgie-panel/panels/{a5e846da-4770-11ec-b442-00163e000000}]
 applets=['a5e846e6-4770-11ec-b442-00163e000000', 'a5e846e5-4770-11ec-b442-00163e000000', 'a5e846eb-4770-11ec-b442-00163e000000', 'a5e846e4-4770-11ec-b442-00163e000000', 'a5e846ea-4770-11ec-b442-00163e000000', 'a5e846e3-4770-11ec-b442-00163e000000', 'a5e846de-4770-11ec-b442-00163e000000', 'a5e846df-4770-11ec-b442-00163e000000', 'a5e846e1-4770-11ec-b442-00163e000000', 'a5e846e2-4770-11ec-b442-00163e000000', 'a5e846dd-4770-11ec-b442-00163e000000', 'a5e846e0-4770-11ec-b442-00163e000000', 'a5e846dc-4770-11ec-b442-00163e000000', 'a5e846e8-4770-11ec-b442-00163e000000', 'a5e846e9-4770-11ec-b442-00163e000000', 'a5e846db-4770-11ec-b442-00163e000000', 'a5e846e7-4770-11ec-b442-00163e000000']
@@ -7792,11 +6242,11 @@ y=-1
 favorite-annotations=@as []
 favorites=@as []
 font='Monospace 16'
-has-partial-match=false
+has-partial-match=true
 hotkey=['<Control><Shift>e']
 lang='en'
 load-emoji-at-startup=true
-load-unicode-at-startup=false
+load-unicode-at-startup=true
 partial-match-condition=0
 partial-match-length=3
 unicode-hotkey=['<Control><Shift>u']
@@ -7855,7 +6305,7 @@ height=395
 last-folder-uri=''
 playlist-width=250
 show-controls=true
-show-playlist=false
+show-playlist=true
 volume=0.9375
 width=794
 
@@ -8040,9 +6490,6 @@ needs-term=false
 [org/cinnamon/desktop/applications/terminal]
 exec='gnome-terminal'
 exec-arg='-x'
-
-[org/cinnamon/desktop/background]
-primary-color='#734ASD'
 
 [org/cinnamon/desktop/input-sources]
 show-all-sources=false
@@ -8704,9 +7151,9 @@ wait-for-miner-fs=false
 
 [org/freedesktop/tracker/fts]
 enable-stemmer=false
-enable-unaccent=true
-ignore-numbers=true
-ignore-stop-words=true
+enable-unaccent=false
+ignore-numbers=false
+ignore-stop-words=false
 max-word-length=30
 max-words-to-index=10000
 
@@ -8714,6 +7161,7 @@ max-words-to-index=10000
 crawling-interval=-1
 enable-monitors=true
 enable-writeback=true
+ignored-directories-with-content=['.trackerignore']
 index-on-battery=true
 index-on-battery-first-time=true
 index-optical-discs=false
@@ -8725,7 +7173,10 @@ low-disk-space-limit=-1
 removable-days-threshold=3
 sched-idle='first-index'
 throttle=0
-verbosity='errors'
+verbosity='minimal'
+
+[org/freedesktop/tracker/needle]
+default-view=1
 
 [org/freedesktop/tracker/store]
 graphupdated-delay=1000
@@ -8750,7 +7201,7 @@ font='Cantarell 50'
 recent-characters=['↓']
 
 [org/gnome/Disks]
-image-dir-uri=''
+image-dir-uri='file:///media/griggorii/6574D7205EB36A91'
 
 [org/gnome/Disks/benchmark]
 do-write=true
@@ -9126,8 +7577,8 @@ active-view='month'
 follow-night-light=false
 weather-settings=(true, false, '', @mv nothing)
 window-maximized=false
-window-position=(34, 28)
-window-size=(1366, 722)
+window-position=[166, 9]
+window-size=[1034, 754]
 
 [org/gnome/charmap]
 font=@ms 'Courier New 20'
@@ -9305,11 +7756,11 @@ exec-arg='-e'
 color-shading-type='solid'
 draw-background=true
 picture-opacity=50
-picture-options='zoom'
-picture-uri=''
+picture-options='wallpaper'
+picture-uri='file:////usr/share/gnome-control-center/pixmaps/noise-texture-light.png'
 picture-uri-dark='file:///usr/share/backgrounds/warty-final-ubuntu.png'
 primary-color='#734ASD'
-secondary-color='#2c001e'
+secondary-color='#008094'
 show-desktop-icons=false
 
 [org/gnome/desktop/calendar]
@@ -9325,6 +7776,7 @@ require-password='never'
 current=uint32 0
 mru-sources=[('xkb', 'us'), ('xkb', 'ru')]
 per-window=true
+show-all-sources=false
 sources=[('xkb', 'us'), ('xkb', 'ru')]
 xkb-options=['grp_led:scroll', 'lv3:ralt_switch']
 
@@ -9341,7 +7793,7 @@ cursor-blink=true
 cursor-blink-time=1200
 cursor-blink-timeout=10
 cursor-size=24
-cursor-theme='Yaru'
+cursor-theme='breeze_cursors'
 document-font-name='Sans 10'
 enable-animations=true
 enable-hot-corners=true
@@ -9356,10 +7808,10 @@ gtk-im-module='gtk-im-context-simple'
 gtk-im-preedit-style='callback'
 gtk-im-status-style='callback'
 gtk-key-theme='Default'
-gtk-theme='Yaru-olive-dark'
+gtk-theme='Yaru-dark'
 gtk-timeout-initial=200
 gtk-timeout-repeat=20
-icon-theme='Yaru-olive'
+icon-theme='Yaru'
 locate-pointer=true
 menubar-accel='F10'
 menubar-detachable=true
@@ -9399,7 +7851,7 @@ autorun-x-content-open-folder=['x-content/bootable-media']
 autorun-x-content-start-app=['x-content/unix-software', 'x-content/bootable-media']
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-gnome-fileroller', 'org-gnome-gedit', 'org-gnome-nautilus', 'org-gnome-baobab', 'org-gnome-terminal', 'org-gnome-eog', 'xsnow', 'gnome-bluetooth-panel', 'org-xfce-mousepad', 'org-gnome-shell-extensions', 'rhythmbox']
+application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor']
 show-banners=true
 show-in-lock-screen=true
 
@@ -10100,7 +8552,7 @@ window-height=482
 window-width=842
 
 [org/gnome/gedit/plugins]
-active-plugins=['time', 'modelines', 'snippets', 'wordcompletion', 'synctex', 'charmap', 'docinfo', 'filebrowser', 'spell', 'sort', 'quickopen', 'colorschemer', 'colorpicker', 'bracketcompletion', 'terminal', 'pythonconsole', 'findinfiles', 'externaltools', 'commander', 'codecomment', 'multiedit', 'git', 'joinlines', 'textsize', 'smartspaces', 'translate', 'quickhighlight']
+active-plugins=['time', 'modelines', 'snippets', 'wordcompletion', 'drawspaces', 'synctex', 'charmap', 'docinfo', 'filebrowser', 'spell', 'sort', 'quickopen', 'colorschemer', 'colorpicker', 'bracketcompletion', 'terminal', 'pythonconsole', 'findinfiles', 'externaltools', 'commander', 'multiedit', 'git', 'textsize', 'smartspaces', 'translate', 'quickhighlight']
 
 [org/gnome/gedit/plugins/drawspaces]
 show-white-space=false
@@ -10216,7 +8668,7 @@ bottom-panel-active-page='GeditTerminalPanel'
 bottom-panel-size=50
 side-panel-active-page='GeditFileBrowserPanel'
 side-panel-size=274
-size=(848, 505)
+size=(861, 561)
 state=87168
 
 [org/gnome/gitg/preferences/commit/message]
@@ -10317,11 +8769,10 @@ y-centered=false
 auto-save-directory=''
 border-effect='none'
 default-file-type='png'
-delay=4
+delay=1
 include-border=true
 include-icc-profile=true
 include-pointer=false
-last-save-directory='file:///home/griggorii/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F'
 take-window-shot=false
 
 [org/gnome/gnome-session]
@@ -10363,7 +8814,7 @@ smooth-refresh=true
 solaris-mode=true
 swap-color='#49A835'
 update-interval=5000
-window-state=(874, 552, 270, 158)
+window-state=(989, 633, 26, 23)
 
 [org/gnome/gnome-system-monitor/disktreenew]
 col-0-visible=true
@@ -10595,12 +9046,12 @@ sidebar-visible=true
 single-click-activation=true
 sort-inverse=false
 sort-type='file::mtime'
-startup-current-file=''
-startup-location=''
+startup-current-file='file:///media/griggorii/0b1a56df-321a-49b6-969b-75a4fae19da9~/V53.0/Nemo2/linux_xorg_glamor_perfomance_drawing_dual-master/Default_SPEED_CPU_DRAWING_XORG_SESSION.png'
+startup-location='file:///media/griggorii/0b1a56df-321a-49b6-969b-75a4fae19da9~/V53.0/Nemo2/linux_xorg_glamor_perfomance_drawing_dual-master'
 statusbar-visible=true
 thumbnail-caption='comment::note,comment::time'
 thumbnail-limit=0
-thumbnail-list-size=0
+thumbnail-list-size=114
 thumbnail-list-visible=true
 thumbnail-size=128
 use-startup-location=false
@@ -10945,8 +9396,8 @@ network-icon-name='Network Servers'
 network-icon-visible=false
 text-ellipsis-limit=3
 trash-icon-name='Trash'
-trash-icon-visible=true
-volumes-visible=true
+trash-icon-visible=false
+volumes-visible=false
 
 [org/gnome/nautilus/icon-view]
 default-zoom-level='standard'
@@ -10968,7 +9419,7 @@ default-sort-order='name'
 executable-text-activation='ask'
 fts-enabled=true
 install-mime-activation=true
-list-view-on-search=false
+list-view-on-search=true
 mouse-back-button=8
 mouse-forward-button=9
 mouse-use-extra-buttons=true
@@ -11002,14 +9453,6 @@ disable-wifi-create=false
 show-applet=true
 stamp=0
 suppress-wireless-networks-available=false
-
-[org/gnome/nm-applet/eap/0bfe967d-f36a-419d-8655-57e3d8712812]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/4f81f370-6235-4073-8316-5f174f96bb04]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
 
 [org/gnome/orca]
 active-profile=['Default', 'default']
@@ -11162,6 +9605,8 @@ click-volume=0
 numlock-state='off'
 
 [org/gnome/settings-daemon/peripherals/mouse]
+double-click=400
+drag-threshold=8
 locate-pointer=false
 
 [org/gnome/settings-daemon/peripherals/smartcard]
@@ -11237,6 +9682,10 @@ increase-text-size=['<Shift>KP_Add']
 keyboard-brightness-down=@as []
 keyboard-brightness-toggle=@as []
 keyboard-brightness-up=@as []
+logout=['[<Control><Alt>Delete]']
+magnifier=['[<Alt><Super>8]']
+magnifier-zoom-in=['[<Alt><Super>equal]']
+magnifier-zoom-out=['[<Alt><Super>minus]']
 max-screencast-length=uint32 1000100010
 media=['KP_Insert']
 mic-mute=['<Alt>m']
@@ -11258,6 +9707,8 @@ screen-brightness-cycle=@as []
 screen-brightness-down=@as []
 screen-brightness-up=@as []
 screencast=['<Primary>Print']
+screenreader=['[<Alt><Super>s]']
+screensaver=['[<Super>l]']
 screenshot=['<Shift>F7']
 screenshot-clip=['<Shift>F10']
 search=['<Shift>F5']
@@ -11497,8 +9948,11 @@ priority=0
 
 [org/gnome/settings-daemon/plugins/xsettings]
 active=true
+antialiasing='rgba'
+hinting='slight'
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 priority=0
+rgba-order='rgb'
 srgba-order='srgb'
 
 [org/gnome/shell]
@@ -11509,10 +9963,10 @@ command-history=['nautilus', 'tilix', 'lg', 'r']
 development-tools=true
 disable-extension-version-validation=true
 disable-user-extensions=false
-disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'dash-to-panel@jderose9.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'desktop-icons@csoriano', 'unite@hardpixel.eu', 'window-list@gnome-shell-extensions.gcampax.github.com']
+disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'dash-to-panel@jderose9.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'desktop-icons@csoriano', 'window-list@gnome-shell-extensions.gcampax.github.com']
 enable-hot-corners=true
-enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io', 'ding@rastersoft.com']
-favorite-apps=['org.gnome.Screenshot.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'com.gexperts.Tilix.desktop', 'chromium-browser.desktop', 'vlc.desktop', 'org.gnome.Terminal.desktop']
+enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io', 'ding@rastersoft.com', 'unite@hardpixel.eu']
+favorite-apps=['org.gnome.Screenshot.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'com.gexperts.Tilix.desktop', 'org.gnome.Terminal.desktop', 'chromium-browser.desktop', 'vlc.desktop']
 had-bluetooth-devices-setup=true
 introspect=false
 remember-mount-password=false
@@ -12175,7 +10629,7 @@ selected-color=(true, 0.22352941176470589, 0.21176470588235294, 0.20392156862745
 
 [org/gtk/settings/debug]
 enable-inspector-keybinding=false
-inspector-warning=true
+inspector-warning=false
 
 [org/gtk/settings/emoji-chooser]
 recent-emoji=[(([uint32 8482], 'trade mark', ':tm:'), uint32 0), (([128077, 0], 'thumbs up', ':thumbsup:'), 0), (([128675, 0, 8205, 9794, 65039], 'man rowing boat', ''), 0), (([128669], 'monorail', ':monorail:'), 0), (([128138], 'pill', ':pill:'), 0), (([128511], 'moai', ':moyai:'), 0), (([128290], 'input numbers', ':1234:'), 0), (([9997, 0], 'writing hand', ':writing_hand:'), 0), (([127757], 'globe showing Europe-Africa', ':earth_africa:'), 0), (([127758], 'globe showing Americas', ':earth_americas:'), 0), (([129504], '⊛ brain', ''), 0)]
@@ -12189,13 +10643,13 @@ location-mode='path-bar'
 show-hidden=false
 show-size-column=true
 show-type-column=true
-sidebar-width=163
+sidebar-width=173
 sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 startup-mode='cwd'
 type-format='category'
-window-position=(34, 28)
+window-position=(225, 127)
 window-size=(917, 515)
 
 [org/mate/caja/compact-view]
@@ -12703,7 +11157,7 @@ show-only-directories=false
 [org/nemo/window-state]
 bookmarks-expanded=true
 devices-expanded=true
-geometry='900x521+59+82'
+geometry='900x517+26+23'
 maximized=false
 my-computer-expanded=true
 network-expanded=true
@@ -12947,11 +11401,11 @@ wrap-around=true
 
 [org/xfce/mousepad/state/window]
 fullscreen=false
-height=uint32 488
+height=487
 left=-1
 maximized=false
 top=-1
-width=uint32 811
+width=840
 
 [org/yorba/shotwell/crop-settings]
 last-crop-height=1
