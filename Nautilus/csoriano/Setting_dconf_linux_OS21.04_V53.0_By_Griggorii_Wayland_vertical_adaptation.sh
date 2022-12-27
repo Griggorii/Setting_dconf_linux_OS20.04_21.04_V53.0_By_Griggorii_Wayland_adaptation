@@ -8623,7 +8623,7 @@ highlight-current-line=false
 insert-spaces=false
 max-undo-actions=2000
 restore-cursor-position=true
-scheme='Yaru-dark'
+scheme='tango'
 search-highlighting=true
 smart-home-end='after'
 syntax-highlighting=true
@@ -11894,6 +11894,10 @@ gsettings set org.xfce.mousepad.preferences.file default-encoding WINDOWS-1251
 gsettings set org.xfce.mousepad.preferences.file default-encoding UTF-8
 
 gsettings set org.gnome.gedit.plugins active-plugins "['multiedit', 'wordcompletion', 'smartspaces', 'joinlines', 'codecomment', 'findinfiles', 'bracketcompletion', 'bookmarks', 'externaltools', 'terminal', 'colorpicker', 'charmap', 'sort', 'docinfo', 'colorschemer', 'snippets', 'quickhighlight', 'quickopen', 'translate', 'modelines', 'time', 'textsize', 'pythonconsole', 'commander', 'filebrowser', 'synctex', 'git', 'spell']"
+
+gsettings set org.gnome.gedit.preferences.editor scheme 'tango'
+
+gsettings set org.xfce.mousepad.preferences.view color-scheme 'tango'
 
 gnome-extensions disable horizontal-workspaces@gnome-shell-extensions.gcampax.github.com
 
