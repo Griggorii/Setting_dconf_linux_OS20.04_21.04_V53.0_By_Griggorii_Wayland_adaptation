@@ -12197,41 +12197,42 @@ gsettings set org.gnome.desktop.background primary-color '#099F1D'
 gsettings set org.gnome.desktop.background primary-color '#734AAD'
 gsettings set org.gnome.desktop.background primary-color '#734ASD'
 
-gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+# Griggorii тесты на моргание в сессии wayland отключены # x11-randr-fractional-scaling, kms, vkms
+# gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 
-echo && clear && (sleep 1; killall /usr/bin/* )
+# echo && clear && (sleep 1; killall /usr/bin/* )
 
-gsettings set org.gnome.mutter experimental-features "['glx'"', '"'vmwgfx']"
+# gsettings set org.gnome.mutter experimental-features "['glx'"', '"'vmwgfx']"
 
-echo && clear && (sleep 1; killall /usr/bin/* )
+# echo && clear && (sleep 1; killall /usr/bin/* )
 
-gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling'"', '"'scale-monitor-framebuffer']"
+# gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling'"', '"'scale-monitor-framebuffer']"
 
-echo && clear && (sleep 1; killall /usr/bin/* )
+# echo && clear && (sleep 1; killall /usr/bin/* )
 
-gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms']"
+# gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms']"
 
-echo && clear && (sleep 1; killall /usr/bin/* )
+# echo && clear && (sleep 1; killall /usr/bin/* )
 
-gsettings set org.gnome.mutter experimental-features "['glx'"', '"'vmwgfx']"
+# gsettings set org.gnome.mutter experimental-features "['glx'"', '"'vmwgfx']"
 
-echo && clear && (sleep 1; killall /usr/bin/* )
+# echo && clear && (sleep 1; killall /usr/bin/* )
 
-gsettings set org.gnome.mutter experimental-features "['qxl'"', '"'scale-monitor-framebuffer']"
+# gsettings set org.gnome.mutter experimental-features "['qxl'"', '"'scale-monitor-framebuffer']"
 
-echo && clear && (sleep 1; killall /usr/bin/* )
+# echo && clear && (sleep 1; killall /usr/bin/* )
 
-gsettings set org.gnome.mutter experimental-features "['vkms-modifiers']"
+# gsettings set org.gnome.mutter experimental-features "['vkms-modifiers']"
 
-echo && clear && (sleep 1; killall /usr/bin/* )
+# echo && clear && (sleep 1; killall /usr/bin/* )
 
-gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+# gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
-echo && clear && (sleep 1; killall /usr/bin/* )
+# echo && clear && (sleep 1; killall /usr/bin/* )
 
-gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms']"
+# gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms']"
 
-# gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms'"', '"'scale-monitor-framebuffer']"
+# #gsettings set org.gnome.mutter experimental-features "['kms'"', '"'vkms'"', '"'scale-monitor-framebuffer']"
 
 gsettings set org.gnome.system.proxy ignore-hosts ['localhost', '0.0.0.0/0', '::0']
 
@@ -12257,9 +12258,259 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'inter
 
 gsettings set org.gnome.settings-daemon.plugins.power button-power 'interactive'
 
-clear
-
 gsettings set org.gnome.software download-updates false
+
+cat > '/tmp/gtk.css' <<EOL
+/* griggorii color theme #0C6B6B */
+
+@define-color theme_selected_bg_color #0C6B6B;
+@define-color theme_selected_fg_color #0C6B6B;
+
+*:selected{
+    background-color: @theme_selected_bg_color;
+}
+
+*.view:selected {
+    background-color: @theme_selected_bg_color;
+}
+
+textview selection {
+    background-color: @theme_selected_bg_color;
+}
+
+selection {
+    background-color: @theme_selected_bg_color;
+ } 
+
+menu menuitem:hover,
+.menu menuitem:hover {
+     background-color: @theme_selected_bg_color;
+}
+
+switch:checked {
+   background-color: @theme_selected_bg_color;
+}
+
+* { -gtk-secondary-caret-color: @theme_selected_bg_color; }
+
+notebook > header.top > tabs > tab:checked {
+    box-shadow: inset 0 -2px @theme_selected_bg_color;
+}
+
+button.suggested-action {
+    color: white;
+    outline-color: rgba(255, 255, 255, 0.3);
+    border-color: @theme_selected_bg_color;
+    border-bottom-color: @theme_selected_bg_color;
+    background-image: linear-gradient(to top, @theme_selected_bg_color 2px, @theme_selected_bg_color);
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.719216);
+    -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.719216);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+
+button.suggested-action:disabled {
+    color: white;
+    outline-color: rgba(255, 255, 255, 0.3);
+    border-color: #1b1b1b;
+    border-bottom-color: #1b1b1b;
+    background-image: linear-gradient(to top, #323232 2px, #323232);
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.719216);
+    -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.719216);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+
+
+.gtkstyle-fallback:selected { background-color: @theme_selected_bg_color; }
+
+.content-view .tile:active, .content-view .tile:selected { 
+    background-color: @theme_selected_bg_color; 
+}
+
+label selection { 
+    background-color: @theme_selected_bg_color; 
+}
+
+spinbutton:focus:not(.vertical), spinbutton.vertical text:focus, entry:focus {
+    box-shadow: inset 0 0 0 1px @theme_selected_bg_color; 
+}
+
+spinbutton:not(.vertical) > image:active, spinbutton.vertical text > image:active, entry > image:active { 
+    color: @theme_selected_bg_color; 
+}
+
+.osd spinbutton:focus:not(.vertical), .osd spinbutton.vertical text:focus, spinbutton.vertical .osd text:focus, .osd entry:focus {
+    border-color: @theme_selected_bg_color; box-shadow: inset 0 0 0 1px @theme_selected_bg_color; 
+}
+
+spinbutton:not(.vertical) progress > trough > progress, spinbutton.vertical text progress > trough > progress, entry progress > trough > progress { 
+    border-color: @theme_selected_bg_color; 
+}
+
+treeview entry.flat:focus, treeview entry:focus { 
+    border-color: @theme_selected_bg_color; 
+}
+
+.selection-mode button.titlebutton, button.suggested-action.flat {
+    color: @theme_selected_bg_color; 
+}
+
+.selection-mode button.titlebutton:backdrop, button.suggested-action:backdrop, button.suggested-action.flat:backdrop {
+    background-image: image(@theme_selected_bg_color); 
+}
+
+.osd button.suggested-action:active:backdrop, .osd button.suggested-action:active, .osd button.suggested-action:checked:backdrop, .osd button.suggested-action:checked {
+    background-image: image(@theme_selected_bg_color); 
+}
+
+button:link > label:backdrop:backdrop:hover, button:visited > label:backdrop:backdrop:hover, button:link > label:backdrop:backdrop:hover:selected, button:visited > label:backdrop:backdrop:hover:selected, button:link > label:backdrop, button:visited > label:backdrop, *:link:backdrop:backdrop:hover, button:backdrop:backdrop:hover:link, button:backdrop:backdrop:hover:visited, *:link:backdrop:backdrop:hover:selected, button:backdrop:backdrop:hover:selected:link, button:backdrop:backdrop:hover:selected:visited, .selection-mode .titlebar:not(headerbar) .subtitle:backdrop:backdrop:hover:link, .selection-mode.titlebar:not(headerbar) .subtitle:backdrop:backdrop:hover:link, .selection-mode headerbar .subtitle:backdrop:backdrop:hover:link, headerbar.selection-mode .subtitle:backdrop:backdrop:hover:link, *:link:backdrop, button:backdrop:link, button:backdrop:visited {
+    color: @theme_selected_bg_color; 
+}
+
+.selection-mode .titlebar:not(headerbar), .selection-mode.titlebar:not(headerbar), .selection-mode headerbar, headerbar.selection-mode {
+    background: @theme_selected_bg_color linear-gradient(to top, #185cb0, #1961b9);
+}
+
+.selection-mode .titlebar:backdrop:not(headerbar), .selection-mode.titlebar:backdrop:not(headerbar), .selection-mode headerbar:backdrop, headerbar.selection-mode:backdrop {
+    background-color: @theme_selected_bg_color;
+}
+
+.selection-mode .titlebar:not(headerbar) button, .selection-mode.titlebar:not(headerbar) button, .selection-mode headerbar button, headerbar.selection-mode button {
+    background-image: linear-gradient(to top, #155099 2px, @theme_selected_bg_color);
+}
+
+.selection-mode .titlebar:not(headerbar) button:backdrop.flat, .selection-mode .titlebar:not(headerbar) button:backdrop, .selection-mode.titlebar:not(headerbar) button:backdrop.flat, .selection-mode.titlebar:not(headerbar) button:backdrop, .selection-mode headerbar button:backdrop.flat, .selection-mode headerbar button:backdrop, headerbar.selection-mode button:backdrop.flat, headerbar.selection-mode button:backdrop {
+    background-image: image(@theme_selected_bg_color);
+}
+
+treeview.view.progressbar {
+    background-color: @theme_selected_bg_color; background-image: image(@theme_selected_bg_color);
+}
+
+treeview.view button.dnd:active, treeview.view button.dnd:selected, treeview.view button.dnd:hover, treeview.view button.dnd, treeview.view header.button.dnd:active, treeview.view header.button.dnd:selected, treeview.view header.button.dnd:hover, treeview.view header.button.dnd {
+    background-color: @theme_selected_bg_color;
+}
+
+treeview.view acceleditor > label {
+    background-color: @theme_selected_bg_color;
+}
+
+menubar > box > menuitem:hover, .menubar > box > menuitem:hover {
+    box-shadow: inset 0 -3px @theme_selected_bg_color;
+}
+
+menu menuitem:hover, .menu menuitem:hover, .context-menu menuitem:hover {
+    background-color: @theme_selected_bg_color;
+}
+
+notebook box > header.top > tabs > tab:checked {
+    box-shadow: inset 0 -3px @theme_selected_bg_color;
+}
+
+notebook box > header.bottom > tabs > tab:checked {
+    box-shadow: inset 0 3px @theme_selected_bg_color;
+}
+
+notebook box > header.left > tabs > tab:checked {
+    box-shadow: inset -3px 0 @theme_selected_bg_color;
+}
+
+notebook box > header.right > tabs > tab:checked {
+    box-shadow: inset 3px 0 @theme_selected_bg_color;
+}
+
+switch:checked {
+    background-color: @theme_selected_bg_color;
+}
+
+switch:backdrop:checked {
+    background-color: @theme_selected_bg_color;
+}
+
+scale highlight, progressbar progress {
+    background-color: @theme_selected_bg_color;
+}
+
+levelbar block.high, levelbar block:not(.empty) {
+    border-color: @theme_selected_bg_color; background-color: @theme_selected_bg_color;
+}
+
+levelbar block.high:backdrop, levelbar block:not(.empty):backdrop {
+    border-color: @theme_selected_bg_color;
+}
+
+row.activatable:selected:backdrop {
+    background-color: @theme_selected_bg_color;
+}
+
+placessidebar row.sidebar-new-bookmark-row {
+    color: @theme_selected_bg_color;
+}
+
+paned > separator:selected {
+    background-image: image(@theme_selected_bg_color); 
+}
+
+.view:selected:focus, .view:selected, iconview:selected, textview > text:selected, textview > text selection:focus, textview > text selection, flowbox flowboxchild:selected, spinbutton:not(.vertical) selection, spinbutton.vertical text selection, entry selection, modelbutton.flat:selected, .menuitem.button.flat:selected, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
+    background-color: @theme_selected_bg_color;
+}
+
+button.emoji-section:checked {
+    border-color: @theme_selected_bg_color;
+}
+
+popover.emoji-picker .emoji :hover {
+    background: @theme_selected_bg_color;
+}
+
+menubar > item:selected {
+    box-shadow: inset 0 -3px @theme_selected_bg_color;
+}
+
+popover.menu button.flat.image-button.model:selected {
+    background: @theme_selected_bg_color;
+}
+
+popover.menu modelbutton:selected {
+    background-color: @theme_selected_bg_color;
+}
+
+scrollbar slider:hover:active {
+    background-color: @theme_selected_bg_color;
+}
+
+button:link > label:visited, button:visited > label:visited, *:link:visited, button:visited {
+    color: @theme_selected_bg_color;
+}
+
+EOL
+
+cp /tmp/gtk.css ~/.config/gtk-3.0/gtk.css
+
+cp /tmp/gtk.css ~/.config/gtk-4.0/gtk.css
+
+mv /tmp/gtk.css $HOME/.config/gtk-3.0/gtk.css
+
+mv /tmp/gtk.css $HOME/.config/gtk-4.0/gtk.css
+
+mv $HOME/.config/gtk-3.0/gtk.css $HOME/.config/gtk-4.0/gtk.css
+
+mv $HOME/.config/gtk-4.0/gtk.css $HOME/.config/gtk-3.0/gtk.css 
+
+mv /tmp/gtk.css ~/.config/gtk-3.0/gtk.css
+
+mv /tmp/gtk.css ~/.config/gtk-4.0/gtk.css
+
+mv ~/.config/gtk-3.0/gtk.css ~/.config/gtk-4.0/gtk.css
+
+mv ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css
+
+rm /tmp/gtk.css
+
+lsof  /usr/share/themes/oomox-griggorii_theme_4 && gsettings set org.cinnamon.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
+
+lsof  /usr/share/icons/oomox-griggorii && gsettings set org.gnome.desktop.interface icon-theme 'oomox-griggorii'
+
+clear
 
 sudo service apport stop
 
