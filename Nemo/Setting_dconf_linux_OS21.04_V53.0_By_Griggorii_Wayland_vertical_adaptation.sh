@@ -9017,12 +9017,12 @@ sidebar-visible=true
 single-click-activation=true
 sort-inverse=false
 sort-type='file::mtime'
-startup-current-file='file:///media/griggorii/0b1a56df-321a-49b6-969b-75a4fae19da9~/V53.0/Nemo2/linux_xorg_glamor_perfomance_drawing_dual-master/Default_SPEED_CPU_DRAWING_XORG_SESSION.png'
-startup-location='file:///media/griggorii/0b1a56df-321a-49b6-969b-75a4fae19da9~/V53.0/Nemo2/linux_xorg_glamor_perfomance_drawing_dual-master'
+startup-current-file=''
+startup-location=''
 statusbar-visible=true
 thumbnail-caption='comment::note,comment::time'
 thumbnail-limit=0
-thumbnail-list-size=114
+thumbnail-list-size=0
 thumbnail-list-visible=true
 thumbnail-size=128
 use-startup-location=false
@@ -9247,6 +9247,13 @@ images='images'
 previews='previews'
 theme-files='theme'
 thumbnails='thumbnails'
+
+[org/gnome/libgnomekbd/desktop]
+default-group=-1
+group-per-window=false
+handle-indicators=false
+layout-names-as-group-names=true
+load-extra-items=true
 
 [org/gnome/libgnomekbd/desktop]
 default-group=-1
