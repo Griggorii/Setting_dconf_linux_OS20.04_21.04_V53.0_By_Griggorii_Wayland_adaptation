@@ -12514,7 +12514,9 @@ mv ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css
 
 rm /tmp/gtk.css
 
-lsof  /usr/share/themes/oomox-griggorii_theme_4 && gsettings set org.cinnamon.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
+lsof  /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css && gsettings set org.cinnamon.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
+
+lsof  /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css && gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
 
 lsof  /usr/share/icons/oomox-griggorii && gsettings set org.gnome.desktop.interface icon-theme 'oomox-griggorii'
 
@@ -12561,6 +12563,11 @@ grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPR
 sudo apt install -y lz4 liblz4-1
 
 sudo modprobe lz4
+
+# Griggorii fix my theme update
+sudo sed -i 's/  border-radius: 40px solid rgba(246, 246, 246, 0.1);/  border-radius: 40px;/g' '/usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css'
+
+sudo sed -i 's/  border-radius: 0 solid rgba(246, 246, 246, 0.1);/  border-radius: 0px;/g' '/usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V3/gtk-3.0/gtk.css'
 
 EOF
 cat > '/tmp/.drirc' <<EOL
