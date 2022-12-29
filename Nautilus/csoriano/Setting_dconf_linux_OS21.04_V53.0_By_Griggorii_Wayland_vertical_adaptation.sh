@@ -11933,23 +11933,23 @@ gsettings set org.gnome.login-screen fallback-logo ''
 
 gsettings set org.gnome.login-screen logo '/usr/share/plymouth/ubuntu-logo.png'
 
-grep -H -r -n  ""40"" '/usr/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/metadata.json' && gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com
+grep -H -r -n  ""40"" '/usr/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/metadata.json' & gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com & clear
 
-grep -H -r -n  ""40"" ~/.local/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/metadata.json && gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com
+grep -H -r -n  ""40"" ~/.local/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/metadata.json & gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com & clear
 
-grep -H -r -n  ""40"" $HOME/.local/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/metadata.json && gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com
+grep -H -r -n  ""40"" $HOME/.local/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/metadata.json & gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com & clear
 
-grep -H -r -n  "21.10" /etc/lsb-release && gnome-extensions enable horizontal-workspaces@gnome-shell-extensions.gcampax.github.com
+grep -H -r -n  "21.10" /etc/lsb-release & gnome-extensions enable horizontal-workspaces@gnome-shell-extensions.gcampax.github.com & clear
 
-grep -H -r -n  "22." /etc/lsb-release && gnome-extensions enable horizontal-workspaces@gnome-shell-extensions.gcampax.github.com
+grep -H -r -n  "22." /etc/lsb-release & gnome-extensions enable horizontal-workspaces@gnome-shell-extensions.gcampax.github.com & clear
 
-grep -H -r -n  "21.04" /etc/lsb-release && gsettings set org.gnome.shell always-show-log-out false
+grep -H -r -n  "21.04" /etc/lsb-release & gsettings set org.gnome.shell always-show-log-out false & clear
 
-grep -H -r -n  "21.10" /etc/lsb-release && gsettings set org.gnome.shell always-show-log-out false
+grep -H -r -n  "21.10" /etc/lsb-release & gsettings set org.gnome.shell always-show-log-out false & clear
 
-grep -H -r -n  "22.04" /etc/lsb-release && gsettings set org.gnome.shell always-show-log-out false
+grep -H -r -n  "22.04" /etc/lsb-release & gsettings set org.gnome.shell always-show-log-out false & clear
 
-grep -H -r -n  "22.10" /etc/lsb-release && gsettings set org.gnome.shell always-show-log-out false
+grep -H -r -n  "22.10" /etc/lsb-release & gsettings set org.gnome.shell always-show-log-out false & clear
 
 gsettings set org.gnome.desktop.notifications show-banners true
 
@@ -12064,17 +12064,17 @@ gsettings set org.mate.desktop.applications.browser.needs-term false
 
 gsettings set org.mate.desktop.applications.browser.nremote false
 
-grep -H -r -n  "20.04" /etc/lsb-release && gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
+grep -H -r -n  "20.04" /etc/lsb-release & gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion' & clear
 
-grep -H -r -n  "20.04" /etc/lsb-release && gsettings set org.gnome.gedit.preferences.editor scheme 'tango'
+grep -H -r -n  "20.04" /etc/lsb-release & gsettings set org.gnome.gedit.preferences.editor scheme 'tango' & clear
 
-grep -H -r -n  "21.04" /etc/lsb-release && gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
+grep -H -r -n  "21.04" /etc/lsb-release & gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion' & clear
 
-grep -H -r -n  "21.04" /etc/lsb-release && gsettings set org.gnome.gedit.preferences.editor scheme 'tango'
+grep -H -r -n  "21.04" /etc/lsb-release & gsettings set org.gnome.gedit.preferences.editor scheme 'tango' & clear
 
-grep -H -r -n  "21.10" /etc/lsb-release && gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
+grep -H -r -n  "21.10" /etc/lsb-release & gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion' & clear
 
-grep -H -r -n  "21.10" /etc/lsb-release && gsettings set org.gnome.gedit.preferences.editor scheme 'tango'
+grep -H -r -n  "21.10" /etc/lsb-release & gsettings set org.gnome.gedit.preferences.editor scheme 'tango' & clear
 
 gsettings set org.gnome.desktop.interface color-scheme 'default'
 
@@ -12096,11 +12096,11 @@ gsettings set org.gnome.desktop.background primary-color '#000000'
 
 gsettings set org.gnome.desktop.background secondary-color '#000000'
 
-gsettings set org.gnome.desktop.background picture-uri '/usr/share/backgrounds/warty-final-ubuntu.png'
+lsof /usr/share/backgrounds/warty-final-ubuntu.png & gsettings set org.gnome.desktop.background picture-uri '/usr/share/backgrounds/warty-final-ubuntu.png' & clear
 
-gsettings set org.gnome.desktop.background picture-uri-dark '/usr/share/backgrounds/jj_light_by_Hiking93.jpg'
+lsof /usr/share/backgrounds/jj_light_by_Hiking93.jpg & gsettings set org.gnome.desktop.background picture-uri-dark '/usr/share/backgrounds/jj_light_by_Hiking93.jpg' & clear
 
-grep -H -r -n  "20.04" /etc/lsb-release && gsettings set org.gnome.desktop.background picture-uri-dark  '/usr/share/backgrounds/hardy_wallpaper_uhd.png'
+grep -H -r -n  "20.04" /etc/lsb-release & lsof /usr/share/backgrounds/hardy_wallpaper_uhd.png & gsettings set org.gnome.desktop.background picture-uri  '/usr/share/backgrounds/hardy_wallpaper_uhd.png' & clear
 
 # Firewalld fedoraproject
 
@@ -12506,11 +12506,11 @@ mv ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css
 
 rm /tmp/gtk.css
 
-lsof  /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css && gsettings set org.cinnamon.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
+lsof  /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css & gsettings set org.cinnamon.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
 
-lsof  /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css && gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
+lsof  /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css & gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
 
-lsof  /usr/share/icons/oomox-griggorii && gsettings set org.gnome.desktop.interface icon-theme 'oomox-griggorii'
+lsof  /usr/share/icons/oomox-griggorii & gsettings set org.gnome.desktop.interface icon-theme 'oomox-griggorii'
 
 clear
 
@@ -12538,19 +12538,19 @@ sudo service mask apport-autoreport.service
 
 # Проба от разработчика Griggorii перевода системы наконец то уже на реал таим работу , возможно это избавит и от заикания звука если вдруг не по ученым глупым бредням в духе скил фактори и ты уже через месяц будешь некий профи программист , а на деле просто левый человек укравший отсюда идею и фактически навредив людям из крупных ИТ компаний  которые хотели бы инвестировать в честный программинг от Griggorii и иных экспертов вынесших из экспериментов реальную составляющию которая оказалась уже рабочей не на рассуждениях , а по факту , не по философским соображениям может  оказаться что linux это некий архив-fs с декодирующимся из initrd архива собранного ядром раскатывающегося в систему , крупные ИТ компаний если не будут поддерживать паразитизм соответственно получат не только "новую OS" но и сверх стабильную OS операционную систему, следовательно замерив скорость lz4 оказался более реал таимовым чем все другое. В крайнем случае заидите и исправьте COMPRESS=lz4 допустим на COMPRESS=zst или иной вариант.
 
-grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=gzip/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf & sudo sed -i 's/COMPRESS=gzip/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf' & clear
 
-grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=zst/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf & sudo sed -i 's/COMPRESS=zst/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf' & clear
 
-grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=lz4d/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf & sudo sed -i 's/COMPRESS=lz4d/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf' & clear
 
-grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=bzip2/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf & sudo sed -i 's/COMPRESS=bzip2/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf' & clear
 
-grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=lzma/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf & sudo sed -i 's/COMPRESS=lzma/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf' & clear
 
-grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=lzop/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf & sudo sed -i 's/COMPRESS=lzop/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf' & clear
 
-grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf && sudo sed -i 's/COMPRESS=xz/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf'
+grep -H -r -n  "lz4" /etc/initramfs-tools/initramfs.conf & sudo sed -i 's/COMPRESS=xz/COMPRESS=lz4/g' '/etc/initramfs-tools/initramfs.conf' & clear
 
 sudo apt install -y lz4 liblz4-1
 
