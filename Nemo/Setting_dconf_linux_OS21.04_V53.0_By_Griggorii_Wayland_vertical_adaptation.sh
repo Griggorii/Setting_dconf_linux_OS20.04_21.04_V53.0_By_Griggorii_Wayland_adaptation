@@ -13217,6 +13217,14 @@ grep -H -r -n  "21.10" /etc/lsb-release & mkdir /tmp/ding_icon_fix_20.04_20.10_2
 EOF
 rm -rf '/tmp/ding_icon_fix_20.04_20.10_21.04_21.10'
 EOF
+mkdir /tmp/hidetopbar+sound-output-device-realtime-reconnect-audio-device
+EOF
+wget --no-check-certificate -P /tmp/hidetopbar+sound-output-device-realtime-reconnect-audio-device https://github.com/Griggorii/Ubuntu-20.04.2-desktop-amd64_By_Griggorii_linux-image-kernel-5.6.0-oem/releases/download/Wayland/hidetopbar+sound-output-device-realtime-reconnect-audio-device.zip
+EOF
+unzip /tmp/hidetopbar+sound-output-device-realtime-reconnect-audio-device/hidetopbar+sound-output-device-realtime-reconnect-audio-device.zip -d ~/.local/share/gnome-shell/extensions
+EOF
+rm -rf /tmp/hidetopbar+sound-output-device-realtime-reconnect-audio-device
+EOF
 rm '/tmp/wget-log'
 EOF
 mkdir /tmp/security
