@@ -3341,40 +3341,40 @@ clear
 EOF
 cat << EOF > dconf-settings.ini
 [ca/desrt/dconf-editor]
-window-is-maximized=false
-saved-pathbar-path='/org/gnome/desktop/lockdown/'
-window-height=534
-window-width=1301
 behaviour='always-confirm-implicit'
-saved-view='/org/gnome/desktop/lockdown/'
-mouse-forward-button=9
-refresh-settings-schema-source=true
-show-warning=false
-sort-case-sensitive=false
-small-keys-list-rows=false
-use-shortpaths=false
 mouse-back-button=8
-restore-view=true
+mouse-forward-button=9
 mouse-use-extra-buttons=true
+refresh-settings-schema-source=true
+restore-view=true
+saved-pathbar-path='/org/gnome/desktop/lockdown/'
+saved-view='/org/gnome/desktop/lockdown/'
+show-warning=false
+small-keys-list-rows=false
+sort-case-sensitive=false
+use-shortpaths=false
+window-height=524
 window-is-fullscreen=false
+window-is-maximized=false
+window-width=981
 
 [ca/desrt/dconf-editor/Demo]
-string='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+boolean=true
+double=3.1415926535897931
+enumeration='White'
+flags=['Red', 'White', 'Blue', 'Yellow', 'Green']
 integer-32-signed=-2147483648
+number-with-range=3
+string='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 weird-enum='only-choice'
 weird-range=5
-number-with-range=3
-flags=['Red', 'White', 'Blue', 'Yellow', 'Green']
-boolean=true
-enumeration='White'
-double=3.1415926535897931
 
 [ca/desrt/dconf-editor/Demo/Conflict]
-warning-similar=true
-another-non-conflicting-key=true
 a-non-conflicting-key=true
+another-non-conflicting-key=true
 default-value-conflict=2
 type-conflict='test'
+warning-similar=true
 
 [system/proxy/ftp]
 host=''
@@ -7585,32 +7585,32 @@ alt-tab-thumbnails=false
 edge-tiling=true
 
 [org/gnome/gnome-system-monitor]
-graph-update-interval=1000
-window-state=(916, 565, 34, 28)
+cpu-colors=[(uint32 0, 'rgb(16,74,21)'), (1, 'rgb(54,192,56)'), (2, 'rgb(89,209,50)'), (3, 'rgb(5,255,14)'), (4, '#3cb44b'), (5, '#42d4f4'), (6, '#4363d8'), (7, '#911eb4'), (8, '#f032e6'), (9, '#fabebe'), (10, '#ffd8b1'), (11, '#fffac8'), (12, '#aaffc3'), (13, '#469990'), (14, '#000075'), (15, '#e6beff')]
 cpu-smooth-graph=true
-maximized=false
 cpu-stacked-area-chart=true
-logarithmic-scale=true
-net-out-color='#EE1D00'
-update-interval=5000
 current-tab='resources'
 disks-interval=5000
-mem-color='#AB1852'
-show-all-fs=true
-network-total-unit=true
-cpu-colors=[(uint32 0, 'rgb(16,74,21)'), (1, 'rgb(54,192,56)'), (2, 'rgb(89,209,50)'), (3, 'rgb(5,255,14)'), (4, '#3cb44b'), (5, '#42d4f4'), (6, '#4363d8'), (7, '#911eb4'), (8, '#f032e6'), (9, '#fabebe'), (10, '#ffd8b1'), (11, '#fffac8'), (12, '#aaffc3'), (13, '#469990'), (14, '#000075'), (15, '#e6beff')]
-swap-color='#49A835'
-network-total-in-bits=true
-show-whose-processes='user'
-solaris-mode=true
-process-memory-in-iec=true
-show-dependencies=false
-resources-memory-in-iec=true
-kill-dialog=true
 graph-data-points=30
-smooth-refresh=true
-network-in-bits=true
+graph-update-interval=1000
+kill-dialog=true
+logarithmic-scale=true
+maximized=false
+mem-color='#AB1852'
 net-in-color='#2D7DB3'
+net-out-color='#EE1D00'
+network-in-bits=true
+network-total-in-bits=true
+network-total-unit=true
+process-memory-in-iec=true
+resources-memory-in-iec=true
+show-all-fs=true
+show-dependencies=false
+show-whose-processes='user'
+smooth-refresh=true
+solaris-mode=true
+swap-color='#49A835'
+update-interval=5000
+window-state=(916, 590, 298, 78)
 
 [org/gnome/gnome-system-monitor/proctree]
 col-9-visible=true
@@ -9112,7 +9112,7 @@ app-picker-view=uint32 1
 disable-extension-version-validation=true
 development-tools=true
 enable-hot-corners=true
-favorite-apps=['org.gnome.Screenshot.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'com.gexperts.Tilix.desktop', 'org.gnome.Terminal.desktop', 'chromium-browser.desktop', 'vlc.desktop']
+favorite-apps=['org.gnome.Screenshot.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'chromium-browser.desktop', 'org.gnome.Terminal.desktop', 'com.gexperts.Tilix.desktop', 'vlc.desktop']
 
 [org/gnome/shell/keybindings]
 toggle-message-tray=@as []
