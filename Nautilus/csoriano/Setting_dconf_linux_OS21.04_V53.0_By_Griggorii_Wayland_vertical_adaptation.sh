@@ -15129,6 +15129,40 @@ EOF
 sudo apt purge -y cpufrequtils
 EOF
 sudo apt purge -y clibcpufreq0
+
+# Griggorii test kernel 5.6.0-oem update https://github.com/Griggorii/linux-image-unsigned-5.6.0-1020-oem-kernel-mod-rpm-deb
+
+cat > '/tmp/99-persistent-msr.rules' <<EOL
+KERNEL=="msr*", MODE="0666"
+EOL
+
+sudo cp '/tmp/99-persistent-msr.rules' '/etc/udev/rules.d'
+EOF
+sudo mv '/tmp/99-persistent-msr.rules' '/etc/udev/rules.d/99-persistent-msr.rules'
+EOF
+sudo mv '/etc/udev/rules.d/99-persistent-msr.rules' '/usr/lib/udev/rules.d/99-persistent-msr.rules'
+EOF
+sudo mv '/etc/udev/rules.d/99-persistent-msr.rules' '/usr/lib/udev/rules.d'
+EOF
+rm '/tmp/99-persistent-msr.rules'
+EOF
+sudo modprobe msr
+EOF
+sudo chmod +r /dev/cpu/*/msr
+EOF
+sudo chmod 666 /dev/cpu/*/msr
+EOF
+modprobe msr
+EOF
+chmod +r /dev/cpu/*/msr
+EOF
+chmod 666 /dev/cpu/*/msr
+EOF
+# ls -la /dev/cpu/*/msr
+EOF
+sudo x86_energy_perf_policy performance
+EOF
+x86_energy_perf_policy performance
 EOF
 # Example energy batary power save command | sudo cpupower frequency-set --governor powersave
 cat > '/tmp/50-scaling-governor.rules' <<EOL
