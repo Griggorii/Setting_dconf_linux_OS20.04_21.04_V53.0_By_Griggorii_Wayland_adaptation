@@ -33413,6 +33413,10 @@ sudo apt install ed -y
 
 sudo apt purge ed -y
 
+sudo service wpa_supplicant stop
+
+sudo systemctl disable wpa_supplicant
+
 sudo sed -i 's/true/false/g' '/etc/whoopsie'
 
 sudo systemctl disable systemd-hostnamed
