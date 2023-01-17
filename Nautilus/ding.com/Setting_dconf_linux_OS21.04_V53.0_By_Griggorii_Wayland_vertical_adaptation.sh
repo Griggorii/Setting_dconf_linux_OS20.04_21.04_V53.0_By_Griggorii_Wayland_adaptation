@@ -15394,6 +15394,36 @@ ln -s '/etc/sysctl.conf' '/etc/sysctl.d/99-sysctl.conf'
 EOF
 ln -s /etc/sysctl.conf /etc/sysctl.d/99-sysctl.conf
 EOF
+cat > '/tmp/pcieasmp' <<EOL
+# Настройка для нового ядра от griggorii 5.6.0-oem https://youtu.be/Fe-FDJFg5zU
+# Откуда взялась настройка https://github.com/Griggorii/Setting_dconf_linux_OS20.04_21.04_V53.0_By_Griggorii_Wayland_adaptation
+# Griggorii суть технологии будущего заинтересованный разработчик делает под это дело переключалку к gui с gui где в случае переключения на сберегающий и максимальный режимы при нажатии идет переключение и перстановка символа в конфиге  # /etc/default/pcieasmp << думаю мне нету смысла объяснять тому кто будет это реализовывать , возможно эта функция пока будет работать только при перезагрузке так что вы должны внести нотификацию в показанном сообщении что функция начнет работать только после reboot по предположению что функция только в режиме чтения в момент от перезагрузки до работы и что бы не воротить ворох лишних суидов и будет возможно как то активироать с разрешением от pam , apparmor , selinux и прочих , пока же выставлена настройка на максимум и при работе от аккумулятора долго работать не сможет , но это предположительно и пока практические замеры не сделаны. 
+
+# pcie_aspm.policy=powersupersave
+# pcie_aspm.policy=powersave
+pcie_aspm.policy=performance
+EOL
+
+sudo mv  '/tmp/pcieasmp' '/etc/default/pcieasmp'
+EOF
+sudo mv  '/tmp/pcieasmp' /etc/default
+EOF
+sudo mv  '/tmp/pcieasmp' '/etc/default'
+EOF
+sudo mv  '/tmp/pcieasmp' /etc/default/
+EOF
+sudo mv  '/tmp/pcieasmp' '/etc/default'
+EOF
+sudo cp '/tmp/pcieasmp' /etc/default
+EOF
+sudo cp  '/tmp/pcieasmp' '/etc/default'
+EOF
+sudo cp  '/tmp/pcieasmp' /etc/default/
+EOF
+sudo cp  '/tmp/pcieasmp' '/etc/default'
+EOF
+rm '/tmp/pcieasmp'
+EOF
 sudo sysctl --system
 EOF
 sysctl --system
