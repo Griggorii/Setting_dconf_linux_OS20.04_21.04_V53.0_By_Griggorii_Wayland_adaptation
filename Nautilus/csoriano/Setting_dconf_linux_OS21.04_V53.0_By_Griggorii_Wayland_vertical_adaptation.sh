@@ -16993,6 +16993,8 @@ grep -H -r -n "chromium-browser" /usr/lib/chromium-browser && sudo cp '/tmp/chro
 EOF
 rm '/tmp/chromium-browser.desktop'
 EOF
+cd -
+EOF
 alias boostrun='powerprofilesctl launch -p performance'
 EOF
 alias goboost='(set -x; powerprofilesctl set performance; sudo cpupower frequency-set -g ondemand >&/dev/null;)'
