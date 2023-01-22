@@ -9057,7 +9057,7 @@ height=316
 width=558
 
 [org/gnome/file-roller/dialogs/new]
-default-extension='.tar.gz'
+default-extension='.zip'
 encrypt-header=false
 expand-options=false
 other-options=false
