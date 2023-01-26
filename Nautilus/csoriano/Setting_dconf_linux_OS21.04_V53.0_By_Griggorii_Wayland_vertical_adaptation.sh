@@ -12755,6 +12755,18 @@ gsettings set org.gnome.desktop.background primary-color '#099F1D'
 gsettings set org.gnome.desktop.background primary-color '#734AAD'
 gsettings set org.gnome.desktop.background primary-color '#734ASD'
 
+# Griggorii color favorite shell ui dark theme my setting | подберете из настроенных себе сами для UI при создании своих шелл тем я приблизительно взял эти настройки со своего shell который настроил считаю что это приблизительно бронзовый хром из из него можно отливать топовые оболочки для программ которые не будут портить зрение ярким от белого когда температура стала выше из за слишком качественных матриц современных мониторов (потому что те тоже побежали за качеством) типа ипс , олед , супер амулед и других.
+
+gsettings set org.gnome.desktop.background primary-color '#39362D'
+gsettings set org.gnome.desktop.background primary-color '#343432'
+gsettings set org.gnome.desktop.background primary-color '#272525'
+gsettings set org.gnome.desktop.background primary-color '#292929'
+gsettings set org.gnome.desktop.background primary-color '#322F2F'
+gsettings set org.gnome.desktop.background primary-color '#3A3936'
+gsettings set org.gnome.desktop.background primary-color '#322D2F'
+gsettings set org.gnome.desktop.background primary-color '#322D2D'
+gsettings set org.gnome.desktop.background primary-color '#282524'
+
 # Griggorii тесты на моргание в сессии wayland отключены # x11-randr-fractional-scaling, kms, vkms
 # gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 
