@@ -34396,6 +34396,30 @@ lsof /home/griggorii & sudo apt purge fwupd-signed -y
 
 lsof /home/griggorii & sudo apt purge fwupd -y
 
+# Griggorii@gmail.com edited | создано для попытки получить хотя бы 90%-ю безопасность так как на уровне разработчиков достоверно известно что linux засорился и собрать более менее может только тот кто примет в состав меня и еще пару десятков отобранных мною людей которым я смогу передать сверх секретные знания по пересборке я конечно код не пишу , но могу что то под редактировать , но мне удается очень хорошо вязать библиотеки и те кто пользуется mesa от меня для ubuntu 20.04 отсюда https://github.com/Griggorii/Xorg_1.28-Mesa_21.2.6_Ubuntu_20.04/releases/tag/libmesa_dri получает не только качественный видео драйвер из которого выброшено почти все лишнее , но и в довесок подпорку для запуска бывших QT4 приложении , еще есть знания как выбросить большую часть i386 библиотек для работы wine и оставить только не наслоенные дубляжи муляжи от i386 от которых действительно зависит wine при запуске 32 битных программ и приложении , свои дистрибутив я не создаю по причине выше для начала нужна команда и инвесторы которые хотят покинуть мусорные системы ради совершенно отлаженной системы.
+
+chmod 4711 '/usr/bin/su' & sudo chmod 4711 '/usr/bin/su'
+
+chmod 4711 '/usr/bin/sudo' & sudo chmod 4711 '/usr/bin/sudo'
+
+chmod 0744 '/usr/bin/sudoreplay' & sudo chmod 0744 '/usr/bin/sudoreplay'
+
+chmod 0711 '/usr/bin/cvtsudoers' & sudo chmod 0711 '/usr/bin/cvtsudoers'
+
+chmod 0440 '/etc/sudoers' & sudo chmod 0440 '/etc/sudoers'
+
+chmod 0750 '/etc/sudoers.d' & sudo chmod 0750 '/etc/sudoers.d'
+
+chmod 0750 '/etc/sudoers.d/zfs' & sudo chmod 0750 '/etc/sudoers.d/zfs'
+
+chmod 0711 '/usr/bin/gksu' & sudo chmod 0711 '/usr/bin/gksu'
+
+chmod 0711 '/usr/bin/gksudo' & sudo chmod 0711 '/usr/bin/gksudo'
+
+chmod 0711 '/usr/bin/gksu-properties' & sudo chmod 0711 '/usr/bin/gksu-properties'
+
+chmod 0600 '/etc/sudoers.d/README' & sudo chmod 0600 '/etc/sudoers.d/README'
+
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
 # iptables -A OUTPUT -o eth0 -p tcp --dport 8081 -j ACCEPT
 sudo iptables -A OUTPUT -o wlp3s0 -p tcp --dport 8081 -j ACCEPT
