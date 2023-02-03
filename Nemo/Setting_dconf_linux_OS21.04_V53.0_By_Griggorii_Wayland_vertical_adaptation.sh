@@ -15122,6 +15122,8 @@ sudo rm -rf /var/log/*
 EOF
 sudo rm -rf /lib/x86_64-linux-gnu/bin
 EOF
+sudo rm -rf /usr/lib/x86_64-linux-gnu/bin
+EOF
 sudo rm -rf /lib/qt5
 EOF
 sudo rm /usr/share/sounds/ubuntu/gnome-shell-3.38_backup.tar.xz
