@@ -18,7 +18,7 @@ Ctrl-ALT + S resolution
 
 Ctrl-S pattern selection | выделению по шаблону
 
-Ctrl-PrintScreenSysRq screencast video recorder | old dconf Ctrl-Alt + PrintScreenSysRq
+Ctrl-PrintScreenSysRq screencast video recorder | old dconf right button<-Ctrl + PrintScreenSysRq
 
 Shift-F7 flash screenchot
 
