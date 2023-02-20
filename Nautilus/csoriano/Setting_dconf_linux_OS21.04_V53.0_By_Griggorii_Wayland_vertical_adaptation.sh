@@ -34258,6 +34258,17 @@ sudo mv '/etc/modprobe.d/nvidia-graphics-drivers.conf' '/usr/lib/modprobe.d/nvid
 
 rm -rf '/tmp/griggorii_check_nvidia_or_nouvea' '/tmp/nvidia-graphics-drivers.conf'
 
+#alsa test relocation default /usr/lib/modprobe.d
+cat > '/tmp/alsa.conf' <<EOL
+options snd-intel-dspcfg dsp_driver=1
+EOL
+
+sudo mv '/tmp/alsa.conf' /usr/lib/modprobe.d/
+
+sudo mv '/etc/modprobe.d/alsa.conf' '/usr/lib/modprobe.d/alsa.conf'
+
+rm '/tmp/alsa.conf'
+
 # Anti conspiracy technologies from griggorii https://github.com/Griggorii/Chromium_OS_77/blob/master/README_old.md against forgery of the primacy of the history of the technology of generating new styles and standards for the web and codecs , I will continue to search and block because I am losing investments due to the falsification of the history of the creation of technologies, and you will lose advertising, technologies were not created at the click of a finger, these were hard assembly days where sometimes it took the whole day and you had to sacrifice sleep, which was reflected in the life graph while you crazy in the Maldives or somewhere else emulating that you work there , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance , this search can still be stopped by transferring from advertising gateways to a specific account, I remind you that technology is a very difficult job, but of course you can chat somewhere in companies or chats and create the appearance
 
 # libgitlab-api-v4-perl данный пакет внедряется и появляется из ниоткуда , напомню что пока самая пользуемая система это ubuntu 20.04. Напомню если вы не будете делать сговор и с венчурными инвестиционными фондами , а они как известно являются титанами ит индустрий и основными инвесторами и то я помогу вам видео драивера и для более новых ubuntu и debian по скольку они являются на данный момент почти одним и тем же по состоянию версии glibc и всего остального , вообщем не обманывайте директоров каноникла и обрисуйте и переведите им это послание , как только они выйдут на меня и пришлют часть денег на предзаказ собранного видео драйвера я начну.
