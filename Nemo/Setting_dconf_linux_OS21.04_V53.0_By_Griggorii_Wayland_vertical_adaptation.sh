@@ -12492,6 +12492,48 @@ gsettings set org.gnome.login-screen enable-password-authentication true
 
 gsettings set org.gnome.login-screen enable-smartcard-authentication true
 
+gsettings set org.gnome.Terminal.Legacy.Settings menu-accelerator-enabled true
+
+gsettings set com.gexperts.Tilix.Settings menu-accelerator-enabled true
+
+gsettings set com.github.maoschanz.drawing last-active-tool 'line'
+
+gsettings set com.github.maoschanz.drawing last-active-tool 'pencil'
+
+gsettings set com.github.maoschanz.drawing last-active-tool 'text'
+
+gsettings set com.ubuntu.touch.system auto-brightness false 
+
+gsettings set com.ubuntu.touch.system  brightness 100
+
+gsettings set com.ubuntu.touch.system has-partial-match true 
+
+gsettings set com.ubuntu.touch.system load-unicode-at-startup true
+
+gsettings set com.ubuntu.touch.system orientation-lock 'none'
+
+gsettings set org.gnome.settings-daemon.peripherals.touchscreen orientation-lock false
+
+gsettings set gsettings set com.ubuntu.touch.system rotation-lock false
+
+gsettings set org.freedesktop.Tracker.FTS enable-stemmer false
+
+gsettings set org.freedesktop.Tracker.FTS enable-unaccent false
+
+gsettings set org.freedesktop.Tracker.FTS  ignore-numbers false
+
+gsettings set org.freedesktop.Tracker.FTS ignore-stop-words false
+
+gsettings set org.freedesktop.Tracker.Miner.Files ignored-directories-with-content "['.trackerignore']"
+
+gsettings set org.gnome.Disks image-dir-uri ''
+
+gsettings set org.gnome.desktop.input-sources xkb-options "['grp_led:scroll', 'lv3:ralt_switch']"
+
+gsettings set org.gnome.desktop.interface font-antialiasing grayscale
+
+gsettings set org.gnome.desktop.interface font-antialiasing rgba
+
 gsettings set org.gnome.login-screen fallback-logo ''
 
 gsettings set org.gnome.login-screen logo '/usr/share/plymouth/ubuntu-logo.png'
@@ -12659,11 +12701,11 @@ gsettings set org.gnome.desktop.background primary-color '#000000'
 
 gsettings set org.gnome.desktop.background secondary-color '#000000'
 
-lsof /usr/share/backgrounds/warty-final-ubuntu.png & gsettings set org.gnome.desktop.background picture-uri '/usr/share/backgrounds/warty-final-ubuntu.png' & clear
+find  /usr/share/backgrounds/warty-final-ubuntu.png && gsettings set org.gnome.desktop.background picture-uri '/usr/share/backgrounds/warty-final-ubuntu.png' && clear
 
-lsof /usr/share/backgrounds/jj_light_by_Hiking93.jpg & gsettings set org.gnome.desktop.background picture-uri-dark '/usr/share/backgrounds/jj_light_by_Hiking93.jpg' & clear
+find  /usr/share/backgrounds/jj_light_by_Hiking93.jpg && gsettings set org.gnome.desktop.background picture-uri-dark '/usr/share/backgrounds/jj_light_by_Hiking93.jpg' && clear
 
-grep -H -r -n  "20.04" /etc/lsb-release & lsof /usr/share/backgrounds/hardy_wallpaper_uhd.png & gsettings set org.gnome.desktop.background picture-uri  '/usr/share/backgrounds/hardy_wallpaper_uhd.png' & clear
+grep -H -r -n  "20.04" /etc/lsb-release && find /usr/share/backgrounds/hardy_wallpaper_uhd.png && gsettings set org.gnome.desktop.background picture-uri  '/usr/share/backgrounds/hardy_wallpaper_uhd.png' && clear
 
 # Firewalld fedoraproject
 
@@ -13085,7 +13127,7 @@ grep -H -r -n "bg" /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-
 
 grep -H -r -n "bg" /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css && gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
 
-lsof  /usr/share/icons/oomox-griggorii & gsettings set org.gnome.desktop.interface icon-theme 'oomox-griggorii'
+ls  /usr/share/icons/oomox-griggorii && gsettings set org.gnome.desktop.interface icon-theme 'oomox-griggorii'
 
 mkdir ~/.local/share/gnome-shell
 
@@ -15398,45 +15440,136 @@ lsof /home/griggorii & systemctl --user mask org.freedesktop.Tracker1.Miner.Extr
 
 # lsof /home/griggorii & sudo systemctl mask gpg-agent
 EOF
-sudo cp /tmp/tracker-miner-apps.desktop /etc/xdg/autostart/
+### OLD BAD IDEA 2021 DOUBLE Hidden=true
+# sudo cp /tmp/tracker-miner-apps.desktop /etc/xdg/autostart/
 
-cp /etc/xdg/autostart/tracker-miner-apps.desktop /tmp/
+# cp /etc/xdg/autostart/tracker-miner-apps.desktop /tmp/
 
-grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-apps.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-apps.desktop
+# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-apps.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-apps.desktop
 
-# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-apps.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-apps.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-miner-apps.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-apps.desktop
+# # grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-apps.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-apps.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-miner-apps.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-apps.desktop
 
-sudo cp /tmp/tracker-miner-user-guides.desktop /etc/xdg/autostart/
+# sudo cp /tmp/tracker-miner-user-guides.desktop /etc/xdg/autostart/
 
-cp /etc/xdg/autostart/tracker-miner-user-guides.desktop /tmp/
+# cp /etc/xdg/autostart/tracker-miner-user-guides.desktop /tmp/
 
-grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-user-guides.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-user-guides.desktop
+# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-user-guides.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-user-guides.desktop
 
-# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-user-guides.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-user-guides.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-miner-user-guides.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-user-guides.desktop
+# # grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-user-guides.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-user-guides.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-miner-user-guides.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-user-guides.desktop
 
-sudo cp /tmp/tracker-store.desktop /etc/xdg/autostart/
+# sudo cp /tmp/tracker-store.desktop /etc/xdg/autostart/
 
-cp /etc/xdg/autostart/tracker-store.desktop /tmp/
+# cp /etc/xdg/autostart/tracker-store.desktop /tmp/
 
-grep -H -r -n "Exec" /etc/xdg/autostart/tracker-store.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-store.desktop
+# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-store.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-store.desktop
 
-# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-store.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-store.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-store.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-store.desktop
+# # grep -H -r -n "Exec" /etc/xdg/autostart/tracker-store.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-store.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-store.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-store.desktop
 
-sudo cp /tmp/tracker-extract.desktop /etc/xdg/autostart/
+# sudo cp /tmp/tracker-extract.desktop /etc/xdg/autostart/
 
-cp /etc/xdg/autostart/tracker-extract.desktop /tmp/
+# cp /etc/xdg/autostart/tracker-extract.desktop /tmp/
 
-grep -H -r -n "Exec" /etc/xdg/autostart/tracker-extract.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-extract.desktop
+# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-extract.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-extract.desktop
 
-# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-extract.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-extract.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-extract.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-extract.desktop
+# # grep -H -r -n "Exec" /etc/xdg/autostart/tracker-extract.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-extract.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-extract.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-extract.desktop
 
-sudo cp /tmp/tracker-miner-fs.desktop /etc/xdg/autostart/
+# sudo cp /tmp/tracker-miner-fs.desktop /etc/xdg/autostart/
 
-cp /etc/xdg/autostart/tracker-miner-fs.desktop /tmp/
+# cp /etc/xdg/autostart/tracker-miner-fs.desktop /tmp/
 
-grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-fs.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-fs.desktop
+# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-fs.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-fs.desktop
 
-# grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-fs.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-fs.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-miner-fs.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-fs.desktop
+# # grep -H -r -n "Exec" /etc/xdg/autostart/tracker-miner-fs.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-fs.desktop && sudo sed -i 's/Hidden=true//g' /etc/xdg/autostart/tracker-miner-fs.desktop && sudo echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-fs.desktop
+
+### NEW IDEA 2023 API TEXT RECHANGE 2023 TM GRIGGORII@GMAIL.COM
+#default root text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-miner-apps.desktop'
+echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|tee --append '/etc/xdg/autostart/tracker-miner-apps.desktop'
+sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-miner-apps.desktop'
+
+#double command check sudo as text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sudo sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-miner-apps.desktop'
+sudo echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|sudo tee --append '/etc/xdg/autostart/tracker-miner-apps.desktop'
+sudo sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-miner-apps.desktop'
+
+#default root text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-miner-user-guides.desktop'
+echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|tee --append '/etc/xdg/autostart/tracker-miner-user-guides.desktop'
+sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-miner-user-guides.desktop'
+
+#double command check sudo as text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sudo sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-miner-user-guides.desktop'
+sudo echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|sudo tee --append '/etc/xdg/autostart/tracker-miner-user-guides.desktop'
+sudo sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-miner-user-guides.desktop'
+
+#default root text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-store.desktop'
+echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|tee --append '/etc/xdg/autostart/tracker-store.desktop'
+sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-store.desktop'
+
+#double command check sudo as text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sudo sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-store.desktop'
+sudo echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|sudo tee --append '/etc/xdg/autostart/tracker-store.desktop'
+sudo sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-store.desktop'
+
+
+#default root text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-extract.desktop'
+echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|tee --append '/etc/xdg/autostart/tracker-extract.desktop'
+sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-extract.desktop'
+
+#double command check sudo as text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sudo sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-extract.desktop'
+sudo echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|sudo tee --append '/etc/xdg/autostart/tracker-extract.desktop'
+sudo sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-extract.desktop'
+
+#default root text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-miner-fs.desktop'
+echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|tee --append '/etc/xdg/autostart/tracker-miner-fs.desktop'
+sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-miner-fs.desktop'
+
+#double command check sudo as text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sudo sed "{s/Hidden=true//g}" -i '/etc/xdg/autostart/tracker-miner-fs.desktop'
+sudo echo -e "$n griggorii@gmail.com_api_lgpl_txt_idea_ Hidden=true"|sudo tee --append '/etc/xdg/autostart/tracker-miner-fs.desktop'
+sudo sed "{s/ griggorii@gmail.com_api_lgpl_txt_idea_ //g}" -i '/etc/xdg/autostart/tracker-miner-fs.desktop'
+
+mkdir -p /tmp/etc/xdg/autostart
+
+cp -r /etc/xdg/autostart/tracker-miner-apps.desktop /etc/xdg/autostart/tracker-miner-user-guides.desktop /etc/xdg/autostart/tracker-store.desktop /etc/xdg/autostart/tracker-extract.desktop /etc/xdg/autostart/tracker-miner-fs.desktop /tmp/etc/xdg/autostart
+
+chmod +w-x+g /tmp/etc/xdg/autostart/*
+
+#griggorii check delete double my old script Hidden=true
+sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* &&  sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true\n//;t}" -i /tmp/etc/xdg/autostart*
+
+#griggorii check version 2 delete double my old script Hidden=true
+sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart* && sed "{:a;/$/N;s/Hidden=true//;t}" -i /tmp/etc/xdg/autostart*
+
+chmod 0644 /tmp/etc/xdg/autostart/*
+
+#root griggorii check Hidden=true
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-miner-apps.desktop' && mv '/tmp/etc/xdg/autostart/tracker-miner-apps.desktop' '/tmp/etc/xdg/autostart/tracker-miner-apps.desktop' & cp '/tmp/etc/xdg/autostart/tracker-miner-apps.desktop' '/tmp/etc/xdg/autostart'
+
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-miner-user-guides.desktop' && mv '/tmp/etc/xdg/autostart/tracker-miner-user-guides.desktop' '/tmp/etc/xdg/autostart/tracker-miner-user-guides.desktop' & cp '/tmp/etc/xdg/autostart/tracker-miner-user-guides.desktop' '/tmp/etc/xdg/autostart'
+
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-store.desktop' && mv '/tmp/etc/xdg/autostart/tracker-store.desktop' '/tmp/etc/xdg/autostart/tracker-store.desktop' & cp '/tmp/etc/xdg/autostart/tracker-store.desktop' '/tmp/etc/xdg/autostart'
+
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-extract.desktop' && mv '/tmp/etc/xdg/autostart/tracker-extract.desktop' '/tmp/etc/xdg/autostart/tracker-extract.desktop' & cp '/tmp/etc/xdg/autostart/tracker-extract.desktop' '/tmp/etc/xdg/autostart'
+
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' && mv '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' & cp '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' '/tmp/etc/xdg/autostart'
+
+#sudo griggorii check Hidden=true
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-miner-apps.desktop' && sudo mv '/tmp/etc/xdg/autostart/tracker-miner-apps.desktop' '/tmp/etc/xdg/autostart/tracker-miner-apps.desktop' & sudo cp '/tmp/etc/xdg/autostart/tracker-miner-apps.desktop' '/tmp/etc/xdg/autostart'
+
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-miner-user-guides.desktop' && sudo mv '/tmp/etc/xdg/autostart/tracker-miner-user-guides.desktop' '/tmp/etc/xdg/autostart/tracker-miner-user-guides.desktop' & sudo cp '/tmp/etc/xdg/autostart/tracker-miner-user-guides.desktop' '/tmp/etc/xdg/autostart'
+
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-store.desktop' && sudo mv '/tmp/etc/xdg/autostart/tracker-store.desktop' '/tmp/etc/xdg/autostart/tracker-store.desktop' & sudo cp '/tmp/etc/xdg/autostart/tracker-store.desktop' '/tmp/etc/xdg/autostart'
+
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-extract.desktop' && sudo mv '/tmp/etc/xdg/autostart/tracker-extract.desktop' '/tmp/etc/xdg/autostart/tracker-extract.desktop' & sudo cp '/tmp/etc/xdg/autostart/tracker-extract.desktop' '/tmp/etc/xdg/autostart'
+
+grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' && sudo mv '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' & sudo cp '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' '/tmp/etc/xdg/autostart'
+
+rm -rf '/tmp/etc'
 EOF
 # Griggorii example /proc fix patch security tutorial 2022 add /etc/sysctl.d echo bash sh
 EOF
