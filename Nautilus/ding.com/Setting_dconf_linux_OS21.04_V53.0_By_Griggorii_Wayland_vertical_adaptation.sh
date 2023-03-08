@@ -15543,6 +15543,22 @@ grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-extract.desktop' && 
 grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' && sudo mv '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' & sudo cp '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' '/tmp/etc/xdg/autostart'
 
 rm -rf '/tmp/etc'
+
+# ____________________________________________________________________________________________________________
+# # # sudo check replace txt griggorii reveals the secter 2023 buld wayland
+# # # User privilege specification
+# # # Example sudo <user_griggorii> special os ide universal chromium support check user command terminal wiev user $ ls --ignore=Systemback /home | double check different check user command terminal wiev user $  id  | edit sudoers add full perfomance ! 1) sudo usermod -a -G sudo griggorii && < <griggorii_example> examle login danger ! not copy run command!!!!| sudo usermod -a -G sudo <$ id > <<< not copy example !!!!  2) <user> $ sudo gedit '/etc/sudoers' && add <my_user_griggorii_ok_next> griggorii	ALL=(ALL:ALL) ALL  < examle login griggorii ! not copy run command!!!! && add block all privelege |# space| %admin ALL=(ALL) ALL reedit to # %admin ALL=(ALL) ALL , do the same with wheel , reedit %admin , %wheel add >>[#_space_] [ # %wheel ALL=(ALL) ALL]  [# %sudo	ALL=(ALL:ALL) ALL] | /root такая директория может быть удалена если вы не заходите от рута и ха место нее может быть поставлена временная заглушка по типу $ sudo mkdir /root && sudo chmod 0000 /root так ваша безопасность взлетает в разы так в этом же фаиле можно посмотреть найдя в нем текст без кавычек [ ] в поиске [ chmod 4711 '/usr/bin/sudo ] вся основа взята из моей системы chromium os 77 которую я собрал в 2018 или в 2019 точно не помно все отальное в том числе не видео хаип уроки я даю тут данные для поддержки на мой счет можно внести найдя на моем канале qr code который сканируется банковским приложением , как видите из примера я убрал тотальное sudo заблокировав впереди решеткой с пробелом #  %wheel не копировать эти скобки [ ]  и так же убрал sudo и admin таким же образом от других , но обязательно включил себя в первой команде в группу sudo которая является вполне системной и прописаной в загрузке /etc/group к которой вы подсоеденились с помощью данных комманд , для большей безопасности дополнительно может быть перенесен куда угодно такой фаил как /usr/bin/su например на флешку или в другую дерикторию/партицию/етк/и/так/далее или же при помощи команды sudo или же вообще удален 
+# _ _ _ _ _ _ _ _  _ _ _ _ _ _ _  _ _ _ _ _ _ _  _ _ _ _ _ _ _  _ _ _ _ _ _ _  _ _ _ _ _ _ _  _ _ _ _ _ _ _  _ _ _ _ _ _ _  _ _ _ _ _ _ _ 
+sed "{s/#WaylandEnable=false/WaylandEnable=true/g}" -i '/etc/gdm3/custom.conf'
+
+sed "{s/# WaylandEnable=false/WaylandEnable=true/g}" -i '/etc/gdm3/custom.conf'
+
+# sudo check replace txt griggorii reveals the secter buld wayland
+sudo sed "{s/#WaylandEnable=false/WaylandEnable=true/g}" -i '/etc/gdm3/custom.conf'
+
+sudo sed "{s/# WaylandEnable=false/WaylandEnable=true/g}" -i '/etc/gdm3/custom.conf'
+# _________________________________________________________________________________________________________
+
 EOF
 # Griggorii example /proc fix patch security tutorial 2022 add /etc/sysctl.d echo bash sh
 EOF
