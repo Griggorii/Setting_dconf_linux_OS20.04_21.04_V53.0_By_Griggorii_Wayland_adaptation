@@ -8736,7 +8736,6 @@ sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gn
 
 [org/gnome/desktop/session]
 idle-delay=uint32 0
-session-name='griggorii_os'
 
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=true
@@ -12734,6 +12733,12 @@ gsettings set org.fedoraproject.FirewallConfig show-helpers false
 gsettings set org.fedoraproject.FirewallConfig show-active-bindings false
 
 gsettings set org.fedoraproject.FirewallConfig show-direct false
+
+# https://youtu.be/zD4vbgzGD_A Ubuntu подставила разрабатчиков XORG и gnome de ? Залочив session-name на 'ubuntu' вы можете наткнутся на то ИКСЫ как пишут на форумах не стартуют памагите все пропало , решение тут. Если сбросить значение ключа даже на дефолт 'gnome' такой командой то вы не сможете зайти в xorg-session сама команда ( gsettings reset org.gnome.desktop.session session-name ) или ( dconf reset -f /org/gnome/desktop/session/session-name ) не возращает на их дефолт 'ubuntu' тем самым все пользователи обречены в том числе разработчики XORG и DCONF на успешный вылет при первой же пробе зайти в иксовую сессию даю тут данные для поддержки на мой счет можно внести найдя на моем канале qr code который сканируется банковским приложением.
+
+grep -H -r -n  "ubuntu" /etc/lsb-release && gsettings set org.gnome.desktop.session session-name 'ubuntu'
+
+grep -H -r -n  "Ubuntu" /etc/lsb-release && gsettings set org.gnome.desktop.session session-name 'ubuntu'
 
 clear
 
