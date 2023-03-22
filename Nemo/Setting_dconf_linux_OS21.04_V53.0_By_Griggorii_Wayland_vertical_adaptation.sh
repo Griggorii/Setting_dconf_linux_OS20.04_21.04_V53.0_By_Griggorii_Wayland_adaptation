@@ -314,6 +314,23 @@ lsof /home/griggorii & systemctl mask --user --now gnome-keyring-ssh.service
 lsof /home/griggorii & systemctl mask --user --now gpg-agent-ssh.socket
 
 lsof /home/griggorii & systemctl mask --user --now ssh-agent.service
+
+# NEW 2023 Lite os
+systemctl --user mask tracker-store.service tracker-miner-fs.service tracker-miner-rss.service tracker-extract.service tracker-miner-apps.service tracker-writeback.service
+
+systemctl --user mask tracker-extract-3.service tracker-miner-fs-3.service tracker-miner-rss-3.service tracker-writeback-3.service tracker-xdg-portal-3.service tracker-miner-fs-control-3.service
+
+systemctl --user mask packagekit.service
+
+sudo systemctl stop packagekit
+
+sudo systemctl disable packagekit
+
+sudo systemctl mask packagekit.service
+
+# sudo systemctl unmask packagekit.service
+
+gsettings set org.gnome.software download-updates false
 EOF
 # dconf reset -f /
 EOF
