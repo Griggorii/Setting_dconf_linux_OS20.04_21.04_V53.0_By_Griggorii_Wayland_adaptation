@@ -13808,6 +13808,131 @@ grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo 
 EOF
 rm -rf '/tmp/drirc_acceleration_idea-main' '/tmp/main.zip'
 EOF
+cat > 'Производительность_интел_в_два_раза_выше_by_griggorii_fix.md' <<EOL
+                     09.05.2022 Drawing canvas xorg perfomance Griggorii@gmail.com
+
+# # # License MIT/LGPL Griggorii@gmail.com beta engine intel framework graphics
+# # # https://github.com/Griggorii/drirc_acceleration_idea
+# # # https://github.com/Griggorii/linux_xorg_glamor_perfomance_uxa_tearing_fix_intel-nouveau 
+
+Внимание ! В случае черного экрана зайти в wayland сессию в нее всегда можно зайти и выполнить команду $ sudo rm - rf /usr/share/X11/xorg.conf.d/20-intel.conf
+
+Данный режим имеет ускорение в drawing в два три раза больше , что дает идею что если слоировать графику через некий эксперементальный режим , а точнее как то до надстроить или научиться это делать методом проб и ошибок то такие компании как amd и nvidia наверное будут рады такому видео драйверу , а пока он может вытягивать только drawing режим и то в сессии xorg только под интелом , из за недостатка инвестирования и вставляния палок на такие технологии как следствие нету оборудования проверить все мои эксперименты , я не знаю возможно ли такое на nvidia не дискретной видеокарте , зато очередной маркетолог вам расскажет про новую плашку и о том что она более не разгониться и надо брать к плашке новый процессор и остальную ерунду и получит копейку по этому я незнаю что будет если стоит видео дравер не на дискретной видео карте и вы примените эту настройку , данная настройка и имеет минусы и плюсы , минусы:
+
+ chromum-о подобные браузеры в режиме полного развернутого экрана в сессии xorg отказываются рисовать картинку пока не выведешь браузер чуть меньше полного экрана так сказать в окно в окне ну и соответственно в режиме F11 картинка просто замрет в сессии xorg и так же скорее всего будет происходить и с какими то другими приложениями из плюсов:
+
+В бенчмарк drawing в программе hardinfo не вооруженным глазом что скорость в два , три раза выше! в xorg сессии после применения и перезапуска. 
+Мною была так же предпринята попытка переноса на низко уровневое api где возможно я на редактировал много лишнего что позднее переделаю или оставлю как есть если это не работает https://youtu.be/xy0xiZiIbe8 одно работает точно это antitearing , возможно glamor не работает и работает только 20-intel.conf из за "TearFree" , т.е по моей идее если это более низко уровневое то в каких то играх через wine итд может и подхватить некое ускорение так как wine работает от mesa если такое есть с помощью совпадения флагов в памяти и такое бывало , но конечно никто не будет сидеть годами и проводить всякие эксперименты , а у меня уже есть шаблон что сработал.
+EOL
+cat > '/tmp/20-intel.conf' <<EOL
+# # # License MIT/LGPL Griggorii@gmail.com beta engine intel framework graphics
+# # # https://github.com/Griggorii/drirc_acceleration_idea
+# # # https://github.com/Griggorii/linux_xorg_glamor_perfomance_uxa_tearing_fix_intel-nouveau 
+
+Section "Module"
+	Load  "dri2"
+	Load  "dri3"
+	Load  "glamoregl"
+EndSection
+
+Section "ServerLayout"
+	Identifier  "Layout0"
+
+	# Enable AutoAddDevices
+	# default: True
+	#Option "AutoAddDevices" "true"
+
+	# Enable AutoAddGPU
+	# default: True
+	#Option "AutoAddGPU" "true"
+EndSection
+
+Section "Device"
+	Identifier     	"Intel Graphics"
+	Driver     	"intel"
+	Option     	"AccelMethod"	            "glamor"
+	Option    	"DRI"               	    "3"
+	Option    	"DRI"               	    "2"
+        VideoRam                                    24576
+
+	# Enable TearFree
+	# default: False
+	#Option "TearFree" "false"
+
+	# Enable ColorTiling
+	# default: True
+	#Option "ColorTiling" "true"
+
+	# Enable ColorTiling2D
+	# default: True
+	#Option "ColorTiling2D" "true"
+
+	# Enable RenderAccel
+	# default: True
+	#Option "RenderAccel" "true"
+
+	# Enable SwapbuffersWait
+	# default: False
+	#Option "SwapbuffersWait" "false"
+
+	# Enable FramebufferCompression
+	# default: False
+	#Option "Throttle" "false"
+
+	# Enable TripleBuffer
+	# default: False
+	#Option "FramebufferCompression" "false"
+
+	# Enable TripleBuffer
+	# default: False
+	#Option "TripleBuffer" "false"
+
+	# Enable Shadow
+	# default: False
+	#Option "Shadow" "false"
+
+	# Enable LinearFramebuffer
+	# default: True
+	#Option "LinearFramebuffer" "true"
+
+	# Enable RelaxedFencing
+	# default: False
+        #Option "RelaxedFencing" "false"
+
+	# Enable BufferCache
+	# default: True
+        #Option "BufferCache" "true"
+
+	# Enable caching of images directly written with uxa->put_image.
+	# default: True
+	#Option "EnableImageCache" "True"
+
+	# Enable caching of images created by uxa->prepare_access.
+	# default: True
+	#Option "EnableFallbackCache" "True"
+
+	# Enable the use of off-screen surfaces.
+	# default: True
+	#Option "EnableSurfaces" "True"
+
+EndSection
+EOL
+sudo cp '/tmp/20-intel.conf' '/usr/share/X11/xorg.conf.d'
+EOF
+cp '/tmp/20-intel.conf' '/usr/share/X11/xorg.conf.d'
+EOF
+rm  '/tmp/20-intel.conf'
+EOF
+sudo  rm - rf  /usr/share/X11/xorg.conf.d/glamor.conf
+EOF
+rm - rf  /usr/share/X11/xorg.conf.d/glamor.conf
+EOF
+sudo rm - rf /etc/X11/xorg.conf
+EOF
+sudo rm - rf /etc/X11/xorg.conf.failsafe
+EOF
+sudo rm - rf /etc/X11/xorg.conf.d/*
+EOF
 # Griggorii delete redundant wayland protocol in ubuntu 20.04 | Удаление лишнего в wayland протоколе для его освобождения от возможной дублирующей нагрузки срабатывания из dev варианта еще не собранного объектного кода с возможным подхватыванием заголовочных фаилов из include
 
 grep -H -r -n  "20.04" /etc/lsb-release && sudo rm -rf /usr/bin/wayland-scanner /usr/include/wayland-util.h /usr/include/wayland-server-protocol.h /usr/include/wayland-server.h /usr/include/wayland-client-protocol.h /usr/include/wayland-client.h /usr/include/wayland-egl.h /usr/include/wayland-version.h /usr/lib/libwayland-server.la /usr/lib/libwayland-client.la /usr/lib/pkgconfig/wayland-client.pc /usr/lib/pkgconfig/wayland-server.pc /usr/share/doc/wayland/wayland-protocol.css /usr/share/doc/wayland/wayland.xml /usr/share/doc/wayland/protocol.xs /usr/share/doc/wayland/wayland.html /usr/include/wayland-cursor.h /usr/lib/libwayland-cursor.la /usr/lib/pkgconfig/wayland-cursor.pc
