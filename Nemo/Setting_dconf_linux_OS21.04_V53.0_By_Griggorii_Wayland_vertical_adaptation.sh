@@ -16308,6 +16308,11 @@ sudo sysctl --system
 EOF
 sysctl --system
 EOF
+# # # от перезаимстовования и воровства сгенерированных схем в dot режимах by griggorii  
+sudo rm /etc/default/yandex-browser
+EOF
+rm /etc/default/yandex-browser
+EOF
 cat << EOF > securetty
 # /etc/securetty: list of terminals on which root is allowed to login.
 # See securetty(5) and login(1).

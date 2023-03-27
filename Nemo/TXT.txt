@@ -1,0 +1,6 @@
+EOF
+# # # от перезаимстовывания и воровства сгенерированных схем в dot режимах by griggorii  
+sudo rm /etc/default/yandex-browser
+EOF
+rm /etc/default/yandex-browser
+EOF
