@@ -12,7 +12,9 @@ Download new thems + icons https://github.com/Griggorii/Setting_dconf_linux_OS20
 
 $ sudo dpkg -i *.deb
 
-CTRL+SHIFT++ Zoom + | CTRL+- Zoom - | CTRL+0 reset zoom
+CTRL+SHIFT++ Terminal all Zoom + | CTRL+- Terminal all Zoom - | CTRL+0 Terminal all reset zoom
+
+SHIFT NUMPAD - and + Global Zoom
 
 Ctrl new | Old dconf Press Super + Scroll mouse
 
