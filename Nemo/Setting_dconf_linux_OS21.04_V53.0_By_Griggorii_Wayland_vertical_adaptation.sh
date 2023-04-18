@@ -18915,6 +18915,237 @@ rm '/etc/sysctl.d/scaling_governor_perfomance.conf'
 EOF
 rm /etc/sysctl.d/scaling_governor_perfomance.conf
 EOF
+cat > '/tmp/cpufreq.conf' <<EOL
+# Anti conspiracy technologies from griggorii https://github.com/Griggorii/Chromium_OS_77/blob/master/README_old.md my os chromium location config /etc/init /usr/bin/cpufreq_config and /usr/lib/systemd/set-cpufreq | Chromium OS77 all griggorii generation config patent /etc/init
+
+# Copyright 2017 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+description     "Configure cpufreq"
+author          "griggorii@gmail.com"
+
+start on started system-services
+task
+
+exec /usr/bin/cpufreq_config
+EOL
+sudo mv '/tmp/cpufreq.conf' '/etc/init'
+EOF
+sudo mv '/tmp/cpufreq.conf' '/etc/init/cpufreq.conf'
+EOF
+mv '/tmp/cpufreq.conf' '/etc/init'
+EOF
+rm '/tmp/cpufreq.conf'
+EOF
+cat > '/tmp/cpufreq_config' <<EOL
+#!/bin/sh
+
+# Anti conspiracy technologies from griggorii https://github.com/Griggorii/Chromium_OS_77/blob/master/README_old.md my os chromium location config /etc/init /usr/bin/cpufreq_config and /usr/lib/systemd/set-cpufreq | Chromium OS77 all griggorii generation config patent /etc/init
+
+# Copyright 2017 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Configures cpufreq if /etc/cpufreq.conf exists and contains valid
+# configuration data.
+
+# Convenience variables with sysfs paths.
+CPU_BASE_DIR=/sys/devices/system/cpu
+CPUFREQ_DIR="${CPU_BASE_DIR}/cpufreq"
+
+##############################################
+# Sets the cpufreq governor for all CPUs.
+# Globals:
+#   CPU_BASE_DIR
+# Arguments:
+#   Name of the cpufreq governor
+# Returns:
+#   nothing
+##############################################
+cpufreq_set_governor() {
+  local governor="$1"
+  local cpu
+
+  for cpu in "${CPU_BASE_DIR}"/cpu[0-9]*; do
+    if [ -e "${cpu}/cpufreq" ]; then
+      echo "${governor}" > "${cpu}/cpufreq/scaling_governor"
+    fi
+  done
+}
+
+###########################################################################
+# Gets the value of a configuration setting for the cpufreq governor.
+# The settings are specified in the configuration file.
+# Arguments:
+#   Name of the sysfs attribute of the setting
+#   Number of the cpufreq policy, empty for systems with a single policy
+#     for all CPUs
+# Returns:
+#   Value of the requested setting, or an empty string if the setting is
+#   not specified in the configuration file.
+###########################################################################
+governor_get_config_value() {
+  local setting="$1"
+  local policy="$2"
+  local conf_var
+
+  conf_var="CPUFREQ_$(echo "${setting}" | tr "[:lower:]" "[:upper:]")"
+  if [ -n "${policy}" ]; then
+    conf_var="${conf_var}_POLICY_${policy}"
+  fi
+
+  echo "$(eval "echo \$$conf_var")"
+}
+
+#############################################################################
+# Configures a setting of the cpufreq governor on systems with a single
+# cpufreq policy. Does nothing if the setting is not specified in the
+# configuration file.
+# Globals:
+#   GOVERNOR_DIR
+# Arguments:
+#   Name of the sysfs attribute of the setting
+# Returns:
+#   nothing
+###########################################################################
+governor_set_optional() {
+  local setting="$1"
+  local sysfs_attr
+
+  sysfs_attr="${GOVERNOR_DIR}/${setting}"
+  if [ ! -f "${sysfs_attr}" ]; then
+    return
+  fi
+
+  local value="$(governor_get_config_value "${setting}")"
+  if [ -z "${value}" ]; then
+    return
+  fi
+
+  echo "${value}" > "${sysfs_attr}"
+}
+
+######################################################################
+#
+# Interactive governor
+#
+#############################################################################
+# Configures a setting of the interactive cpufreq governor on systems with
+# multiple cpufreq policies. Does nothing if the setting is not specified
+# in the configuration file.
+# Globals:
+#   CPUFREQ_DIR
+# Arguments:
+#   Number of the cpufreq policy
+#   Name of the sysfs attribute of the setting
+# Returns:
+#   nothing
+###########################################################################
+interactive_policy_set_optional() {
+  local policy="$1"
+  local setting="$2"
+  local sysfs_attr="${CPUFREQ_DIR}/policy${policy}/interactive/${setting}"
+
+  if [ ! -f "${sysfs_attr}" ]; then
+    return
+  fi
+
+  local value="$(governor_get_config_value "${setting}" "${policy}")"
+  if [ -z "${value}" ]; then
+    return
+  fi
+
+  echo "${value}" > "${sysfs_attr}"
+}
+
+#########################################################################
+# Configures the interactive cpufreq governor according to the values
+# from the configuration file.
+# Globals:
+#   GOVERNOR_DIR
+#   CPUFREQ_DIR
+# Arguments:
+#   None
+# Returns:
+#   nothing
+#########################################################################
+cpufreq_config_interactive() {
+  local setting
+
+  GOVERNOR_DIR="${CPUFREQ_DIR}/interactive"
+  if [ -d "${GOVERNOR_DIR}" ]; then
+    for setting in input_boost above_hispeed_delay go_hispeed_load \
+        hispeed_freq min_sample_time target_loads timer_rate; do
+      governor_set_optional "${setting}"
+    done
+  else
+    local p
+    for p in "${CPUFREQ_DIR}"/policy[0-9]*; do
+      local policy="${p##*/policy}"
+
+      for setting in input_boost above_hispeed_delay go_hispeed_load \
+          hispeed_freq min_sample_time target_loads timer_rate; do
+        interactive_policy_set_optional "${policy}" "${setting}"
+      done
+    done
+  fi
+}
+
+
+######################################################################
+#
+# Ondemand governor
+#
+#########################################################################
+# Configures the ondemand cpufreq governor according to the values
+# from the configuration file.
+# Globals:
+#   GOVERNOR_DIR
+# Arguments:
+#   None
+# Returns:
+#   nothing
+#########################################################################
+cpufreq_config_ondemand() {
+  local setting
+
+  GOVERNOR_DIR="${CPUFREQ_DIR}/ondemand"
+  for setting in sampling_rate up_threshold ignore_nice_load \
+      io_is_busy sampling_down_factor powersave_bias; do
+    governor_set_optional "${setting}"
+  done
+}
+
+######################################################################
+
+if [ ! -f /etc/cpufreq.conf ]; then
+  exit 0
+fi
+. /etc/cpufreq.conf
+
+if [ -z "${CPUFREQ_GOVERNOR}" ]; then
+  exit 0
+fi
+
+cpufreq_set_governor "${CPUFREQ_GOVERNOR}"
+
+if [ "${CPUFREQ_GOVERNOR}" = "interactive" ]; then
+  cpufreq_config_interactive
+elif [ "${CPUFREQ_GOVERNOR}" = "ondemand" ]; then
+  cpufreq_config_ondemand
+fi
+EOL
+chmod 0755 '/tmp/cpufreq_config'
+EOF
+sudo mv '/tmp/cpufreq_config' '/usr/bin'
+EOF
+sudo mv '/tmp/cpufreq_config' '/usr/bin/cpufreq_config'
+EOF
+mv '/tmp/cpufreq_config' '/usr/bin'
+EOF
+rm '/tmp/cpufreq_config'
+EOF
 sudo bash -c "echo >> /etc/sysctl.d/scaling_governor_perfomance.conf" && sudo echo -e "\ndevices.system.cpu.cpufreq.policy0.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf &&  sudo echo -e "\ndevices.system.cpu.cpufreq.policy1.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy2.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy3.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy4.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy5.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy6.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy7.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy8.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy9.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy10.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy11.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy12.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy13.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy14.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy15.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy16.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy17.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy18.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy19.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy20.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy21.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy22.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy23.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy24.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy25.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy26.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy27.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy28.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy29.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy30.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy31.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy32.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy33.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy34.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy35.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy36.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy37.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy38.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy39.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy40.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy41.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy42.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy43.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy44.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy45.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy46.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy47.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy48.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy49.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy50.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy51.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy52.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy53.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy54.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy55.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy56.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy57.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy58.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy59.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy60.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy61.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy62.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy63.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy64.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy65.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy66.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy67.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy68.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy69.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy70.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy71.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy72.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy73.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy74.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy75.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy76.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy77.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy78.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy79.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy80.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy81.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy82.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy83.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy84.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy85.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy86.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy87.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy88.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy89.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy90.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy91.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy92.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy93.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy94.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy95.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy96.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy97.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy98.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy99.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy100.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy101.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy102.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy103.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy104.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy105.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy106.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy107.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy108.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy109.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy110.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy111.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy112.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy113.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy114.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy115.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy116.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy117.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy118.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy119.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy120.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy121.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy122.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy123.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy124.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy125.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy126.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf && sudo echo -e "\ndevices.system.cpu.cpufreq.policy127.scaling_governor = perfomance\n"| sudo tee --append /etc/sysctl.d/scaling_governor_perfomance.conf
 EOF
 sudo sysctl -w processor.ignore_ppc=1
