@@ -16962,6 +16962,11 @@ lsof '/usr/bin/htop' & lsof '/usr/bin/tilix' & sudo cp '/tmp/HTop TILIX.desktop'
 EOF
 rm '/tmp/HTop TILIX.desktop'
 EOF
+# # # wine add default global menu applications griggorii@gmail.com
+sudo cp '/usr/share/wine/applications/wine.desktop' '/usr/share/applications' && sudo rm -rf '/usr/share/wine/applications'
+EOF
+cp '/usr/share/wine/applications/wine.desktop' '/usr/share/applications' && rm -rf '/usr/share/wine/applications'
+EOF
 sudo cp /usr/bin/nautilus-desktop /usr/bin/nautilus-desktop.backup
 EOF
 sudo rm /usr/bin/nautilus-desktop
