@@ -16642,7 +16642,15 @@ MESA_LOADER_DRIVER_OVERRIDE=kms_swrast  mesa_glthread=false vblank_mode=1 mangoh
 
 Про wine glx gears и все такое:
 
-                              Про GLXBadFBConfig запуск некоторых приложении например версия выше 3.0
+                         Про GLXBadFBConfig запуск некоторых приложении например версия выше 3.0
+                             Касается так же vrchat но не стоит злоупотреблять этим в /etc/environment
+                             и ставить флаг MESA_GL_VERSION_OVERRIDE=4.5 по скольку могут перестать
+                             запускаться не  только wine программы/игры/приложения но и всякие obs studio
+                            дополнительно можно поимать черный экран на какой нибудь супер не известной
+                            видео карте и если вдруг еще чего там не заработает wayland , а вы еще только
+                             разбираете эти наработки то можете и не справится , но если вы спец то добро
+                            пожаловать в самые настоящие разработки которые я тестирую и привожу к 
+                             рабочему состоянию.
 
 X Error of failed request:  GLXBadFBConfig
   Major opcode of failed request:  152 (GLX)
@@ -16650,7 +16658,7 @@ X Error of failed request:  GLXBadFBConfig
   Serial number of failed request:  399
   Current serial number in output stream:  399
 
-Пример одного приложения которое выдало такую ошибку CPUZ64.exe и даже пришлось кильнуть winedbg что бы оно завершило запуск , а не висело в статус прогрессе запуска
+Пример одного приложения которое выдало такую ошибку CPUZ64.exe и даже пришлось кильнуть winedbg что бы оно завершило запуск , а не висело в статус прогрессе запуска с vrchat таких киллов не надо.
 
 $ MESA_GL_VERSION_OVERRIDE=4.5COMPAT '/usr/bin/wine64' CPUZ64.exe
 
@@ -16669,6 +16677,125 @@ MESA_GL_VERSION_OVERRIDE=4.5COMPAT MESA_LOADER_DRIVER_OVERRIDE=i965 mesa_glthrea
 MESA_GL_VERSION_OVERRIDE=100500.00COMPAT MESA_LOADER_DRIVER_OVERRIDE=i965 mesa_glthread=false vblank_mode=1 mangohud glxgears -info
 
 EOL
+cat > '20-intel.conf' <<EOL
+# # # Version test 1::2::3 бета конфиг для noname и vendor видео карт поредактируйте Identifier 1::2...
+# # # install /usr/share/X11/xorg.conf.d/20-intel.conf
+# # # License MIT/LGPL Griggorii@gmail.com beta engine intel framework graphics
+# # # https://github.com/Griggorii/drirc_acceleration_idea
+# # # https://github.com/Griggorii/linux_xorg_glamor_perfomance_uxa_tearing_fix_intel-nouveau
+# # # Driver     	"intеl" drawing not acceleration dual speed benchmark "intеl" replace >>
+# # # >>> "intеl" example >> Section "Device" replace "modеsetting" >> Section "Device">> { Driver  "intеl" } 
+# # # "intеl" >> mesa kms problem black screen window command example glxgears
+# # # terminal paste command ( MESA_LOADER_DRIVER_OVERRIDE=kms_swrast glxgears -info )
+
+Section "Module"
+	Load  "dri2"
+	Load  "dri3"
+	Load  "glamoregl"
+	Load  "exa"
+	Load  "fbdevhw"
+EndSection
+
+Section "ServerLayout"
+	Identifier  "Layout0"
+
+	# Enable AutoAddDevices
+	# default: True
+	#Option "AutoAddDevices" "true"
+
+	# Enable AutoAddGPU
+	# default: True
+	#Option "AutoAddGPU" "true"
+EndSection
+
+Section "Device"
+	Identifier     	"Intel Graphics::Configured Video Device::Device0"
+	Driver     	"intel::fbdev::modesetting::sna::nv::nvidia::nouveau::apm::ati::chips::cirrus::cyrix::glide::glint::i128::i740::imstt::mga::neomagic::openchrome::r128::radeon::rendition::savage::s3virge::siliconmotion::sis:: sisusb::sunbw2::suncg14::suncg3::suncg6::sunffb::sunleo::suntcx::tdfx::trident::tseng::vesa::vmware::voodoo::wsfb::xgi::xgixp"
+	Option     	"AccelMethod"	            "glamor"
+	Option "DRMDevice" "/dev/dri/renderD128"
+	Option    	"DRI"               	    "2"
+	Option    	"DRI"               	    "3"
+        VideoRam                                    24576
+        
+        # adaptive strategy for any power source
+        # Option "RegistryDwords" "PowerMizerEnable=0x1; PerfLevelSrc=0x2233; PowerMizerDefault=0x3"
+
+        # batt=max power saving, AC=max power saving
+        # Option "RegistryDwords" "PowerMizerEnable=0x1; PerfLevelSrc=0x3333"
+
+        # batt=adaptive strategy, AC=max performance
+        # Option "RegistryDwords" "PowerMizerEnable=0x1; PerfLevelSrc=0x3322; PowerMizerDefaultAC=0x1"
+
+        # batt=max power saving, AC=max performance
+        Option "RegistryDwords" "PowerMizerEnable=0x1; PerfLevelSrc=0x2222; PowerMizerDefault=0x3; PowerMizerDefaultAC=0x1"
+
+        # batt=max power saving, AC=adaptive strategy
+        # Option "RegistryDwords" "PowerMizerEnable=0x1; PerfLevelSrc=0x2222; PowerMizerDefault=0x3; PowerMizerDefaultAC=0x3"
+
+	# Enable TearFree
+	# default: False
+	#Option "TearFree" "false"
+
+	# Enable ColorTiling
+	# default: True
+	#Option "ColorTiling" "true"
+
+	# Enable ColorTiling2D
+	# default: True
+	#Option "ColorTiling2D" "true"
+
+	# Enable RenderAccel
+	# default: True
+	#Option "RenderAccel" "true"
+
+	# Enable SwapbuffersWait
+	# default: False
+	#Option "SwapbuffersWait" "false"
+
+	# Enable Throttle
+	# default: False
+	#Option "Throttle" "false"
+
+	# Enable FramebufferCompression
+	# default: False
+	#Option "FramebufferCompression" "false"
+
+	# Enable TripleBuffer
+	# default: False
+	#Option "TripleBuffer" "false"
+
+	# Enable Shadow
+	# default: False
+	#Option "Shadow" "false"
+
+	# Enable LinearFramebuffer
+	# default: True
+	#Option "LinearFramebuffer" "true"
+
+	# Enable RelaxedFencing
+	# default: False
+        #Option "RelaxedFencing" "false"
+
+	# Enable BufferCache
+	# default: True
+        #Option "BufferCache" "true"
+
+	# Enable caching of images directly written with uxa->put_image.
+	# default: True
+	#Option "EnableImageCache" "True"
+
+	# Enable caching of images created by uxa->prepare_access.
+	# default: True
+	#Option "EnableFallbackCache" "True"
+
+	# Enable the use of off-screen surfaces.
+	# default: True
+	#Option "EnableSurfaces" "True"
+
+EndSection
+
+
+EOL
 cat > '/tmp/20-intel.conf' <<EOL
 # # # License MIT/LGPL Griggorii@gmail.com beta engine intel framework graphics
 # # # https://github.com/Griggorii/drirc_acceleration_idea
@@ -16682,6 +16809,8 @@ Section "Module"
 	Load  "dri2"
 	Load  "dri3"
 	Load  "glamoregl"
+	Load  "exa"
+	Load  "fbdevhw"
 EndSection
 
 Section "ServerLayout"
@@ -16912,7 +17041,7 @@ EOF
 rm nautilus-autostart.desktop
 EOF
 cat > '/tmp/environment' <<EOL
-export QT_QPA_PLATFORMTHEME=qt5ct
+QT_QPA_PLATFORMTHEME=qt5ct
 QT_X11_NO_MITSHM=1
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
@@ -16921,6 +17050,10 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 
 mesa_glthread=false
 vblank_mode=1
+
+# Griggorii hybrid graphics nvidia + intel onli X11 nvidia no intel delete - > # # # Reboot | danger obs studio not job
+# # # MESA_GL_VERSION_OVERRIDE=4.5
+# # # MESA_GL_VERSION_OVERRIDE=3.0
 EOL
 sudo mv '/tmp/environment' '/etc/environment'
 EOF
