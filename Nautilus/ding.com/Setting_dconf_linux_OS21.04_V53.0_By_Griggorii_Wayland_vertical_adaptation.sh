@@ -16606,6 +16606,20 @@ grep -H -r -n  "vblank_mode" '/usr/share/drirc.d/00-mesa-defaults.conf' && sudo 
 EOF
 rm -rf '/tmp/drirc_acceleration_idea-main' '/tmp/main.zip'
 EOF
+find ~/.wine && mkdir -p ~/.wine/drive_c/windows/system32/drivers/etc
+EOF
+cat > $HOME/.wine/drive_c/windows/system32/drivers/etc/hosts <<EOL
+# The following griggorii wine https://github.com/Griggorii/Xorg_1.28-Mesa_21.2.6_Ubuntu_20.04/releases/tag/libmesa_dri
+127.0.0.1 griggorii_os
+127.0.1.1 griggorii_os_routers
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+EOL
 cat > 'Производительность_интел_в_два_раза_выше_by_griggorii_fix.md' <<EOL
                      09.05.2022 Drawing canvas xorg perfomance Griggorii@gmail.com
 
