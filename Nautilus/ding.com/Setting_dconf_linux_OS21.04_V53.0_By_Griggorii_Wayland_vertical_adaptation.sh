@@ -16727,6 +16727,7 @@ Section "Device"
 	Identifier     	"Intel Graphics::Configured Video Device::Device0"
 	Driver     	"intel::fbdev::modesetting::sna::nv::nvidia::nouveau::apm::ati::chips::cirrus::cyrix::glide::glint::i128::i740::imstt::mga::neomagic::openchrome::r128::radeon::rendition::savage::s3virge::siliconmotion::sis:: sisusb::sunbw2::suncg14::suncg3::suncg6::sunffb::sunleo::suntcx::tdfx::trident::tseng::vesa::vmware::voodoo::wsfb::xgi::xgixp"
 	Option     	"AccelMethod"	            "glamor"
+	Option     	"adaptive_sync"	            "false"
 	Option "DRMDevice" "/dev/dri/renderD128"
 	Option    	"DRI"               	    "2"
 	Option    	"DRI"               	    "3"
@@ -16844,6 +16845,7 @@ Section "Device"
 	Identifier     	"Intel Graphics"
 	Driver     	"intel"
 	Option     	"AccelMethod"	            "glamor"
+	Option     	"adaptive_sync"	            "false"
 	Option "DRMDevice" "/dev/dri/renderD128"
 	Option    	"DRI"               	    "2"
 	Option    	"DRI"               	    "3"
@@ -17063,6 +17065,9 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 # Project Griggorii acceleration full speed game or benchmarks in linux
 # https://github.com/Griggorii/drirc_acceleration_idea |  ok tearing vblank_mode=0 > wayland tearing no
 
+AutoAddDevices=true
+AutoAddGPU=true
+adaptive_sync=false
 mesa_glthread=false
 vblank_mode=1
 
