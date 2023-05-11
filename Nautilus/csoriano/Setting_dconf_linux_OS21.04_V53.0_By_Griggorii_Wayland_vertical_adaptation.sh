@@ -23107,6 +23107,41 @@ cp /tmp/lz4.conf /etc/dracut.conf.d/
 EOF
 rm '/tmp/lz4.conf'
 EOF
+cp '/usr/include/webkitgtk-4.0/jsc/JSCValue.h' '/tmp/JSCValue.h.backup'
+EOF
+cat > '/tmp/JSCValue.patch' <<EOL
+From: Griggorii <griggorii@gmail.com>
+Date: Fri, 12 May 2023 00:30:40 +0800
+Subject: [PATCH 2.0] SCValue: +jsc_value_new_from_json +jsc_value_to_json  
+
+--- a/usr/include/webkitgtk-4.0/jsc/JSCValue.h
++++ b/usr/include/webkitgtk-4.0/jsc/JSCValue.h
+@@ -260,6 +260,14 @@
+                                            guint                 n_parameters,
+                                            JSCValue            **parameters);
+ 
++JSC_API JSCValue *
++jsc_value_new_from_json                   (JSCContext           *context,
++                                           const char           *json);
++
++JSC_API char *
++jsc_value_to_json                         (JSCValue             *value,
++                                           guint                 indent);
++
+ G_END_DECLS
+ 
+ #endif /* JSCValue_h */
+EOL
+cp '/usr/include/webkitgtk-4.0/jsc/JSCValue.h' '/tmp/JSCValue.h.backup' && sudo patch -Np1  < '/tmp/JSCValue.patch' '/usr/include/webkitgtk-4.0/jsc/JSCValue.h'
+EOF
+grep -H -r -n "jsc_value_to_json" '/tmp/JSCValue.h.backup' && sudo mv '/tmp/JSCValue.h.backup' '/usr/include/webkitgtk-4.0/jsc/JSCValue.h'
+EOF
+rm -rf '/tmp/JSCValue.h.backup' '/tmp/JSCValue.patch'
+EOF
+sudo rm '/usr/include/webkitgtk-4.0/jsc/JSCValue.h.rej'
+EOF
+sudo rm '/usr/include/webkitgtk-4.0/jsc/JSCValue.h.orig'
+EOF
 cat > '/tmp/mesa_test_obj_code_dump_griggorii_beta_idea_nano_level_experiment.txt' <<EOL
 
 Файл: /usr/lib/x86_64-linux-gnu/dri/i915_dri.so
