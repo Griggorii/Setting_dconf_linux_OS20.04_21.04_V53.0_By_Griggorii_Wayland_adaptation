@@ -15943,6 +15943,32 @@ mv ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css
 
 rm /tmp/gtk.css
 
+mkdir -p /tmp/gtk-2.0
+
+cat > '/tmp/gtk-2.0/gtkfilechooser.ini' <<EOL
+[Filechooser Settings]
+LocationMode=path-bar
+ShowHidden=false
+ShowSizeColumn=true
+GeometryX=0
+GeometryY=0
+GeometryWidth=840
+GeometryHeight=674
+SortColumn=name
+SortOrder=ascending
+StartupMode=recent
+EOL
+
+mv '/tmp/gtk-2.0/gtkfilechooser.ini' ~/.config/gtk-2.0
+
+mv '/tmp/gtk-2.0/gtkfilechooser.ini' ~/.config/gtk-2.0/gtkfilechooser.ini
+
+mv '/tmp/gtk-2.0/gtkfilechooser.ini' $HOME/.config/gtk-2.0
+
+mv '/tmp/gtk-2.0/gtkfilechooser.ini' $HOME/.config/gtk-2.0/gtkfilechooser.ini
+
+rm -rf '/tmp/gtk-2.0'
+
 grep -H -r -n "bg" /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css && gsettings set org.cinnamon.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
 
 grep -H -r -n "bg" /usr/share/themes/Pop-dark-oomox-griggorii_theme_2020_V4/gtk-3.0/gtk.css && gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark-oomox-griggorii_theme_2020_V4'
