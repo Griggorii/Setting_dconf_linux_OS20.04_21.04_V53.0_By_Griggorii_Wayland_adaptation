@@ -17501,6 +17501,8 @@ mkdir deamon_pulse_backup_freeze_test
 EOF
 sudo mv /etc/pulse/daemon.conf ~/deamon_pulse_backup_freeze_test
 EOF
+sudo mv /etc/pulse/default.pa ~/deamon_pulse_backup_freeze_test
+EOF
 cd deamon_pulse_backup_freeze_test
 EOF
 sudo chmod -R a+rwx ./daemon.conf
@@ -17615,6 +17617,164 @@ EOF
 rm ./daemon.conf
 EOF
 sudo rm ./daemon.conf
+EOF
+cat << EOF > default.pa
+#!/usr/bin/pulseaudio -nF
+#
+# This file is part of PulseAudio.
+#
+# PulseAudio is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# PulseAudio is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with PulseAudio; if not, see <http://www.gnu.org/licenses/>.
+
+# This startup script is used only if PulseAudio is started per-user
+# (i.e. not in system mode)
+
+.fail
+
+### Automatically restore the volume of streams and devices
+load-module module-device-restore
+load-module module-stream-restore
+load-module module-card-restore
+
+### Automatically augment property information from .desktop files
+### stored in /usr/share/application
+load-module module-augment-properties
+
+### Should be after module-*-restore but before module-*-detect
+load-module module-switch-on-port-available
+
+### Use hot-plugged devices like Bluetooth or USB automatically (LP: #1702794)
+.ifexists module-switch-on-connect.so
+load-module module-switch-on-connect
+.endif
+
+### Load audio drivers statically
+### (it's probably better to not load these drivers manually, but instead
+### use module-udev-detect -- see below -- for doing this automatically)
+#load-module module-alsa-sink
+#load-module module-alsa-source device=hw:1,0
+#load-module module-oss device="/dev/dsp" sink_name=output source_name=input
+#load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
+#load-module module-null-sink
+#load-module module-pipe-sink
+
+### Automatically load driver modules depending on the hardware available
+.ifexists module-udev-detect.so
+load-module module-udev-detect tsched=0
+.else
+### Use the static hardware detection module (for systems that lack udev support)
+load-module module-detect tsched=0
+.endif
+
+### Automatically connect sink and source if JACK server is present
+.ifexists module-jackdbus-detect.so
+.nofail
+load-module module-jackdbus-detect channels=2
+.fail
+.endif
+
+### Automatically load driver modules for Bluetooth hardware
+.ifexists module-bluetooth-policy.so
+load-module module-bluetooth-policy
+.endif
+
+.ifexists module-bluetooth-discover.so
+load-module module-bluetooth-discover
+.endif
+
+### Load several protocols
+.ifexists module-esound-protocol-unix.so
+load-module module-esound-protocol-unix
+.endif
+load-module module-native-protocol-unix
+
+### Network access (may be configured with paprefs, so leave this commented
+### here if you plan to use paprefs)
+#load-module module-esound-protocol-tcp
+#load-module module-native-protocol-tcp
+#load-module module-zeroconf-publish
+
+### Load the RTP receiver module (also configured via paprefs, see above)
+#load-module module-rtp-recv
+
+### Load the RTP sender module (also configured via paprefs, see above)
+#load-module module-null-sink sink_name=rtp format=s16be channels=2 rate=44100 sink_properties="device.description='RTP Multicast Sink'"
+#load-module module-rtp-send source=rtp.monitor
+
+### Load additional modules from GSettings. This can be configured with the paprefs tool.
+### Please keep in mind that the modules configured by paprefs might conflict with manually
+### loaded modules.
+.ifexists module-gsettings.so
+.nofail
+load-module module-gsettings
+.fail
+.endif
+
+
+### Automatically restore the default sink/source when changed by the user
+### during runtime
+### NOTE: This should be loaded as early as possible so that subsequent modules
+### that look up the default sink/source get the right value
+load-module module-default-device-restore
+
+### Make sure we always have a sink around, even if it is a null sink.
+load-module module-always-sink
+
+### Honour intended role device property
+load-module module-intended-roles
+
+### Automatically suspend sinks/sources that become idle for too long
+load-module module-suspend-on-idle
+
+### If autoexit on idle is enabled we want to make sure we only quit
+### when no local session needs us anymore.
+.ifexists module-console-kit.so
+load-module module-console-kit
+.endif
+.ifexists module-systemd-login.so
+load-module module-systemd-login
+.endif
+
+### Enable positioned event sounds
+load-module module-position-event-sounds
+
+### Cork music/video streams when a phone stream is active
+load-module module-role-cork
+
+### Block audio recording for snap confined packages unless they have
+### the "pulseaudio" or "audio-record" interfaces plugged.
+.ifexists module-snap-policy.so
+load-module module-snap-policy
+.endif
+
+### Modules to allow autoloading of filters (such as echo cancellation)
+### on demand. module-filter-heuristics tries to determine what filters
+### make sense, and module-filter-apply does the heavy-lifting of
+### loading modules and rerouting streams.
+load-module module-filter-heuristics
+load-module module-filter-apply
+
+### Make some devices default
+#set-default-sink output
+#set-default-source input
+EOF
+sudo cp ./default.pa /etc/pulse/
+EOF
+sudo cp default.pa /etc/pulse/
+EOF
+rm ./default.pa
+EOF
+sudo rm ./default.pa
 EOF
 sudo ln -s /lib/linux-sound-base/noOSS.modprobe.conf /lib/modprobe.d/blacklist-oss.conf
 EOF
@@ -19027,6 +19187,13 @@ grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-store.desktop' && su
 grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-extract.desktop' && sudo mv '/tmp/etc/xdg/autostart/tracker-extract.desktop' '/tmp/etc/xdg/autostart/tracker-extract.desktop' & sudo cp '/tmp/etc/xdg/autostart/tracker-extract.desktop' '/tmp/etc/xdg/autostart'
 
 grep -H -r -n "Hidden=true" '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' && sudo mv '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' & sudo cp '/tmp/etc/xdg/autostart/tracker-miner-fs.desktop' '/tmp/etc/xdg/autostart'
+
+#griggorii grub tune тест защиты ядра в некоторых случаях жалуются что перстает работать wifi я проверил wifi работает значит можно и пременить такую защиту , не рекомендую никому модифицировать груб лишним и на моем примере все что вы пытаетесь тут написать кроме перчисленного можно внести в другие конфиги , например /usr/lib/modprobe.d /lib/modprobe.d как пример конфиг из моей наработки один из конфигов с названием nvidia-kms.conf и другие в этой же директории , что касается ограничения и разграничения параметров не модулей , а ядра то смотреть как я настроил конфиг /etc/sysctl.conf я единственный разработчик в мире кто хочет ревизировать конфиги по системе что бы они не дублировались  , но мою работу забраковали и закрыли мне инвестиции в мою страну я пока не знаю что делать , но стараюсь работать удаленно совместно общего международного плана и стандарта над web 4.0 стараясь направить по хорошему пути других разработчиков.
+#default root text add LGPL Griggorii@gmail.com api text add auto replace 2023
+sudo sed "{s/ lockdown=confidentiality//g}" -i '/etc/default/grub'
+sudo sed "{s/____test//g}" -i '/etc/default/grub'
+sudo sed "{s/"splash"/"splash____test"/g}" -i '/etc/default/grub'
+sudo sed "{s/""____test""/"" lockdown=confidentiality""/g}" -i '/etc/default/grub'
 
 rm -rf '/tmp/etc'
 
