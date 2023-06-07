@@ -17556,7 +17556,8 @@ cat << EOF > daemon.conf
 ; realtime-scheduling = yes
 ; realtime-priority = 5
 
-; exit-idle-time = 20
+# ; exit-idle-time = 200 Griggorii change test exit-idle-time = -1
+; exit-idle-time = -1
 ; scache-idle-time = 20
 
 ; dl-search-path = (depends on architecture)
@@ -17596,9 +17597,12 @@ cat << EOF > daemon.conf
 ; rlimit-msgqueue = -1
 ; rlimit-nice = 31
 ; rlimit-rtprio = 9
-; rlimit-rttime = 200000
+; rlimit-rttime = -1
+# ; rlimit-rttime = 200000 Griggorii change test rlimit-rttime = -1
 
-; default-sample-format = s16le
+
+# ; default-sample-format = s16le Griggorii change test default-sample-format = float32le
+; default-sample-format = float32le
 ; default-sample-rate = 44100
 ; alternate-sample-rate = 48000
 ; default-sample-channels = 2
