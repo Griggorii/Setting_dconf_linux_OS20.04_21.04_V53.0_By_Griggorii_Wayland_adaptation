@@ -15940,11 +15940,15 @@ mv ~/.config/gtk-3.0/gtk.css ~/.config/gtk-4.0/gtk.css
 
 mv ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css
 
-rm -rf ~/.config/gtk-2.0
+rm /tmp/gtk.css
+
+rm ~/.config/gtk-2.0
+
+rm $HOME/.config/gtk-2.0
+
+mkdir -p $HOME/.config/gtk-2.0
 
 mkdir -p ~/.config/gtk-2.0
-
-rm /tmp/gtk.css
 
 mkdir -p /tmp/gtk-2.0
 
