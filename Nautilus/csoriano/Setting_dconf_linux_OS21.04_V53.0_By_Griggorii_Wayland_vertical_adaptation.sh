@@ -39891,7 +39891,108 @@ EOF
 rm '/tmp/baniplist.txt'
 EOF
 sudo rm '/tmp/baniplist.txt'
-EOF
+
+### Было решено временно сделать для испытания , пишите у кого появились проблемы в сязи с этим на Griggorii@gmail.com
+sudo iptables -I INPUT -s 192.168.178.0 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.0 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.0 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.0 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.0 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.0 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.0
+
+sudo iptables -I INPUT -s 192.168.178.1 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.1 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.1 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.1 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.1 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.1 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.1
+
+sudo iptables -I INPUT -s 192.168.178.2 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.2 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.2 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.2 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.2 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.2 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.2
+
+sudo iptables -I INPUT -s 192.168.178.3 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.3 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.3 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.3 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.3 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.3 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.3
+
+sudo iptables -I INPUT -s 192.168.178.4 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.4 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.4 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.4 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.4 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.4 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.4
+
+sudo iptables -I INPUT -s 192.168.178.5 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.5 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.5 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.5 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.5 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.5 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.5
+
+sudo iptables -I INPUT -s 192.168.178.6 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.6 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.6 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.6 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.6 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.6 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.6
+
+sudo iptables -I INPUT -s 192.168.178.7 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.7 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.7 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.7 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.7 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.7 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.7
+
+sudo iptables -I INPUT -s 192.168.178.8 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.8 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.8 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.8 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.8 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.8 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.8
+
+sudo iptables -I INPUT -s 192.168.178.9 -j DROP
+
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.9 --dport 443 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.9 --dport 80 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.9 --dport 22 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.9 --dport 8888 -j DROP
+sudo iptables -I INPUT 1 -p tcp -s 192.168.178.9 --dport 8081 -j DROP
+
+sudo firewall-cmd --permanent --zone=drop --add-source=192.168.178.9
+
 sudo firewall-cmd --reload
 sudo firewall-cmd --complete-reload
 sudo systemctl restart firewalld
