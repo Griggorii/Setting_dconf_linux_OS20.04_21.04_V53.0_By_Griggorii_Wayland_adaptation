@@ -1,7 +1,7 @@
 # Setting_dconf_linux_OS20.04_21.04_V53.0_By_Griggorii_Wayland_adaptation
 dconf , gnome , wayland , X11 , PipeWire and Pulse Audio fix , setting global , qt-dbus , linux , tweak , tweaks , dconf , perfomance , chromium os 77 docker linux dconf nemo icons
 
-Example live cd ubuntu 15 min process setting https://cloud.mail.ru/public/cfxf/THs2hxbn4
+Example 2023 update script .sh live cd ubuntu 15 min process setting https://cloud.mail.ru/public/cfxf/THs2hxbn4
 
 Ubuntu 16.04....22.04 all support ubuntu stable-> gnome-shell-3.36-3.38 | support gnome-shell-42 nemo support proview https://www.youtube.com/watch?v=r0ki7MUEv7o https://youtu.be/fqCYEX4uOhg
 
