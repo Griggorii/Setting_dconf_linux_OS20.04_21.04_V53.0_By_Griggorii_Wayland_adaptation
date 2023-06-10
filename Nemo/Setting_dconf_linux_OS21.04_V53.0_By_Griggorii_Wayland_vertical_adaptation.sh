@@ -7093,7 +7093,7 @@ default-height=600
 default-width=1000
 devel-only=false
 direct-color-edit=false
-last-active-tool='select'
+last-active-tool='text'
 last-left-rgba=['0.0196078431372549', '1.0', '0.054901960784313725', '1.0']
 last-right-rgba=['0.0196078431372549', '1.0', '0.054901960784313725', '1.0']
 last-size=6
@@ -7114,16 +7114,21 @@ last-text-background='outline'
 use-antialiasing=true
 
 [com/github/wwmm/pulseeffects]
+audio-activity-timeout=5
 blocksize-in='512'
 blocksize-out='512'
 bypass=false
+custom-sink=''
 custom-source='alsa_input.pci-0000_00_1b.0.analog-stereo'
 enable-all-sinkinputs=true
 enable-all-sourceoutputs=false
+last-used-input-preset='Presets'
+last-used-output-preset='My7'
 last-used-preset='Akai HD-230_6'
 niceness=-10
 priority-type='None'
 realtime-priority=4
+show-blocklisted-apps=false
 use-dark-theme=false
 use-default-sink=false
 use-default-source=true
@@ -7598,6 +7603,8 @@ fill=true
 gradient-color=[0.0, 0.0, 0.0, 1.0]
 height=112
 line-width=2.0
+maximum-frequency=20000
+minimum-frequency=20
 n-points=81
 sampling-freq=10
 scale=1.0
@@ -9488,7 +9495,7 @@ incoming-message-sound='/usr/share/sounds/ubuntu/notifications/Xylo.ogg'
 silent-mode=false
 
 [com/ubuntu/touch/system]
-auto-brightness=true
+auto-brightness=false
 brightness=100
 brightness-needs-hardware-default=true
 orientation-lock='none'
@@ -10614,7 +10621,7 @@ window-is-maximized=false
 window-width=730
 
 [org/gnome/Totem]
-active-plugins=['vimeo', 'skipto', 'screenshot', 'screensaver', 'save-file', 'rotation', 'recent', 'pythonconsole', 'movie-properties', 'opensubtitles', 'media_player_keys', 'totem-im-status', 'autoload-subtitles', 'apple-trailers']
+active-plugins=['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'rotation', 'recent', 'pythonconsole', 'movie-properties', 'opensubtitles', 'open-directory', 'mpris', 'totem-im-status', 'autoload-subtitles', 'apple-trailers']
 audio-output-type='stereo'
 autoload-subtitles=false
 brightness=32767
@@ -11110,7 +11117,7 @@ clock-format='24h'
 clock-show-date=true
 clock-show-seconds=true
 clock-show-weekday=true
-color-scheme='prefer-dark'
+color-scheme='default'
 cursor-blink=true
 cursor-blink-time=1200
 cursor-blink-timeout=10
@@ -11119,7 +11126,7 @@ cursor-theme='breeze_cursors'
 document-font-name='Sans 10'
 enable-animations=true
 enable-hot-corners=true
-font-antialiasing='grayscale'
+font-antialiasing='rgba'
 font-hinting='slight'
 font-name='Ubuntu 11'
 font-rgba-order='rgb'
@@ -11173,7 +11180,7 @@ autorun-x-content-open-folder=['x-content/bootable-media']
 autorun-x-content-start-app=['x-content/unix-software', 'x-content/bootable-media']
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-gnome-fileroller', 'org-gnome-baobab', 'org-gnome-terminal', 'org-gnome-gedit']
+application-children=['gnome-control-center', 'gsettings set org-gnome-tweaks', 'gsettings set org-gnome-gedit', 'firefox', 'com-gexperts-tilix', 'mousepad', 'gsettings set org-gnome-nautilus', 'gsettings set org-gnome-terminal', 'gsettings set org-gnome-fileroller', 'gsettings set org-gnome-baobab', 'budgie-desktop-settings', 'nemo', 'brave-browser', 'jb-mission-control-jdk8', 'brave-browser-beta', 'thunar', 'gdebi', 'thunderbird', 'telegramdesktop', 'gsettings set org-midori-browser-midori', 'vlc', 'xfce4-notifyd-config', 'nm-applet', 'com-obsproject-studio', 'yelp', 'gnome-power-panel', 'gnome-network-panel', 'displaycal', 'displaycal-scripting-client', 'stacer', 'chromium-browser', 'gnome-system-monitor', 'gsettings set org-gnome-boxes', 'displaycal-vrml-to-x3d-converter', 'green-recorder', 'gsettings set org-gnome-eog', 'io-github-celluloid-player-celluloid', 'update-manager', 'gsettings set org-gnome-totem', 'gsettings set org-freedesktop-problems-applet', 'gsettings set org-gnome-software', 'gsettings set org-gnome-extensions', 'sqlitebrowser', 'hardinfo', 'gsettings set org-gnome-epiphany', 'libreoffice-startcenter', 'nm-connection-editor', 'ca-desrt-dconf-editor', 'org-gnome-terminal', 'org-gnome-totem']
 show-banners=true
 show-in-lock-screen=true
 
@@ -11999,11 +12006,11 @@ replace-with-entry=['https://github.com/Griggorii/Xorg_1.28-Mesa_21.2.6_Ubuntu_2
 search-for-entry=['https://bugs&.freedesktop&.org/enter_bug&.cgi?product=DRI']
 
 [org/gnome/gedit/state/window]
-bottom-panel-active-page='GeditPythonConsolePanel'
+bottom-panel-active-page='GeditTerminalPanel'
 bottom-panel-size=50
 side-panel-active-page='GeditFileBrowserPanel'
 side-panel-size=274
-size=(795, 518)
+size=(847, 518)
 state=87168
 
 [org/gnome/gitg/preferences/commit/message]
@@ -12790,14 +12797,6 @@ show-applet=true
 stamp=0
 suppress-wireless-networks-available=false
 
-[org/gnome/nm-applet/eap/4e203002-7799-46a4-a0ba-3e85a0dcfa19]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/de9515ad-550c-3763-8685-1444f9535e0f]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
 [org/gnome/orca]
 active-profile=['Default', 'default']
 
@@ -12949,8 +12948,6 @@ click-volume=0
 numlock-state='off'
 
 [org/gnome/settings-daemon/peripherals/mouse]
-double-click=400
-drag-threshold=8
 locate-pointer=false
 
 [org/gnome/settings-daemon/peripherals/smartcard]
@@ -13295,22 +13292,19 @@ priority=0
 
 [org/gnome/settings-daemon/plugins/xsettings]
 active=true
-antialiasing='rgba'
-hinting='slight'
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 priority=0
-rgba-order='rgb'
 srgba-order='srgb'
 
 [org/gnome/shell]
 always-show-log-out=false
-app-picker-layout=[{'gnome-session-properties.desktop': <{'position': <0>}>, 'software-properties-drivers.desktop': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.Mahjongg.desktop': <{'position': <3>}>, 'software-properties-gtk.desktop': <{'position': <4>}>, 'org.gnome.Mines.desktop': <{'position': <5>}>, 'sol.desktop': <{'position': <6>}>}, {'simple-scan.desktop': <{'position': <0>}>, 'org.gnome.PowerStats.desktop': <{'position': <1>}>, 'org.gnome.Sudoku.desktop': <{'position': <2>}>, 'org.gnome.gedit.desktop': <{'position': <3>}>, 'Utilities': <{'position': <4>}>, 'gnome-language-selector.desktop': <{'position': <5>}>, 'org.gnome.Cheese.desktop': <{'position': <6>}>, 'libreoffice-calc.desktop': <{'position': <7>}>, 'libreoffice-draw.desktop': <{'position': <8>}>, 'libreoffice-impress.desktop': <{'position': <9>}>, 'libreoffice-writer.desktop': <{'position': <10>}>, 'firewall-config.desktop': <{'position': <11>}>, 'firefox_firefox.desktop': <{'position': <12>}>, 'update-manager.desktop': <{'position': <13>}>, 'mini-browser.desktop': <{'position': <14>}>, 'libreoffice-math.desktop': <{'position': <15>}>, 'sync-monitor-calendar.desktop': <{'position': <16>}>}, {'rhythmbox.desktop': <{'position': <0>}>, 'transmission-gtk.desktop': <{'position': <1>}>, 'org.gnome.Totem.desktop': <{'position': <2>}>, 'thunderbird.desktop': <{'position': <3>}>, 'usb-creator-gtk.desktop': <{'position': <4>}>, 'yelp.desktop': <{'position': <5>}>}, {'libreoffice-startcenter.desktop': <{'position': <0>}>, 'org.remmina.Remmina.desktop': <{'position': <1>}>, 'shotwell.desktop': <{'position': <2>}>, 'org.gnome.Todo.desktop': <{'position': <3>}>, 'snap-store_ubuntu-software.desktop': <{'position': <4>}>, 'org.gnome.Terminal.desktop': <{'position': <5>}>}]
+app-picker-layout=[{'gnome-session-properties.desktop': <{'position': <0>}>, 'software-properties-drivers.desktop': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.Mahjongg.desktop': <{'position': <3>}>, 'software-properties-gtk.desktop': <{'position': <4>}>, 'org.gnome.Mines.desktop': <{'position': <5>}>, 'sol.desktop': <{'position': <6>}>, 'mpv.desktop': <{'position': <7>}>, 'qt5ct.desktop': <{'position': <8>}>}, {'simple-scan.desktop': <{'position': <0>}>, 'org.gnome.PowerStats.desktop': <{'position': <1>}>, 'org.gnome.Sudoku.desktop': <{'position': <2>}>, 'org.gnome.gedit.desktop': <{'position': <3>}>, 'Utilities': <{'position': <4>}>, 'gnome-language-selector.desktop': <{'position': <5>}>, 'org.gnome.Cheese.desktop': <{'position': <6>}>, 'libreoffice-calc.desktop': <{'position': <7>}>, 'libreoffice-draw.desktop': <{'position': <8>}>, 'libreoffice-impress.desktop': <{'position': <9>}>, 'libreoffice-writer.desktop': <{'position': <10>}>, 'io.github.celluloid_player.Celluloid.desktop': <{'position': <11>}>, 'firefox_firefox.desktop': <{'position': <12>}>, 'com.github.maoschanz.drawing.desktop': <{'position': <13>}>, 'mini-browser.desktop': <{'position': <14>}>, 'firefox.desktop': <{'position': <15>}>, 'sync-monitor-calendar.desktop': <{'position': <16>}>, 'org.gnome.Maps.desktop': <{'position': <17>}>, 'gnome-privacy-panel.desktop': <{'position': <18>}>, 'gnome-mahjongg.desktop': <{'position': <19>}>, 'evince-previewer.desktop': <{'position': <20>}>, 'gnome-applications-panel.desktop': <{'position': <21>}>, 'gnome-default-apps-panel.desktop': <{'position': <22>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <23>}>}, {'rhythmbox.desktop': <{'position': <0>}>, 'transmission-gtk.desktop': <{'position': <1>}>, 'org.gnome.Totem.desktop': <{'position': <2>}>, 'thunderbird.desktop': <{'position': <3>}>, 'usb-creator-gtk.desktop': <{'position': <4>}>, 'yelp.desktop': <{'position': <5>}>, 'calf.desktop': <{'position': <6>}>, 'org.gnome.Weather.desktop': <{'position': <7>}>, 'shotwell-viewer.desktop': <{'position': <8>}>, 'bleachbit-root.desktop': <{'position': <9>}>, 'gnome-mines.desktop': <{'position': <10>}>, 'org.gnome.Shell.PortalHelper.desktop': <{'position': <11>}>, 'gnome-sudoku.desktop': <{'position': <12>}>, 'gnome-removable-media-panel.desktop': <{'position': <13>}>, 'gnome-notifications-panel.desktop': <{'position': <14>}>, 'cairo-dock.desktop': <{'position': <15>}>, 'cairo-dock-cairo.desktop': <{'position': <16>}>, 'compiz.desktop': <{'position': <17>}>, 'ccsm.desktop': <{'position': <18>}>, 'alacarte-made-12.desktop': <{'position': <19>}>, 'gnome-alsamixer.desktop': <{'position': <20>}>, 'org.gnome.Gnote.desktop': <{'position': <21>}>, 'chrome-fahmaaghhglfmonjliepjlchgpgfmobi-Default.desktop': <{'position': <22>}>, 'gucharmap.desktop': <{'position': <23>}>}, {'libreoffice-startcenter.desktop': <{'position': <0>}>, 'org.remmina.Remmina.desktop': <{'position': <1>}>, 'shotwell.desktop': <{'position': <2>}>, 'org.gnome.Todo.desktop': <{'position': <3>}>, 'snap-store_ubuntu-software.desktop': <{'position': <4>}>, 'cpu-x.desktop': <{'position': <5>}>, 'gimp.desktop': <{'position': <6>}>, 'htop.desktop': <{'position': <7>}>, 'org.xfce.mousepad.desktop': <{'position': <8>}>, 'account-polld.desktop': <{'position': <9>}>, 'openjdk-11-java.desktop': <{'position': <10>}>, 'openjdk-8-java.desktop': <{'position': <11>}>, 'alacarte-made-30.desktop': <{'position': <12>}>, 'paman.desktop': <{'position': <13>}>, 'com.github.wwmm.pulseeffects.desktop': <{'position': <14>}>, 'alacarte-made-26.desktop': <{'position': <15>}>, 'alacarte-made-2.desktop': <{'position': <16>}>, 'gnome-thunderbolt-panel.desktop': <{'position': <17>}>, 'gnome-wifi-panel.desktop': <{'position': <18>}>, 'slingscold.desktop': <{'position': <19>}>, 'evince.desktop': <{'position': <20>}>, 'HTop TILIX.desktop': <{'position': <21>}>, 'ubiquity.desktop': <{'position': <22>}>, 'alacarte-made-48.desktop': <{'position': <23>}>}]
 app-picker-view=uint32 1
 command-history=['nautilus', 'tilix', 'lg', 'r']
 development-tools=true
 disable-extension-version-validation=true
 disable-user-extensions=false
-disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'dash-to-panel@jderose9.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com', 'desktop-icons@csoriano', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com']
+disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'Home-Server@sven.kramer', 'openweather-extension@jenslody.de', 'dash-to-panel@jderose9.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'desktop-icons@csoriano', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com']
 enable-hot-corners=true
 enabled-extensions=['mediaplayer@patapon.info', 'GPaste@gnome-shell-extensions.gnome.org', 'gnomenu@panacier.gmail.com', 'auto-ovpn@yahoo.com', 'printers@linux-man.org', 'sound-output-device-chooser@kgshank.net', 'bettervolume@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'suspend-button@laserb', 'TilixDropdown@ivkuzev@gmail.com', 'system-monitor@paradoxxx.zero.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'ubuntu-appindicators@ubuntu.com', 'CoverflowAltTab@palatis.blogspot.com', 'disconnect-wifi@kgshank.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'hidetopbar@mathieu.bidon.ca', 'ubuntu-dock@ubuntu.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'theme-switcher@fthx', 'extension-list@tu.berry', 'popthemetoggle@kylecorry31.github.io', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io', 'desktop-cube@schneegans.github.com']
 favorite-apps=['org.gnome.Screenshot.desktop', 'nemo.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-system-monitor.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.DiskUtility.desktop', 'ca.desrt.dconf-editor.desktop', 'chromium-browser.desktop', 'org.gnome.Terminal.desktop', 'com.gexperts.Tilix.desktop', 'vlc.desktop']
@@ -13694,7 +13688,7 @@ window-buttons-placement='last'
 window-buttons-theme='yaru'
 
 [org/gnome/shell/extensions/user-theme]
-name='Orchis'
+name='Orchis-light'
 
 [org/gnome/shell/extensions/window-list]
 display-all-workspaces=false
@@ -14512,7 +14506,7 @@ show-only-directories=false
 [org/nemo/window-state]
 bookmarks-expanded=true
 devices-expanded=true
-geometry='863x518+34+28'
+geometry='863x524+34+28'
 maximized=false
 my-computer-expanded=true
 network-expanded=true
@@ -14772,11 +14766,11 @@ wrap-around=true
 
 [org/xfce/mousepad/state/window]
 fullscreen=false
-height=503
+height=498
 left=-1
 maximized=false
 top=-1
-width=859
+width=835
 
 [org/yorba/shotwell/crop-settings]
 last-crop-height=1
@@ -14825,6 +14819,7 @@ auto-import=false
 commit-metadata=false
 directory-pattern='%Y/%m/%d'
 directory-pattern-custom=''
+import-dir=''
 raw-developer-default='CAMERA'
 use-lowercase-filenames=false
 
@@ -15656,6 +15651,8 @@ gsettings set org.gnome.desktop.background primary-color '#3A3936'
 gsettings set org.gnome.desktop.background primary-color '#322D2F'
 gsettings set org.gnome.desktop.background primary-color '#322D2D'
 gsettings set org.gnome.desktop.background primary-color '#282524'
+
+gsettings set org.gnome.desktop.background secondary-color '#2c002e'
 
 # Griggorii тесты на моргание в сессии wayland отключены # x11-randr-fractional-scaling, kms, vkms
 # gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
