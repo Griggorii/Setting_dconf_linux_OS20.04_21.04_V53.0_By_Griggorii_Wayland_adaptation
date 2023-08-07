@@ -1,5 +1,5 @@
 #!/bin/bash
-#Only real technologies, not any fictional parasitic distributions support real technology investments and donate MOMENTUM 5336 6901 2665 2892
+#Only real technologies, not any fictional parasitic distributions support real technology investments and donate VISA 4817 7601 8112 4706 usd
 
 ####Griggorii@gmail.com mit license dconf-config
 
@@ -3654,7 +3654,7 @@ EOF
 chmod -R a+rwx dconf-settings-original-restore.sh
 EOF
 cat << EOF > dconf-settings.sh
-notify-send "Перезаидите в сессию что бы изменения вступили в силу | please restart session By Griggorii setting Only real technologies, not any fictional parasitic distributions support real technology investments and donate MOMENTUM 5336 6901 2665 2892" 
+notify-send "Перезаидите в сессию что бы изменения вступили в силу | please restart session By Griggorii setting Only real technologies, not any fictional parasitic distributions support real technology investments and donate VISA 4817 7601 8112 4706 usd" 
 EOF
 chmod -R a+rwx dconf-settings.sh && ./dconf-settings.sh && rm dconf-settings.sh
 EOF
@@ -16522,7 +16522,7 @@ cat > '/tmp/.drirc' <<EOL
 
 # copyright generation drirc my chromium os 77 https://github.com/Griggorii/Chromium_OS_77  , my license is not free re-edit vendor Intel, AMD, nvidia and alternate vendor fork submit publish prohibited ! Examples of using $ sudo cp drirc /etc/ and home $ cp drirc ~/.drirc and rename .drirc
 
-# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank rub card MOMENTUM 5336 6901 2665 2892 griggorii@gmail.com
+# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank rub card VISA 4817 7601 8112 4706 usd griggorii@gmail.com
 EOL
 sudo mv /tmp/.drirc /etc/
 EOF
@@ -16547,7 +16547,7 @@ cat > '/tmp/.drirc' <<EOL
 
 # https://github.com/Griggorii/drirc_acceleration_idea
 
-# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank rub card MOMENTUM 5336 6901 2665 2892 griggorii@gmail.com
+# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank rub card VISA 4817 7601 8112 4706 usd griggorii@gmail.com
 EOL
 cp  /tmp/.drirc ~/
 EOF
@@ -40039,7 +40039,7 @@ Restore location terminal in folder parasit_changelog_i386 run command $ sudo cp
 
 Прочитать для чего это было сделано тут https://github.com/Griggorii/Ubuntu-20.04.2-desktop-amd64_By_Griggorii_linux-image-kernel-5.6.0-oem при нехватке компонента от wine все как один идут на установку wine32 что ведет к смене логов которые хотят заменить паразитными логами от i386 которые по идее для архитектуры i386 должны быть вообще исключены либо для них должна быть сделана отдельная директория вида /usr/share/doc/i386 но так как там либо делают вид что работают либо не могут додуматься что надо сделать так , а позднее логи вообще складывать по типу архитектура/директория допустим как пример /usr/share/doc/i386 /usr/share/doc/amd64 /usr/share/doc/arm7 и так далее , а на деле лучше исключить для amd64 кучу пакетов и оставить те пакеты про которые я написал из собираемых пакетов за исключение названных и то в даже в данной ситуации можно встретить и такие вещи как /usr/share/drirc.d/00-mesa-defaults.conf /usr/share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json в данной же директории может быть и nvidia конфиг /usr/share/drirc.d/
 
-# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank rub card MOMENTUM 5336 6901 2665 2892 griggorii@gmail.com
+# Only real technologies, not any fictional parasitic distributions support real technology investments and donate sberbank rub card VISA 4817 7601 8112 4706 usd griggorii@gmail.com
 EOL
 
 # sudo mv /usr/share/doc/libc6 ~/parasit_changelog_i386/doc
@@ -40232,7 +40232,7 @@ EOF
 EOF
 grep -H -r -n  "20.04" /etc/lsb-release && lsof /usr/bin/x-www-browser & sh -c "/usr/bin/x-www-browser www.github.com/Griggorii/Xorg_1.28-Mesa_21.2.6_Ubuntu_20.04/releases/tag/libmesa_dri"
 EOF
-grep -H -r -n  "20.04" /etc/lsb-release && lsof /usr/bin/notify-send & sh -c "/usr/bin/notify-send "UI_Perfomance_Ubuntu_20.04_development.sh Only real technologies, not any fictional parasitic distributions support real technology investments and donate MOMENTUM 5336 6901 2665 2892""
+grep -H -r -n  "20.04" /etc/lsb-release && lsof /usr/bin/notify-send & sh -c "/usr/bin/notify-send "UI_Perfomance_Ubuntu_20.04_development.sh Only real technologies, not any fictional parasitic distributions support real technology investments and donate VISA 4817 7601 8112 4706 usd""
 EOF
 grep -H -r -n  "extension-manager" /usr/bin & (sh -c /usr/bin/extension-manager "$@") | (sleep 3; killall sh)
 EOF
